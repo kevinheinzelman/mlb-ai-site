@@ -17,6 +17,19 @@
   };
   const card = (c) => `<article class="metric-card"><strong>${esc(c.label)}</strong><div class="metric-value ${esc(c.tone || '')}">${esc(c.value)}</div><div class="subtle">${esc(c.note || '')}</div></article>`;
   const pills = (items) => (items || []).filter(Boolean).map((t) => `<span class="hero-pill">${esc(t)}</span>`).join('');
+  const sumUnits = (rows) => rows.reduce((sum, row) => sum + Number(row.units || 0), 0);
+
+  function latestPerformanceRow(performance) {
+    const rows = Array.isArray(performance?.rows) ? performance.rows : [];
+    return rows.length ? rows[rows.length - 1] : null;
+  }
+
+  function recentPerformanceUnits(performance, days) {
+    const rows = Array.isArray(performance?.rows) ? performance.rows : [];
+    if (!rows.length) return null;
+    const range = rangeDates(rows, days === 7 ? '7d' : days === 30 ? '30d' : 'season');
+    return sumUnits(filterDate(rows, range.start, range.end));
+  }
 
   function boardDate(leads) {
     return leads?.board_available === false
@@ -98,7 +111,7 @@
   }
 
   function renderStatusStrip(status) {
-    const shell = $('.shell');
+    const shell = $('.page-shell');
     if (!shell) return;
     const mapped = statusMap(status);
     const section = document.createElement('section');
@@ -107,7 +120,14 @@
     shell.insertBefore(section, shell.firstChild);
   }
 
-  function renderLeans(status, leans, op) {
+  function renderTrustBar(target, config) {
+    const node = typeof target === 'string' ? $(target) : target;
+    if (!node) return;
+    node.className = `trust-bar trust-bar-${esc(config.severity || 'ok')}`;
+    node.innerHTML = `<div class="trust-bar-copy"><p class="status-strip-label">${esc(config.kicker || 'Board trust')}</p><h2>${esc(config.title || '')}</h2><p>${esc(config.subtitle || '')}</p></div><div class="trust-bar-grid">${(config.items || []).map((item) => `<article class="trust-bar-item"><span>${esc(item.label)}</span><strong>${esc(item.value)}</strong><small>${esc(item.note || '')}</small></article>`).join('')}</div>`;
+  }
+
+  function renderLeans(status, leans, op, performance) {
     const requested = leans.requested_board_date || op?.boards?.operating_date || 'unknown';
     const active = boardDate(leans);
     const latestValid = leans.latest_valid_mlb_ai_board_date || op?.boards?.latest_valid_mlb_ai_board_date || active || 'unknown';
@@ -126,6 +146,20 @@
       { label: 'Core card', value: String(core.length), note: 'Highest-confidence positions.' },
       { label: 'Board date', value: active || 'No board', note: `Requested date ${requested}` }
     ].map(card).join('');
+    renderTrustBar('#leans-trust-bar', {
+      severity: noBoard ? 'warning' : (op?.trust?.trusted_for_modeling ? 'ok' : 'fail'),
+      kicker: 'Today at a glance',
+      title: noBoard ? `No official board for ${requested}` : `${core.length} core play${core.length === 1 ? '' : 's'} on the official board`,
+      subtitle: noBoard
+        ? (leans.availability_reason || `The requested date ${requested} does not currently have a valid MLB AI board.`)
+        : `The board is official for ${active}. Today's card is separated from the settled record so the page stays clear about what is live and what is historical.`,
+      items: [
+        { label: 'Board state', value: noBoard ? 'No board' : `${rows.length} plays`, note: noBoard ? `Requested ${requested}` : `${core.length} core | ${exploratory.length} exploratory` },
+        { label: 'Results through', value: performance?.results_through || performance?.source_coverage?.shadow_results_through || latestPerformanceRow(performance)?.board_date || 'Unknown', note: 'Latest graded MLB AI date' },
+        { label: 'Last 7 days', value: units(recentPerformanceUnits(performance, 7)), note: 'Recent settled shadow record' },
+        { label: '2026 cumulative', value: units(latestPerformanceRow(performance)?.cumulative_units), note: latestPerformanceRow(performance)?.board_date ? `Through ${latestPerformanceRow(performance).board_date}` : 'No 2026 grading yet' }
+      ]
+    });
     const badge = $('#leans-summary-badge');
     if (badge) badge.textContent = noBoard ? `No official plays for ${requested}` : `${rows.length} official plays`;
     const summary = $('#leans-summary-grid');
@@ -146,7 +180,7 @@
     const feature = $('#leans-featured-play');
     if (featureWrap && feature) {
       if (noBoard || !featured) featureWrap.style.display = 'none';
-      else feature.innerHTML = `<article class="lean-featured-card"><div class="lean-featured-top"><div><p class="lean-featured-matchup">${esc(featured.matchup)}</p><h3 class="lean-featured-play">${esc(market(featured))}</h3><p class="lean-featured-market">${esc(String(featured.side || '').toUpperCase())} at ${esc(odds(featured.price_american))} | ${esc(fixed(featured.suggested_units, 2))} unit official position</p></div><div class="history-chip-row"><span class="${confidenceClass(featured.confidence_band)}">${esc(title(featured.confidence_band || 'unknown'))} confidence</span>${priceChip(featured.price_flag)}</div></div><div class="lean-featured-metrics"><div class="metric-tile"><label>Edge</label><strong>${esc(pctEdge(featured.edge))}</strong></div><div class="metric-tile"><label>Model</label><strong>${esc(pct(featured.model_probability))}</strong></div><div class="metric-tile"><label>Market</label><strong>${esc(pct(featured.market_probability))}</strong></div><div class="metric-tile"><label>Slate rank</label><strong>#${esc(String(featured.rank_on_slate || '--'))}</strong></div></div><div class="lean-explain-grid"><div class="lean-explain-block"><strong>Primary drivers</strong><ul>${(featured.primary_drivers || []).slice(0, 3).map((item) => `<li>${esc(item)}</li>`).join('')}</ul></div><div class="lean-explain-block"><strong>Short read</strong><ul><li>${esc(featured.explanation_summary || 'No explanation available.')}</li></ul></div></div></article>`;
+      else feature.innerHTML = `<article class="lean-featured-card"><div class="lean-featured-top"><div><p class="lean-featured-matchup">${esc(featured.matchup)}</p><h3 class="lean-featured-play">${esc(market(featured))}</h3><p class="lean-featured-market">${esc(String(featured.side || '').toUpperCase())} at ${esc(odds(featured.price_american))} | ${esc(fixed(featured.suggested_units, 2))} unit official position</p></div><div class="history-chip-row"><span class="${confidenceClass(featured.confidence_band)}">${esc(title(featured.confidence_band || 'unknown'))} confidence</span><span class="badge">${esc(fixed(featured.suggested_units, 2))} units</span>${priceChip(featured.price_flag)}</div></div><div class="lean-featured-metrics"><div class="metric-tile"><label>Edge</label><strong>${esc(pctEdge(featured.edge))}</strong></div><div class="metric-tile"><label>Model</label><strong>${esc(pct(featured.model_probability))}</strong></div><div class="metric-tile"><label>Market</label><strong>${esc(pct(featured.market_probability))}</strong></div><div class="metric-tile"><label>Slate rank</label><strong>#${esc(String(featured.rank_on_slate || '--'))}</strong></div></div><div class="lean-explain-grid"><div class="lean-explain-block"><strong>Primary drivers</strong><ul>${(featured.primary_drivers || []).slice(0, 3).map((item) => `<li>${esc(item)}</li>`).join('')}</ul></div><div class="lean-explain-block"><strong>Short read</strong><ul><li>${esc(featured.explanation_summary || 'No explanation available.')}</li></ul></div></div></article>`;
     }
 
     const leanCard = (row) => `<article class="lean-decision-card"><div class="lean-decision-head"><div><p class="lean-kicker">${esc(row.matchup)}</p><h3>${esc(String(row.away_team || '').toUpperCase())} vs ${esc(String(row.home_team || '').toUpperCase())}</h3><div class="lean-bet-callout">${esc(market(row))}</div><p class="lean-subline">Official side: ${esc(String(row.side || '').toUpperCase())} at ${esc(odds(row.price_american))}</p></div><div class="lean-score-stack"><span class="${confidenceClass(row.confidence_band)}">${esc(title(row.confidence_band || 'unknown'))} confidence</span><span class="badge">${esc(fixed(row.suggested_units, 2))} units</span>${priceChip(row.price_flag)}</div></div><div class="lean-decision-metrics"><div class="metric-tile"><label>Edge</label><strong>${esc(pctEdge(row.edge))}</strong></div><div class="metric-tile"><label>Model</label><strong>${esc(pct(row.model_probability))}</strong></div><div class="metric-tile"><label>Market</label><strong>${esc(pct(row.market_probability))}</strong></div><div class="metric-tile"><label>Slate rank</label><strong>#${esc(String(row.rank_on_slate || '--'))}</strong></div></div><div class="lean-explain-grid"><div class="lean-explain-block"><strong>Why it made the card</strong><ul>${(row.primary_drivers || []).slice(0, 3).map((item) => `<li>${esc(item)}</li>`).join('')}</ul></div><div class="lean-explain-block"><strong>Supporting context</strong><ul>${(row.supporting_context || []).slice(0, 3).map((item) => `<li>${esc(item)}</li>`).join('')}</ul></div></div></article>`;
@@ -185,7 +219,7 @@
   function historyCard(row) {
     const edgeDrivers = (row.top_edge_drivers || []).slice(0, 3).map((item) => `${title(item.feature)} ${fixed(item.contribution, 3)}`);
     const contextDrivers = (row.top_context_drivers || []).slice(0, 3).map((item) => `${title(item.feature)} ${fixed(item.contribution, 3)}`);
-    return `<article class="history-card"><div class="history-card-head"><div><p class="lean-kicker">${esc(row.board_date)}</p><h3>${esc(market(row))}</h3><p class="lean-subline">${esc(row.canonical_game_id)} | ${esc(odds(row.price_american))} | ${esc(fixed(row.suggested_units, 2))} unit</p></div><div class="history-chip-row"><span class="${confidenceClass(row.confidence_band)}">${esc(title(row.confidence_band || 'unknown'))}</span><span class="badge">${esc(pctEdge(row.edge))} edge</span></div></div><div class="history-card-metrics"><div class="metric-tile"><label>Final score</label><strong>${esc(fixed(row.final_score, 3))}</strong></div><div class="metric-tile"><label>Context score</label><strong>${esc(fixed(row.context_score, 3))}</strong></div><div class="metric-tile"><label>Hostile penalty</label><strong>${esc(fixed(row.hostile_penalty_multiplier, 3))}</strong></div></div><p class="history-summary">${esc(row.explanation_summary || 'No explanation summary available.')}</p><div class="lean-explain-grid"><div class="lean-explain-block"><strong>Top edge drivers</strong><ul>${edgeDrivers.map((item) => `<li>${esc(item)}</li>`).join('')}</ul></div><div class="lean-explain-block"><strong>Top context drivers</strong><ul>${contextDrivers.map((item) => `<li>${esc(item)}</li>`).join('')}</ul></div></div></article>`;
+    return `<article class="history-card"><div class="history-card-head"><div><p class="lean-kicker">${esc(row.board_date)}</p><h3>${esc(market(row))}</h3><p class="lean-subline">${esc(row.canonical_game_id)} | ${esc(odds(row.price_american))} | ${esc(fixed(row.suggested_units, 2))} unit recommendation</p></div><div class="history-chip-row"><span class="${confidenceClass(row.confidence_band)}">${esc(title(row.confidence_band || 'unknown'))}</span><span class="badge">${esc(pctEdge(row.edge))} edge</span></div></div><div class="history-card-metrics"><div class="metric-tile"><label>Final score</label><strong>${esc(fixed(row.final_score, 3))}</strong></div><div class="metric-tile"><label>Context score</label><strong>${esc(fixed(row.context_score, 3))}</strong></div><div class="metric-tile"><label>Hostile penalty</label><strong>${esc(fixed(row.hostile_penalty_multiplier, 3))}</strong></div></div><p class="history-summary">${esc(row.explanation_summary || 'No explanation summary available.')}</p><div class="lean-explain-grid"><div class="lean-explain-block"><strong>Why the pick graded well</strong><ul>${edgeDrivers.map((item) => `<li>${esc(item)}</li>`).join('')}</ul></div><div class="lean-explain-block"><strong>What shaped the context</strong><ul>${contextDrivers.map((item) => `<li>${esc(item)}</li>`).join('')}</ul></div></div></article>`;
   }
 
   function renderPerformance(status, reporting, monthly, comparison, performance, pickHistory, op) {
@@ -203,11 +237,24 @@
       { label: '2026 bets', value: String(reporting?.active_policy_shadow_summary?.bets ?? '--'), note: `Tracked shadow record through ${resultsThrough}` },
       { label: '2026 ROI', value: pct(reporting?.active_policy_shadow_summary?.roi), note: 'Full shadow season to date.' }
     ].map(card).join('');
+    renderTrustBar('#performance-trust-bar', {
+      severity: op?.trust?.trusted_for_modeling ? 'ok' : 'fail',
+      kicker: 'Trust summary',
+      title: `Results are settled through ${resultsThrough}`,
+      subtitle: 'Filtered ranges help you interrogate the record. Full-season cumulative remains separate so the page cannot imply conflicting totals.',
+      items: [
+        { label: 'Board state', value: op?.boards?.active_board_date || 'Unknown', note: op?.trust?.trusted_for_modeling ? 'Official board trusted' : 'Board trust blocked' },
+        { label: 'Results through', value: resultsThrough, note: 'Latest graded MLB AI date' },
+        { label: 'Last 7 days', value: units(recentPerformanceUnits(performance, 7)), note: 'Recent settled performance' },
+        { label: '2026 cumulative', value: units(latest?.cumulative_units), note: latest?.board_date ? `Full season through ${latest.board_date}` : 'No 2026 results available' }
+      ]
+    });
     const trust = $('#performance-trust-grid');
     if (trust) trust.innerHTML = [
       { label: 'Results through', value: resultsThrough, note: 'Latest graded date in the active shadow record.' },
       { label: 'Artifact generated', value: dt(reporting?.generated_at), note: 'Refresh time for the exported reporting artifact.' },
-      { label: 'Filtered vs season', value: 'Separated', note: 'Filtered views do not overwrite the full-season cumulative line.' }
+      { label: 'Filtered vs season', value: 'Separated', note: 'Filtered views do not overwrite the full-season cumulative line.' },
+      { label: 'Requested board', value: requested, note: `Official board ${active}` }
     ].map(card).join('');
     const windowGrid = $('#performance-window-grid');
     const recent = (label, mode) => {
@@ -238,10 +285,10 @@
       const filtered = filterDate(rows, start.value, end.value);
       const sums = perfSummary(filtered);
       summary.innerHTML = [
-        { label: 'Filtered days', value: String(sums.days), note: `${start.value || 'start'} through ${end.value || 'end'}` },
+        { label: 'Filtered range', value: `${start.value || 'start'} to ${end.value || 'end'}`, note: `${sums.days} graded day${sums.days === 1 ? '' : 's'} in view` },
         { label: 'Filtered bets', value: String(sums.bets), note: `${sums.wins} wins | ${sums.losses} losses | ${sums.pushes} pushes` },
-        { label: 'Filtered units', value: units(sums.units), tone: sums.units > 0 ? 'metric-good' : sums.units < 0 ? 'metric-bad' : '', note: `Filtered ROI ${pct(sums.roi)}` },
-        { label: 'Season cumulative', value: units(latest?.cumulative_units), tone: Number(latest?.cumulative_units || 0) > 0 ? 'metric-good' : Number(latest?.cumulative_units || 0) < 0 ? 'metric-bad' : '', note: `Full season through ${resultsThrough}` }
+        { label: 'Filtered units', value: units(sums.units), tone: sums.units > 0 ? 'metric-good' : sums.units < 0 ? 'metric-bad' : '', note: `Only for the visible range | ROI ${pct(sums.roi)}` },
+        { label: 'Full 2026 cumulative', value: units(latest?.cumulative_units), tone: Number(latest?.cumulative_units || 0) > 0 ? 'metric-good' : Number(latest?.cumulative_units || 0) < 0 ? 'metric-bad' : '', note: `Separate season line through ${resultsThrough}` }
       ].map(card).join('');
       dailyBody.innerHTML = filtered.length ? filtered.map((row) => `<tr><td>${esc(row.board_date)}</td><td>${row.bets}</td><td>${row.wins}</td><td>${row.losses}</td><td>${row.pushes}</td><td>${pct(row.win_rate)}</td><td>${units(row.units)}</td><td>${pct(row.roi)}</td><td>${units(row.cumulative_units)}</td></tr>`).join('') : '<tr><td colspan="9" class="subtle">No 2026 daily rows are available for this filter.</td></tr>';
     }
@@ -298,12 +345,12 @@
       const avgEdge = filtered.length ? filtered.reduce((sum, row) => sum + Number(row.edge || 0), 0) / filtered.length : null;
       const avgUnits = filtered.length ? filtered.reduce((sum, row) => sum + Number(row.suggested_units || 0), 0) / filtered.length : null;
       hSummary.innerHTML = [
-        { label: 'Picks in filter', value: String(filtered.length), note: 'All 2026 selections exported in the explanations artifact.' },
-        { label: 'Average edge', value: pctEdge(avgEdge), note: 'Mean model-vs-market edge inside the filtered pick set.' },
-        { label: 'Average units', value: fixed(avgUnits, 2), note: 'Suggested units from the pick artifact.' }
+        { label: 'Picks shown', value: String(filtered.length), note: `${hStart.value || 'start'} through ${hEnd.value || 'end'}` },
+        { label: 'Average edge', value: pctEdge(avgEdge), note: 'Mean model-vs-market edge inside the visible picks.' },
+        { label: 'Average units', value: fixed(avgUnits, 2), note: 'Recommended size from the pick artifact.' }
       ].map(card).join('');
       hGrid.innerHTML = filtered.length ? filtered.slice().sort((a, b) => String(b.board_date).localeCompare(String(a.board_date)) || Number(b.final_score || 0) - Number(a.final_score || 0)).map(historyCard).join('') : '<div class="empty-state">No 2026 pick-history rows match the current filters.</div>';
-      hGap.innerHTML = '<h3>Current artifact limit</h3><p>The exported 2026 pick-explanations artifact is enough to inspect individual picks, but it does not yet include matchup labels or pick-level settled outcomes. For full bet-to-result traceability, the next artifact should be <strong>mlb_ai_leans_history_view_v1.json</strong> with board date, matchup, market, price, units, confidence, result status, result units, and cumulative-after-pick fields.</p>';
+      hGap.innerHTML = '<h3>Next artifact unlock</h3><p><strong>mlb_ai_leans_history_view_v1.json</strong> should power the next step in this explorer: actual matchup labels, settled result status, result units, and cumulative-after-pick history. That would let the page connect each pick directly to what happened, instead of stopping at pick inspection and explanation.</p><div class="meta-line">Required fields: board_date, canonical_game_id, matchup, market_type, side, line_value, price_american, confidence_band, suggested_units, result_status, result_units, cumulative_units_after_pick, edge.</div>';
     }
 
     if (hPresets) {
@@ -378,11 +425,11 @@
     const op = await json('mlb_operational_status_v1.json');
     renderStatusStrip(op);
     const status = await json('mlb_ai_active_engine_status_v1.json');
-    if (page === 'leans') return renderLeans(status, await json('mlb_ai_daily_leans_v1.json'), op);
+    if (page === 'leans') return renderLeans(status, await json('mlb_ai_daily_leans_v1.json'), op, await json('mlb_ai_daily_performance_2026_v1.json'));
     if (page === 'performance') return renderPerformance(status, await json('mlb_ai_reporting_v1.json'), await json('mlb_ai_reporting_monthly_v1.json'), await json('mlb_ai_policy_comparison_v1.json'), await json('mlb_ai_daily_performance_2026_v1.json'), await json('mlb_ai_pick_explanations_2026_v1.json'), op);
     if (page === 'operations') return renderOperations(status, op);
   } catch (error) {
-    const shell = $('.shell') || document.body;
+    const shell = $('.page-shell') || document.body;
     const panel = document.createElement('section');
     panel.className = 'page-section';
     panel.innerHTML = `<div class="empty-state">Failed to load the MLB AI site artifacts: ${esc(error.message)}</div>`;

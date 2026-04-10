@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-10T02:14:13.045Z",
+  "generated_at": "2026-04-10T11:44:37.930Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_totals",
@@ -15,45 +15,45 @@
       "board_date": "2026-03-25",
       "bets": 1,
       "wins": 0,
-      "losses": 1,
-      "pushes": 0,
-      "win_rate": 0,
-      "units": -1,
-      "roi": -1,
-      "cumulative_units": -1
+      "losses": 0,
+      "pushes": 1,
+      "win_rate": null,
+      "units": 0,
+      "roi": 0,
+      "cumulative_units": 0
     },
     {
       "board_date": "2026-03-26",
-      "bets": 2,
+      "bets": 3,
       "wins": 0,
-      "losses": 2,
+      "losses": 3,
       "pushes": 0,
       "win_rate": 0,
-      "units": -2,
+      "units": -3,
       "roi": -1,
       "cumulative_units": -3
     },
     {
       "board_date": "2026-03-27",
-      "bets": 2,
-      "wins": 2,
+      "bets": 1,
+      "wins": 1,
       "losses": 0,
       "pushes": 0,
       "win_rate": 1,
-      "units": 1.522989,
-      "roi": 0.761494,
-      "cumulative_units": -1.477011
+      "units": 0.847458,
+      "roi": 0.847458,
+      "cumulative_units": -2.152542
     },
     {
       "board_date": "2026-03-28",
       "bets": 4,
-      "wins": 2,
-      "losses": 2,
+      "wins": 3,
+      "losses": 1,
       "pushes": 0,
-      "win_rate": 0.5,
-      "units": -0.361204,
-      "roi": -0.090301,
-      "cumulative_units": -1.838215
+      "win_rate": 0.75,
+      "units": 1.508361,
+      "roi": 0.37709,
+      "cumulative_units": -0.644181
     },
     {
       "board_date": "2026-03-29",
@@ -62,9 +62,9 @@
       "losses": 1,
       "pushes": 0,
       "win_rate": 0.666667,
-      "units": 0.818182,
-      "roi": 0.272727,
-      "cumulative_units": -1.020033
+      "units": 0.742424,
+      "roi": 0.247475,
+      "cumulative_units": 0.098243
     },
     {
       "board_date": "2026-03-30",
@@ -75,29 +75,29 @@
       "win_rate": 0.666667,
       "units": 0.951266,
       "roi": 0.317089,
-      "cumulative_units": -0.068767
+      "cumulative_units": 1.049509
     },
     {
       "board_date": "2026-03-31",
-      "bets": 4,
+      "bets": 3,
       "wins": 2,
-      "losses": 2,
+      "losses": 1,
       "pushes": 0,
-      "win_rate": 0.5,
-      "units": 0,
-      "roi": 0,
-      "cumulative_units": -0.068767
+      "win_rate": 0.666667,
+      "units": 1,
+      "roi": 0.333333,
+      "cumulative_units": 2.049509
     },
     {
       "board_date": "2026-04-01",
-      "bets": 1,
+      "bets": 6,
       "wins": 0,
-      "losses": 0,
+      "losses": 5,
       "pushes": 1,
-      "win_rate": null,
-      "units": 0,
-      "roi": 0,
-      "cumulative_units": -0.068767
+      "win_rate": 0,
+      "units": -5,
+      "roi": -0.833333,
+      "cumulative_units": -2.950491
     },
     {
       "board_date": "2026-04-02",
@@ -108,40 +108,40 @@
       "win_rate": 0,
       "units": -1,
       "roi": -1,
-      "cumulative_units": -1.068767
+      "cumulative_units": -3.950491
     },
     {
       "board_date": "2026-04-03",
-      "bets": 3,
-      "wins": 1,
+      "bets": 5,
+      "wins": 3,
       "losses": 2,
       "pushes": 0,
-      "win_rate": 0.333333,
-      "units": -1.130435,
-      "roi": -0.376812,
-      "cumulative_units": -2.199202
+      "win_rate": 0.6,
+      "units": 0.687897,
+      "roi": 0.137579,
+      "cumulative_units": -3.262594
     },
     {
       "board_date": "2026-04-04",
+      "bets": 1,
+      "wins": 0,
+      "losses": 1,
+      "pushes": 0,
+      "win_rate": 0,
+      "units": -1,
+      "roi": -1,
+      "cumulative_units": -4.262594
+    },
+    {
+      "board_date": "2026-04-05",
       "bets": 4,
       "wins": 2,
       "losses": 2,
       "pushes": 0,
       "win_rate": 0.5,
-      "units": -0.178054,
-      "roi": -0.044513,
-      "cumulative_units": -2.377256
-    },
-    {
-      "board_date": "2026-04-05",
-      "bets": 3,
-      "wins": 2,
-      "losses": 1,
-      "pushes": 0,
-      "win_rate": 0.666667,
-      "units": 0.731634,
-      "roi": 0.243878,
-      "cumulative_units": -1.645622
+      "units": -0.268366,
+      "roi": -0.067091,
+      "cumulative_units": -4.53096
     },
     {
       "board_date": "2026-04-06",
@@ -150,42 +150,42 @@
       "losses": 0,
       "pushes": 0,
       "win_rate": 1,
-      "units": 1.717023,
-      "roi": 0.858511,
-      "cumulative_units": 0.071401
+      "units": 1.778656,
+      "roi": 0.889328,
+      "cumulative_units": -2.752304
     },
     {
       "board_date": "2026-04-07",
-      "bets": 3,
-      "wins": 2,
+      "bets": 1,
+      "wins": 0,
       "losses": 1,
       "pushes": 0,
-      "win_rate": 0.666667,
-      "units": 0.717023,
-      "roi": 0.239008,
-      "cumulative_units": 0.788424
+      "win_rate": 0,
+      "units": -1,
+      "roi": -1,
+      "cumulative_units": -3.752304
     },
     {
       "board_date": "2026-04-08",
-      "bets": 2,
-      "wins": 1,
+      "bets": 1,
+      "wins": 0,
       "losses": 1,
       "pushes": 0,
-      "win_rate": 0.5,
-      "units": -0.137931,
-      "roi": -0.068965,
-      "cumulative_units": 0.650493
+      "win_rate": 0,
+      "units": -1,
+      "roi": -1,
+      "cumulative_units": -4.752304
     },
     {
       "board_date": "2026-04-09",
       "bets": 1,
-      "wins": 1,
-      "losses": 0,
+      "wins": 0,
+      "losses": 1,
       "pushes": 0,
-      "win_rate": 1,
-      "units": 0.163934,
-      "roi": 0.163934,
-      "cumulative_units": 0.814427
+      "win_rate": 0,
+      "units": -1,
+      "roi": -1,
+      "cumulative_units": -5.752304
     }
   ]
 }
