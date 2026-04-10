@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-10T16:27:19.896Z",
+  "generated_at": "2026-04-10T16:30:44.755Z",
   "source_run_id": "mlb_loop_20260409_20260409230003_ebu3jb",
   "state": "fail",
   "summary": {
@@ -45,7 +45,7 @@
       "state": "fail",
       "status": "fail",
       "trusted_for_site_shadow": false,
-      "generated_at": "2026-04-10T16:27:19.731Z"
+      "generated_at": "2026-04-10T16:30:44.586Z"
     }
   },
   "boards": {
@@ -524,7 +524,7 @@
     },
     "mlb_ai_shadow_validation_report": {
       "path": "C:\\Users\\kevin\\Documents\\Action Exporter MLB Rebuild\\data\\working\\mlb_ai_shadow_validation_report_v1.json",
-      "generated_at": "2026-04-10T16:27:19.731Z"
+      "generated_at": "2026-04-10T16:30:44.586Z"
     }
   },
   "contract": {
