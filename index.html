@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>MLB AI Leans</title>
+    <title>MLB AI | Daily Leans</title>
     <link rel="stylesheet" href="./assets/mlb-ai.css" />
   </head>
   <body data-page="leans">
     <header class="site-header">
       <div class="shell shell-nav">
-        <a class="site-brand" href="./index.html">
+        <a class="site-brand" href="./index.html" aria-label="MLB AI home">
           <span class="site-brand-mark">MLB AI</span>
-          <span class="site-brand-copy">Daily board</span>
+          <span class="site-brand-copy">Official board</span>
         </a>
         <nav class="site-nav" aria-label="Primary">
           <a class="site-nav-link is-active" href="./index.html" aria-current="page">Leans</a>
@@ -21,47 +21,59 @@
       </div>
     </header>
 
-    <main class="shell">
+    <main class="shell page-shell">
       <section class="page-hero page-hero-leans">
         <div class="page-hero-copy">
-          <p class="eyebrow">Official plays</p>
-          <h1>Daily MLB leans</h1>
+          <p class="eyebrow">Official board</p>
+          <h1>What the system would actually bet today.</h1>
           <p class="lede">
-            Start here. See whether there is an official board today, then scan the strongest plays, prices, and reasons without digging through internal model language.
+            Start with the board. If there are official plays, they should be impossible to miss. If there is no valid board, the page should say that immediately and clearly.
           </p>
+          <div id="leans-hero-meta" class="hero-meta"></div>
         </div>
         <div id="leans-hero-grid" class="hero-grid"></div>
       </section>
 
-      <section class="panel">
+      <section class="page-section">
         <div class="section-head">
           <div>
-            <p class="section-kicker">Today&apos;s board</p>
-            <h2>Board summary</h2>
+            <p class="section-kicker">Board clarity</p>
+            <h2>Today’s board state</h2>
           </div>
           <span id="leans-summary-badge" class="badge"></span>
         </div>
         <div id="leans-summary-grid" class="summary-grid"></div>
       </section>
 
-      <section class="panel panel-emphasis">
+      <section id="leans-featured-section" class="page-section page-section-emphasis">
         <div class="section-head">
           <div>
-            <p class="section-kicker">Top confidence</p>
+            <p class="section-kicker">Top decision</p>
+            <h2>Featured play</h2>
+          </div>
+          <span class="badge">Highest conviction</span>
+        </div>
+        <div id="leans-featured-play"></div>
+      </section>
+
+      <section class="page-section page-section-emphasis">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Official card</p>
             <h2>Core plays</h2>
           </div>
-          <span class="badge">Official card</span>
+          <span class="badge">Primary bets</span>
         </div>
         <div id="leans-core-cards" class="lean-decision-grid"></div>
       </section>
 
-      <section class="panel">
+      <section class="page-section">
         <div class="section-head">
           <div>
-            <p class="section-kicker">Secondary angles</p>
+            <p class="section-kicker">Secondary card</p>
             <h2>Exploratory plays</h2>
           </div>
-          <span class="badge">Use discretion</span>
+          <span class="badge">Smaller exposure</span>
         </div>
         <div id="leans-exploratory-cards" class="lean-decision-grid"></div>
       </section>

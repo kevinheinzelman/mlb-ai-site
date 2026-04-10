@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>MLB AI Performance</title>
+    <title>MLB AI | Performance</title>
     <link rel="stylesheet" href="./assets/mlb-ai.css" />
   </head>
   <body data-page="performance">
     <header class="site-header">
       <div class="shell shell-nav">
-        <a class="site-brand" href="./index.html">
+        <a class="site-brand" href="./index.html" aria-label="MLB AI home">
           <span class="site-brand-mark">MLB AI</span>
-          <span class="site-brand-copy">Daily board</span>
+          <span class="site-brand-copy">Official board</span>
         </a>
         <nav class="site-nav" aria-label="Primary">
           <a class="site-nav-link" href="./index.html">Leans</a>
@@ -21,28 +21,49 @@
       </div>
     </header>
 
-    <main class="shell">
+    <main class="shell page-shell">
       <section class="page-hero page-hero-performance">
         <div class="page-hero-copy">
           <p class="eyebrow">Performance</p>
-          <h1>Track what the board has actually done</h1>
+          <h1>See what the board has done, not just what it says.</h1>
           <p class="lede">
-            Review recent results, inspect the 2026 day-by-day path, and zoom out to the longer record without mixing in engine-internal noise.
+            This page separates full-season truth from filtered views, shows results through the latest graded date, and makes it easy to inspect 2026 picks without digging through internal reporting.
           </p>
+          <div id="performance-hero-meta" class="hero-meta"></div>
         </div>
         <div id="performance-hero-grid" class="hero-grid"></div>
       </section>
 
-      <section class="panel controls-panel">
+      <section class="page-section page-section-emphasis">
         <div class="section-head">
           <div>
-            <p class="section-kicker">Filters</p>
-            <h2>Recent performance controls</h2>
+            <p class="section-kicker">Trust layer</p>
+            <h2>Results framing</h2>
           </div>
           <span id="performance-coverage-badge" class="badge"></span>
         </div>
-        <div class="controls-grid">
-          <div class="control-group">
+        <div id="performance-trust-grid" class="summary-grid"></div>
+      </section>
+
+      <section class="page-section">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Recent windows</p>
+            <h2>At-a-glance performance</h2>
+          </div>
+        </div>
+        <div id="performance-window-grid" class="summary-grid"></div>
+      </section>
+
+      <section class="page-section">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Daily range</p>
+            <h2>Filter the 2026 ledger</h2>
+          </div>
+        </div>
+        <div class="filter-bar">
+          <div class="control-group control-group-wide">
             <label class="control-label">Quick range</label>
             <div class="segmented-control" id="performance-range-presets">
               <button type="button" data-range="7d">7D</button>
@@ -52,40 +73,31 @@
             </div>
           </div>
           <div class="control-group">
-            <label class="control-label" for="performance-start-date">Start date</label>
+            <label class="control-label" for="performance-start-date">Start</label>
             <input id="performance-start-date" type="date" />
           </div>
           <div class="control-group">
-            <label class="control-label" for="performance-end-date">End date</label>
+            <label class="control-label" for="performance-end-date">End</label>
             <input id="performance-end-date" type="date" />
           </div>
           <div class="control-group">
-            <label class="control-label" for="monthly-policy-filter">Monthly history</label>
+            <label class="control-label" for="monthly-policy-filter">Monthly view</label>
             <select id="monthly-policy-filter">
               <option value="active_only">Active system only</option>
               <option value="all_policies">Include comparators</option>
             </select>
           </div>
         </div>
-      </section>
-
-      <section class="panel">
-        <div class="section-head">
-          <div>
-            <p class="section-kicker">Current read</p>
-            <h2>Filtered performance summary</h2>
-          </div>
-        </div>
         <div id="performance-summary-grid" class="summary-grid"></div>
       </section>
 
-      <section class="panel">
+      <section class="page-section">
         <div class="section-head">
           <div>
-            <p class="section-kicker">2026 daily</p>
+            <p class="section-kicker">2026 ledger</p>
             <h2>Daily performance</h2>
           </div>
-          <span class="badge">Cumulative included</span>
+          <span class="badge">Filtered range only</span>
         </div>
         <div class="table-wrap">
           <table id="daily-performance-table">
@@ -107,13 +119,63 @@
         </div>
       </section>
 
-      <section class="panel">
+      <section class="page-section page-section-emphasis">
         <div class="section-head">
           <div>
-            <p class="section-kicker">Longer view</p>
+            <p class="section-kicker">2026 picks</p>
+            <h2>Pick history explorer</h2>
+          </div>
+          <span class="badge">Artifact-driven inspection</span>
+        </div>
+        <div class="filter-bar">
+          <div class="control-group control-group-wide">
+            <label class="control-label">Date preset</label>
+            <div class="segmented-control" id="history-range-presets">
+              <button type="button" data-range="7d">7D</button>
+              <button type="button" data-range="30d">30D</button>
+              <button type="button" data-range="season">Season</button>
+              <button type="button" data-range="all">All</button>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="history-start-date">Start</label>
+            <input id="history-start-date" type="date" />
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="history-end-date">End</label>
+            <input id="history-end-date" type="date" />
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="history-confidence-filter">Confidence</label>
+            <select id="history-confidence-filter">
+              <option value="all">All</option>
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="history-market-filter">Market</label>
+            <select id="history-market-filter">
+              <option value="all">All</option>
+              <option value="total">Totals</option>
+              <option value="moneyline">Moneyline</option>
+              <option value="spread">Run line</option>
+            </select>
+          </div>
+        </div>
+        <div id="history-summary-grid" class="summary-grid"></div>
+        <div id="pick-history-grid" class="pick-history-grid"></div>
+        <div id="pick-history-gap" class="artifact-gap"></div>
+      </section>
+
+      <section class="page-section">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Long-run record</p>
             <h2>Monthly history</h2>
           </div>
-          <span class="badge">Historical record</span>
+          <span class="badge">Active system plus comparators</span>
         </div>
         <div class="table-wrap">
           <table id="monthly-table">
@@ -128,6 +190,7 @@
                 <th>Win %</th>
                 <th>Units</th>
                 <th>ROI</th>
+                <th>Cumulative</th>
               </tr>
             </thead>
             <tbody></tbody>
@@ -135,11 +198,11 @@
         </div>
       </section>
 
-      <section class="panel">
+      <section class="page-section">
         <div class="section-head">
           <div>
-            <p class="section-kicker">Context</p>
-            <h2>How the active system behaves</h2>
+            <p class="section-kicker">Benchmarks</p>
+            <h2>System context</h2>
           </div>
         </div>
         <div id="performance-comparator-grid" class="summary-grid"></div>

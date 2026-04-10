@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>MLB AI Operations</title>
+    <title>MLB AI | Operations</title>
     <link rel="stylesheet" href="./assets/mlb-ai.css" />
   </head>
   <body data-page="operations">
     <header class="site-header">
       <div class="shell shell-nav">
-        <a class="site-brand" href="./index.html">
+        <a class="site-brand" href="./index.html" aria-label="MLB AI home">
           <span class="site-brand-mark">MLB AI</span>
-          <span class="site-brand-copy">Daily board</span>
+          <span class="site-brand-copy">Official board</span>
         </a>
         <nav class="site-nav" aria-label="Primary">
           <a class="site-nav-link" href="./index.html">Leans</a>
@@ -21,19 +21,20 @@
       </div>
     </header>
 
-    <main class="shell">
+    <main class="shell page-shell">
       <section class="page-hero page-hero-operations">
         <div class="page-hero-copy">
           <p class="eyebrow">Operations</p>
-          <h1>System status and board health</h1>
+          <h1>Trust, freshness, and system state.</h1>
           <p class="lede">
-            This page is for verifying trust, freshness, and runtime state. It keeps the technical detail separate from the bettor-facing decision pages.
+            This page is intentionally technical. Use it to confirm board trust, dependency freshness, and runtime status without mixing that operator detail into the bettor-facing pages.
           </p>
+          <div id="operations-hero-meta" class="hero-meta"></div>
         </div>
         <div id="operations-hero-grid" class="hero-grid"></div>
       </section>
 
-      <section class="panel">
+      <section class="page-section">
         <div class="section-head">
           <div>
             <p class="section-kicker">Validation</p>
@@ -43,17 +44,17 @@
         <div id="operations-validation-grid" class="summary-grid"></div>
       </section>
 
-      <section class="panel">
+      <section class="page-section">
         <div class="section-head">
           <div>
-            <p class="section-kicker">Board state</p>
+            <p class="section-kicker">Board ownership</p>
             <h2>Dates and board alignment</h2>
           </div>
         </div>
         <div id="operations-board-grid" class="summary-grid"></div>
       </section>
 
-      <section class="panel">
+      <section class="page-section">
         <div class="section-head">
           <div>
             <p class="section-kicker">Dependencies</p>
@@ -63,7 +64,7 @@
         <div id="operations-freshness-grid" class="context-grid"></div>
       </section>
 
-      <section class="panel">
+      <section class="page-section">
         <div class="section-head">
           <div>
             <p class="section-kicker">Coverage</p>
@@ -73,21 +74,21 @@
         <div id="operations-metrics-grid" class="summary-grid"></div>
       </section>
 
-      <section class="panel">
+      <section class="page-section">
         <div class="section-head">
           <div>
-            <p class="section-kicker">Issues</p>
-            <h2>Warnings, failures, and info</h2>
+            <p class="section-kicker">Open items</p>
+            <h2>Failures, warnings, and info</h2>
           </div>
         </div>
         <div id="operations-issues" class="stack-list"></div>
       </section>
 
-      <section class="panel">
+      <section class="page-section">
         <div class="section-head">
           <div>
-            <p class="section-kicker">Technical details</p>
-            <h2>Engine and run metadata</h2>
+            <p class="section-kicker">Engine metadata</p>
+            <h2>Technical details</h2>
           </div>
         </div>
         <div id="operations-engine-grid" class="summary-grid"></div>
