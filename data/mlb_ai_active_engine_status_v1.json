@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-10T11:44:37.930Z",
+  "generated_at": "2026-04-10T11:48:18.270Z",
   "artifact_version": "v1",
   "active_engine": {
     "engine_family": "mlb_ai_totals",
@@ -9,13 +9,13 @@
     "model_lock_status": "locked_active_shadow",
     "trusted_for_live_betting": false
   },
-  "requested_board_date": "2026-04-09",
+  "requested_board_date": "2026-04-10",
   "active_board_date": "2026-04-09",
   "freshness": {
-    "generated_at": "2026-04-10T11:44:37.930Z",
+    "generated_at": "2026-04-10T11:48:18.270Z",
     "board_date": "2026-04-09",
-    "current_source_scores_generated_at": "2026-04-10T11:44:50.102Z",
-    "historical_source_audit_generated_at": "2026-04-10T11:44:37.930Z"
+    "current_source_scores_generated_at": "2026-04-10T11:48:28.373Z",
+    "historical_source_audit_generated_at": "2026-04-10T11:48:18.270Z"
   },
   "source_date_coverage": {
     "current_window_start": "2026-03-25",

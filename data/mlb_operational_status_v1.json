@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-10T02:14:32.108Z",
+  "generated_at": "2026-04-10T11:48:40.215Z",
   "source_run_id": "mlb_loop_20260409_20260409230003_ebu3jb",
   "state": "fail",
   "summary": {
@@ -12,7 +12,7 @@
     "trusted_for_modeling": true,
     "trusted_for_site_shadow": false,
     "active_board_date": "2026-04-09",
-    "latest_canonical_board_date": "2026-04-09",
+    "latest_canonical_board_date": "2026-04-10",
     "latest_valid_mlb_ai_board_date": "2026-04-09",
     "engine_family": "mlb_ai_totals",
     "engine_version": "v8",
@@ -45,13 +45,13 @@
       "state": "fail",
       "status": "fail",
       "trusted_for_site_shadow": false,
-      "generated_at": "2026-04-10T02:14:31.959Z"
+      "generated_at": "2026-04-10T11:48:40.048Z"
     }
   },
   "boards": {
     "operating_date": "2026-04-09",
     "active_board_date": "2026-04-09",
-    "latest_canonical_board_date": "2026-04-09",
+    "latest_canonical_board_date": "2026-04-10",
     "latest_valid_mlb_ai_board_date": "2026-04-09",
     "canonical_board_coverage_pct": null,
     "baseball_board_coverage_pct": null
@@ -228,10 +228,30 @@
     "failures": [
       {
         "source": "mlb_ai_shadow_validation",
-        "code": "viewer_generated_at_vs_db_mismatch",
+        "code": "mlb_ai_modeling_layers_stale_vs_canonical_betting",
         "detail": {
-          "expectedGeneratedAt": "2026-04-10T02:14:13.045Z",
-          "actual": "2026-04-10T01:55:14.144Z"
+          "canonical_max_game_date": "2026-04-10",
+          "baseline_max_game_date": "2026-04-09",
+          "modeling_max_game_date": "2026-04-09",
+          "canonical_latest_signature": "mlb:286500|over|6.500|-120|2026-04-10T11:00:13.558Z||mlb:286500|under|6.500|-100|2026-04-10T11:00:13.558Z||mlb:286501|over|8.500|-115|2026-04-10T11:00:13.558Z||mlb:286501|under|8.500|-105|2026-04-10T11:00:13.558Z||mlb:286502|over|8.500|-110|2026-04-10T11:00:13.558Z||mlb:286502|under|8.500|-110|2026-04-10T11:00:13.558Z||mlb:286503|over|9.000|-114|2026-04-10T11:00:13.558Z||mlb:286503|under|9.000|-108|2026-04-10T11:00:13.558Z||mlb:286504|over|9.000|-120|2026-04-10T11:00:13.558Z||mlb:286504|under|9.000|-103|2026-04-10T11:00:13.558Z||mlb:286505|over|8.000|-116|2026-04-10T11:00:13.558Z||mlb:286505|under|8.000|-105|2026-04-10T11:00:13.558Z||mlb:286506|over|8.500|-106|2026-04-10T11:00:13.558Z||mlb:286506|under|8.500|-114|2026-04-10T11:00:13.558Z||mlb:286507|over|8.500|-115|2026-04-10T11:00:13.558Z||mlb:286507|under|8.500|-105|2026-04-10T11:00:13.558Z||mlb:286508|over|8.500|-115|2026-04-10T11:00:13.558Z||mlb:286508|under|8.500|-105|2026-04-10T11:00:13.558Z||mlb:286509|over|8.000|-109|2026-04-10T11:00:13.558Z||mlb:286509|under|8.000|-110|2026-04-10T11:00:13.558Z||mlb:286510|over|8.000|-115|2026-04-10T11:00:13.558Z||mlb:286510|under|8.000|-105|2026-04-10T11:00:13.558Z||mlb:286511|over|7.500|-105|2026-04-10T11:00:13.558Z||mlb:286511|under|7.500|-115|2026-04-10T11:00:13.558Z||mlb:286512|over|7.500|-107|2026-04-10T11:00:13.558Z||mlb:286512|under|7.500|-112|2026-04-10T11:00:13.558Z||mlb:286513|over|8.000|-119|2026-04-10T11:00:13.558Z||mlb:286513|under|8.000|-105|2026-04-10T11:00:13.558Z||mlb:286514|over|9.000|-115|2026-04-10T11:00:13.558Z||mlb:286514|under|9.000|-105|2026-04-10T11:00:13.558Z",
+          "baseline_latest_signature": null,
+          "modeling_latest_signature": null,
+          "baseline_exists": true,
+          "modeling_exists": true,
+          "baseline_stale": true,
+          "modeling_stale": true,
+          "baseline_signature_stale": false,
+          "modeling_signature_stale": false,
+          "refresh_required": true
+        }
+      },
+      {
+        "source": "mlb_ai_shadow_validation",
+        "code": "canonical_totals_exist_but_modeling_rows_missing_for_latest_date",
+        "detail": {
+          "latestCanonicalBoard": "2026-04-10",
+          "canonicalRowsForLatestDate": 30,
+          "modelingRowsForLatestDate": 0
         }
       }
     ],
@@ -477,7 +497,21 @@
         ]
       }
     ],
-    "info": []
+    "info": [
+      {
+        "source": "mlb_ai_shadow_validation",
+        "code": "canonical_board_newer_than_latest_valid_mlb_ai_board",
+        "detail": {
+          "latestCanonicalBoard": "2026-04-10",
+          "latestValidMlbAiBoard": "2026-04-09"
+        }
+      },
+      {
+        "source": "mlb_ai_shadow_validation",
+        "code": "viewer_validation_skipped",
+        "detail": "C:\\Users\\kevin\\Documents\\Action Exporter MLB Rebuild\\viewer\\public\\data"
+      }
+    ]
   },
   "source_reports": {
     "loop_validation_report": {
@@ -490,7 +524,7 @@
     },
     "mlb_ai_shadow_validation_report": {
       "path": "C:\\Users\\kevin\\Documents\\Action Exporter MLB Rebuild\\data\\working\\mlb_ai_shadow_validation_report_v1.json",
-      "generated_at": "2026-04-10T02:14:31.959Z"
+      "generated_at": "2026-04-10T11:48:40.048Z"
     }
   },
   "contract": {
