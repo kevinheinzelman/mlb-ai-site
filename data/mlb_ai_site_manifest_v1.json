@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-04-09T23:09:54.459Z",
+  "artifact_version": "v1",
+  "files": {
+    "status": "mlb_ai_active_engine_status_v1.json",
+    "daily_leans": "mlb_ai_daily_leans_v1.json",
+    "reporting": "mlb_ai_reporting_v1.json",
+    "reporting_monthly": "mlb_ai_reporting_monthly_v1.json",
+    "comparison": "mlb_ai_policy_comparison_v1.json",
+    "performance_2026": "mlb_ai_daily_performance_2026_v1.json",
+    "pick_explanations_2026": "mlb_ai_pick_explanations_2026_v1.json"
+  }
+}

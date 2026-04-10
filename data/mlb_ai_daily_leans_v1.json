@@ -1,0 +1,196 @@
+{
+  "generated_at": "2026-04-09T23:09:54.459Z",
+  "artifact_version": "v1",
+  "engine": {
+    "engine_family": "mlb_ai_totals",
+    "engine_version": "v8",
+    "active_policy": "hostile_fix_with_caps",
+    "engine_state": "shadow_locked",
+    "model_lock_status": "locked_active_shadow",
+    "trusted_for_live_betting": false
+  },
+  "selection_contract": "hostile_fix_with_caps",
+  "requested_board_date": "2026-04-09",
+  "board_date": "2026-04-08",
+  "slate_summary": {
+    "total_rows_scored": 30,
+    "selected_bets": 2,
+    "selected_unders": 2,
+    "selected_overs": 0
+  },
+  "rows": [
+    {
+      "board_date": "2026-04-08",
+      "canonical_game_id": "mlb:286376",
+      "matchup": "KC @ CLE",
+      "away_team": "KC",
+      "home_team": "CLE",
+      "market_type": "total",
+      "side": "under",
+      "line_value": 7,
+      "price_american": -121,
+      "market_probability": 0.522678,
+      "model_probability": 0.7,
+      "edge": 0.177322,
+      "selection_contract": "hostile_fix_with_caps",
+      "context_score": 1.022788,
+      "base_context_score": 1.146312,
+      "final_score": 0.174108,
+      "raw_score_v7": 0.203266,
+      "active_raw_score": 0.181363,
+      "rank_on_slate": 1,
+      "percentile_rank_on_slate": 1,
+      "confidence_band": "high",
+      "visibility_tier": "core",
+      "display_sort_bucket": "core_priority",
+      "price_flag": "standard",
+      "primary_drivers": [
+        "Model edge 17.7 pts",
+        "Context score 1.023",
+        "Weather Wind In Lt15"
+      ],
+      "supporting_context": [
+        "Action Sharp 1 2",
+        "Baseball Bullpen Mid",
+        "Total bucket Low"
+      ],
+      "suggested_units": 1,
+      "reason_flags": [
+        "strong_model_edge",
+        "above_neutral_context",
+        "above_slate_average_score",
+        "wind_in_context",
+        "under_side",
+        "hostile_scoring_penalty_applied",
+        "selection_contract_hostile_fix_with_caps"
+      ],
+      "explanation_summary": "under 7 ranked highly on the slate because edge 0.1773 and active context score 1.0228 produced final score 0.1741. Hostile scoring penalty x0.8922 applied from baseball_total_combo:bullpen_mid|low, action_bucket:sharp_1_2. Overlay penalties: wind_in_lt15 x0.96. Context buckets: weather=wind_in_lt15, action=sharp_1_2, baseball=bullpen_mid.",
+      "context_buckets": {
+        "weather_bucket": "wind_in_lt15",
+        "action_bucket": "sharp_1_2",
+        "baseball_bucket": "bullpen_mid",
+        "total_bucket": "low"
+      },
+      "hostile_penalty_multiplier": 0.892242,
+      "hostile_penalty_components": [
+        {
+          "family": "baseball_total_combo",
+          "key": "bullpen_mid|low",
+          "bets": 168,
+          "roi": 0.017747,
+          "multiplier": 0.846864
+        },
+        {
+          "family": "action_bucket",
+          "key": "sharp_1_2",
+          "bets": 84,
+          "roi": 0.053114,
+          "multiplier": 0.965731
+        }
+      ],
+      "overlay_multiplier": 0.96,
+      "overlay_penalties": [
+        {
+          "reason": "wind_in_lt15",
+          "multiplier": 0.96
+        }
+      ],
+      "comparator_flags": {
+        "v8_balanced_baseline": true,
+        "v7_production": true,
+        "v7_hybrid": true,
+        "v8_light": true
+      }
+    },
+    {
+      "board_date": "2026-04-08",
+      "canonical_game_id": "mlb:286379",
+      "matchup": "SEA @ TEX",
+      "away_team": "SEA",
+      "home_team": "TEX",
+      "market_type": "total",
+      "side": "under",
+      "line_value": 7.5,
+      "price_american": -116,
+      "market_probability": 0.515397,
+      "model_probability": 0.589189,
+      "edge": 0.073792,
+      "selection_contract": "hostile_fix_with_caps",
+      "context_score": 1.044836,
+      "base_context_score": 1.146312,
+      "final_score": 0.074017,
+      "raw_score_v7": 0.084589,
+      "active_raw_score": 0.077101,
+      "rank_on_slate": 2,
+      "percentile_rank_on_slate": 0.965517,
+      "confidence_band": "high",
+      "visibility_tier": "core",
+      "display_sort_bucket": "core_priority",
+      "price_flag": "standard",
+      "primary_drivers": [
+        "Model edge 7.4 pts",
+        "Context score 1.045",
+        "Weather Wind In Lt15"
+      ],
+      "supporting_context": [
+        "Action Sharp 3 Plus",
+        "Baseball Bullpen Mid",
+        "Total bucket Low"
+      ],
+      "suggested_units": 1,
+      "reason_flags": [
+        "strong_model_edge",
+        "above_neutral_context",
+        "above_slate_average_score",
+        "wind_in_context",
+        "under_side",
+        "hostile_scoring_penalty_applied",
+        "selection_contract_hostile_fix_with_caps"
+      ],
+      "explanation_summary": "under 7.5 ranked highly on the slate because edge 0.0738 and active context score 1.0448 produced final score 0.074. Hostile scoring penalty x0.9115 applied from baseball_total_combo:bullpen_mid|low, hostile_order:2, action_bucket:sharp_3_plus. Overlay penalties: wind_in_lt15 x0.96. Context buckets: weather=wind_in_lt15, action=sharp_3_plus, baseball=bullpen_mid.",
+      "context_buckets": {
+        "weather_bucket": "wind_in_lt15",
+        "action_bucket": "sharp_3_plus",
+        "baseball_bucket": "bullpen_mid",
+        "total_bucket": "low"
+      },
+      "hostile_penalty_multiplier": 0.911476,
+      "hostile_penalty_components": [
+        {
+          "family": "baseball_total_combo",
+          "key": "bullpen_mid|low",
+          "bets": 168,
+          "roi": 0.017747,
+          "multiplier": 0.846864
+        },
+        {
+          "family": "hostile_order",
+          "key": "2",
+          "bets": 288,
+          "roi": 0.05089,
+          "multiplier": 0.939806
+        },
+        {
+          "family": "action_bucket",
+          "key": "sharp_3_plus",
+          "bets": 1279,
+          "roi": 0.063826,
+          "multiplier": 0.982399
+        }
+      ],
+      "overlay_multiplier": 0.96,
+      "overlay_penalties": [
+        {
+          "reason": "wind_in_lt15",
+          "multiplier": 0.96
+        }
+      ],
+      "comparator_flags": {
+        "v8_balanced_baseline": false,
+        "v7_production": false,
+        "v7_hybrid": false,
+        "v8_light": false
+      }
+    }
+  ]
+}
