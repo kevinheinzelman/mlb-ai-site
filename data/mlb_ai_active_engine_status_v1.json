@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-10T11:48:18.270Z",
+  "generated_at": "2026-04-10T16:26:55.688Z",
   "artifact_version": "v1",
   "active_engine": {
     "engine_family": "mlb_ai_totals",
@@ -12,10 +12,10 @@
   "requested_board_date": "2026-04-10",
   "active_board_date": "2026-04-09",
   "freshness": {
-    "generated_at": "2026-04-10T11:48:18.270Z",
+    "generated_at": "2026-04-10T16:26:55.688Z",
     "board_date": "2026-04-09",
-    "current_source_scores_generated_at": "2026-04-10T11:48:28.373Z",
-    "historical_source_audit_generated_at": "2026-04-10T11:48:18.270Z"
+    "current_source_scores_generated_at": "2026-04-10T16:27:08.750Z",
+    "historical_source_audit_generated_at": "2026-04-10T16:26:55.688Z"
   },
   "source_date_coverage": {
     "current_window_start": "2026-03-25",
