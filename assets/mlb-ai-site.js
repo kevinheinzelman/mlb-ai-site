@@ -294,7 +294,7 @@
     `;
   }
 
-  function renderLeans(status, leans) {
+  function renderLeans(status, leans, operationalStatus) {
     renderEngineMeta(document.getElementById('leans-meta'), status);
     const visibleRows = [...(leans.rows || [])]
       .filter((row) => classifyLeanRow(row) !== 'hidden')
@@ -309,11 +309,17 @@
 
     const summaryGrid = document.getElementById('leans-summary-grid');
     if (summaryGrid) {
+      const requestedBoardDate = leans.requested_board_date || operationalStatus?.boards?.operating_date || leans.board_date;
+      const latestCanonicalBoard = operationalStatus?.boards?.latest_canonical_board_date || 'unknown';
+      const latestValidBoard = operationalStatus?.boards?.latest_valid_mlb_ai_board_date || leans.board_date;
+      const boardMessage = requestedBoardDate !== leans.board_date
+        ? `Requested ${requestedBoardDate}; latest valid MLB AI board is ${leans.board_date}. Canonical betting date is ${latestCanonicalBoard}.`
+        : `Requested ${requestedBoardDate}; latest valid MLB AI board matches the request.`;
       summaryGrid.innerHTML = `
         <article class="metric-card">
           <strong>Board date</strong>
           <div class="metric-value">${leans.board_date}</div>
-          <div class="subtle">Requested ${leans.requested_board_date}</div>
+          <div class="subtle">${escapeHtml(boardMessage)}</div>
         </article>
         <article class="metric-card">
           <strong>Core plays</strong>
@@ -329,6 +335,11 @@
           <strong>Hidden weak plays</strong>
           <div class="metric-value">${Math.max(0, (leans.rows || []).length - visibleRows.length)}</div>
           <div class="subtle">Low-confidence not shown</div>
+        </article>
+        <article class="metric-card">
+          <strong>Latest valid board</strong>
+          <div class="metric-value">${latestValidBoard}</div>
+          <div class="subtle">Canonical betting date ${latestCanonicalBoard}</div>
         </article>
       `;
     }
@@ -348,7 +359,7 @@
     }
   }
 
-  function renderReporting(status, reporting, monthly, comparison) {
+  function renderReporting(status, reporting, monthly, comparison, performance, operationalStatus) {
     renderEngineMeta(document.getElementById('reporting-meta'), status);
 
     const summaryGrid = document.getElementById('policy-summary-grid');
@@ -380,6 +391,63 @@
           <div class="meta-line">Max DD ${formatNumber(card.summary.max_drawdown, 2)}</div>
         </article>
       `).join('');
+    }
+
+    const performanceRows = Array.isArray(performance?.rows) ? performance.rows : [];
+    const latestPerformanceRow = performanceRows.length ? performanceRows[performanceRows.length - 1] : null;
+    const perfCoverageBadge = document.getElementById('performance-coverage-badge');
+    if (perfCoverageBadge) {
+      const throughDate = reporting?.source_coverage?.shadow_results_through || latestPerformanceRow?.board_date || 'unknown';
+      perfCoverageBadge.textContent = `Results through ${throughDate}`;
+    }
+
+    const performanceSummaryGrid = document.getElementById('performance-summary-grid');
+    if (performanceSummaryGrid) {
+      const requestedBoardDate = operationalStatus?.boards?.operating_date || status.requested_board_date || 'unknown';
+      const activeBoardDate = operationalStatus?.boards?.active_board_date || reporting.active_board_date || 'unknown';
+      const latestValidBoard = operationalStatus?.boards?.latest_valid_mlb_ai_board_date || activeBoardDate;
+      const latestCanonicalBoard = operationalStatus?.boards?.latest_canonical_board_date || 'unknown';
+      performanceSummaryGrid.innerHTML = `
+        <article class="metric-card">
+          <strong>Results through</strong>
+          <div class="metric-value">${reporting?.source_coverage?.shadow_results_through || 'unknown'}</div>
+          <div class="subtle">2026 shadow grading currently stops at the latest settled active-board date.</div>
+        </article>
+        <article class="metric-card">
+          <strong>Latest 2026 day</strong>
+          <div class="metric-value">${latestPerformanceRow?.board_date || 'unknown'}</div>
+          <div class="subtle">Requested ${requestedBoardDate}; active board ${activeBoardDate}</div>
+        </article>
+        <article class="metric-card">
+          <strong>Cumulative units</strong>
+          <div class="metric-value ${Number(latestPerformanceRow?.cumulative_units || 0) >= 0 ? 'metric-good' : 'metric-bad'}">${formatUnits(latestPerformanceRow?.cumulative_units)}</div>
+          <div class="subtle">${latestPerformanceRow ? `${latestPerformanceRow.bets} bets on ${latestPerformanceRow.board_date}` : 'No 2026 rows available'}</div>
+        </article>
+        <article class="metric-card">
+          <strong>Board coverage</strong>
+          <div class="metric-value">${latestValidBoard}</div>
+          <div class="subtle">Canonical betting date ${latestCanonicalBoard}</div>
+        </article>
+      `;
+    }
+
+    const dailyPerformanceBody = document.querySelector('#daily-performance-table tbody');
+    if (dailyPerformanceBody) {
+      dailyPerformanceBody.innerHTML = performanceRows.length
+        ? performanceRows.map((row) => `
+          <tr>
+            <td>${row.board_date}</td>
+            <td>${row.bets}</td>
+            <td>${row.wins}</td>
+            <td>${row.losses}</td>
+            <td>${row.pushes}</td>
+            <td>${formatPct(row.win_rate)}</td>
+            <td>${formatUnits(row.units)}</td>
+            <td>${formatPct(row.roi)}</td>
+            <td>${formatUnits(row.cumulative_units)}</td>
+          </tr>
+        `).join('')
+        : '<tr><td colspan="9" class="subtle">No 2026 daily performance rows are available.</td></tr>';
     }
 
     const monthlyBody = document.querySelector('#monthly-table tbody');
@@ -441,14 +509,15 @@
     }
     if (page === 'leans') {
       const leans = await loadJson('mlb_ai_daily_leans_v1.json');
-      renderLeans(status, leans);
+      renderLeans(status, leans, operationalStatus);
       return;
     }
     if (page === 'reporting') {
       const reporting = await loadJson('mlb_ai_reporting_v1.json');
       const monthly = await loadJson('mlb_ai_reporting_monthly_v1.json');
       const comparison = await loadJson('mlb_ai_policy_comparison_v1.json');
-      renderReporting(status, reporting, monthly, comparison);
+      const performance = await loadJson('mlb_ai_daily_performance_2026_v1.json');
+      renderReporting(status, reporting, monthly, comparison, performance, operationalStatus);
     }
   } catch (error) {
     const shell = document.querySelector('.shell') || document.body;
