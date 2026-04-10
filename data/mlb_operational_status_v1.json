@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-04-09T23:11:36.887Z",
+  "generated_at": "2026-04-10T02:14:32.108Z",
   "source_run_id": "mlb_loop_20260409_20260409230003_ebu3jb",
-  "state": "ok",
+  "state": "fail",
   "summary": {
     "loop_ran": true,
     "last_run_started_at": "2026-04-09T23:00:03.005Z",
     "last_run_finished_at": "2026-04-09T23:11:36.835Z",
     "last_run_overall_status": "completed_with_stubs",
-    "validation_prepublish": "PASS",
+    "validation_prepublish": null,
     "validation_final": "PASS",
     "trusted_for_modeling": true,
-    "trusted_for_site_shadow": true,
-    "active_board_date": "2026-04-08",
+    "trusted_for_site_shadow": false,
+    "active_board_date": "2026-04-09",
     "latest_canonical_board_date": "2026-04-09",
-    "latest_valid_mlb_ai_board_date": "2026-04-08",
+    "latest_valid_mlb_ai_board_date": "2026-04-09",
     "engine_family": "mlb_ai_totals",
     "engine_version": "v8",
     "active_policy": "hostile_fix_with_caps",
-    "dependency_state": "ok"
+    "dependency_state": "warning"
   },
   "run": {
     "run_id": "mlb_loop_20260409_20260409230003_ebu3jb",
@@ -31,9 +31,9 @@
   },
   "validation": {
     "prepublish": {
-      "state": "ok",
-      "status": "PASS",
-      "updated_at": "2026-04-09T23:11:36.832Z"
+      "state": "fail",
+      "status": null,
+      "updated_at": null
     },
     "final": {
       "state": "ok",
@@ -42,34 +42,34 @@
       "generated_at": "2026-04-09T23:11:36.810Z"
     },
     "site_shadow": {
-      "state": "ok",
-      "status": "pass",
-      "trusted_for_site_shadow": true,
-      "generated_at": "2026-04-09T23:11:33.997Z"
+      "state": "fail",
+      "status": "fail",
+      "trusted_for_site_shadow": false,
+      "generated_at": "2026-04-10T02:14:31.959Z"
     }
   },
   "boards": {
     "operating_date": "2026-04-09",
-    "active_board_date": "2026-04-08",
+    "active_board_date": "2026-04-09",
     "latest_canonical_board_date": "2026-04-09",
-    "latest_valid_mlb_ai_board_date": "2026-04-08",
-    "canonical_board_coverage_pct": 1,
-    "baseball_board_coverage_pct": 1
+    "latest_valid_mlb_ai_board_date": "2026-04-09",
+    "canonical_board_coverage_pct": null,
+    "baseball_board_coverage_pct": null
   },
   "engine": {
     "engine_family": "mlb_ai_totals",
     "engine_version": "v8",
     "active_policy": "hostile_fix_with_caps",
-    "trusted_for_site_shadow": true
+    "trusted_for_site_shadow": false
   },
   "trust": {
     "trusted_for_modeling": true,
-    "trusted_for_site_shadow": true
+    "trusted_for_site_shadow": false
   },
   "dependency_freshness": {
     "summary": {
-      "ok": 7,
-      "warning": 0,
+      "ok": 6,
+      "warning": 1,
       "fail": 0,
       "stale_dependencies": [
         "threshold_validation_artifact",
@@ -78,19 +78,51 @@
         "discovered_states_v2",
         "evidence_framework_output"
       ],
-      "partial_dependencies": [],
-      "failed_dependencies": [],
-      "propagation_breaks": []
+      "partial_dependencies": [
+        "viewer_daily_leans",
+        "viewer_performance_summary",
+        "viewer_signal_glossary",
+        "working_daily_leans_v2",
+        "serving_artifact",
+        "daily_leans_with_explanations",
+        "mlb_market_odds",
+        "mlb_api_games_current"
+      ],
+      "failed_dependencies": [
+        "portfolio_simulation"
+      ],
+      "propagation_breaks": [
+        {
+          "downstream": "betting_rows",
+          "downstream_status": "fresh",
+          "upstream": "mlb_market_odds",
+          "upstream_status": "partial"
+        },
+        {
+          "downstream": "baseball_context",
+          "downstream_status": "fresh",
+          "upstream": "mlb_api_games_current",
+          "upstream_status": "partial"
+        },
+        {
+          "downstream": "results_rebuilt",
+          "downstream_status": "fresh",
+          "upstream": "mlb_api_games_current",
+          "upstream_status": "partial"
+        }
+      ]
     },
     "layers": [
       {
         "name": "serving_artifact",
-        "state": "ok",
-        "freshness_status": "fresh",
+        "state": "warning",
+        "freshness_status": "partial",
         "latest_freshness_value": "2026-04-09T23:08:37.815Z",
-        "target_date_coverage": "2026-04-09",
+        "target_date_coverage": "unknown",
         "owner_stage": "daily_leans_serving_export",
-        "missing_target_dates": [],
+        "missing_target_dates": [
+          "2026-04-10"
+        ],
         "notes": [
           "Serving artifact consumed by viewer export and application step."
         ]
@@ -100,12 +132,14 @@
         "state": "ok",
         "freshness_status": "fresh",
         "latest_freshness_value": "2026-04-09T23:00:35Z",
-        "target_date_coverage": "2026-04-09",
+        "target_date_coverage": "no_board_expected_for_operating_date",
         "owner_stage": "rebuild_mlb_betting_rows_refresh",
         "missing_target_dates": [],
         "notes": [
-          "Board-date coverage 6/6.",
-          "Expected board-date coverage 2026-04-09 from canonical live/current mlb_market_odds with game_market_snapshots fallback."
+          "Max game_date 2026-04-09 trails operating date 2026-04-10.",
+          "Board-date coverage 0/0.",
+          "No betting-row board exists on operating date 2026-04-10; ordinary loop freshness falls back to latest available board coverage.",
+          "Expected board-date coverage 2026-04-10 from canonical live/current mlb_market_odds with game_market_snapshots fallback."
         ]
       },
       {
@@ -113,12 +147,13 @@
         "state": "ok",
         "freshness_status": "fresh",
         "latest_freshness_value": "2026-04-09T23:00:22.320Z",
-        "target_date_coverage": "2026-04-09",
+        "target_date_coverage": "no_board_expected_for_operating_date",
         "owner_stage": "rebuild_mlb_action_features_v3_refresh",
         "missing_target_dates": [],
         "notes": [
-          "Board-date coverage 6/6.",
-          "Expected action-window coverage 2026-04-07..2026-04-09."
+          "Board-date coverage 0/0.",
+          "No betting-row board exists on operating date 2026-04-10; ordinary loop freshness falls back to latest available board coverage.",
+          "Expected action-window coverage 2026-04-08..2026-04-10."
         ]
       },
       {
@@ -126,12 +161,13 @@
         "state": "ok",
         "freshness_status": "fresh",
         "latest_freshness_value": "2026-04-07T02:03:37.476Z",
-        "target_date_coverage": "2026-04-09",
+        "target_date_coverage": "no_board_expected_for_operating_date",
         "owner_stage": "bounded_weather_refresh",
         "missing_target_dates": [],
         "notes": [
-          "Board-date coverage 6/6.",
-          "Expected weather-window coverage 2026-04-08..2026-04-09."
+          "Board-date coverage 0/0.",
+          "No betting-row board exists on operating date 2026-04-10; ordinary loop freshness falls back to latest available board coverage.",
+          "Expected weather-window coverage 2026-04-09..2026-04-10."
         ]
       },
       {
@@ -139,12 +175,14 @@
         "state": "ok",
         "freshness_status": "fresh",
         "latest_freshness_value": "2026-04-09T23:01:57.617Z",
-        "target_date_coverage": "2026-04-09",
+        "target_date_coverage": "no_board_expected_for_operating_date",
         "owner_stage": "bounded_current_baseball_context_refresh",
         "missing_target_dates": [],
         "notes": [
-          "Board-date coverage 6/6.",
-          "Expected baseball-window coverage 2026-04-03..2026-04-09."
+          "Max game_date 2026-04-09 trails operating date 2026-04-10.",
+          "Board-date coverage 0/0.",
+          "No betting-row board exists on operating date 2026-04-10; ordinary loop freshness falls back to latest available board coverage.",
+          "Expected baseball-window coverage 2026-04-04..2026-04-10."
         ]
       },
       {
@@ -156,7 +194,7 @@
         "owner_stage": "rebuild_mlb_game_results_refresh",
         "missing_target_dates": [],
         "notes": [
-          "Expected settled-date coverage through the latest completed current game within 2026-04-03..2026-04-09."
+          "Expected settled-date coverage through the latest completed current game within 2026-04-04..2026-04-10."
         ]
       },
       {
@@ -164,12 +202,14 @@
         "state": "ok",
         "freshness_status": "fresh",
         "latest_freshness_value": "2026-04-09T23:00:22.320Z",
-        "target_date_coverage": "2026-04-09",
+        "target_date_coverage": "no_board_expected_for_operating_date",
         "owner_stage": "canonical_refresh_if_needed",
         "missing_target_dates": [],
         "notes": [
-          "Board-date coverage 6/6.",
-          "Expected canonical board-date coverage 2026-04-09."
+          "Max game_date 2026-04-09 trails operating date 2026-04-10.",
+          "Board-date coverage 0/0.",
+          "No betting-row board exists on operating date 2026-04-10; ordinary loop freshness falls back to latest available board coverage.",
+          "Expected canonical board-date coverage 2026-04-10."
         ]
       }
     ]
@@ -178,25 +218,266 @@
     "action_coverage_pct": 1,
     "weather_coverage_pct": 1,
     "baseball_coverage_pct": 1,
-    "baseball_complete_coverage_pct": 0.9792,
+    "baseball_complete_coverage_pct": 0.9877,
     "mapping_resolved_pct": 1,
     "unmapped_rows": 0,
     "fallback_identity_rows": 0,
-    "near_start_fallback_pct": 0.3125
+    "near_start_fallback_pct": 0.1852
   },
   "blocked": {
-    "failures": [],
-    "warnings": [],
-    "info": [
+    "failures": [
       {
         "source": "mlb_ai_shadow_validation",
-        "code": "canonical_board_newer_than_latest_valid_mlb_ai_board",
+        "code": "viewer_generated_at_vs_db_mismatch",
         "detail": {
-          "latestCanonicalBoard": "2026-04-09",
-          "latestValidMlbAiBoard": "2026-04-08"
+          "expectedGeneratedAt": "2026-04-10T02:14:13.045Z",
+          "actual": "2026-04-10T01:55:14.144Z"
         }
       }
-    ]
+    ],
+    "warnings": [
+      {
+        "source": "run_health",
+        "code": "operating_date_has_no_board_rows",
+        "detail": {
+          "operating_date": "2026-04-10",
+          "board_games_expected": 0,
+          "board_games_present_in_canonical": 0,
+          "board_games_present_in_baseball_context": 0,
+          "research_ready_rows_on_operating_date": 0,
+          "canonical_board_coverage_pct": null,
+          "baseball_board_coverage_pct": null
+        }
+      },
+      {
+        "source": "run_health",
+        "code": "noncritical_freshness_dependency_not_fresh",
+        "detail": {
+          "name": "serving_artifact",
+          "freshness_status": "partial",
+          "latest_freshness_value": "2026-04-09T23:08:37.815Z",
+          "target_date_coverage": "unknown",
+          "expected_target_dates": [
+            "2026-04-10"
+          ],
+          "missing_target_dates": [
+            "2026-04-10"
+          ],
+          "owner_stage": "daily_leans_serving_export",
+          "upstream_dependencies": [
+            "daily_leans_with_explanations",
+            "portfolio_simulation",
+            "betting_rows",
+            "action_features",
+            "baseball_context",
+            "weather_game",
+            "results_rebuilt"
+          ],
+          "notes": [
+            "Serving artifact consumed by viewer export and application step."
+          ]
+        }
+      },
+      {
+        "source": "run_health",
+        "code": "drift_fail_threshold_base_row_count",
+        "detail": [
+          {
+            "metric": "base_row_count",
+            "current_value": 486,
+            "previous_value": 576,
+            "pct_change": -0.1563
+          },
+          {
+            "metric": "distinct_game_count",
+            "current_value": 81,
+            "previous_value": 96,
+            "pct_change": -0.1563
+          },
+          {
+            "metric": "action_coverage_pct",
+            "current_value": 1,
+            "previous_value": 1,
+            "pct_change": 0
+          },
+          {
+            "metric": "weather_coverage_pct",
+            "current_value": 1,
+            "previous_value": 1,
+            "pct_change": 0
+          },
+          {
+            "metric": "baseball_coverage_pct",
+            "current_value": 1,
+            "previous_value": 1,
+            "pct_change": 0
+          },
+          {
+            "metric": "baseball_complete_coverage_pct",
+            "current_value": 0.9877,
+            "previous_value": 0.9792,
+            "pct_change": 0.0087
+          },
+          {
+            "metric": "mapping_resolved_pct",
+            "current_value": 1,
+            "previous_value": 1,
+            "pct_change": 0
+          },
+          {
+            "metric": "near_start_fallback_pct",
+            "current_value": 0.1852,
+            "previous_value": 0.3125,
+            "pct_change": -0.4074
+          },
+          {
+            "metric": "unexpected_missing_results_rows",
+            "current_value": 0,
+            "previous_value": 0,
+            "pct_change": 0
+          },
+          {
+            "metric": "duplicate_modeling_grain_groups",
+            "current_value": 0,
+            "previous_value": 0,
+            "pct_change": 0
+          }
+        ]
+      },
+      {
+        "source": "run_health",
+        "code": "drift_fail_threshold_distinct_game_count",
+        "detail": [
+          {
+            "metric": "base_row_count",
+            "current_value": 486,
+            "previous_value": 576,
+            "pct_change": -0.1563
+          },
+          {
+            "metric": "distinct_game_count",
+            "current_value": 81,
+            "previous_value": 96,
+            "pct_change": -0.1563
+          },
+          {
+            "metric": "action_coverage_pct",
+            "current_value": 1,
+            "previous_value": 1,
+            "pct_change": 0
+          },
+          {
+            "metric": "weather_coverage_pct",
+            "current_value": 1,
+            "previous_value": 1,
+            "pct_change": 0
+          },
+          {
+            "metric": "baseball_coverage_pct",
+            "current_value": 1,
+            "previous_value": 1,
+            "pct_change": 0
+          },
+          {
+            "metric": "baseball_complete_coverage_pct",
+            "current_value": 0.9877,
+            "previous_value": 0.9792,
+            "pct_change": 0.0087
+          },
+          {
+            "metric": "mapping_resolved_pct",
+            "current_value": 1,
+            "previous_value": 1,
+            "pct_change": 0
+          },
+          {
+            "metric": "near_start_fallback_pct",
+            "current_value": 0.1852,
+            "previous_value": 0.3125,
+            "pct_change": -0.4074
+          },
+          {
+            "metric": "unexpected_missing_results_rows",
+            "current_value": 0,
+            "previous_value": 0,
+            "pct_change": 0
+          },
+          {
+            "metric": "duplicate_modeling_grain_groups",
+            "current_value": 0,
+            "previous_value": 0,
+            "pct_change": 0
+          }
+        ]
+      },
+      {
+        "source": "run_health",
+        "code": "drift_fail_threshold_near_start_fallback_pct",
+        "detail": [
+          {
+            "metric": "base_row_count",
+            "current_value": 486,
+            "previous_value": 576,
+            "pct_change": -0.1563
+          },
+          {
+            "metric": "distinct_game_count",
+            "current_value": 81,
+            "previous_value": 96,
+            "pct_change": -0.1563
+          },
+          {
+            "metric": "action_coverage_pct",
+            "current_value": 1,
+            "previous_value": 1,
+            "pct_change": 0
+          },
+          {
+            "metric": "weather_coverage_pct",
+            "current_value": 1,
+            "previous_value": 1,
+            "pct_change": 0
+          },
+          {
+            "metric": "baseball_coverage_pct",
+            "current_value": 1,
+            "previous_value": 1,
+            "pct_change": 0
+          },
+          {
+            "metric": "baseball_complete_coverage_pct",
+            "current_value": 0.9877,
+            "previous_value": 0.9792,
+            "pct_change": 0.0087
+          },
+          {
+            "metric": "mapping_resolved_pct",
+            "current_value": 1,
+            "previous_value": 1,
+            "pct_change": 0
+          },
+          {
+            "metric": "near_start_fallback_pct",
+            "current_value": 0.1852,
+            "previous_value": 0.3125,
+            "pct_change": -0.4074
+          },
+          {
+            "metric": "unexpected_missing_results_rows",
+            "current_value": 0,
+            "previous_value": 0,
+            "pct_change": 0
+          },
+          {
+            "metric": "duplicate_modeling_grain_groups",
+            "current_value": 0,
+            "previous_value": 0,
+            "pct_change": 0
+          }
+        ]
+      }
+    ],
+    "info": []
   },
   "source_reports": {
     "loop_validation_report": {
@@ -205,11 +486,11 @@
     },
     "run_health_report": {
       "path": "C:\\Users\\kevin\\Documents\\Action Exporter MLB Rebuild\\data\\working\\mlb_run_health_report_v1.json",
-      "generated_at": "2026-04-09T23:11:36.810Z"
+      "generated_at": "2026-04-10T01:54:05.499Z"
     },
     "mlb_ai_shadow_validation_report": {
       "path": "C:\\Users\\kevin\\Documents\\Action Exporter MLB Rebuild\\data\\working\\mlb_ai_shadow_validation_report_v1.json",
-      "generated_at": "2026-04-09T23:11:33.997Z"
+      "generated_at": "2026-04-10T02:14:31.959Z"
     }
   },
   "contract": {
@@ -220,12 +501,6 @@
   },
   "debug": {
     "status_summary_keys": {
-      "mlb_daily_loop.last_run": {
-        "status_value": "completed",
-        "updated_at": "2026-04-09T23:11:36.819Z",
-        "status_message": "loop_completed",
-        "detail_summary": "loop_completed"
-      },
       "mlb_daily_loop.source_refresh": {
         "status_value": "completed",
         "updated_at": "2026-04-09T23:11:36.821Z",
@@ -292,23 +567,17 @@
         "status_message": "viewer_publish_stage_recorded",
         "detail_summary": "viewer_publish_stage_recorded"
       },
-      "mlb_daily_loop.validation_prepublish": {
-        "status_value": "PASS",
-        "updated_at": "2026-04-09T23:11:36.832Z",
-        "status_message": "prepublish_validation_stage_recorded",
-        "detail_summary": "prepublish_validation_stage_recorded"
-      },
-      "mlb_daily_loop.validation_final": {
-        "status_value": "PASS",
-        "updated_at": "2026-04-09T23:11:36.833Z",
-        "status_message": "final_validation_stage_recorded",
-        "detail_summary": "final_validation_stage_recorded"
-      },
       "mlb_daily_loop.mlb_ai_site_artifacts": {
         "status_value": "completed",
         "updated_at": "2026-04-09T23:11:36.831Z",
         "status_message": "mlb_ai_site_artifacts_built_and_exported",
         "detail_summary": "mlb_ai_site_artifacts_built_and_exported"
+      },
+      "mlb_daily_loop.operational_status": {
+        "status_value": "completed",
+        "updated_at": "2026-04-09T23:11:37.070Z",
+        "status_message": "operational_status_artifact_built_exported_validated",
+        "detail_summary": "operational_status_artifact_built_exported_validated"
       }
     }
   }

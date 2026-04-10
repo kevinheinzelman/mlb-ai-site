@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MLB AI Performance</title>
+    <link rel="stylesheet" href="./assets/mlb-ai.css" />
+  </head>
+  <body data-page="performance">
+    <header class="site-header">
+      <div class="shell shell-nav">
+        <a class="site-brand" href="./index.html">
+          <span class="site-brand-mark">MLB AI</span>
+          <span class="site-brand-copy">Daily board</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a class="site-nav-link" href="./index.html">Leans</a>
+          <a class="site-nav-link is-active" href="./mlb-ai-performance.html" aria-current="page">Performance</a>
+          <a class="site-nav-link" href="./operations.html">Operations</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="page-hero page-hero-performance">
+        <div class="page-hero-copy">
+          <p class="eyebrow">Performance</p>
+          <h1>Track what the board has actually done</h1>
+          <p class="lede">
+            Review recent results, inspect the 2026 day-by-day path, and zoom out to the longer record without mixing in engine-internal noise.
+          </p>
+        </div>
+        <div id="performance-hero-grid" class="hero-grid"></div>
+      </section>
+
+      <section class="panel controls-panel">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Filters</p>
+            <h2>Recent performance controls</h2>
+          </div>
+          <span id="performance-coverage-badge" class="badge"></span>
+        </div>
+        <div class="controls-grid">
+          <div class="control-group">
+            <label class="control-label">Quick range</label>
+            <div class="segmented-control" id="performance-range-presets">
+              <button type="button" data-range="7d">7D</button>
+              <button type="button" data-range="30d">30D</button>
+              <button type="button" data-range="season">Season</button>
+              <button type="button" data-range="all">All</button>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="performance-start-date">Start date</label>
+            <input id="performance-start-date" type="date" />
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="performance-end-date">End date</label>
+            <input id="performance-end-date" type="date" />
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="monthly-policy-filter">Monthly history</label>
+            <select id="monthly-policy-filter">
+              <option value="active_only">Active system only</option>
+              <option value="all_policies">Include comparators</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Current read</p>
+            <h2>Filtered performance summary</h2>
+          </div>
+        </div>
+        <div id="performance-summary-grid" class="summary-grid"></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">2026 daily</p>
+            <h2>Daily performance</h2>
+          </div>
+          <span class="badge">Cumulative included</span>
+        </div>
+        <div class="table-wrap">
+          <table id="daily-performance-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Bets</th>
+                <th>Wins</th>
+                <th>Losses</th>
+                <th>Pushes</th>
+                <th>Win %</th>
+                <th>Units</th>
+                <th>ROI</th>
+                <th>Cumulative</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Longer view</p>
+            <h2>Monthly history</h2>
+          </div>
+          <span class="badge">Historical record</span>
+        </div>
+        <div class="table-wrap">
+          <table id="monthly-table">
+            <thead>
+              <tr>
+                <th>Month</th>
+                <th>System</th>
+                <th>Bets</th>
+                <th>Wins</th>
+                <th>Losses</th>
+                <th>Pushes</th>
+                <th>Win %</th>
+                <th>Units</th>
+                <th>ROI</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Context</p>
+            <h2>How the active system behaves</h2>
+          </div>
+        </div>
+        <div id="performance-comparator-grid" class="summary-grid"></div>
+        <div id="context-breakdowns" class="context-grid"></div>
+      </section>
+    </main>
+
+    <script src="./assets/mlb-ai-site.js"></script>
+  </body>
+</html>

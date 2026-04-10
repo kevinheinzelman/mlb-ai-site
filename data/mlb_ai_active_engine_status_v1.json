@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-09T23:09:54.459Z",
+  "generated_at": "2026-04-10T02:14:13.045Z",
   "artifact_version": "v1",
   "active_engine": {
     "engine_family": "mlb_ai_totals",
@@ -10,17 +10,24 @@
     "trusted_for_live_betting": false
   },
   "requested_board_date": "2026-04-09",
-  "active_board_date": "2026-04-08",
+  "active_board_date": "2026-04-09",
   "freshness": {
-    "generated_at": "2026-04-09T23:09:54.459Z",
-    "board_date": "2026-04-08",
-    "current_source_scores_generated_at": "2026-04-09T23:11:03.842Z",
-    "historical_source_audit_generated_at": "2026-04-09T23:09:54.459Z"
+    "generated_at": "2026-04-10T02:14:13.045Z",
+    "board_date": "2026-04-09",
+    "current_source_scores_generated_at": "2026-04-10T02:14:18.028Z",
+    "historical_source_audit_generated_at": "2026-04-10T02:14:13.045Z"
   },
   "source_date_coverage": {
     "current_window_start": "2026-03-25",
-    "current_window_end": "2026-04-08",
+    "current_window_end": "2026-04-09",
     "historical_start": "2022-04",
     "historical_end": "2025-09"
+  },
+  "board_date_consistency": {
+    "modeling_max_date": "2026-04-09",
+    "decision_max_date": "2026-04-09",
+    "reporting_active_board_date": "2026-04-09",
+    "status_active_board_date": "2026-04-09",
+    "daily_leans_board_date": "2026-04-09"
   }
 }

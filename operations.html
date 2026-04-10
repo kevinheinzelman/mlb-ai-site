@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MLB AI Operations</title>
+    <link rel="stylesheet" href="./assets/mlb-ai.css" />
+  </head>
+  <body data-page="operations">
+    <header class="site-header">
+      <div class="shell shell-nav">
+        <a class="site-brand" href="./index.html">
+          <span class="site-brand-mark">MLB AI</span>
+          <span class="site-brand-copy">Daily board</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a class="site-nav-link" href="./index.html">Leans</a>
+          <a class="site-nav-link" href="./mlb-ai-performance.html">Performance</a>
+          <a class="site-nav-link is-active" href="./operations.html" aria-current="page">Operations</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="page-hero page-hero-operations">
+        <div class="page-hero-copy">
+          <p class="eyebrow">Operations</p>
+          <h1>System status and board health</h1>
+          <p class="lede">
+            This page is for verifying trust, freshness, and runtime state. It keeps the technical detail separate from the bettor-facing decision pages.
+          </p>
+        </div>
+        <div id="operations-hero-grid" class="hero-grid"></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Validation</p>
+            <h2>Current trust state</h2>
+          </div>
+        </div>
+        <div id="operations-validation-grid" class="summary-grid"></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Board state</p>
+            <h2>Dates and board alignment</h2>
+          </div>
+        </div>
+        <div id="operations-board-grid" class="summary-grid"></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Dependencies</p>
+            <h2>Freshness by layer</h2>
+          </div>
+        </div>
+        <div id="operations-freshness-grid" class="context-grid"></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Coverage</p>
+            <h2>Key runtime metrics</h2>
+          </div>
+        </div>
+        <div id="operations-metrics-grid" class="summary-grid"></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Issues</p>
+            <h2>Warnings, failures, and info</h2>
+          </div>
+        </div>
+        <div id="operations-issues" class="stack-list"></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Technical details</p>
+            <h2>Engine and run metadata</h2>
+          </div>
+        </div>
+        <div id="operations-engine-grid" class="summary-grid"></div>
+      </section>
+    </main>
+
+    <script src="./assets/mlb-ai-site.js"></script>
+  </body>
+</html>

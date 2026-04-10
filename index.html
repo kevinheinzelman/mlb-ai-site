@@ -3,46 +3,70 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>MLB AI Viewer</title>
+    <title>MLB AI Leans</title>
     <link rel="stylesheet" href="./assets/mlb-ai.css" />
   </head>
-  <body data-page="home">
-    <div class="shell">
-      <header class="hero">
-        <div>
-          <p class="eyebrow">MLB AI Shadow Operation</p>
-          <h1>Clean-room totals engine surface</h1>
+  <body data-page="leans">
+    <header class="site-header">
+      <div class="shell shell-nav">
+        <a class="site-brand" href="./index.html">
+          <span class="site-brand-mark">MLB AI</span>
+          <span class="site-brand-copy">Daily board</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a class="site-nav-link is-active" href="./index.html" aria-current="page">Leans</a>
+          <a class="site-nav-link" href="./mlb-ai-performance.html">Performance</a>
+          <a class="site-nav-link" href="./operations.html">Operations</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="page-hero page-hero-leans">
+        <div class="page-hero-copy">
+          <p class="eyebrow">Official plays</p>
+          <h1>Daily MLB leans</h1>
           <p class="lede">
-            Primary engine: <strong>`mlb_ai_totals` / `v8` / `hostile_fix_with_caps`</strong>.
-            The UI reads exported artifact contracts only. Engine internals remain swappable behind this surface.
+            Start here. See whether there is an official board today, then scan the strongest plays, prices, and reasons without digging through internal model language.
           </p>
         </div>
-        <div class="hero-meta" id="engine-meta"></div>
-      </header>
-
-      <nav class="nav-cards">
-        <a class="nav-card" href="./mlb-ai-leans.html">
-          <span class="nav-card-label">Leans</span>
-          <strong>Current MLB AI leans</strong>
-          <span>Today’s active slate, ranks, edge, units, and explanation fields.</span>
-        </a>
-        <a class="nav-card" href="./mlb-ai-reporting.html">
-          <span class="nav-card-label">Reporting</span>
-          <strong>Performance and policy audit</strong>
-          <span>Historical units, monthly stats, drawdown, comparators, and context mix.</span>
-        </a>
-      </nav>
+        <div id="leans-hero-grid" class="hero-grid"></div>
+      </section>
 
       <section class="panel">
-        <h2>Operational contract</h2>
-        <div class="bullets">
-          <div>One loop, one scheduler, one export path.</div>
-          <div>Primary site surface is `mlb_ai_totals / v8 / hostile_fix_with_caps`.</div>
-          <div>Comparators remain available for reporting: `soft_plus_half_sigma`, `hybrid_top25_cap3`, `v8_light`.</div>
-          <div>This engine is still marked <strong>shadow candidate</strong>, not fully trusted live automation.</div>
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Today&apos;s board</p>
+            <h2>Board summary</h2>
+          </div>
+          <span id="leans-summary-badge" class="badge"></span>
         </div>
+        <div id="leans-summary-grid" class="summary-grid"></div>
       </section>
-    </div>
+
+      <section class="panel panel-emphasis">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Top confidence</p>
+            <h2>Core plays</h2>
+          </div>
+          <span class="badge">Official card</span>
+        </div>
+        <div id="leans-core-cards" class="lean-decision-grid"></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Secondary angles</p>
+            <h2>Exploratory plays</h2>
+          </div>
+          <span class="badge">Use discretion</span>
+        </div>
+        <div id="leans-exploratory-cards" class="lean-decision-grid"></div>
+      </section>
+    </main>
+
     <script src="./assets/mlb-ai-site.js"></script>
   </body>
 </html>

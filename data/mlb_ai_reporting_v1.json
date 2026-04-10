@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-09T23:09:54.459Z",
+  "generated_at": "2026-04-10T02:14:13.045Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_totals",
@@ -12,7 +12,7 @@
   "selection_contract": "hostile_fix_with_caps",
   "source_coverage": {
     "historical_window": "2022-2025",
-    "shadow_results_through": "2026-04-08"
+    "shadow_results_through": "2026-04-09"
   },
   "active_policy_definition": {
     "policy_name": "hostile_fix_with_caps",
@@ -47,26 +47,26 @@
     }
   },
   "active_policy_shadow_summary": {
-    "bets": 41,
-    "wins": 20,
+    "bets": 42,
+    "wins": 21,
     "losses": 21,
     "pushes": 0,
-    "units": -3.349508,
-    "roi": -0.081695,
-    "hit_rate": 0.487805,
+    "units": -3.185573,
+    "roi": -0.075847,
+    "hit_rate": 0.5,
     "max_drawdown": 9.130435,
-    "units_per_bet": -0.081695,
-    "monthly_volatility": 1.605986,
+    "units_per_bet": -0.075847,
+    "monthly_volatility": 1.524018,
     "losing_month_pct": 1,
     "worst_month": {
       "month": "2026-04",
-      "bets": 22,
-      "wins": 10,
+      "bets": 23,
+      "wins": 11,
       "losses": 12,
       "pushes": 0,
-      "units": -3.28074,
-      "roi": -0.149125,
-      "hit_rate": 0.454545,
+      "units": -3.116805,
+      "roi": -0.135513,
+      "hit_rate": 0.478261,
       "max_drawdown": 8.130435
     }
   },
@@ -100,26 +100,26 @@
         }
       },
       "shadow_summary": {
-        "bets": 42,
-        "wins": 20,
+        "bets": 43,
+        "wins": 21,
         "losses": 22,
         "pushes": 0,
-        "units": -4.349508,
-        "roi": -0.10356,
-        "hit_rate": 0.47619,
+        "units": -4.185573,
+        "roi": -0.097339,
+        "hit_rate": 0.488372,
         "max_drawdown": 9.199203,
-        "units_per_bet": -0.10356,
-        "monthly_volatility": 1.105986,
+        "units_per_bet": -0.097339,
+        "monthly_volatility": 1.024018,
         "losing_month_pct": 1,
         "worst_month": {
           "month": "2026-04",
-          "bets": 22,
-          "wins": 10,
+          "bets": 23,
+          "wins": 11,
           "losses": 12,
           "pushes": 0,
-          "units": -3.28074,
-          "roi": -0.149125,
-          "hit_rate": 0.454545,
+          "units": -3.116805,
+          "roi": -0.135513,
+          "hit_rate": 0.478261,
           "max_drawdown": 8.130435
         }
       }
@@ -153,26 +153,26 @@
         }
       },
       "shadow_summary": {
-        "bets": 37,
-        "wins": 18,
+        "bets": 38,
+        "wins": 19,
         "losses": 19,
         "pushes": 0,
-        "units": -3.301888,
-        "roi": -0.08924,
-        "hit_rate": 0.486486,
+        "units": -3.137954,
+        "roi": -0.082578,
+        "hit_rate": 0.5,
         "max_drawdown": 9.130435,
-        "units_per_bet": -0.08924,
-        "monthly_volatility": 1.582177,
+        "units_per_bet": -0.082578,
+        "monthly_volatility": 1.500209,
         "losing_month_pct": 1,
         "worst_month": {
           "month": "2026-04",
-          "bets": 20,
-          "wins": 9,
+          "bets": 21,
+          "wins": 10,
           "losses": 11,
           "pushes": 0,
-          "units": -3.233121,
-          "roi": -0.161656,
-          "hit_rate": 0.45,
+          "units": -3.069186,
+          "roi": -0.146152,
+          "hit_rate": 0.47619,
           "max_drawdown": 7.130435
         }
       }
@@ -206,26 +206,26 @@
         }
       },
       "shadow_summary": {
-        "bets": 35,
-        "wins": 20,
+        "bets": 37,
+        "wins": 22,
         "losses": 15,
         "pushes": 0,
-        "units": 2.376433,
-        "roi": 0.067898,
-        "hit_rate": 0.571429,
+        "units": 2.552416,
+        "roi": 0.068984,
+        "hit_rate": 0.594595,
         "max_drawdown": 6.130435,
-        "units_per_bet": 0.067898,
-        "monthly_volatility": 0.512247,
+        "units_per_bet": 0.068984,
+        "monthly_volatility": 0.424255,
         "losing_month_pct": 0,
         "worst_month": {
           "month": "2026-04",
-          "bets": 18,
-          "wins": 10,
+          "bets": 20,
+          "wins": 12,
           "losses": 8,
           "pushes": 0,
-          "units": 0.67597,
-          "roi": 0.037554,
-          "hit_rate": 0.555556,
+          "units": 0.851953,
+          "roi": 0.042598,
+          "hit_rate": 0.6,
           "max_drawdown": 5.130435
         }
       }
@@ -259,26 +259,26 @@
         }
       },
       "shadow_summary": {
-        "bets": 42,
-        "wins": 20,
+        "bets": 43,
+        "wins": 21,
         "losses": 22,
         "pushes": 0,
-        "units": -4.349508,
-        "roi": -0.10356,
-        "hit_rate": 0.47619,
+        "units": -4.185573,
+        "roi": -0.097339,
+        "hit_rate": 0.488372,
         "max_drawdown": 9.199203,
-        "units_per_bet": -0.10356,
-        "monthly_volatility": 1.105986,
+        "units_per_bet": -0.097339,
+        "monthly_volatility": 1.024018,
         "losing_month_pct": 1,
         "worst_month": {
           "month": "2026-04",
-          "bets": 22,
-          "wins": 10,
+          "bets": 23,
+          "wins": 11,
           "losses": 12,
           "pushes": 0,
-          "units": -3.28074,
-          "roi": -0.149125,
-          "hit_rate": 0.454545,
+          "units": -3.116805,
+          "roi": -0.135513,
+          "hit_rate": 0.478261,
           "max_drawdown": 8.130435
         }
       }
@@ -488,5 +488,12 @@
     "This engine is the locked active shadow model. Site surfacing does not imply live betting trust.",
     "Comparators are exported for reporting, but the primary leans surface uses the locked active shadow model only."
   ],
-  "active_board_date": "2026-04-08"
+  "active_board_date": "2026-04-09",
+  "board_date_consistency": {
+    "modeling_max_date": "2026-04-09",
+    "decision_max_date": "2026-04-09",
+    "reporting_active_board_date": "2026-04-09",
+    "status_active_board_date": "2026-04-09",
+    "daily_leans_board_date": "2026-04-09"
+  }
 }

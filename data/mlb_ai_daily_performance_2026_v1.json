@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-09T23:09:54.459Z",
+  "generated_at": "2026-04-10T02:14:13.045Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_totals",
@@ -175,6 +175,17 @@
       "units": -0.137931,
       "roi": -0.068965,
       "cumulative_units": 0.650493
+    },
+    {
+      "board_date": "2026-04-09",
+      "bets": 1,
+      "wins": 1,
+      "losses": 0,
+      "pushes": 0,
+      "win_rate": 1,
+      "units": 0.163934,
+      "roi": 0.163934,
+      "cumulative_units": 0.814427
     }
   ]
 }

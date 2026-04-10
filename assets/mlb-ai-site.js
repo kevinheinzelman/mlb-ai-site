@@ -1,529 +1,451 @@
 (async function main() {
   const page = document.body.dataset.page;
-
-  async function loadJson(name) {
+  const $ = (s) => document.querySelector(s);
+  const esc = (v) => String(v ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  const num = (v) => Number.isNaN(Number(v)) || v == null;
+  const pct = (v) => num(v) ? '--' : `${(Number(v) * 100).toFixed(2)}%`;
+  const units = (v) => num(v) ? '--' : `${Number(v) >= 0 ? '+' : ''}${Number(v).toFixed(2)}u`;
+  const fixed = (v, d = 2) => num(v) ? '--' : Number(v).toFixed(d);
+  const odds = (v) => num(v) ? '--' : `${Number(v) > 0 ? '+' : ''}${Number(v)}`;
+  const dt = (v) => !v ? 'Unknown' : new Date(v).toLocaleString();
+  const json = async (name) => {
     const response = await fetch(`./data/${name}`, { cache: 'no-store' });
     if (!response.ok) throw new Error(`Failed to load ${name}`);
     return response.json();
+  };
+
+  function renderCardGrid(target, cards) {
+    if (!target) return;
+    target.innerHTML = cards.map((card) => `
+      <article class="metric-card">
+        <strong>${esc(card.label)}</strong>
+        <div class="metric-value ${card.tone || ''}">${esc(card.value)}</div>
+        <div class="subtle">${esc(card.note || '')}</div>
+      </article>
+    `).join('');
   }
 
-  function formatPct(value) {
-    if (value == null || Number.isNaN(Number(value))) return '—';
-    return `${(Number(value) * 100).toFixed(2)}%`;
-  }
-
-  function formatUnits(value) {
-    if (value == null || Number.isNaN(Number(value))) return '—';
-    return `${Number(value) >= 0 ? '+' : ''}${Number(value).toFixed(2)}u`;
-  }
-
-  function formatNumber(value, digits = 2) {
-    if (value == null || Number.isNaN(Number(value))) return '—';
-    return Number(value).toFixed(digits);
-  }
-
-  function badge(text) {
-    return `<span class="chip">${text}</span>`;
-  }
-
-  function escapeHtml(value) {
-    return String(value ?? '')
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#39;');
-  }
-
-  function titleCaseState(value) {
-    if (!value) return 'Unknown';
-    return String(value).charAt(0).toUpperCase() + String(value).slice(1);
-  }
-
-  function mapOperationalStatusToStrip(status) {
-    const trustedForBoard = Boolean(status?.trust?.trusted_for_modeling) && Boolean(status?.trust?.trusted_for_site_shadow);
-    const hasFailures = Array.isArray(status?.blocked?.failures) && status.blocked.failures.length > 0;
-    const hasWarnings = Array.isArray(status?.blocked?.warnings) && status.blocked.warnings.length > 0;
-    const runOverallStatus = status?.run?.overall_status || status?.summary?.last_run_overall_status || null;
-    const hasStubs = runOverallStatus === 'completed_with_stubs';
-
+  function mapStatus(status) {
+    const trusted = Boolean(status?.trust?.trusted_for_modeling) && Boolean(status?.trust?.trusted_for_site_shadow);
+    const failures = status?.blocked?.failures || [];
+    const warnings = status?.blocked?.warnings || [];
+    const runStatus = status?.run?.overall_status || status?.summary?.last_run_overall_status || 'unknown';
+    const stubs = runStatus === 'completed_with_stubs';
     let severity = 'ok';
-    if (!trustedForBoard || hasFailures || status?.state === 'fail') {
-      severity = 'fail';
-    } else if (hasStubs || hasWarnings || status?.state === 'warning') {
-      severity = 'warning';
-    }
-
-    let headline = 'Today’s board is trusted.';
-    let subheadline = 'Loop run, validation, and MLB AI shadow export all agree on the active board.';
-
+    if (!trusted || failures.length || status?.state === 'fail') severity = 'fail';
+    else if (stubs || warnings.length || status?.state === 'warning') severity = 'warning';
+    let headline = "Today's board is trusted.";
+    let subheadline = "The board, validation, and site export are aligned for today's use.";
     if (severity === 'fail') {
-      headline = 'Today’s board is not trusted.';
-      subheadline = hasFailures
-        ? `Blocking validation failed: ${status.blocked.failures[0].code}.`
-        : 'Required runtime trust signals are not aligned.';
-    } else if (hasStubs) {
-      headline = 'Today’s board is trusted, with non-board stubs still present.';
-      subheadline = 'Modeling and MLB AI shadow trust passed, but the loop finished as completed_with_stubs.';
+      headline = "Today's board is not trusted.";
+      subheadline = failures.length ? `Blocking validation failed: ${failures[0].code}.` : 'Required trust signals are not aligned.';
+    } else if (stubs) {
+      headline = "Today's board is trusted, with non-board stubs still present.";
+      subheadline = 'The board is trusted, but the loop still records non-board stub stages.';
     } else if (severity === 'warning') {
-      headline = 'Today’s board is trusted, with warnings.';
-      subheadline = hasWarnings
-        ? `Runtime warnings are present: ${status.blocked.warnings[0].code}.`
-        : 'Trust passed, but some non-blocking signals need operator review.';
+      headline = "Today's board is trusted, with warnings.";
+      subheadline = warnings.length ? `Non-blocking runtime warnings are present: ${warnings[0].code}.` : 'Trust passed, but there are non-blocking operator signals to review.';
     }
-
     const chips = [
       `Modeling ${status?.trust?.trusted_for_modeling ? 'trusted' : 'blocked'}`,
-      `MLB AI shadow ${status?.trust?.trusted_for_site_shadow ? 'trusted' : 'blocked'}`,
       `Board ${status?.boards?.active_board_date || 'unknown'}`,
       `Final ${status?.validation?.final?.status || 'unknown'}`,
-      `Run ${runOverallStatus || 'unknown'}`
+      `Run ${runStatus}`
     ];
-
-    if (status?.boards?.latest_valid_mlb_ai_board_date && status.boards.latest_valid_mlb_ai_board_date !== status.boards.active_board_date) {
-      chips.push(`Latest valid ${status.boards.latest_valid_mlb_ai_board_date}`);
-    }
-    if (status?.boards?.latest_canonical_board_date && status.boards.latest_canonical_board_date !== status.boards.active_board_date) {
-      chips.push(`Canonical ${status.boards.latest_canonical_board_date}`);
-    }
-    if (hasStubs) {
-      chips.push('Non-board stubs');
-    }
-
-    return {
-      severity,
-      headline,
-      subheadline,
-      chips
-    };
+    if (status?.boards?.latest_valid_mlb_ai_board_date && status.boards.latest_valid_mlb_ai_board_date !== status.boards.active_board_date) chips.push(`Latest valid ${status.boards.latest_valid_mlb_ai_board_date}`);
+    if (status?.boards?.latest_canonical_board_date && status.boards.latest_canonical_board_date !== status.boards.active_board_date) chips.push(`Canonical ${status.boards.latest_canonical_board_date}`);
+    if (stubs) chips.push('Non-board stubs');
+    return { severity, headline, subheadline, chips };
   }
 
-  function renderOperationalStatusStrip(status) {
-    const shell = document.querySelector('.shell');
+  function renderStatusStrip(status) {
+    const shell = $('.shell');
     if (!shell) return;
-    const mapped = mapOperationalStatusToStrip(status);
+    const mapped = mapStatus(status);
     const section = document.createElement('section');
     section.className = `status-strip status-strip-${mapped.severity}`;
     section.innerHTML = `
       <div class="status-strip-copy">
         <p class="status-strip-label">Board trust</p>
-        <h2>${escapeHtml(mapped.headline)}</h2>
-        <p>${escapeHtml(mapped.subheadline)}</p>
+        <h2>${esc(mapped.headline)}</h2>
+        <p>${esc(mapped.subheadline)}</p>
       </div>
-      <div class="status-strip-chips">
-        ${mapped.chips.map((text) => `<span class="status-chip">${escapeHtml(text)}</span>`).join('')}
-      </div>
+      <div class="status-strip-chips">${mapped.chips.map((t) => `<span class="status-chip">${esc(t)}</span>`).join('')}</div>
     `;
     shell.insertBefore(section, shell.firstChild);
   }
 
-  function renderEngineMeta(target, status) {
-    if (!target) return;
-    target.innerHTML = `
-      <div class="meta-grid">
-        <div class="metric-card">
-          <strong>Active engine</strong>
-          <div class="metric-value">${status.active_engine.engine_family}</div>
-          <div class="subtle">${status.active_engine.engine_version} / ${status.active_engine.active_policy}</div>
-        </div>
-        <div class="metric-card">
-          <strong>State</strong>
-          <div class="metric-value">${status.active_engine.engine_state}</div>
-          <div class="subtle">Trusted live: ${status.active_engine.trusted_for_live_betting ? 'yes' : 'no'}</div>
-        </div>
-        <div class="metric-card">
-          <strong>Freshness</strong>
-          <div class="metric-value">${status.active_board_date}</div>
-          <div class="subtle">Generated ${new Date(status.generated_at).toLocaleString()}</div>
-        </div>
-      </div>
-    `;
-  }
-
-  function renderHome(status) {
-    renderEngineMeta(document.getElementById('engine-meta'), status);
-  }
-
-  function formatOdds(value) {
-    if (value == null || Number.isNaN(Number(value))) return '—';
-    const number = Number(value);
-    return number > 0 ? `+${number}` : `${number}`;
-  }
-
-  function classifyLeanRowFallback(row) {
+  function vis(row) {
+    const tier = String(row.visibility_tier || '').toLowerCase();
+    if (tier === 'core' || tier === 'exploratory' || tier === 'hidden') return tier;
     if (row.confidence_band === 'high') return 'core';
     if (row.confidence_band === 'medium') return 'exploratory';
     return 'hidden';
   }
 
-  function classifyLeanRow(row) {
-    const visibilityTier = String(row.visibility_tier || '').toLowerCase();
-    if (visibilityTier === 'core' || visibilityTier === 'exploratory' || visibilityTier === 'hidden') {
-      return visibilityTier;
-    }
-    return classifyLeanRowFallback(row);
+  function leanCmp(a, b) {
+    const buckets = { core_priority: 2, exploratory_priority: 1, hidden: 0 };
+    const bands = { high: 2, medium: 1, low: 0 };
+    return (buckets[b.display_sort_bucket] || 0) - (buckets[a.display_sort_bucket] || 0)
+      || (bands[b.confidence_band] || 0) - (bands[a.confidence_band] || 0)
+      || Number(b.edge || 0) - Number(a.edge || 0)
+      || Number(a.rank_on_slate || 0) - Number(b.rank_on_slate || 0);
   }
 
-  function compareLeans(a, b) {
-    const bucketOrder = { core_priority: 2, exploratory_priority: 1, hidden: 0 };
-    const bucketDelta = (bucketOrder[b.display_sort_bucket] || 0) - (bucketOrder[a.display_sort_bucket] || 0);
-    if (bucketDelta !== 0) return bucketDelta;
-    const bandOrder = { high: 2, medium: 1, low: 0 };
-    const bandDelta = (bandOrder[b.confidence_band] || 0) - (bandOrder[a.confidence_band] || 0);
-    if (bandDelta !== 0) return bandDelta;
-    const edgeDelta = Number(b.edge || 0) - Number(a.edge || 0);
-    if (edgeDelta !== 0) return edgeDelta;
-    return Number(a.rank_on_slate || 0) - Number(b.rank_on_slate || 0);
-  }
-
-  function buildPrimaryDriversFallback(row) {
-    const drivers = [];
-    drivers.push(`Model edge ${formatPct(row.edge)}`);
-    drivers.push(`Context score ${formatNumber(row.context_score, 3)}`);
-    if (row.context_buckets?.weather_bucket) {
-      drivers.push(`Weather ${row.context_buckets.weather_bucket.replaceAll('_', ' ')}`);
-    } else if (Array.isArray(row.reason_flags) && row.reason_flags.includes('wind_in_context')) {
-      drivers.push('Wind-sensitive context');
-    }
-    return drivers.slice(0, 3);
-  }
-
-  function buildPrimaryDrivers(row) {
-    if (Array.isArray(row.primary_drivers) && row.primary_drivers.length) {
-      return row.primary_drivers.slice(0, 3);
-    }
-    return buildPrimaryDriversFallback(row);
-  }
-
-  function buildSupportingContextFallback(row) {
-    const items = [];
-    if (row.context_buckets?.action_bucket) {
-      items.push(`Action ${row.context_buckets.action_bucket.replaceAll('_', ' ')}`);
-    }
-    if (row.context_buckets?.baseball_bucket) {
-      items.push(`Baseball ${row.context_buckets.baseball_bucket.replaceAll('_', ' ')}`);
-    }
-    if (row.context_buckets?.total_bucket) {
-      items.push(`Total bucket ${row.context_buckets.total_bucket}`);
-    }
-    if (Array.isArray(row.comparator_flags ? Object.entries(row.comparator_flags) : [])) {
-      const aligned = Object.entries(row.comparator_flags)
-        .filter(([, value]) => Boolean(value))
-        .map(([key]) => key.replaceAll('_', ' '));
-      if (aligned.length) {
-        items.push(`Comparator alignment ${aligned.slice(0, 2).join(', ')}`);
-      }
-    }
+  function primaryDrivers(row) {
+    if (Array.isArray(row.primary_drivers) && row.primary_drivers.length) return row.primary_drivers.slice(0, 3);
+    const items = [`Model edge ${pct(row.edge)}`, `Context score ${fixed(row.context_score, 3)}`];
+    if (row.context_buckets?.weather_bucket) items.push(`Weather ${String(row.context_buckets.weather_bucket).replaceAll('_', ' ')}`);
     return items.slice(0, 3);
   }
 
-  function buildSupportingContext(row) {
-    if (Array.isArray(row.supporting_context) && row.supporting_context.length) {
-      return row.supporting_context.slice(0, 3);
-    }
-    return buildSupportingContextFallback(row);
-  }
-
-  function expensivePriceLabelFallback(row) {
-    const price = Number(row.price_american || 0);
-    if (Number.isNaN(price)) return null;
-    if (price <= -150) return 'Expensive price';
-    if (price <= -130) return 'Priced up';
-    return null;
-  }
-
-  function expensivePriceLabel(row) {
-    const priceFlag = String(row.price_flag || '').toLowerCase();
-    if (priceFlag === 'expensive') return 'Expensive price';
-    if (priceFlag === 'priced_up') return 'Priced up';
-    if (priceFlag === 'standard') return null;
-    return expensivePriceLabelFallback(row);
+  function supportDrivers(row) {
+    if (Array.isArray(row.supporting_context) && row.supporting_context.length) return row.supporting_context.slice(0, 3);
+    const items = [];
+    if (row.context_buckets?.action_bucket) items.push(`Action ${String(row.context_buckets.action_bucket).replaceAll('_', ' ')}`);
+    if (row.context_buckets?.baseball_bucket) items.push(`Baseball ${String(row.context_buckets.baseball_bucket).replaceAll('_', ' ')}`);
+    if (row.context_buckets?.total_bucket) items.push(`Total bucket ${row.context_buckets.total_bucket}`);
+    return items.slice(0, 3);
   }
 
   function marketLabel(row) {
-    if (row.market_type === 'total') {
-      return `Total ${row.side.toUpperCase()} ${row.line_value}`;
-    }
-    if (row.market_type === 'moneyline') {
-      return `Moneyline ${row.side.toUpperCase()}`;
-    }
-    if (row.market_type === 'spread') {
-      return `Run line ${row.side.toUpperCase()} ${row.line_value}`;
-    }
-    return `${row.market_type} ${row.side}`.trim();
+    if (row.market_type === 'total') return `Total ${String(row.side || '').toUpperCase()} ${row.line_value}`;
+    if (row.market_type === 'moneyline') return `Moneyline ${String(row.side || '').toUpperCase()}`;
+    if (row.market_type === 'spread') return `Run line ${String(row.side || '').toUpperCase()} ${row.line_value}`;
+    return `${row.market_type || 'Market'} ${row.side || ''}`.trim();
   }
 
-  function buildLeanCard(row) {
-    const primaryDrivers = buildPrimaryDrivers(row);
-    const supportingContext = buildSupportingContext(row);
-    const expensivePrice = expensivePriceLabel(row);
+  function priceFlag(row) {
+    if (String(row.price_flag || '').toLowerCase() === 'expensive') return 'Expensive price';
+    if (String(row.price_flag || '').toLowerCase() === 'priced_up') return 'Priced up';
+    return '';
+  }
+
+  function leanCard(row) {
+    const primary = primaryDrivers(row);
+    const support = supportDrivers(row);
+    const price = priceFlag(row);
     return `
       <article class="lean-decision-card">
         <div class="lean-decision-head">
           <div>
-            <p class="lean-kicker">${row.matchup}</p>
-            <h3>${marketLabel(row)}</h3>
-            <p class="lean-subline">Price ${formatOdds(row.price_american)} · ${row.confidence_band} confidence · ${formatNumber(row.suggested_units, 2)}u</p>
+            <p class="lean-kicker">${esc(row.matchup)}</p>
+            <h3>${esc(marketLabel(row))}</h3>
+            <p class="lean-subline">Recommended: ${esc(String(row.side || '').toUpperCase())} | Price ${esc(odds(row.price_american))}</p>
           </div>
           <div class="lean-score-stack">
-            <span class="badge">${row.confidence_band}</span>
-            ${expensivePrice ? `<span class="price-flag">${escapeHtml(expensivePrice)}</span>` : ''}
+            <span class="badge">${esc(row.confidence_band || 'unknown')} confidence</span>
+            ${price ? `<span class="price-flag">${esc(price)}</span>` : ''}
           </div>
         </div>
         <div class="lean-decision-metrics">
-          <div><strong>Recommended side</strong><div>${row.side.toUpperCase()}</div></div>
-          <div><strong>Odds</strong><div>${formatOdds(row.price_american)}</div></div>
-          <div><strong>Edge</strong><div>${formatPct(row.edge)}</div></div>
-          <div><strong>Units</strong><div>${formatNumber(row.suggested_units, 2)}</div></div>
+          <div><strong>Edge</strong><div>${pct(row.edge)}</div></div>
+          <div><strong>Model</strong><div>${pct(row.model_probability)}</div></div>
+          <div><strong>Market</strong><div>${pct(row.market_probability)}</div></div>
+          <div><strong>Units</strong><div>${fixed(row.suggested_units, 2)}</div></div>
         </div>
         <div class="lean-explain-grid">
-          <div class="lean-explain-block">
-            <strong>Primary drivers</strong>
-            <ul>
-              ${primaryDrivers.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}
-            </ul>
-          </div>
-          <div class="lean-explain-block">
-            <strong>Supporting context</strong>
-            <ul>
-              ${supportingContext.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}
-            </ul>
-          </div>
+          <div class="lean-explain-block"><strong>Why it made the card</strong><ul>${primary.map((item) => `<li>${esc(item)}</li>`).join('')}</ul></div>
+          <div class="lean-explain-block"><strong>Supporting context</strong><ul>${support.map((item) => `<li>${esc(item)}</li>`).join('')}</ul></div>
         </div>
       </article>
     `;
   }
 
+  function rangeDates(rows, mode) {
+    if (!rows.length) return { start: '', end: '' };
+    const maxDate = rows[rows.length - 1].board_date;
+    const max = new Date(`${maxDate}T00:00:00`);
+    let start = rows[0].board_date;
+    if (mode === '7d') { const d = new Date(max); d.setDate(d.getDate() - 6); start = d.toISOString().slice(0, 10); }
+    if (mode === '30d') { const d = new Date(max); d.setDate(d.getDate() - 29); start = d.toISOString().slice(0, 10); }
+    if (mode === 'season') start = rows.find((r) => String(r.board_date).startsWith('2026-'))?.board_date || rows[0].board_date;
+    return { start, end: maxDate };
+  }
+
+  function filterDate(rows, startDate, endDate) {
+    return rows.filter((row) => (!startDate || row.board_date >= startDate) && (!endDate || row.board_date <= endDate));
+  }
+
+  function perfSummary(rows) {
+    const bets = rows.reduce((s, r) => s + Number(r.bets || 0), 0);
+    const wins = rows.reduce((s, r) => s + Number(r.wins || 0), 0);
+    const losses = rows.reduce((s, r) => s + Number(r.losses || 0), 0);
+    const pushes = rows.reduce((s, r) => s + Number(r.pushes || 0), 0);
+    const unitsValue = rows.reduce((s, r) => s + Number(r.units || 0), 0);
+    const graded = wins + losses;
+    return { days: rows.length, bets, wins, losses, pushes, units: unitsValue, roi: bets ? unitsValue / bets : null, winRate: graded ? wins / graded : null };
+  }
+
   function renderLeans(status, leans, operationalStatus) {
-    renderEngineMeta(document.getElementById('leans-meta'), status);
-    const visibleRows = [...(leans.rows || [])]
-      .filter((row) => classifyLeanRow(row) !== 'hidden')
-      .sort(compareLeans);
-    const coreRows = visibleRows.filter((row) => classifyLeanRow(row) === 'core');
-    const exploratoryRows = visibleRows.filter((row) => classifyLeanRow(row) === 'exploratory');
+    const requested = leans.requested_board_date || operationalStatus?.boards?.operating_date || leans.board_date || 'unknown';
+    const latestCanonical = leans.latest_canonical_board_date || operationalStatus?.boards?.latest_canonical_board_date || 'unknown';
+    const latestValid = leans.latest_valid_mlb_ai_board_date || operationalStatus?.boards?.latest_valid_mlb_ai_board_date || leans.active_board_date || leans.board_date || 'unknown';
+    const noBoard = leans.board_state === 'no_valid_board_for_requested_date' || Boolean(leans.board_available) === false;
+    const visible = [...(leans.rows || [])].filter((row) => vis(row) !== 'hidden').sort(leanCmp);
+    const core = visible.filter((row) => vis(row) === 'core');
+    const exploratory = visible.filter((row) => vis(row) === 'exploratory');
 
-    const summaryBadge = document.getElementById('leans-summary-badge');
-    if (summaryBadge) {
-      summaryBadge.textContent = `${visibleRows.length} visible plays on ${leans.board_date}`;
-    }
+    renderCardGrid($('#leans-hero-grid'), [
+      { label: 'Requested date', value: requested, note: noBoard ? 'No official board is available for this date.' : 'This is the date the page is checking.' },
+      { label: 'Official plays', value: String(visible.length), note: noBoard ? 'The page shows zero official plays when no valid board exists.' : 'Visible core and exploratory plays only.' },
+      { label: 'Board status', value: noBoard ? 'No board' : 'Official board', note: noBoard ? `Latest valid board is ${latestValid}.` : `Board is live for ${leans.board_date}.` }
+    ]);
 
-    const summaryGrid = document.getElementById('leans-summary-grid');
-    if (summaryGrid) {
-      const requestedBoardDate = leans.requested_board_date || operationalStatus?.boards?.operating_date || leans.board_date;
-      const latestCanonicalBoard = operationalStatus?.boards?.latest_canonical_board_date || 'unknown';
-      const latestValidBoard = operationalStatus?.boards?.latest_valid_mlb_ai_board_date || leans.board_date;
-      const boardMessage = requestedBoardDate !== leans.board_date
-        ? `Requested ${requestedBoardDate}; latest valid MLB AI board is ${leans.board_date}. Canonical betting date is ${latestCanonicalBoard}.`
-        : `Requested ${requestedBoardDate}; latest valid MLB AI board matches the request.`;
-      summaryGrid.innerHTML = `
-        <article class="metric-card">
-          <strong>Board date</strong>
-          <div class="metric-value">${leans.board_date}</div>
-          <div class="subtle">${escapeHtml(boardMessage)}</div>
-        </article>
-        <article class="metric-card">
-          <strong>Core plays</strong>
-          <div class="metric-value">${coreRows.length}</div>
-          <div class="subtle">High-confidence only</div>
-        </article>
-        <article class="metric-card">
-          <strong>Exploratory plays</strong>
-          <div class="metric-value">${exploratoryRows.length}</div>
-          <div class="subtle">Moderate-confidence only</div>
-        </article>
-        <article class="metric-card">
-          <strong>Hidden weak plays</strong>
-          <div class="metric-value">${Math.max(0, (leans.rows || []).length - visibleRows.length)}</div>
-          <div class="subtle">Low-confidence not shown</div>
+    if ($('#leans-summary-badge')) $('#leans-summary-badge').textContent = noBoard ? `No official plays for ${requested}` : `${visible.length} official plays`;
+
+    if ($('#leans-summary-grid')) {
+      $('#leans-summary-grid').innerHTML = noBoard ? `
+        <article class="metric-card metric-card-wide">
+          <strong>No official board for ${esc(requested)}</strong>
+          <div class="metric-value">No plays</div>
+          <div class="subtle">${esc(leans.availability_reason || `No valid MLB AI board is available for ${requested}.`)}</div>
         </article>
         <article class="metric-card">
           <strong>Latest valid board</strong>
-          <div class="metric-value">${latestValidBoard}</div>
-          <div class="subtle">Canonical betting date ${latestCanonicalBoard}</div>
+          <div class="metric-value">${esc(latestValid)}</div>
+          <div class="subtle">The last board the model considers valid.</div>
+        </article>
+        <article class="metric-card">
+          <strong>Latest betting date</strong>
+          <div class="metric-value">${esc(latestCanonical)}</div>
+          <div class="subtle">Markets may exist even when the model has no official board.</div>
+        </article>
+      ` : `
+        <article class="metric-card">
+          <strong>Official board date</strong>
+          <div class="metric-value">${esc(leans.board_date)}</div>
+          <div class="subtle">Requested date ${esc(requested)}</div>
+        </article>
+        <article class="metric-card">
+          <strong>Core plays</strong>
+          <div class="metric-value">${core.length}</div>
+          <div class="subtle">Highest-conviction card.</div>
+        </article>
+        <article class="metric-card">
+          <strong>Exploratory plays</strong>
+          <div class="metric-value">${exploratory.length}</div>
+          <div class="subtle">Actionable, but less central.</div>
+        </article>
+        <article class="metric-card">
+          <strong>Latest betting date</strong>
+          <div class="metric-value">${esc(latestCanonical)}</div>
+          <div class="subtle">Useful for checking whether the board is same-day or lagging.</div>
         </article>
       `;
     }
 
-    const coreContainer = document.getElementById('leans-core-cards');
-    if (coreContainer) {
-      coreContainer.innerHTML = coreRows.length
-        ? coreRows.map(buildLeanCard).join('')
-        : '<div class="empty-state">No core plays are available on the current board.</div>';
-    }
+    if ($('#leans-core-cards')) $('#leans-core-cards').innerHTML = noBoard
+      ? `<div class="empty-state">No official MLB AI plays are available for ${esc(requested)}.</div>`
+      : core.length ? core.map(leanCard).join('') : '<div class="empty-state">No core plays are available on the official board.</div>';
 
-    const exploratoryContainer = document.getElementById('leans-exploratory-cards');
-    if (exploratoryContainer) {
-      exploratoryContainer.innerHTML = exploratoryRows.length
-        ? exploratoryRows.map(buildLeanCard).join('')
-        : '<div class="empty-state">No exploratory plays are available on the current board.</div>';
-    }
+    if ($('#leans-exploratory-cards')) $('#leans-exploratory-cards').innerHTML = noBoard
+      ? `<div class="empty-state">The page does not fall back to ${esc(latestValid)} plays when the requested date has no valid board.</div>`
+      : exploratory.length ? exploratory.map(leanCard).join('') : '<div class="empty-state">No exploratory plays are available on the official board.</div>';
   }
 
-  function renderReporting(status, reporting, monthly, comparison, performance, operationalStatus) {
-    renderEngineMeta(document.getElementById('reporting-meta'), status);
+  function renderPerformance(status, reporting, monthly, comparison, performance, operationalStatus) {
+    const rows = Array.isArray(performance?.rows) ? performance.rows.slice() : [];
+    const latest = rows.length ? rows[rows.length - 1] : null;
+    const requested = operationalStatus?.boards?.operating_date || status.requested_board_date || 'unknown';
+    const active = operationalStatus?.boards?.active_board_date || reporting.active_board_date || 'unknown';
 
-    const summaryGrid = document.getElementById('policy-summary-grid');
-    if (summaryGrid) {
-      const cards = [
-        {
-          title: 'Active historical',
-          summary: reporting.active_policy_historical_summary,
-          note: `${status.active_engine.active_policy} / 2022-2025`
-        },
-        {
-          title: 'Active shadow',
-          summary: reporting.active_policy_shadow_summary,
-          note: `Through ${reporting.source_coverage.shadow_results_through}`
-        },
-        ...comparison.comparators.map((entry) => ({
-          title: entry.label,
-          summary: entry.historical_summary,
-          note: entry.policy_name
-        }))
-      ];
-      summaryGrid.innerHTML = cards.map((card) => `
-        <article class="metric-card">
-          <strong>${card.title}</strong>
-          <div class="metric-value ${Number(card.summary.units || 0) >= 0 ? 'metric-good' : 'metric-bad'}">${formatUnits(card.summary.units)}</div>
-          <div class="subtle">${card.note}</div>
-          <div class="meta-line">ROI ${formatPct(card.summary.roi)}</div>
-          <div class="meta-line">Bets ${card.summary.bets ?? '—'}</div>
-          <div class="meta-line">Max DD ${formatNumber(card.summary.max_drawdown, 2)}</div>
-        </article>
-      `).join('');
+    renderCardGrid($('#performance-hero-grid'), [
+      { label: 'Results through', value: reporting?.source_coverage?.shadow_results_through || 'unknown', note: 'This is the latest graded day, not the artifact timestamp.' },
+      { label: 'Season cumulative', value: units(latest?.cumulative_units), note: latest ? `As of ${latest.board_date}` : 'No 2026 performance rows available.' },
+      { label: 'Requested vs board', value: `${requested} / ${active}`, note: 'Requested date first, official board second.' }
+    ]);
+    if ($('#performance-coverage-badge')) $('#performance-coverage-badge').textContent = `Results through ${reporting?.source_coverage?.shadow_results_through || 'unknown'}`;
+
+    const start = $('#performance-start-date');
+    const end = $('#performance-end-date');
+    const presets = $('#performance-range-presets');
+    const policy = $('#monthly-policy-filter');
+    const dailyBody = $('#daily-performance-table tbody');
+    const summaryGrid = $('#performance-summary-grid');
+    const monthlyBody = $('#monthly-table tbody');
+    const comparatorGrid = $('#performance-comparator-grid');
+    const contextBlocks = $('#context-breakdowns');
+    if (!rows.length || !start || !end || !presets || !policy || !dailyBody || !summaryGrid || !monthlyBody || !comparatorGrid || !contextBlocks) return;
+
+    const defaults = rangeDates(rows, 'season');
+    start.min = rows[0].board_date; start.max = rows[rows.length - 1].board_date; start.value = defaults.start;
+    end.min = rows[0].board_date; end.max = rows[rows.length - 1].board_date; end.value = defaults.end;
+
+    function setPreset(mode) {
+      presets.querySelectorAll('button').forEach((button) => button.classList.toggle('is-active', button.dataset.range === mode));
     }
 
-    const performanceRows = Array.isArray(performance?.rows) ? performance.rows : [];
-    const latestPerformanceRow = performanceRows.length ? performanceRows[performanceRows.length - 1] : null;
-    const perfCoverageBadge = document.getElementById('performance-coverage-badge');
-    if (perfCoverageBadge) {
-      const throughDate = reporting?.source_coverage?.shadow_results_through || latestPerformanceRow?.board_date || 'unknown';
-      perfCoverageBadge.textContent = `Results through ${throughDate}`;
-    }
-
-    const performanceSummaryGrid = document.getElementById('performance-summary-grid');
-    if (performanceSummaryGrid) {
-      const requestedBoardDate = operationalStatus?.boards?.operating_date || status.requested_board_date || 'unknown';
-      const activeBoardDate = operationalStatus?.boards?.active_board_date || reporting.active_board_date || 'unknown';
-      const latestValidBoard = operationalStatus?.boards?.latest_valid_mlb_ai_board_date || activeBoardDate;
-      const latestCanonicalBoard = operationalStatus?.boards?.latest_canonical_board_date || 'unknown';
-      performanceSummaryGrid.innerHTML = `
-        <article class="metric-card">
-          <strong>Results through</strong>
-          <div class="metric-value">${reporting?.source_coverage?.shadow_results_through || 'unknown'}</div>
-          <div class="subtle">2026 shadow grading currently stops at the latest settled active-board date.</div>
-        </article>
-        <article class="metric-card">
-          <strong>Latest 2026 day</strong>
-          <div class="metric-value">${latestPerformanceRow?.board_date || 'unknown'}</div>
-          <div class="subtle">Requested ${requestedBoardDate}; active board ${activeBoardDate}</div>
-        </article>
-        <article class="metric-card">
-          <strong>Cumulative units</strong>
-          <div class="metric-value ${Number(latestPerformanceRow?.cumulative_units || 0) >= 0 ? 'metric-good' : 'metric-bad'}">${formatUnits(latestPerformanceRow?.cumulative_units)}</div>
-          <div class="subtle">${latestPerformanceRow ? `${latestPerformanceRow.bets} bets on ${latestPerformanceRow.board_date}` : 'No 2026 rows available'}</div>
-        </article>
-        <article class="metric-card">
-          <strong>Board coverage</strong>
-          <div class="metric-value">${latestValidBoard}</div>
-          <div class="subtle">Canonical betting date ${latestCanonicalBoard}</div>
-        </article>
-      `;
-    }
-
-    const dailyPerformanceBody = document.querySelector('#daily-performance-table tbody');
-    if (dailyPerformanceBody) {
-      dailyPerformanceBody.innerHTML = performanceRows.length
-        ? performanceRows.map((row) => `
-          <tr>
-            <td>${row.board_date}</td>
-            <td>${row.bets}</td>
-            <td>${row.wins}</td>
-            <td>${row.losses}</td>
-            <td>${row.pushes}</td>
-            <td>${formatPct(row.win_rate)}</td>
-            <td>${formatUnits(row.units)}</td>
-            <td>${formatPct(row.roi)}</td>
-            <td>${formatUnits(row.cumulative_units)}</td>
-          </tr>
-        `).join('')
-        : '<tr><td colspan="9" class="subtle">No 2026 daily performance rows are available.</td></tr>';
-    }
-
-    const monthlyBody = document.querySelector('#monthly-table tbody');
-    if (monthlyBody) {
-      const order = [
-        ['v8_balanced', 'V8 balanced'],
+    function drawMonthly() {
+      const activeOnly = policy.value !== 'all_policies';
+      const order = activeOnly ? [['hostile_fix_with_caps', 'Active system']] : [
+        ['hostile_fix_with_caps', 'Active system'],
+        ['v8_balanced', 'V8 baseline'],
         ['soft_plus_half_sigma', 'V7 production'],
         ['hybrid_top25_cap3', 'V7 hybrid'],
         ['v8_light', 'V8 light']
       ];
-      monthlyBody.innerHTML = order.flatMap(([key, label]) =>
-        (monthly.policies[key] || []).map((row) => `
-          <tr>
-            <td>${row.month}</td>
-            <td>${label}</td>
-            <td>${row.bets}</td>
-            <td>${row.wins}</td>
-            <td>${row.losses}</td>
-            <td>${row.pushes}</td>
-            <td>${formatPct(row.win_pct)}</td>
-            <td>${formatUnits(row.units)}</td>
-            <td>${formatPct(row.roi)}</td>
-          </tr>
-        `)
-      ).join('');
+      monthlyBody.innerHTML = order.flatMap(([key, label]) => (monthly.policies?.[key] || []).map((row) => `
+        <tr>
+          <td>${esc(row.month)}</td>
+          <td>${esc(label)}</td>
+          <td>${row.bets}</td>
+          <td>${row.wins}</td>
+          <td>${row.losses}</td>
+          <td>${row.pushes}</td>
+          <td>${pct(row.win_pct)}</td>
+          <td>${units(row.units)}</td>
+          <td>${pct(row.roi)}</td>
+        </tr>
+      `)).join('');
     }
 
-    const contextBlocks = document.getElementById('context-breakdowns');
-    if (contextBlocks) {
-      const sections = [
-        ['side_mix', 'Side mix'],
-        ['total_bucket_mix', 'Total bucket mix'],
-        ['price_bucket_mix', 'Price bucket mix'],
-        ['wind_mix', 'Wind mix'],
-        ['bullpen_mix', 'Bullpen mix'],
-        ['action_mix', 'Action mix']
-      ];
-      contextBlocks.innerHTML = sections.map(([key, title]) => {
-        const rows = reporting.context_breakdowns[key] || [];
-        return `
-          <article class="context-card">
-            <strong>${title}</strong>
-            ${rows.slice(0, 6).map((row) => `
-              <div class="meta-line">${row.bucket}: ${formatUnits(row.units)} / ${formatPct(row.roi)} / ${row.bets} bets</div>
-            `).join('')}
-          </article>
-        `;
-      }).join('');
+    function drawPerformance() {
+      const filtered = filterDate(rows, start.value, end.value);
+      const summary = perfSummary(filtered);
+      summaryGrid.innerHTML = `
+        <article class="metric-card">
+          <strong>Days in range</strong>
+          <div class="metric-value">${summary.days}</div>
+          <div class="subtle">${esc(start.value || 'start')} through ${esc(end.value || 'end')}</div>
+        </article>
+        <article class="metric-card">
+          <strong>Bets in range</strong>
+          <div class="metric-value">${summary.bets}</div>
+          <div class="subtle">${summary.wins} wins | ${summary.losses} losses | ${summary.pushes} pushes</div>
+        </article>
+        <article class="metric-card">
+          <strong>Units in range</strong>
+          <div class="metric-value ${summary.units >= 0 ? 'metric-good' : 'metric-bad'}">${units(summary.units)}</div>
+          <div class="subtle">ROI ${pct(summary.roi)}</div>
+        </article>
+        <article class="metric-card">
+          <strong>Season cumulative</strong>
+          <div class="metric-value ${Number(latest?.cumulative_units || 0) >= 0 ? 'metric-good' : 'metric-bad'}">${units(latest?.cumulative_units)}</div>
+          <div class="subtle">Latest graded day ${esc(latest?.board_date || 'unknown')}</div>
+        </article>
+      `;
+      dailyBody.innerHTML = filtered.length ? filtered.map((row) => `
+        <tr>
+          <td>${esc(row.board_date)}</td>
+          <td>${row.bets}</td>
+          <td>${row.wins}</td>
+          <td>${row.losses}</td>
+          <td>${row.pushes}</td>
+          <td>${pct(row.win_rate)}</td>
+          <td>${units(row.units)}</td>
+          <td>${pct(row.roi)}</td>
+          <td>${units(row.cumulative_units)}</td>
+        </tr>
+      `).join('') : '<tr><td colspan="9" class="subtle">No 2026 daily performance rows are available for this range.</td></tr>';
     }
+
+    presets.addEventListener('click', (event) => {
+      const button = event.target.closest('button[data-range]');
+      if (!button) return;
+      const range = rangeDates(rows, button.dataset.range);
+      start.value = range.start;
+      end.value = range.end;
+      setPreset(button.dataset.range);
+      drawPerformance();
+    });
+    start.addEventListener('change', () => { setPreset(''); drawPerformance(); });
+    end.addEventListener('change', () => { setPreset(''); drawPerformance(); });
+    policy.addEventListener('change', drawMonthly);
+
+    comparatorGrid.innerHTML = [
+      { label: 'Active historical', value: units(reporting.active_policy_historical_summary?.units), note: `2022-2025 ROI ${pct(reporting.active_policy_historical_summary?.roi)}` },
+      { label: '2026 tracked results', value: units(reporting.active_policy_shadow_summary?.units), note: `Through ${reporting.source_coverage.shadow_results_through}` },
+      ...((comparison.comparators || []).slice(0, 2).map((entry) => ({ label: entry.label, value: units(entry.historical_summary?.units), note: `Historical ROI ${pct(entry.historical_summary?.roi)}` })))
+    ].map((card) => `
+      <article class="metric-card">
+        <strong>${esc(card.label)}</strong>
+        <div class="metric-value">${esc(card.value)}</div>
+        <div class="subtle">${esc(card.note)}</div>
+      </article>
+    `).join('');
+
+    const sections = [['side_mix', 'Side mix'], ['total_bucket_mix', 'Total bucket mix'], ['price_bucket_mix', 'Price mix'], ['wind_mix', 'Wind mix'], ['bullpen_mix', 'Bullpen mix'], ['action_mix', 'Action mix']];
+    contextBlocks.innerHTML = sections.map(([key, title]) => {
+      const items = reporting.context_breakdowns?.[key] || [];
+      return `
+        <article class="context-card">
+          <strong>${esc(title)}</strong>
+          ${items.slice(0, 6).map((row) => `<div class="meta-line">${esc(row.bucket)} | ${units(row.units)} | ${pct(row.roi)} | ${row.bets} bets</div>`).join('')}
+        </article>
+      `;
+    }).join('');
+
+    setPreset('season');
+    drawPerformance();
+    drawMonthly();
+  }
+
+  function renderOperations(status, op) {
+    renderCardGrid($('#operations-hero-grid'), [
+      { label: 'System state', value: String(op.state || 'unknown').toUpperCase(), note: `Loop status ${op.run?.overall_status || 'unknown'}` },
+      { label: 'Last completed run', value: dt(op.summary?.last_run_finished_at), note: `Started ${dt(op.summary?.last_run_started_at)}` },
+      { label: 'Board trust', value: op.trust?.trusted_for_modeling && op.trust?.trusted_for_site_shadow ? 'Trusted' : 'Blocked', note: `Active board ${op.boards?.active_board_date || 'unknown'}` }
+    ]);
+    renderCardGrid($('#operations-validation-grid'), [
+      { label: 'Prepublish validation', value: op.validation?.prepublish?.status || 'unknown', note: dt(op.validation?.prepublish?.updated_at) },
+      { label: 'Final validation', value: op.validation?.final?.status || 'unknown', note: op.validation?.final?.trusted_for_modeling ? 'Trusted for modeling' : 'Not trusted for modeling' },
+      { label: 'Site board trust', value: op.validation?.site_shadow?.status || 'unknown', note: op.validation?.site_shadow?.trusted_for_site_shadow ? 'Trusted for site surface' : 'Blocked' }
+    ]);
+    renderCardGrid($('#operations-board-grid'), [
+      { label: 'Operating date', value: op.boards?.operating_date || 'unknown', note: 'Current run date' },
+      { label: 'Active board', value: op.boards?.active_board_date || 'unknown', note: 'Board currently trusted for the site' },
+      { label: 'Latest valid MLB AI board', value: op.boards?.latest_valid_mlb_ai_board_date || 'unknown', note: 'Latest date the MLB AI board considers valid' },
+      { label: 'Latest canonical betting date', value: op.boards?.latest_canonical_board_date || 'unknown', note: 'Latest date available in canonical betting rows' }
+    ]);
+    renderCardGrid($('#operations-metrics-grid'), [
+      { label: 'Action coverage', value: pct(op.key_metrics?.action_coverage_pct), note: 'Mapped action features on the active window' },
+      { label: 'Weather coverage', value: pct(op.key_metrics?.weather_coverage_pct), note: 'Weather coverage on the active window' },
+      { label: 'Baseball coverage', value: pct(op.key_metrics?.baseball_coverage_pct), note: 'Baseball context coverage on the active window' },
+      { label: 'Resolved mapping', value: pct(op.key_metrics?.mapping_resolved_pct), note: `${op.key_metrics?.unmapped_rows ?? 'unknown'} unmapped rows` }
+    ]);
+    if ($('#operations-freshness-grid')) {
+      $('#operations-freshness-grid').innerHTML = (op.dependency_freshness?.layers || []).map((layer) => `
+        <article class="context-card">
+          <strong>${esc(layer.name)}</strong>
+          <div class="meta-line">State: ${esc(layer.state)}</div>
+          <div class="meta-line">Freshness: ${esc(layer.freshness_status)}</div>
+          <div class="meta-line">Coverage: ${esc(layer.target_date_coverage || 'unknown')}</div>
+          <div class="meta-line">Updated: ${esc(layer.latest_freshness_value || 'unknown')}</div>
+          <div class="meta-line">${esc((layer.notes || []).join(' '))}</div>
+        </article>
+      `).join('');
+    }
+    if ($('#operations-issues')) {
+      const groups = [['Failures', op.blocked?.failures || []], ['Warnings', op.blocked?.warnings || []], ['Info', op.blocked?.info || []]];
+      $('#operations-issues').innerHTML = groups.map(([label, entries]) => `
+        <article class="stack-card">
+          <strong>${esc(label)}</strong>
+          ${entries.length ? entries.map((entry) => `<div class="meta-line">${esc(entry.code)}${entry.source ? ` | ${esc(entry.source)}` : ''}</div>`).join('') : '<div class="subtle">None</div>'}
+        </article>
+      `).join('');
+    }
+    renderCardGrid($('#operations-engine-grid'), [
+      { label: 'Engine family', value: status.active_engine?.engine_family || 'unknown', note: `Version ${status.active_engine?.engine_version || 'unknown'}` },
+      { label: 'Active policy', value: status.active_engine?.active_policy || 'unknown', note: status.active_engine?.engine_state || 'unknown' },
+      { label: 'Generated', value: dt(status.generated_at), note: `Requested board ${status.requested_board_date || 'unknown'}` },
+      { label: 'Live-betting trust', value: status.active_engine?.trusted_for_live_betting ? 'Trusted' : 'Not live', note: 'Technical metadata only' }
+    ]);
   }
 
   try {
-    const operationalStatus = await loadJson('mlb_operational_status_v1.json');
-    renderOperationalStatusStrip(operationalStatus);
-    const status = await loadJson('mlb_ai_active_engine_status_v1.json');
-    if (page === 'home') {
-      renderHome(status);
-      return;
-    }
-    if (page === 'leans') {
-      const leans = await loadJson('mlb_ai_daily_leans_v1.json');
-      renderLeans(status, leans, operationalStatus);
-      return;
-    }
-    if (page === 'reporting') {
-      const reporting = await loadJson('mlb_ai_reporting_v1.json');
-      const monthly = await loadJson('mlb_ai_reporting_monthly_v1.json');
-      const comparison = await loadJson('mlb_ai_policy_comparison_v1.json');
-      const performance = await loadJson('mlb_ai_daily_performance_2026_v1.json');
-      renderReporting(status, reporting, monthly, comparison, performance, operationalStatus);
-    }
+    if (page === 'redirect') return;
+    const op = await json('mlb_operational_status_v1.json');
+    renderStatusStrip(op);
+    const status = await json('mlb_ai_active_engine_status_v1.json');
+    if (page === 'leans') return renderLeans(status, await json('mlb_ai_daily_leans_v1.json'), op);
+    if (page === 'performance') return renderPerformance(status, await json('mlb_ai_reporting_v1.json'), await json('mlb_ai_reporting_monthly_v1.json'), await json('mlb_ai_policy_comparison_v1.json'), await json('mlb_ai_daily_performance_2026_v1.json'), op);
+    if (page === 'operations') return renderOperations(status, op);
   } catch (error) {
-    const shell = document.querySelector('.shell') || document.body;
+    const shell = $('.shell') || document.body;
     const panel = document.createElement('section');
     panel.className = 'panel';
-    panel.innerHTML = `<div class="empty-state">Failed to load MLB AI viewer artifacts: ${error.message}</div>`;
+    panel.innerHTML = `<div class="empty-state">Failed to load the MLB AI site artifacts: ${esc(error.message)}</div>`;
     shell.appendChild(panel);
   }
 }());

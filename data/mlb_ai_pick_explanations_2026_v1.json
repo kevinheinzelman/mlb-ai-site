@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-09T23:09:54.459Z",
+  "generated_at": "2026-04-10T02:14:13.045Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_totals",
@@ -5611,6 +5611,146 @@
           "win_rate": null,
           "units": 67.662323,
           "roi": 0.090579
+        },
+        "exact_context": {
+          "bets": 0,
+          "wins": 0,
+          "losses": 0,
+          "pushes": 0,
+          "win_rate": null,
+          "units": 0,
+          "roi": null
+        }
+      }
+    },
+    {
+      "board_date": "2026-04-09",
+      "canonical_game_id": "mlb:286450",
+      "market_type": "total",
+      "side": "under",
+      "line_value": 9.5,
+      "price_american": -610,
+      "model_probability": 0.999999,
+      "market_probability": 0.807102,
+      "edge": 0.192897,
+      "selection_contract": "hostile_fix_with_caps",
+      "context_score": 1.14652,
+      "raw_score_v7": 0.225729,
+      "final_score": 0.212314,
+      "hostile_penalty_multiplier": 0.979759,
+      "confidence_band": "high",
+      "suggested_units": 1,
+      "explanation_summary": "under 9.5 ranked highly on the slate because edge 0.1929 and active context score 1.1465 produced final score 0.2123. Hostile scoring penalty x0.9798 applied from action_bucket:sharp_3_plus. Overlay penalties: high_total x0.96. Context buckets: weather=wind_cross_15_plus, action=sharp_3_plus, baseball=bullpen_mid.",
+      "reason_flags": [
+        "strong_model_edge",
+        "above_neutral_context",
+        "above_neutral_context_after_hostile_fix",
+        "above_slate_average_score",
+        "crosswind_context",
+        "under_side",
+        "hostile_scoring_penalty_applied",
+        "selection_contract_hostile_fix_with_caps"
+      ],
+      "hostile_penalty_components": [
+        {
+          "family": "action_bucket",
+          "key": "sharp_3_plus",
+          "bets": 1279,
+          "roi": 0.063826,
+          "multiplier": 0.982399
+        }
+      ],
+      "top_edge_drivers": [
+        {
+          "feature": "price_american_norm",
+          "value": -6.1,
+          "contribution": 0.056569
+        },
+        {
+          "feature": "market_prob_devig",
+          "value": 0.807102,
+          "contribution": 0.04858
+        },
+        {
+          "feature": "total_bullpen_ipouts_last5",
+          "value": 111,
+          "contribution": -0.023031
+        },
+        {
+          "feature": "action_is_sharp_side",
+          "value": 1,
+          "contribution": 0.01996
+        },
+        {
+          "feature": "home_bullpen_ipouts_last5",
+          "value": 56,
+          "contribution": -0.010527
+        }
+      ],
+      "top_context_drivers": [
+        {
+          "feature": "total_bullpen_ipouts_last5",
+          "value": 111,
+          "contribution": -3.970048
+        },
+        {
+          "feature": "total_bullpen_ipouts_last3",
+          "value": 59,
+          "contribution": 3.239311
+        },
+        {
+          "feature": "weather_temperature",
+          "value": 24.6,
+          "contribution": -1.728539
+        },
+        {
+          "feature": "weather_wind_speed",
+          "value": 17.6,
+          "contribution": -1.149397
+        },
+        {
+          "feature": "price_american_norm",
+          "value": -6.1,
+          "contribution": 0.22331
+        }
+      ],
+      "historical_linkage": {
+        "scoring_backbone": "base raw_score_v7 = edge x context_score_v7; active hostile_fix_with_caps penalizes hostile interactions before V8 balanced cap-based selection",
+        "same_side": {
+          "bets": 0,
+          "wins": 0,
+          "losses": 0,
+          "pushes": 0,
+          "win_rate": null,
+          "units": 0,
+          "roi": null
+        },
+        "same_weather_bucket": {
+          "bets": 355,
+          "wins": 0,
+          "losses": 0,
+          "pushes": 0,
+          "win_rate": null,
+          "units": 44.267184,
+          "roi": 0.124696
+        },
+        "same_baseball_bucket": {
+          "bets": 548,
+          "wins": 0,
+          "losses": 0,
+          "pushes": 0,
+          "win_rate": null,
+          "units": 42.593746,
+          "roi": 0.077726
+        },
+        "same_total_bucket": {
+          "bets": 313,
+          "wins": 0,
+          "losses": 0,
+          "pushes": 0,
+          "win_rate": null,
+          "units": 31.620716,
+          "roi": 0.101025
         },
         "exact_context": {
           "bets": 0,
