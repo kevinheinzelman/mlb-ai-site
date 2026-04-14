@@ -293,7 +293,9 @@ td.subtle {
 .hero-pill,
 .filter-tag,
 .price-pill,
-.confidence-pill {
+.confidence-pill,
+.freshness-pill,
+.change-pill {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
@@ -325,6 +327,23 @@ td.subtle {
   background: rgba(22, 116, 71, 0.10);
 }
 .confidence-pill-medium {
+  color: var(--warn);
+  border-color: rgba(158, 106, 31, 0.18);
+  background: rgba(158, 106, 31, 0.10);
+}
+.freshness-pill-green,
+.change-pill-yes {
+  color: var(--good);
+  border-color: rgba(22, 116, 71, 0.22);
+  background: rgba(22, 116, 71, 0.10);
+}
+.freshness-pill-red,
+.change-pill-no {
+  color: var(--bad);
+  border-color: rgba(179, 38, 30, 0.22);
+  background: rgba(179, 38, 30, 0.10);
+}
+.freshness-pill-yellow {
   color: var(--warn);
   border-color: rgba(158, 106, 31, 0.18);
   background: rgba(158, 106, 31, 0.10);

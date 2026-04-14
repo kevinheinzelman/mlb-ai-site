@@ -47,6 +47,16 @@
       <section class="page-section">
         <div class="section-head">
           <div>
+            <p class="section-kicker">Publish</p>
+            <h2>Site and automation status</h2>
+          </div>
+        </div>
+        <div id="operations-publish-grid" class="summary-grid"></div>
+      </section>
+
+      <section class="page-section">
+        <div class="section-head">
+          <div>
             <p class="section-kicker">Board ownership</p>
             <h2>Dates and board alignment</h2>
           </div>
@@ -62,6 +72,16 @@
           </div>
         </div>
         <div id="operations-freshness-grid" class="context-grid"></div>
+      </section>
+
+      <section class="page-section">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Change detection</p>
+            <h2>Did new data actually arrive?</h2>
+          </div>
+        </div>
+        <div id="operations-change-grid" class="summary-grid"></div>
       </section>
 
       <section class="page-section">
@@ -92,6 +112,59 @@
           </div>
         </div>
         <div id="operations-engine-grid" class="summary-grid"></div>
+      </section>
+
+      <section class="page-section">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Loop Objects</p>
+            <h2>Full freshness and delta table</h2>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table id="operations-object-table">
+            <thead>
+              <tr>
+                <th>Object</th>
+                <th>Type</th>
+                <th>Domain</th>
+                <th>Last refresh</th>
+                <th>Previous refresh</th>
+                <th>Latest date</th>
+                <th>Previous date</th>
+                <th>Rows</th>
+                <th>Previous rows</th>
+                <th>Delta</th>
+                <th>Changed</th>
+                <th>Freshness</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Stages</p>
+            <h2>Loop execution ledger</h2>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table id="operations-stage-table">
+            <thead>
+              <tr>
+                <th>Stage</th>
+                <th>Domain</th>
+                <th>Status</th>
+                <th>Finished</th>
+                <th>Message</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
       </section>
     </main>
 

@@ -10,6 +10,17 @@
   const odds = (v) => bad(v) ? '--' : `${Number(v) > 0 ? '+' : ''}${Number(v)}`;
   const dt = (v) => !v ? 'Unknown' : new Date(v).toLocaleString();
   const title = (v) => String(v || '').replaceAll('_', ' ').replace(/\b\w/g, (m) => m.toUpperCase());
+  const freshnessPill = (value) => {
+    const key = String(value || 'unknown').toLowerCase();
+    const cls = key === 'green' ? 'freshness-pill freshness-pill-green'
+      : key === 'red' ? 'freshness-pill freshness-pill-red'
+      : 'freshness-pill freshness-pill-yellow';
+    return `<span class="${cls}">${esc(String(value || 'unknown').toUpperCase())}</span>`;
+  };
+  const changePill = (value) => {
+    const yes = Boolean(value);
+    return `<span class="${yes ? 'change-pill change-pill-yes' : 'change-pill change-pill-no'}">${yes ? 'CHANGED' : 'UNCHANGED'}</span>`;
+  };
   const json = async (name) => {
     const res = await fetch(`./data/${name}`, { cache: 'no-store' });
     if (!res.ok) throw new Error(`Failed to load ${name}`);
@@ -374,11 +385,12 @@
 
   function renderOperations(status, op) {
     const heroMeta = $('#operations-hero-meta');
-    if (heroMeta) heroMeta.innerHTML = pills([`Run ${op.run?.overall_status || 'unknown'}`, `Operating ${op.boards?.operating_date || 'unknown'}`, `Board ${op.boards?.active_board_date || 'unknown'}`, op.trust?.trusted_for_site_shadow ? 'Site trusted' : 'Site blocked']);
+    if (heroMeta) heroMeta.innerHTML = pills([`Run ${op.run?.overall_status || 'unknown'}`, `Operating ${op.boards?.operating_date || 'unknown'}`, `Board ${op.boards?.active_board_date || 'unknown'}`, `Ranker ${op.boards?.ranker_shadow_threshold || 'unknown'}`, op.trust?.trusted_for_site_shadow ? 'Site trusted' : 'Site blocked']);
     const hero = $('#operations-hero-grid');
     if (hero) hero.innerHTML = [
       { label: 'System state', value: String(op.state || 'unknown').toUpperCase(), note: `Loop status ${op.run?.overall_status || 'unknown'}` },
       { label: 'Last completed run', value: dt(op.summary?.last_run_finished_at), note: `Started ${dt(op.summary?.last_run_started_at)}` },
+      { label: 'Publish state', value: op.publish?.public_site_publish?.status || 'unknown', note: `Published ${dt(op.summary?.latest_published_at)}` },
       { label: 'Board trust', value: op.trust?.trusted_for_modeling && op.trust?.trusted_for_site_shadow ? 'Trusted' : 'Blocked', note: `Active board ${op.boards?.active_board_date || 'unknown'}` }
     ].map(card).join('');
 
@@ -386,7 +398,17 @@
     if (validation) validation.innerHTML = [
       { label: 'Prepublish validation', value: op.validation?.prepublish?.status || 'unknown', note: dt(op.validation?.prepublish?.updated_at) },
       { label: 'Final validation', value: op.validation?.final?.status || 'unknown', note: op.validation?.final?.trusted_for_modeling ? 'Trusted for modeling' : 'Not trusted for modeling' },
-      { label: 'Site board trust', value: op.validation?.site_shadow?.status || 'unknown', note: op.validation?.site_shadow?.trusted_for_site_shadow ? 'Trusted for site surface' : 'Blocked' }
+      { label: 'Site board trust', value: op.validation?.site_shadow?.status || 'unknown', note: op.validation?.site_shadow?.trusted_for_site_shadow ? 'Trusted for site surface' : 'Blocked' },
+      { label: 'Latest graded date', value: op.summary?.latest_graded_date || 'unknown', note: 'Canonical ranker grading frontier' }
+    ].map(card).join('');
+
+    const publish = $('#operations-publish-grid');
+    if (publish) publish.innerHTML = [
+      { label: 'Viewer export', value: op.publish?.viewer_publish?.status || 'unknown', note: dt(op.publish?.viewer_publish?.updated_at) },
+      { label: 'Public site publish', value: op.publish?.public_site_publish?.status || 'unknown', note: dt(op.publish?.public_site_publish?.updated_at) },
+      { label: 'Status finalize publish', value: op.publish?.operational_status_finalize_publish?.status || 'unknown', note: dt(op.publish?.operational_status_finalize_publish?.updated_at) },
+      { label: 'Ranker threshold', value: op.summary?.ranker_shadow_selection_threshold || op.boards?.ranker_shadow_threshold || 'unknown', note: 'Active shadow operating threshold' },
+      { label: 'Overlap guard', value: op.hourly_automation?.overlap_guard || 'unknown', note: op.hourly_automation?.safe_to_run_unattended ? 'Safe for unattended hourly scheduling' : 'Lock currently active' }
     ].map(card).join('');
 
     const board = $('#operations-board-grid');
@@ -408,6 +430,19 @@
     const freshness = $('#operations-freshness-grid');
     if (freshness) freshness.innerHTML = (op.dependency_freshness?.layers || []).map((layer) => `<article class="context-card"><strong>${esc(layer.name)}</strong><div class="meta-line">State: ${esc(layer.state)}</div><div class="meta-line">Freshness: ${esc(layer.freshness_status)}</div><div class="meta-line">Coverage: ${esc(layer.target_date_coverage || 'unknown')}</div><div class="meta-line">Updated: ${esc(layer.latest_freshness_value || 'unknown')}</div><div class="meta-line">${esc((layer.notes || []).join(' '))}</div></article>`).join('');
 
+    const changed = $('#operations-change-grid');
+    if (changed) {
+      const objects = Array.isArray(op.loop_objects) ? op.loop_objects.filter((item) => item.object_type !== 'stage') : [];
+      const changedObjects = objects.filter((item) => item.changed_flag);
+      const staleObjects = objects.filter((item) => String(item.freshness_status).toLowerCase() === 'red');
+      changed.innerHTML = [
+        { label: 'Changed objects', value: String(changedObjects.length), note: `${objects.length} tracked objects in contract` },
+        { label: 'Stale objects', value: String(staleObjects.length), note: staleObjects.slice(0, 3).map((item) => item.object_name).join(', ') || 'None' },
+        { label: 'Latest graded date', value: op.summary?.latest_graded_date || 'unknown', note: 'Canonical result attach frontier' },
+        { label: 'Latest published', value: dt(op.summary?.latest_published_at), note: op.publish?.public_site_publish?.status || 'unknown' }
+      ].map(card).join('');
+    }
+
     const issues = $('#operations-issues');
     if (issues) issues.innerHTML = [['Failures', op.blocked?.failures || []], ['Warnings', op.blocked?.warnings || []], ['Info', op.blocked?.info || []]].map(([label, rows]) => `<article class="stack-card"><strong>${esc(label)}</strong>${rows.length ? rows.map((entry) => `<div class="meta-line">${esc(entry.code)}${entry.source ? ` | ${esc(entry.source)}` : ''}</div>`).join('') : '<div class="subtle">None</div>'}</article>`).join('');
 
@@ -418,6 +453,43 @@
       { label: 'Generated', value: dt(status.generated_at), note: `Requested board ${status.requested_board_date || 'unknown'}` },
       { label: 'Live-betting trust', value: status.active_engine?.trusted_for_live_betting ? 'Trusted' : 'Not live', note: 'Technical metadata only' }
     ].map(card).join('');
+
+    const objectBody = $('#operations-object-table tbody');
+    if (objectBody) {
+      const rows = Array.isArray(op.loop_objects) ? op.loop_objects.filter((item) => item.object_type !== 'stage') : [];
+      objectBody.innerHTML = rows.length
+        ? rows.sort((a, b) => String(a.domain).localeCompare(String(b.domain)) || String(a.object_name).localeCompare(String(b.object_name)))
+            .map((row) => `<tr>
+              <td>${esc(row.object_name)}</td>
+              <td>${esc(row.object_type)}</td>
+              <td>${esc(row.domain)}</td>
+              <td>${esc(dt(row.last_refresh_timestamp))}</td>
+              <td>${esc(dt(row.latest_generated_at_previous))}</td>
+              <td>${esc(row.latest_game_date_or_board_date || '--')}</td>
+              <td>${esc(row.latest_game_date_previous || '--')}</td>
+              <td>${esc(row.row_count_current ?? '--')}</td>
+              <td>${esc(row.row_count_previous ?? '--')}</td>
+              <td>${esc(row.delta_rows ?? '--')}</td>
+              <td>${changePill(row.changed_flag)}</td>
+              <td>${freshnessPill(row.freshness_status)}</td>
+            </tr>`).join('')
+        : '<tr><td colspan="11" class="subtle">No loop object records are available.</td></tr>';
+    }
+
+    const stageBody = $('#operations-stage-table tbody');
+    if (stageBody) {
+      const rows = Array.isArray(op.loop_objects) ? op.loop_objects.filter((item) => item.object_type === 'stage') : [];
+      stageBody.innerHTML = rows.length
+        ? rows.sort((a, b) => String(a.last_refresh_timestamp || '').localeCompare(String(b.last_refresh_timestamp || '')))
+            .map((row) => `<tr>
+              <td>${esc(row.object_name)}</td>
+              <td>${esc(row.domain)}</td>
+              <td>${freshnessPill(row.status_value === 'completed' || row.status_value === 'warning' ? 'green' : 'red')} <span class="subtle">${esc(row.status_value || 'unknown')}</span></td>
+              <td>${esc(dt(row.last_refresh_timestamp))}</td>
+              <td>${esc(row.status_message || '--')}</td>
+            </tr>`).join('')
+        : '<tr><td colspan="5" class="subtle">No stage records are available.</td></tr>';
+    }
   }
 
   try {
