@@ -1,276 +1,118 @@
 {
-  "generated_at": "2026-04-14T17:10:07.321Z",
+  "generated_at": "2026-04-14T22:30:35.223Z",
   "artifact_version": "v1",
   "engine": {
-    "engine_family": "mlb_ai_totals",
-    "engine_version": "v8",
-    "active_policy": "hostile_fix_with_caps",
-    "engine_state": "shadow_locked",
-    "model_lock_status": "locked_active_shadow",
+    "engine_family": "mlb_ai_ranker",
+    "engine_version": "v1",
+    "active_policy": "edge_gte_0_03",
+    "engine_state": "public_primary",
+    "model_lock_status": "ranker_public_primary",
     "trusted_for_live_betting": false
   },
+  "site_surface": {
+    "system_key": "ranker_system",
+    "label": "Ranker System",
+    "role": "primary_site_surface",
+    "status": "live_site_surface",
+    "model_family": "mlb_ai_ranker",
+    "model_version": "v1",
+    "threshold": "edge_gte_0_03",
+    "description": "Full-board daily ranking surface using predicted win probability minus implied probability."
+  },
+  "retained_internal_systems": [
+    {
+      "system_key": "totals_unders_system",
+      "label": "Totals / Unders System",
+      "role": "retained_internal_system",
+      "status": "not_publicly_surfaced",
+      "engine_family": "mlb_ai_totals",
+      "engine_version": "v8",
+      "active_policy": "hostile_fix_with_caps",
+      "description": "Retained internally for historical comparison and specialist analysis, but removed from the current public site surface."
+    }
+  ],
   "active_policy": {
-    "policy_name": "hostile_fix_with_caps",
+    "policy_name": "edge_gte_0_03",
     "historical_summary": {
-      "bets": 1861,
-      "wins": 1012,
-      "losses": 764,
-      "pushes": 85,
-      "units": 120.455811,
-      "roi": 0.064726,
-      "hit_rate": 0.56982,
-      "max_drawdown": 19.933905,
-      "units_per_bet": 0.064726,
-      "monthly_volatility": 6.268991,
-      "losing_month_pct": 0.275862,
-      "worst_month": {
-        "month": "2024-07",
-        "bets": 68,
-        "wins": 30,
-        "losses": 34,
-        "pushes": 4,
-        "units": -7.775743,
-        "roi": -0.114349,
-        "hit_rate": 0.46875,
-        "max_drawdown": 7.775743
-      }
+      "bets": 4006,
+      "units": 126.1073,
+      "roi": 0.033,
+      "win_rate": 0.5844
     },
     "shadow_summary": {
-      "bets": 51,
-      "wins": 22,
-      "losses": 28,
-      "pushes": 1,
-      "units": -8.813647,
-      "roi": -0.172817,
-      "hit_rate": 0.44,
-      "max_drawdown": 14.139259,
-      "units_per_bet": -0.172817,
-      "monthly_volatility": 3.325897,
-      "losing_month_pct": 1,
-      "worst_month": {
-        "month": "2026-04",
-        "bets": 32,
-        "wins": 13,
-        "losses": 19,
-        "pushes": 0,
-        "units": -7.732721,
-        "roi": -0.241648,
-        "hit_rate": 0.40625,
-        "max_drawdown": 11.139259
-      }
+      "bets": null,
+      "units": -1.5412,
+      "roi": -0.0186,
+      "win_rate": null
     }
   },
   "comparators": [
     {
-      "policy_name": "hybrid_top25_cap3",
-      "family": "v7",
-      "label": "V7 Hybrid Comparator",
+      "policy_name": "edge_gte_0_01",
+      "family": "threshold",
+      "label": "Edge >= 0.01",
       "historical_summary": {
-        "bets": 1969,
-        "wins": 1061,
-        "losses": 819,
-        "pushes": 89,
-        "units": 114.334747,
-        "roi": 0.058067,
-        "hit_rate": 0.564362,
-        "max_drawdown": 21.348334,
-        "units_per_bet": 0.058067,
-        "monthly_volatility": 7.597964,
-        "losing_month_pct": 0.310345,
-        "worst_month": {
-          "month": "2024-07",
-          "bets": 78,
-          "wins": 36,
-          "losses": 39,
-          "pushes": 3,
-          "units": -7.009246,
-          "roi": -0.089862,
-          "hit_rate": 0.48,
-          "max_drawdown": 7.856704
-        }
+        "bets": 7752,
+        "units": 176.0812,
+        "roi": 0.0238,
+        "win_rate": 0.5599
       },
       "shadow_summary": {
-        "bets": 52,
-        "wins": 25,
-        "losses": 26,
-        "pushes": 1,
-        "units": -4.156468,
-        "roi": -0.079932,
-        "hit_rate": 0.490196,
-        "max_drawdown": 9.749837,
-        "units_per_bet": -0.079932,
-        "monthly_volatility": 3.091511,
-        "losing_month_pct": 0.5,
-        "worst_month": {
-          "month": "2026-04",
-          "bets": 35,
-          "wins": 16,
-          "losses": 19,
-          "pushes": 0,
-          "units": -5.169745,
-          "roi": -0.147707,
-          "hit_rate": 0.457143,
-          "max_drawdown": 9.470801
-        }
+        "bets": null,
+        "units": -13.49,
+        "roi": -0.0627,
+        "win_rate": null
       }
     },
     {
-      "policy_name": "soft_plus_half_sigma",
-      "family": "v7",
-      "label": "V7 Production Comparator",
+      "policy_name": "edge_gte_0_02",
+      "family": "threshold",
+      "label": "Edge >= 0.02",
       "historical_summary": {
-        "bets": 1782,
-        "wins": 965,
-        "losses": 740,
-        "pushes": 77,
-        "units": 101.439152,
-        "roi": 0.056924,
-        "hit_rate": 0.565982,
-        "max_drawdown": 25.234264,
-        "units_per_bet": 0.056924,
-        "monthly_volatility": 7.634803,
-        "losing_month_pct": 0.37931,
-        "worst_month": {
-          "month": "2024-07",
-          "bets": 69,
-          "wins": 30,
-          "losses": 36,
-          "pushes": 3,
-          "units": -9.791977,
-          "roi": -0.141913,
-          "hit_rate": 0.454545,
-          "max_drawdown": 10.639434
-        }
+        "bets": 5433,
+        "units": 154.159,
+        "roi": 0.0298,
+        "win_rate": 0.5727
       },
       "shadow_summary": {
-        "bets": 44,
-        "wins": 20,
-        "losses": 23,
-        "pushes": 1,
-        "units": -5.537558,
-        "roi": -0.125854,
-        "hit_rate": 0.465116,
-        "max_drawdown": 8.346327,
-        "units_per_bet": -0.125854,
-        "monthly_volatility": 0.948723,
-        "losing_month_pct": 1,
-        "worst_month": {
-          "month": "2026-04",
-          "bets": 28,
-          "wins": 13,
-          "losses": 15,
-          "pushes": 0,
-          "units": -3.717501,
-          "roi": -0.132768,
-          "hit_rate": 0.464286,
-          "max_drawdown": 7.180328
-        }
+        "bets": null,
+        "units": -12.8485,
+        "roi": -0.0905,
+        "win_rate": null
       }
     },
     {
-      "policy_name": "v8_balanced",
-      "family": "v8",
-      "label": "V8 Baseline Comparator",
+      "policy_name": "edge_gte_0_04",
+      "family": "threshold",
+      "label": "Edge >= 0.04",
       "historical_summary": {
-        "bets": 1862,
-        "wins": 1017,
-        "losses": 766,
-        "pushes": 79,
-        "units": 122.667881,
-        "roi": 0.06588,
-        "hit_rate": 0.570387,
-        "max_drawdown": 16.911797,
-        "units_per_bet": 0.06588,
-        "monthly_volatility": 6.274794,
-        "losing_month_pct": 0.241379,
-        "worst_month": {
-          "month": "2024-07",
-          "bets": 67,
-          "wins": 30,
-          "losses": 33,
-          "pushes": 4,
-          "units": -6.775743,
-          "roi": -0.10113,
-          "hit_rate": 0.47619,
-          "max_drawdown": 7.107143
-        }
+        "bets": 3003,
+        "units": 138.5277,
+        "roi": 0.0483,
+        "win_rate": 0.6027
       },
       "shadow_summary": {
-        "bets": 47,
-        "wins": 20,
-        "losses": 26,
-        "pushes": 1,
-        "units": -8.635593,
-        "roi": -0.183736,
-        "hit_rate": 0.434783,
-        "max_drawdown": 13.09164,
-        "units_per_bet": -0.183736,
-        "monthly_volatility": 2.367306,
-        "losing_month_pct": 1,
-        "worst_month": {
-          "month": "2026-04",
-          "bets": 29,
-          "wins": 12,
-          "losses": 17,
-          "pushes": 0,
-          "units": -6.685102,
-          "roi": -0.230521,
-          "hit_rate": 0.413793,
-          "max_drawdown": 10.09164
-        }
+        "bets": null,
+        "units": -5.1057,
+        "roi": -0.0896,
+        "win_rate": null
       }
     },
     {
-      "policy_name": "v8_light",
-      "family": "v8",
-      "label": "V8 Light Comparator",
+      "policy_name": "top5",
+      "family": "baseline",
+      "label": "Top 5 baseline",
       "historical_summary": {
-        "bets": 1947,
-        "wins": 1062,
-        "losses": 799,
-        "pushes": 86,
-        "units": 129.611219,
-        "roi": 0.06657,
-        "hit_rate": 0.570661,
-        "max_drawdown": 19.064339,
-        "units_per_bet": 0.06657,
-        "monthly_volatility": 6.662781,
-        "losing_month_pct": 0.241379,
-        "worst_month": {
-          "month": "2024-07",
-          "bets": 68,
-          "wins": 30,
-          "losses": 34,
-          "pushes": 4,
-          "units": -7.775743,
-          "roi": -0.114349,
-          "hit_rate": 0.46875,
-          "max_drawdown": 7.775743
-        }
+        "bets": 3734,
+        "units": 147.649,
+        "roi": 0.0415,
+        "win_rate": 0.5872
       },
       "shadow_summary": {
-        "bets": 55,
-        "wins": 23,
-        "losses": 30,
-        "pushes": 2,
-        "units": -9.980313,
-        "roi": -0.18146,
-        "hit_rate": 0.433962,
-        "max_drawdown": 15.139259,
-        "units_per_bet": -0.18146,
-        "monthly_volatility": 3.742564,
-        "losing_month_pct": 1,
-        "worst_month": {
-          "month": "2026-04",
-          "bets": 34,
-          "wins": 13,
-          "losses": 20,
-          "pushes": 1,
-          "units": -8.732721,
-          "roi": -0.256845,
-          "hit_rate": 0.393939,
-          "max_drawdown": 12.139259
-        }
+        "bets": null,
+        "units": -9.6793,
+        "roi": -0.0827,
+        "win_rate": null
       }
     }
   ]

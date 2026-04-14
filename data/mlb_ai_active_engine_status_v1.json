@@ -1,33 +1,80 @@
 {
-  "generated_at": "2026-04-14T17:10:07.321Z",
+  "generated_at": "2026-04-14T22:30:35.223Z",
   "artifact_version": "v1",
   "active_engine": {
-    "engine_family": "mlb_ai_totals",
-    "engine_version": "v8",
-    "active_policy": "hostile_fix_with_caps",
-    "engine_state": "shadow_locked",
-    "model_lock_status": "locked_active_shadow",
+    "engine_family": "mlb_ai_ranker",
+    "engine_version": "v1",
+    "active_policy": "edge_gte_0_03",
+    "engine_state": "public_primary",
+    "model_lock_status": "ranker_public_primary",
     "trusted_for_live_betting": false
   },
   "requested_board_date": "2026-04-14",
   "active_board_date": "2026-04-14",
   "freshness": {
-    "generated_at": "2026-04-14T17:10:07.321Z",
+    "generated_at": "2026-04-14T22:30:35.223Z",
     "board_date": "2026-04-14",
-    "current_source_scores_generated_at": "2026-04-14T17:11:16.491Z",
-    "historical_source_audit_generated_at": "2026-04-14T17:10:07.321Z"
+    "latest_canonical_board_date": "2026-04-14",
+    "current_source_scores_generated_at": "2026-04-14T22:28:06.215Z",
+    "historical_source_audit_generated_at": "2026-04-14T22:30:27.785Z"
   },
   "source_date_coverage": {
-    "current_window_start": "2026-03-25",
     "current_window_end": "2026-04-14",
-    "historical_start": "2022-04",
-    "historical_end": "2025-09"
+    "historical_start": "2022-04-07",
+    "historical_end": "2025-09-30"
   },
-  "board_date_consistency": {
-    "modeling_max_date": "2026-04-14",
-    "decision_max_date": "2026-04-14",
-    "reporting_active_board_date": "2026-04-14",
-    "status_active_board_date": "2026-04-14",
-    "daily_leans_board_date": "2026-04-14"
+  "site_system_contract": {
+    "primary_system": {
+      "system_key": "ranker_system",
+      "label": "Ranker System",
+      "role": "primary_site_surface",
+      "status": "live_site_surface",
+      "model_family": "mlb_ai_ranker",
+      "model_version": "v1",
+      "threshold": "edge_gte_0_03",
+      "description": "Full-board daily ranking surface using predicted win probability minus implied probability.",
+      "board_date": "2026-04-14",
+      "threshold_summary": {
+        "historical_roi": 0.033,
+        "historical_units": 126.1073,
+        "settled_2026_roi": -0.0186,
+        "settled_2026_units": -1.5412
+      }
+    },
+    "retained_internal_systems": [
+      {
+        "system_key": "totals_unders_system",
+        "label": "Totals / Unders System",
+        "role": "retained_internal_system",
+        "status": "not_publicly_surfaced",
+        "engine_family": "mlb_ai_totals",
+        "engine_version": "v8",
+        "active_policy": "hostile_fix_with_caps",
+        "description": "Retained internally for historical comparison and specialist analysis, but removed from the current public site surface."
+      }
+    ],
+    "page_feeds": {
+      "homepage": {
+        "page": "index.html",
+        "primary_artifact": "mlb_ai_daily_leans_v1.json",
+        "system_key": "ranker_system"
+      },
+      "performance": {
+        "page": "mlb-ai-performance.html",
+        "primary_artifacts": [
+          "mlb_ai_reporting_v1.json",
+          "mlb_ai_reporting_monthly_v1.json",
+          "mlb_ai_daily_performance_2026_v1.json",
+          "mlb_ai_policy_comparison_v1.json",
+          "mlb_ai_pick_explanations_2026_v1.json"
+        ],
+        "system_key": "ranker_system"
+      },
+      "operations": {
+        "page": "operations.html",
+        "primary_artifact": "mlb_operational_status_v1.json",
+        "system_key": "ranker_system"
+      }
+    }
   }
 }

@@ -11,7 +11,7 @@
       <div class="shell shell-nav">
         <a class="site-brand" href="./index.html" aria-label="MLB AI home">
           <span class="site-brand-mark">MLB AI</span>
-          <span class="site-brand-copy">Official board</span>
+          <span class="site-brand-copy">System surfaces</span>
         </a>
         <nav class="site-nav" aria-label="Primary">
           <a class="site-nav-link" href="./index.html">Leans</a>
@@ -25,9 +25,9 @@
       <section class="page-hero page-hero-performance">
         <div class="page-hero-copy">
           <p class="eyebrow">Performance</p>
-          <h1>See what the board has done, not just what it says.</h1>
+          <h1>See what the Ranker System has done, not just what it says.</h1>
           <p class="lede">
-            This page separates full-season truth from filtered views, shows results through the latest graded date, and makes it easy to inspect 2026 picks without digging through internal reporting.
+            This page reports the current public Ranker record. The threshold contract is fixed, the scoring contract is unchanged, and the public performance surface matches the public picks surface.
           </p>
           <div id="performance-hero-meta" class="hero-meta"></div>
         </div>
@@ -85,8 +85,8 @@
           <div class="control-group">
             <label class="control-label" for="monthly-policy-filter">Monthly view</label>
             <select id="monthly-policy-filter">
-              <option value="active_only">Active system only</option>
-              <option value="all_policies">Include comparators</option>
+              <option value="active_only">Public threshold only</option>
+              <option value="all_thresholds">Include threshold comparators</option>
             </select>
           </div>
         </div>
@@ -185,7 +185,7 @@
             <p class="section-kicker">Long-run record</p>
             <h2>Monthly history</h2>
           </div>
-          <span class="badge">Active system plus comparators</span>
+          <span class="badge">Public threshold plus comparators</span>
         </div>
         <div class="table-wrap">
           <table id="monthly-table">

@@ -48,6 +48,22 @@
       : (leads?.board_date || leads?.active_board_date || null);
   }
 
+  function primarySurface(payload, op) {
+    return payload?.site_surface || op?.site_system_contract?.primary_system || null;
+  }
+
+  function retainedInternalSystems(payload, op) {
+    return payload?.retained_internal_systems || op?.site_system_contract?.retained_internal_systems || [];
+  }
+
+  function primarySurfaceLabel(payload, op) {
+    return primarySurface(payload, op)?.label || 'Primary system';
+  }
+
+  function primaryThreshold(payload, op) {
+    return primarySurface(payload, op)?.threshold || payload?.selection_contract || op?.summary?.ranker_shadow_selection_threshold || op?.boards?.ranker_shadow_threshold || 'edge_gte_0_03';
+  }
+
   function market(row) {
     const line = bad(row.line_value) ? '' : ` ${row.line_value}`;
     if (row.market_type === 'total') return `Total ${String(row.side || '').toUpperCase()}${line}`;
@@ -139,10 +155,11 @@
   }
 
   function renderLeans(status, leans, op, performance) {
+    const primaryLabel = primarySurfaceLabel(leans, op);
+    const threshold = primaryThreshold(leans, op);
     const requested = leans.requested_board_date || op?.boards?.operating_date || 'unknown';
     const active = boardDate(leans);
     const latestValid = leans.latest_valid_mlb_ai_board_date || op?.boards?.latest_valid_mlb_ai_board_date || active || 'unknown';
-    const latestCanonical = leans.latest_canonical_board_date || op?.boards?.latest_canonical_board_date || 'unknown';
     const noBoard = leans.board_available === false || leans.board_state === 'no_valid_board_for_requested_date';
     const rows = [...(leans.rows || [])].filter((row) => vis(row) !== 'hidden').sort(leanSort);
     const core = rows.filter((row) => vis(row) === 'core');
@@ -150,25 +167,26 @@
     const featured = core[0] || rows[0] || null;
 
     const heroMeta = $('#leans-hero-meta');
-    if (heroMeta) heroMeta.innerHTML = pills([`Requested ${requested}`, noBoard ? 'No official board' : `Board ${active}`, `Latest valid ${latestValid}`, op?.trust?.trusted_for_modeling ? 'Board trusted' : 'Trust blocked']);
+    if (heroMeta) heroMeta.innerHTML = pills([primaryLabel, `Threshold ${threshold}`, `Requested ${requested}`, noBoard ? 'No official board' : `Board ${active}`, `Latest valid ${latestValid}`, op?.trust?.trusted_for_modeling ? 'Board trusted' : 'Trust blocked']);
     const hero = $('#leans-hero-grid');
     if (hero) hero.innerHTML = [
+      { label: 'Surface shown', value: primaryLabel, note: 'This page shows the live public ranker card.' },
       { label: 'Official plays', value: String(rows.length), note: noBoard ? 'A no-board day shows zero official plays on purpose.' : 'Only surfaced core and exploratory plays are shown.' },
       { label: 'Core card', value: String(core.length), note: 'Highest-confidence positions.' },
-      { label: 'Board date', value: active || 'No board', note: `Requested date ${requested}` }
+      { label: 'Selection threshold', value: threshold, note: 'Every public pick cleared this edge threshold.' }
     ].map(card).join('');
     renderTrustBar('#leans-trust-bar', {
       severity: noBoard ? 'warning' : (op?.trust?.trusted_for_modeling ? 'ok' : 'fail'),
-      kicker: 'Today at a glance',
-      title: noBoard ? `No official board for ${requested}` : `${core.length} core play${core.length === 1 ? '' : 's'} on the official board`,
+      kicker: 'System identity',
+      title: noBoard ? `No ${primaryLabel} board for ${requested}` : `${primaryLabel}: ${core.length} core play${core.length === 1 ? '' : 's'} on the official board`,
       subtitle: noBoard
         ? (leans.availability_reason || `The requested date ${requested} does not currently have a valid MLB AI board.`)
-        : `The board is official for ${active}. Today's card is separated from the settled record so the page stays clear about what is live and what is historical.`,
+        : `${primaryLabel} is the live public site surface for ${active}. Every public pick shown here comes from the fixed threshold contract ${threshold}.`,
       items: [
-        { label: 'Board state', value: noBoard ? 'No board' : `${rows.length} plays`, note: noBoard ? `Requested ${requested}` : `${core.length} core | ${exploratory.length} exploratory` },
+        { label: 'Primary surface', value: primaryLabel, note: 'Live public daily card' },
+        { label: 'Selection threshold', value: threshold, note: 'Public ranker contract' },
         { label: 'Results through', value: performance?.results_through || performance?.source_coverage?.shadow_results_through || latestPerformanceRow(performance)?.board_date || 'Unknown', note: 'Latest graded MLB AI date' },
-        { label: 'Last 7 days', value: units(recentPerformanceUnits(performance, 7)), note: 'Recent settled shadow record' },
-        { label: '2026 cumulative', value: units(latestPerformanceRow(performance)?.cumulative_units), note: latestPerformanceRow(performance)?.board_date ? `Through ${latestPerformanceRow(performance).board_date}` : 'No 2026 grading yet' }
+        { label: 'Board state', value: noBoard ? 'No board' : `${rows.length} plays`, note: noBoard ? `Requested ${requested}` : `${core.length} core | ${exploratory.length} exploratory` }
       ]
     });
     const badge = $('#leans-summary-badge');
@@ -176,15 +194,15 @@
     const summary = $('#leans-summary-grid');
     if (summary) summary.innerHTML = noBoard
       ? [
-          { label: `No official board for ${requested}`, value: 'No plays', note: leans.availability_reason || `No valid MLB AI board is available for ${requested}.` },
+          { label: `${primaryLabel} board for ${requested}`, value: 'No plays', note: leans.availability_reason || `No valid MLB AI board is available for ${requested}.` },
           { label: 'Latest valid board', value: latestValid, note: 'This is the most recent date the model considers official.' },
-          { label: 'Latest betting date', value: latestCanonical, note: 'Markets can exist before an official MLB AI board is available.' }
+          { label: 'Selection threshold', value: threshold, note: 'Public ranker contract' }
         ].map(card).join('')
       : [
-          { label: 'Official board date', value: active, note: `Requested date ${requested}` },
+          { label: 'Official board date', value: active, note: `${primaryLabel} | requested date ${requested}` },
           { label: 'Slate rows scored', value: String(leans?.slate_summary?.total_rows_scored || '--'), note: 'Total rows evaluated by the active engine.' },
-          { label: 'Selected bets', value: String(leans?.slate_summary?.selected_bets || rows.length), note: `${leans?.slate_summary?.selected_unders || 0} unders | ${leans?.slate_summary?.selected_overs || 0} overs` },
-          { label: 'Latest betting date', value: latestCanonical, note: 'Useful when checking same-day board alignment.' }
+          { label: 'Selected bets', value: String(leans?.slate_summary?.selected_bets || rows.length), note: Object.entries(leans?.slate_summary?.selected_by_market || {}).map(([key, value]) => `${title(key)} ${value}`).join(' | ') || 'Ranker picks on the public card' },
+          { label: 'Selection threshold', value: threshold, note: 'Public ranker contract' }
         ].map(card).join('');
 
     const featureWrap = $('#leans-featured-section');
@@ -234,6 +252,8 @@
   }
 
   function renderPerformance(status, reporting, monthly, comparison, performance, pickHistory, op) {
+    const primaryLabel = primarySurfaceLabel(reporting, op);
+    const threshold = primaryThreshold(reporting, op);
     const rows = Array.isArray(performance?.rows) ? performance.rows.slice() : [];
     const latest = rows[rows.length - 1] || null;
     const requested = op?.boards?.operating_date || status.requested_board_date || 'unknown';
@@ -241,31 +261,31 @@
     const resultsThrough = reporting?.source_coverage?.shadow_results_through || latest?.board_date || 'unknown';
 
     const heroMeta = $('#performance-hero-meta');
-    if (heroMeta) heroMeta.innerHTML = pills([`Results through ${resultsThrough}`, `Requested ${requested}`, `Official board ${active}`, op?.trust?.trusted_for_modeling ? 'Board trusted' : 'Trust blocked']);
+    if (heroMeta) heroMeta.innerHTML = pills([primaryLabel, `Threshold ${threshold}`, `Results through ${resultsThrough}`, `Requested ${requested}`, `Official board ${active}`, op?.trust?.trusted_for_modeling ? 'Board trusted' : 'Trust blocked']);
     const hero = $('#performance-hero-grid');
     if (hero) hero.innerHTML = [
+      { label: 'Surface shown', value: primaryLabel, note: 'This page reports the public ranker record.' },
       { label: 'Season cumulative', value: units(latest?.cumulative_units), note: latest ? `As of ${latest.board_date}` : 'No 2026 results available.' },
-      { label: '2026 bets', value: String(reporting?.active_policy_shadow_summary?.bets ?? '--'), note: `Tracked shadow record through ${resultsThrough}` },
-      { label: '2026 ROI', value: pct(reporting?.active_policy_shadow_summary?.roi), note: 'Full shadow season to date.' }
+      { label: 'Selection threshold', value: threshold, note: 'Public ranker contract' }
     ].map(card).join('');
     renderTrustBar('#performance-trust-bar', {
       severity: op?.trust?.trusted_for_modeling ? 'ok' : 'fail',
-      kicker: 'Trust summary',
-      title: `Results are settled through ${resultsThrough}`,
-      subtitle: 'Filtered ranges help you interrogate the record. Full-season cumulative remains separate so the page cannot imply conflicting totals.',
+      kicker: 'System identity',
+      title: `${primaryLabel} results are settled through ${resultsThrough}`,
+      subtitle: `${primaryLabel} is the current public performance surface. This page reports the public ranker contract ${threshold} from the same system that drives the live board.`,
       items: [
-        { label: 'Board state', value: op?.boards?.active_board_date || 'Unknown', note: op?.trust?.trusted_for_modeling ? 'Official board trusted' : 'Board trust blocked' },
+        { label: 'Primary surface', value: primaryLabel, note: 'Live public reporting contract' },
+        { label: 'Selection threshold', value: threshold, note: 'Public ranker contract' },
         { label: 'Results through', value: resultsThrough, note: 'Latest graded MLB AI date' },
-        { label: 'Last 7 days', value: units(recentPerformanceUnits(performance, 7)), note: 'Recent settled performance' },
         { label: '2026 cumulative', value: units(latest?.cumulative_units), note: latest?.board_date ? `Full season through ${latest.board_date}` : 'No 2026 results available' }
       ]
     });
     const trust = $('#performance-trust-grid');
     if (trust) trust.innerHTML = [
-      { label: 'Results through', value: resultsThrough, note: 'Latest graded date in the active shadow record.' },
+      { label: 'Results through', value: resultsThrough, note: `${primaryLabel} grading frontier.` },
       { label: 'Artifact generated', value: dt(reporting?.generated_at), note: 'Refresh time for the exported reporting artifact.' },
       { label: 'Filtered vs season', value: 'Separated', note: 'Filtered views do not overwrite the full-season cumulative line.' },
-      { label: 'Requested board', value: requested, note: `Official board ${active}` }
+      { label: 'Selection threshold', value: threshold, note: 'Public ranker contract' }
     ].map(card).join('');
     const windowGrid = $('#performance-window-grid');
     const recent = (label, mode) => {
@@ -273,7 +293,7 @@
       const summary = perfSummary(filterDate(rows, range.start, range.end));
       return { label, value: units(summary.units), tone: summary.units > 0 ? 'metric-good' : summary.units < 0 ? 'metric-bad' : '', note: `${summary.bets} bets | ${pct(summary.roi)} ROI` };
     };
-    if (windowGrid && rows.length) windowGrid.innerHTML = [recent('Last 7 days', '7d'), recent('Last 30 days', '30d'), recent('2026 season', 'season'), { label: 'Historical active system', value: units(reporting?.active_policy_historical_summary?.units), note: `2022-2025 ROI ${pct(reporting?.active_policy_historical_summary?.roi)}` }].map(card).join('');
+    if (windowGrid && rows.length) windowGrid.innerHTML = [recent('Last 7 days', '7d'), recent('Last 30 days', '30d'), recent('2026 season', 'season'), { label: `${primaryLabel} historical`, value: units(reporting?.active_policy_historical_summary?.units), note: `2022-2025 ROI ${pct(reporting?.active_policy_historical_summary?.roi)}` }].map(card).join('');
     const coverage = $('#performance-coverage-badge');
     if (coverage) coverage.textContent = `Results through ${resultsThrough}`;
 
@@ -305,9 +325,9 @@
     }
 
     function drawMonthly() {
-      const activeOnly = monthlyFilter?.value !== 'all_policies';
-      const order = activeOnly ? [['hostile_fix_with_caps', 'Active system']] : [['hostile_fix_with_caps', 'Active system'], ['v8_balanced', 'V8 baseline'], ['soft_plus_half_sigma', 'V7 production'], ['hybrid_top25_cap3', 'V7 hybrid'], ['v8_light', 'V8 light']];
-      monthlyBody.innerHTML = order.flatMap(([key, label]) => (monthly.policies?.[key] || []).map((row) => `<tr><td>${esc(row.month)}</td><td>${esc(label)}</td><td>${row.bets}</td><td>${row.wins}</td><td>${row.losses}</td><td>${row.pushes}</td><td>${pct(row.win_pct)}</td><td>${units(row.units)}</td><td>${pct(row.roi)}</td><td>${units(row.cumulative_units)}</td></tr>`)).join('');
+      const activeOnly = monthlyFilter?.value !== 'all_thresholds';
+      const order = activeOnly ? [[threshold, `${primaryLabel} (${threshold})`]] : [[threshold, `${primaryLabel} (${threshold})`], ['top5', 'Top 5 baseline'], ['edge_gte_0_01', 'Edge >= 0.01'], ['edge_gte_0_02', 'Edge >= 0.02'], ['edge_gte_0_04', 'Edge >= 0.04']];
+      monthlyBody.innerHTML = order.flatMap(([key, label]) => (monthly.policies?.[key] || []).map((row) => `<tr><td>${esc(row.month)}</td><td>${esc(label)}</td><td>${row.bets}</td><td>${row.wins}</td><td>${row.losses}</td><td>${row.pushes ?? '--'}</td><td>${pct(row.win_pct)}</td><td>${units(row.units)}</td><td>${pct(row.roi)}</td><td>${units(row.cumulative_units)}</td></tr>`)).join('');
     }
 
     if (presets) {
@@ -327,11 +347,12 @@
     monthlyFilter?.addEventListener('change', drawMonthly);
 
     comp.innerHTML = [
-      { label: 'Active 2026', value: units(reporting?.active_policy_shadow_summary?.units), note: `${reporting?.active_policy_shadow_summary?.bets || 0} bets | ${pct(reporting?.active_policy_shadow_summary?.roi)}` },
-      { label: 'Active historical', value: units(reporting?.active_policy_historical_summary?.units), note: `2022-2025 ROI ${pct(reporting?.active_policy_historical_summary?.roi)}` },
+      { label: `${primaryLabel} 2026`, value: units(reporting?.active_policy_shadow_summary?.units), note: `${reporting?.active_policy_shadow_summary?.bets || 0} bets | ${pct(reporting?.active_policy_shadow_summary?.roi)}` },
+      { label: `${primaryLabel} historical`, value: units(reporting?.active_policy_historical_summary?.units), note: `2022-2025 ROI ${pct(reporting?.active_policy_historical_summary?.roi)}` },
+      { label: 'Threshold contract', value: threshold, note: 'Public ranker selection rule' },
       ...((comparison.comparators || []).slice(0, 2).map((entry) => ({ label: entry.label, value: units(entry.shadow_summary?.units), note: `2026 ROI ${pct(entry.shadow_summary?.roi)}` })))
     ].map(card).join('');
-    context.innerHTML = [['side', 'Side mix'], ['weather_bucket', 'Weather mix'], ['baseball_bucket', 'Baseball mix'], ['action_bucket', 'Action mix'], ['total_bucket', 'Total mix']].map(([key, label]) => `<article class="context-card"><strong>${esc(label)}</strong>${(reporting.context_breakdowns?.[key] || []).slice(0, 6).map((row) => `<div class="meta-line">${esc(row.bucket)} | ${row.bets} bets | ${units(row.units)} | ${pct(row.roi)}</div>`).join('')}</article>`).join('');
+    context.innerHTML = [['market_family', 'Market mix'], ['market_side', 'Side mix'], ['price_bucket', 'Price mix'], ['edge_bucket', 'Edge mix']].map(([key, label]) => `<article class="context-card"><strong>${esc(label)}</strong>${(reporting.context_breakdowns?.[key] || []).slice(0, 6).map((row) => `<div class="meta-line">${esc(row.bucket)} | ${row.bets} bets | ${units(row.units)} | ${pct(row.roi)}</div>`).join('')}</article>`).join('');
 
     drawDaily();
     drawMonthly();
@@ -384,14 +405,17 @@
   }
 
   function renderOperations(status, op) {
+    const primaryLabel = op?.site_system_contract?.primary_system?.label || status?.site_system_contract?.primary_system?.label || status?.active_engine?.engine_family || 'Primary system';
+    const threshold = op.summary?.ranker_shadow_selection_threshold || op.boards?.ranker_shadow_threshold || status?.site_system_contract?.primary_system?.threshold || 'edge_gte_0_03';
     const heroMeta = $('#operations-hero-meta');
-    if (heroMeta) heroMeta.innerHTML = pills([`Run ${op.run?.overall_status || 'unknown'}`, `Operating ${op.boards?.operating_date || 'unknown'}`, `Board ${op.boards?.active_board_date || 'unknown'}`, `Ranker ${op.boards?.ranker_shadow_threshold || 'unknown'}`, op.trust?.trusted_for_site_shadow ? 'Site trusted' : 'Site blocked']);
+    if (heroMeta) heroMeta.innerHTML = pills([primaryLabel, `Threshold ${threshold}`, `Run ${op.run?.overall_status || 'unknown'}`, `Operating ${op.boards?.operating_date || 'unknown'}`, `Board ${op.boards?.active_board_date || 'unknown'}`, op.trust?.trusted_for_site_shadow ? 'Site trusted' : 'Site blocked']);
     const hero = $('#operations-hero-grid');
     if (hero) hero.innerHTML = [
       { label: 'System state', value: String(op.state || 'unknown').toUpperCase(), note: `Loop status ${op.run?.overall_status || 'unknown'}` },
+      { label: 'Primary surface', value: primaryLabel, note: 'Current live public site surface' },
       { label: 'Last completed run', value: dt(op.summary?.last_run_finished_at), note: `Started ${dt(op.summary?.last_run_started_at)}` },
       { label: 'Publish state', value: op.publish?.public_site_publish?.status || 'unknown', note: `Published ${dt(op.summary?.latest_published_at)}` },
-      { label: 'Board trust', value: op.trust?.trusted_for_modeling && op.trust?.trusted_for_site_shadow ? 'Trusted' : 'Blocked', note: `Active board ${op.boards?.active_board_date || 'unknown'}` }
+      { label: 'Selection threshold', value: threshold, note: 'Public ranker contract' }
     ].map(card).join('');
 
     const validation = $('#operations-validation-grid');
@@ -407,14 +431,14 @@
       { label: 'Viewer export', value: op.publish?.viewer_publish?.status || 'unknown', note: dt(op.publish?.viewer_publish?.updated_at) },
       { label: 'Public site publish', value: op.publish?.public_site_publish?.status || 'unknown', note: dt(op.publish?.public_site_publish?.updated_at) },
       { label: 'Status finalize publish', value: op.publish?.operational_status_finalize_publish?.status || 'unknown', note: dt(op.publish?.operational_status_finalize_publish?.updated_at) },
-      { label: 'Ranker threshold', value: op.summary?.ranker_shadow_selection_threshold || op.boards?.ranker_shadow_threshold || 'unknown', note: 'Active shadow operating threshold' },
+      { label: 'Ranker threshold', value: threshold, note: 'Public site threshold contract' },
       { label: 'Overlap guard', value: op.hourly_automation?.overlap_guard || 'unknown', note: op.hourly_automation?.safe_to_run_unattended ? 'Safe for unattended hourly scheduling' : 'Lock currently active' }
     ].map(card).join('');
 
     const board = $('#operations-board-grid');
     if (board) board.innerHTML = [
       { label: 'Operating date', value: op.boards?.operating_date || 'unknown', note: 'Current run date' },
-      { label: 'Active board', value: op.boards?.active_board_date || 'unknown', note: 'Board currently trusted for the site' },
+      { label: 'Active board', value: op.boards?.active_board_date || 'unknown', note: `${primaryLabel} board currently trusted for the site` },
       { label: 'Latest valid board', value: op.boards?.latest_valid_mlb_ai_board_date || 'unknown', note: 'Latest date the MLB AI board considers valid' },
       { label: 'Latest canonical betting date', value: op.boards?.latest_canonical_board_date || 'unknown', note: 'Latest date available in canonical betting rows' }
     ].map(card).join('');
@@ -448,8 +472,9 @@
 
     const engine = $('#operations-engine-grid');
     if (engine) engine.innerHTML = [
-      { label: 'Engine family', value: status.active_engine?.engine_family || 'unknown', note: `Version ${status.active_engine?.engine_version || 'unknown'}` },
+      { label: 'Primary surface', value: primaryLabel, note: `Engine ${status.active_engine?.engine_family || 'unknown'} ${status.active_engine?.engine_version || 'unknown'}` },
       { label: 'Active policy', value: status.active_engine?.active_policy || 'unknown', note: status.active_engine?.engine_state || 'unknown' },
+      { label: 'Selection threshold', value: threshold, note: 'Public ranker contract' },
       { label: 'Generated', value: dt(status.generated_at), note: `Requested board ${status.requested_board_date || 'unknown'}` },
       { label: 'Live-betting trust', value: status.active_engine?.trusted_for_live_betting ? 'Trusted' : 'Not live', note: 'Technical metadata only' }
     ].map(card).join('');

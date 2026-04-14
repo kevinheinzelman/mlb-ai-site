@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-04-14T17:10:07.321Z",
+  "generated_at": "2026-04-14T22:30:35.223Z",
   "artifact_version": "v1",
   "engine": {
-    "engine_family": "mlb_ai_totals",
-    "engine_version": "v8",
-    "active_policy": "hostile_fix_with_caps",
-    "engine_state": "shadow_locked",
-    "model_lock_status": "locked_active_shadow",
+    "engine_family": "mlb_ai_ranker",
+    "engine_version": "v1",
+    "active_policy": "edge_gte_0_03",
+    "engine_state": "public_primary",
+    "model_lock_status": "ranker_public_primary",
     "trusted_for_live_betting": false
   },
-  "selection_contract": "hostile_fix_with_caps",
+  "selection_contract": "edge_gte_0_03",
   "board_state": "ready",
   "board_available": true,
   "requested_board_date": "2026-04-14",
@@ -19,320 +19,131 @@
   "latest_canonical_board_date": "2026-04-14",
   "availability_reason": null,
   "slate_summary": {
-    "total_rows_scored": 30,
-    "selected_bets": 4,
-    "selected_unders": 4,
-    "selected_overs": 0
+    "total_rows_scored": 90,
+    "selected_bets": 3,
+    "selected_by_market": {
+      "spread": 3
+    }
   },
   "rows": [
     {
       "board_date": "2026-04-14",
-      "canonical_game_id": "mlb:286834",
-      "matchup": "NYM @ LAD",
-      "away_team": "NYM",
-      "home_team": "LAD",
-      "market_type": "total",
-      "side": "under",
-      "line_value": 7.5,
-      "price_american": -115,
-      "market_probability": 0.510834,
-      "model_probability": 0.55627,
-      "edge": 0.045436,
-      "selection_contract": "hostile_fix_with_caps",
-      "context_score": 1.052648,
-      "base_context_score": 1.052648,
-      "final_score": 0.047828,
-      "raw_score_v7": 0.047828,
-      "active_raw_score": 0.047828,
+      "canonical_game_id": "mlb:286831",
+      "matchup": "Colorado Rockies @ Houston Astros",
+      "away_team": "Colorado Rockies",
+      "home_team": "Houston Astros",
+      "market_type": "spread",
+      "side": "away",
+      "line_value": 1.5,
+      "price_american": -138,
+      "market_probability": 0.579832,
+      "model_probability": 0.636923,
+      "edge": 0.057091,
+      "selection_contract": "edge_gte_0_03",
       "rank_on_slate": 1,
-      "percentile_rank_on_slate": 0.965517,
       "confidence_band": "high",
       "visibility_tier": "core",
       "display_sort_bucket": "core_priority",
-      "price_flag": "standard",
       "primary_drivers": [
-        "Model edge 4.5 pts",
-        "Context score 1.053",
-        "Weather Wind Cross 15 Plus"
+        "Market Implied Probability +0.169",
+        "Price American Norm +0.080",
+        "Selected Is Home +0.043"
       ],
       "supporting_context": [
-        "Action Sharp 3 Plus",
-        "Baseball Bullpen Mid",
-        "Total bucket Low"
+        "Price American Norm +0.080",
+        "Selected Is Home +0.043"
       ],
       "suggested_units": 1,
-      "reason_flags": [
-        "above_neutral_context",
-        "above_neutral_context_after_hostile_fix",
-        "above_slate_average_score",
-        "crosswind_context",
-        "under_side",
-        "selection_contract_hostile_fix_with_caps"
-      ],
-      "explanation_summary": "under 7.5 ranked highly on the slate because edge 0.0454 and active context score 1.0526 produced final score 0.0478. Context buckets: weather=wind_cross_15_plus, action=sharp_3_plus, baseball=bullpen_mid.",
-      "context_buckets": {
-        "weather_bucket": "wind_cross_15_plus",
-        "action_bucket": "sharp_3_plus",
-        "baseball_bucket": "bullpen_mid",
-        "total_bucket": "low"
-      },
-      "hostile_penalty_multiplier": 1,
-      "hostile_penalty_components": [],
-      "overlay_multiplier": 1,
-      "overlay_penalties": [],
-      "comparator_flags": {
-        "v8_balanced_baseline": true,
-        "v7_production": true,
-        "v7_hybrid": false,
-        "v8_light": true
-      }
+      "explanation_summary": "Run line Away at -138 cleared the edge_gte_0_03 threshold with model probability 63.7% versus market 58.0%.",
+      "comparator_flags": {},
+      "ev_proxy": 0.098462
     },
     {
       "board_date": "2026-04-14",
-      "canonical_game_id": "mlb:286822",
-      "matchup": "KC @ DET",
-      "away_team": "KC",
-      "home_team": "DET",
-      "market_type": "total",
-      "side": "under",
-      "line_value": 8,
-      "price_american": -114,
-      "market_probability": 0.509817,
-      "model_probability": 0.55627,
-      "edge": 0.046453,
-      "selection_contract": "hostile_fix_with_caps",
-      "context_score": 1.019177,
-      "base_context_score": 1.039741,
-      "final_score": 0.047344,
-      "raw_score_v7": 0.048299,
-      "active_raw_score": 0.047344,
+      "canonical_game_id": "mlb:286825",
+      "matchup": "Los Angeles Angels @ New York Yankees",
+      "away_team": "Los Angeles Angels",
+      "home_team": "New York Yankees",
+      "market_type": "spread",
+      "side": "away",
+      "line_value": 1.5,
+      "price_american": -136,
+      "market_probability": 0.576271,
+      "model_probability": 0.628571,
+      "edge": 0.0523,
+      "selection_contract": "edge_gte_0_03",
       "rank_on_slate": 2,
-      "percentile_rank_on_slate": 1,
       "confidence_band": "high",
       "visibility_tier": "core",
       "display_sort_bucket": "core_priority",
-      "price_flag": "standard",
       "primary_drivers": [
-        "Model edge 4.6 pts",
-        "Context score 1.019",
-        "Weather Wind Cross 15 Plus"
+        "Market Implied Probability +0.159",
+        "Price American Norm +0.078",
+        "Selected Is Home +0.043"
       ],
       "supporting_context": [
-        "Action Sharp 3 Plus",
-        "Baseball Bullpen Light",
-        "Total bucket Low"
+        "Price American Norm +0.078",
+        "Selected Is Home +0.043"
       ],
       "suggested_units": 1,
-      "reason_flags": [
-        "above_slate_average_score",
-        "crosswind_context",
-        "lighter_bullpen_context",
-        "under_side",
-        "hostile_scoring_penalty_applied",
-        "selection_contract_hostile_fix_with_caps"
-      ],
-      "explanation_summary": "under 8 ranked highly on the slate because edge 0.0465 and active context score 1.0192 produced final score 0.0473. Hostile scoring penalty x0.9802 applied from baseball_weather_combo:bullpen_light|wind_cross_15_plus. Context buckets: weather=wind_cross_15_plus, action=sharp_3_plus, baseball=bullpen_light.",
-      "context_buckets": {
-        "weather_bucket": "wind_cross_15_plus",
-        "action_bucket": "sharp_3_plus",
-        "baseball_bucket": "bullpen_light",
-        "total_bucket": "low"
-      },
-      "hostile_penalty_multiplier": 0.980222,
-      "hostile_penalty_components": [
-        {
-          "family": "baseball_weather_combo",
-          "key": "bullpen_light|wind_cross_15_plus",
-          "bets": 86,
-          "roi": 0.045047,
-          "multiplier": 0.982802
-        }
-      ],
-      "overlay_multiplier": 1,
-      "overlay_penalties": [],
-      "comparator_flags": {
-        "v8_balanced_baseline": true,
-        "v7_production": true,
-        "v7_hybrid": true,
-        "v8_light": true
-      }
+      "explanation_summary": "Run line Away at -136 cleared the edge_gte_0_03 threshold with model probability 62.9% versus market 57.6%.",
+      "comparator_flags": {},
+      "ev_proxy": 0.090756
     },
     {
       "board_date": "2026-04-14",
-      "canonical_game_id": "mlb:286833",
-      "matchup": "TEX @ OAK",
-      "away_team": "TEX",
-      "home_team": "OAK",
-      "market_type": "total",
-      "side": "under",
-      "line_value": 9,
-      "price_american": -120,
-      "market_probability": 0.521739,
-      "model_probability": 0.55627,
-      "edge": 0.034531,
-      "selection_contract": "hostile_fix_with_caps",
-      "context_score": 0.852588,
-      "base_context_score": 1.039741,
-      "final_score": 0.029441,
-      "raw_score_v7": 0.035903,
-      "active_raw_score": 0.029441,
+      "canonical_game_id": "mlb:286826",
+      "matchup": "Miami Marlins @ Atlanta Braves",
+      "away_team": "Miami Marlins",
+      "home_team": "Atlanta Braves",
+      "market_type": "spread",
+      "side": "away",
+      "line_value": 1.5,
+      "price_american": -156,
+      "market_probability": 0.609375,
+      "model_probability": 0.641628,
+      "edge": 0.032253,
+      "selection_contract": "edge_gte_0_03",
       "rank_on_slate": 3,
-      "percentile_rank_on_slate": 0.931034,
       "confidence_band": "medium",
       "visibility_tier": "exploratory",
       "display_sort_bucket": "exploratory_priority",
-      "price_flag": "standard",
       "primary_drivers": [
-        "Model edge 3.5 pts",
-        "Context score 0.853",
-        "Weather Wind Cross Lt15"
+        "Market Implied Probability +0.257",
+        "Price American Norm +0.095",
+        "Selected Is Home +0.043"
       ],
       "supporting_context": [
-        "Action Sharp 1 2",
-        "Baseball Bullpen Mid",
-        "Total bucket Mid"
+        "Price American Norm +0.095",
+        "Selected Is Home +0.043"
       ],
       "suggested_units": 1,
-      "reason_flags": [
-        "above_slate_average_score",
-        "crosswind_context",
-        "under_side",
-        "hostile_scoring_penalty_applied",
-        "selection_contract_hostile_fix_with_caps"
-      ],
-      "explanation_summary": "under 9 ranked highly on the slate because edge 0.0345 and active context score 0.8526 produced final score 0.0294. Hostile scoring penalty x0.82 applied from action_bucket:sharp_1_2. Context buckets: weather=wind_cross_lt15, action=sharp_1_2, baseball=bullpen_mid.",
-      "context_buckets": {
-        "weather_bucket": "wind_cross_lt15",
-        "action_bucket": "sharp_1_2",
-        "baseball_bucket": "bullpen_mid",
-        "total_bucket": "mid"
-      },
-      "hostile_penalty_multiplier": 0.82,
-      "hostile_penalty_components": [
-        {
-          "family": "action_bucket",
-          "key": "sharp_1_2",
-          "bets": 78,
-          "roi": -0.107189,
-          "multiplier": 0.82
-        }
-      ],
-      "overlay_multiplier": 1,
-      "overlay_penalties": [],
-      "comparator_flags": {
-        "v8_balanced_baseline": false,
-        "v7_production": false,
-        "v7_hybrid": false,
-        "v8_light": false
-      }
-    },
-    {
-      "board_date": "2026-04-14",
-      "canonical_game_id": "mlb:286830",
-      "matchup": "CLE @ STL",
-      "away_team": "CLE",
-      "home_team": "STL",
-      "market_type": "total",
-      "side": "under",
-      "line_value": 9,
-      "price_american": -121,
-      "market_probability": 0.523922,
-      "model_probability": 0.55627,
-      "edge": 0.032348,
-      "selection_contract": "hostile_fix_with_caps",
-      "context_score": 0.912509,
-      "base_context_score": 1.052648,
-      "final_score": 0.027192,
-      "raw_score_v7": 0.034051,
-      "active_raw_score": 0.029518,
-      "rank_on_slate": 4,
-      "percentile_rank_on_slate": 0.896552,
-      "confidence_band": "low",
-      "visibility_tier": "hidden",
-      "display_sort_bucket": "hidden",
-      "price_flag": "standard",
-      "primary_drivers": [
-        "Model edge 3.2 pts",
-        "Context score 0.913",
-        "Weather Wind In 15 Plus"
-      ],
-      "supporting_context": [
-        "Action Sharp 3 Plus",
-        "Baseball Bullpen Heavy",
-        "Total bucket Mid"
-      ],
-      "suggested_units": 1,
-      "reason_flags": [
-        "above_neutral_context",
-        "above_slate_average_score",
-        "wind_in_context",
-        "heavy_bullpen_context",
-        "under_side",
-        "hostile_scoring_penalty_applied",
-        "selection_contract_hostile_fix_with_caps"
-      ],
-      "explanation_summary": "under 9 ranked highly on the slate because edge 0.0323 and active context score 0.9125 produced final score 0.0272. Hostile scoring penalty x0.8669 applied from baseball_weather_combo:bullpen_heavy|wind_in_15_plus, heavy_order:1, baseball_total_combo:bullpen_heavy|mid. Overlay penalties: wind_in_15_plus x0.94, bullpen_heavy x0.98. Context buckets: weather=wind_in_15_plus, action=sharp_3_plus, baseball=bullpen_heavy.",
-      "context_buckets": {
-        "weather_bucket": "wind_in_15_plus",
-        "action_bucket": "sharp_3_plus",
-        "baseball_bucket": "bullpen_heavy",
-        "total_bucket": "mid"
-      },
-      "hostile_penalty_multiplier": 0.86687,
-      "hostile_penalty_components": [
-        {
-          "family": "baseball_weather_combo",
-          "key": "bullpen_heavy|wind_in_15_plus",
-          "bets": 61,
-          "roi": -0.050356,
-          "multiplier": 0.82
-        },
-        {
-          "family": "heavy_order",
-          "key": "1",
-          "bets": 412,
-          "roi": 0.006439,
-          "multiplier": 0.826715
-        },
-        {
-          "family": "baseball_total_combo",
-          "key": "bullpen_heavy|mid",
-          "bets": 264,
-          "roi": 0.035477,
-          "multiplier": 0.941474
-        },
-        {
-          "family": "hostile_order",
-          "key": "1",
-          "bets": 475,
-          "roi": 0.039117,
-          "multiplier": 0.94875
-        }
-      ],
-      "overlay_multiplier": 0.9212,
-      "overlay_penalties": [
-        {
-          "reason": "wind_in_15_plus",
-          "multiplier": 0.94
-        },
-        {
-          "reason": "bullpen_heavy",
-          "multiplier": 0.98
-        }
-      ],
-      "comparator_flags": {
-        "v8_balanced_baseline": false,
-        "v7_production": false,
-        "v7_hybrid": false,
-        "v8_light": false
-      }
+      "explanation_summary": "Run line Away at -156 cleared the edge_gte_0_03 threshold with model probability 64.2% versus market 60.9%.",
+      "comparator_flags": {},
+      "ev_proxy": 0.052927
     }
   ],
-  "board_date_consistency": {
-    "modeling_max_date": "2026-04-14",
-    "decision_max_date": "2026-04-14",
-    "reporting_active_board_date": "2026-04-14",
-    "status_active_board_date": "2026-04-14",
-    "daily_leans_board_date": "2026-04-14"
-  }
+  "site_surface": {
+    "system_key": "ranker_system",
+    "label": "Ranker System",
+    "role": "primary_site_surface",
+    "status": "live_site_surface",
+    "model_family": "mlb_ai_ranker",
+    "model_version": "v1",
+    "threshold": "edge_gte_0_03",
+    "description": "Full-board daily ranking surface using predicted win probability minus implied probability.",
+    "board_date": "2026-04-14"
+  },
+  "retained_internal_systems": [
+    {
+      "system_key": "totals_unders_system",
+      "label": "Totals / Unders System",
+      "role": "retained_internal_system",
+      "status": "not_publicly_surfaced",
+      "engine_family": "mlb_ai_totals",
+      "engine_version": "v8",
+      "active_policy": "hostile_fix_with_caps",
+      "description": "Retained internally for historical comparison and specialist analysis, but removed from the current public site surface."
+    }
+  ]
 }
