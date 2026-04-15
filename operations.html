@@ -11,10 +11,10 @@
       <div class="shell shell-nav">
         <a class="site-brand" href="./index.html" aria-label="MLB AI home">
           <span class="site-brand-mark">MLB AI</span>
-          <span class="site-brand-copy">System surfaces</span>
+          <span class="site-brand-copy">Official bets and operations</span>
         </a>
         <nav class="site-nav" aria-label="Primary">
-          <a class="site-nav-link" href="./index.html">Leans</a>
+          <a class="site-nav-link" href="./index.html">Bets</a>
           <a class="site-nav-link" href="./mlb-ai-performance.html">Performance</a>
           <a class="site-nav-link" href="./mlb-ai-challenger.html">Challenger</a>
           <a class="site-nav-link is-active" href="./operations.html" aria-current="page">Operations</a>
@@ -26,118 +26,36 @@
       <section class="page-hero page-hero-operations">
         <div class="page-hero-copy">
           <p class="eyebrow">Operations</p>
-          <h1>Trust, freshness, and publish state.</h1>
+          <h1>What is healthy, what is stale, and what needs attention</h1>
           <p class="lede">
-            This page is intentionally technical. It confirms the live public policy, the separate challenger lane, artifact freshness, validation, and whether publish actually landed.
+            This page is for operator trust. It should make failures obvious, explain strange freshness states, and keep healthy items compact.
           </p>
           <div id="operations-hero-meta" class="hero-meta"></div>
         </div>
         <div id="operations-hero-grid" class="hero-grid"></div>
       </section>
 
-      <section class="page-section">
-        <div class="section-head">
-          <div>
-            <p class="section-kicker">Validation</p>
-            <h2>Current trust state</h2>
-          </div>
-        </div>
-        <div id="operations-validation-grid" class="summary-grid"></div>
-      </section>
+      <section id="operations-priority-grid" class="page-section page-section-emphasis"></section>
 
       <section class="page-section">
         <div class="section-head">
           <div>
-            <p class="section-kicker">Publish</p>
-            <h2>Site and automation status</h2>
+            <p class="section-kicker">Freshness</p>
+            <h2>Data status</h2>
           </div>
-        </div>
-        <div id="operations-publish-grid" class="summary-grid"></div>
-      </section>
-
-      <section class="page-section">
-        <div class="section-head">
-          <div>
-            <p class="section-kicker">Board ownership</p>
-            <h2>Dates and board alignment</h2>
-          </div>
-        </div>
-        <div id="operations-board-grid" class="summary-grid"></div>
-      </section>
-
-      <section class="page-section">
-        <div class="section-head">
-          <div>
-            <p class="section-kicker">Dependencies</p>
-            <h2>Freshness by layer</h2>
-          </div>
-        </div>
-        <div id="operations-freshness-grid" class="context-grid"></div>
-      </section>
-
-      <section class="page-section">
-        <div class="section-head">
-          <div>
-            <p class="section-kicker">Change detection</p>
-            <h2>Did new data actually arrive?</h2>
-          </div>
-        </div>
-        <div id="operations-change-grid" class="summary-grid"></div>
-      </section>
-
-      <section class="page-section">
-        <div class="section-head">
-          <div>
-            <p class="section-kicker">Coverage</p>
-            <h2>Key runtime metrics</h2>
-          </div>
-        </div>
-        <div id="operations-metrics-grid" class="summary-grid"></div>
-      </section>
-
-      <section class="page-section">
-        <div class="section-head">
-          <div>
-            <p class="section-kicker">Open items</p>
-            <h2>Failures, warnings, and info</h2>
-          </div>
-        </div>
-        <div id="operations-issues" class="stack-list"></div>
-      </section>
-
-      <section class="page-section">
-        <div class="section-head">
-          <div>
-            <p class="section-kicker">Engine metadata</p>
-            <h2>Technical details</h2>
-          </div>
-        </div>
-        <div id="operations-engine-grid" class="summary-grid"></div>
-      </section>
-
-      <section class="page-section">
-        <div class="section-head">
-          <div>
-            <p class="section-kicker">Loop Objects</p>
-            <h2>Full freshness and delta table</h2>
-          </div>
+          <span class="badge">Problems first, healthy rows below</span>
         </div>
         <div class="table-wrap">
-          <table id="operations-object-table">
+          <table id="operations-freshness-table">
             <thead>
               <tr>
+                <th>Status</th>
                 <th>Object</th>
-                <th>Type</th>
                 <th>Domain</th>
                 <th>Last refresh</th>
-                <th>Previous refresh</th>
-                <th>Latest date</th>
-                <th>Previous date</th>
-                <th>Rows</th>
-                <th>Previous rows</th>
-                <th>Delta</th>
-                <th>Changed</th>
-                <th>Freshness</th>
+                <th>Expected date</th>
+                <th>Current date</th>
+                <th>What it means</th>
               </tr>
             </thead>
             <tbody></tbody>
@@ -148,24 +66,35 @@
       <section class="page-section">
         <div class="section-head">
           <div>
-            <p class="section-kicker">Stages</p>
-            <h2>Loop execution ledger</h2>
+            <p class="section-kicker">Loop ledger</p>
+            <h2>Execution status</h2>
           </div>
+          <span class="badge">Failures and warnings first</span>
         </div>
         <div class="table-wrap">
           <table id="operations-stage-table">
             <thead>
               <tr>
+                <th>Status</th>
                 <th>Stage</th>
                 <th>Domain</th>
-                <th>Status</th>
                 <th>Finished</th>
-                <th>Message</th>
+                <th>What happened</th>
               </tr>
             </thead>
             <tbody></tbody>
           </table>
         </div>
+      </section>
+
+      <section class="page-section">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Healthy reference</p>
+            <h2>Key summaries</h2>
+          </div>
+        </div>
+        <div id="operations-summary-grid" class="summary-grid"></div>
       </section>
     </main>
 

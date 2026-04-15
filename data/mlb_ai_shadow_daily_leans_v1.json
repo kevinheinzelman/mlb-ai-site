@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-15T17:32:12.604Z",
+  "generated_at": "2026-04-15T19:38:33.878Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_ranker",
@@ -20,18 +20,120 @@
   "availability_reason": null,
   "slate_summary": {
     "total_rows_scored": 90,
-    "selected_bets": 1,
+    "selected_bets": 4,
     "selected_by_market": {
+      "moneyline": 2,
+      "total": 1,
       "spread": 1
     }
   },
   "rows": [
     {
       "board_date": "2026-04-15",
+      "canonical_game_id": "mlb:286879",
+      "matchup": "Arizona Diamondbacks @ Baltimore Orioles",
+      "away_team": "Arizona Diamondbacks",
+      "home_team": "Baltimore Orioles",
+      "bet_label": "Arizona Diamondbacks ML (+252)",
+      "market_type": "moneyline",
+      "side": "away",
+      "line_value": 0,
+      "price_american": 252,
+      "market_probability": 0.284091,
+      "model_probability": 0.9999,
+      "edge": 0.715809,
+      "selection_contract": "edge_gte_0_04_no_cap_challenger",
+      "rank_on_slate": 1,
+      "confidence_band": "high",
+      "visibility_tier": "core",
+      "display_sort_bucket": "core_priority",
+      "primary_drivers": [
+        "Market Implied Probability -0.838",
+        "Price American Norm -0.071",
+        "Opponent Team Statcast Available Flag +0.028"
+      ],
+      "supporting_context": [
+        "Price American Norm -0.071",
+        "Opponent Team Statcast Available Flag +0.028"
+      ],
+      "suggested_units": 1,
+      "explanation_summary": "Moneyline Away at +252 cleared the edge_gte_0_04_no_cap_challenger threshold with model probability 100.0% versus market 28.4%.",
+      "comparator_flags": {},
+      "ev_proxy": 2.519648
+    },
+    {
+      "board_date": "2026-04-15",
+      "canonical_game_id": "mlb:286879",
+      "matchup": "Arizona Diamondbacks @ Baltimore Orioles",
+      "away_team": "Arizona Diamondbacks",
+      "home_team": "Baltimore Orioles",
+      "bet_label": "Under 11.5 (-148)",
+      "market_type": "total",
+      "side": "under",
+      "line_value": 11.5,
+      "price_american": -148,
+      "market_probability": 0.596774,
+      "model_probability": 0.9999,
+      "edge": 0.403126,
+      "selection_contract": "edge_gte_0_04_no_cap_challenger",
+      "rank_on_slate": 2,
+      "confidence_band": "high",
+      "visibility_tier": "core",
+      "display_sort_bucket": "core_priority",
+      "primary_drivers": [
+        "Market Implied Probability +0.383",
+        "Is Over Side +0.016",
+        "Price American Norm +0.014"
+      ],
+      "supporting_context": [
+        "Is Over Side +0.016",
+        "Price American Norm +0.014"
+      ],
+      "suggested_units": 1,
+      "explanation_summary": "Total Under at -148 cleared the edge_gte_0_04_no_cap_challenger threshold with model probability 100.0% versus market 59.7%.",
+      "comparator_flags": {},
+      "ev_proxy": 0.675508
+    },
+    {
+      "board_date": "2026-04-15",
+      "canonical_game_id": "mlb:286879",
+      "matchup": "Arizona Diamondbacks @ Baltimore Orioles",
+      "away_team": "Arizona Diamondbacks",
+      "home_team": "Baltimore Orioles",
+      "bet_label": "Baltimore Orioles ML (-355)",
+      "market_type": "moneyline",
+      "side": "home",
+      "line_value": 0,
+      "price_american": -355,
+      "market_probability": 0.78022,
+      "model_probability": 0.9999,
+      "edge": 0.21968,
+      "selection_contract": "edge_gte_0_04_no_cap_challenger",
+      "rank_on_slate": 3,
+      "confidence_band": "high",
+      "visibility_tier": "core",
+      "display_sort_bucket": "core_priority",
+      "primary_drivers": [
+        "Market Implied Probability +0.916",
+        "Price American Norm +0.054",
+        "Opponent Team Statcast Available Flag +0.028"
+      ],
+      "supporting_context": [
+        "Price American Norm +0.054",
+        "Opponent Team Statcast Available Flag +0.028"
+      ],
+      "suggested_units": 1,
+      "explanation_summary": "Moneyline Home at -355 cleared the edge_gte_0_04_no_cap_challenger threshold with model probability 100.0% versus market 78.0%.",
+      "comparator_flags": {},
+      "ev_proxy": 0.281562
+    },
+    {
+      "board_date": "2026-04-15",
       "canonical_game_id": "mlb:286882",
       "matchup": "Washington Nationals @ Pittsburgh Pirates",
       "away_team": "Washington Nationals",
       "home_team": "Pittsburgh Pirates",
+      "bet_label": "Washington Nationals +1.5 (-136)",
       "market_type": "spread",
       "side": "away",
       "line_value": 1.5,
@@ -40,7 +142,7 @@
       "model_probability": 0.628571,
       "edge": 0.0523,
       "selection_contract": "edge_gte_0_04_no_cap_challenger",
-      "rank_on_slate": 1,
+      "rank_on_slate": 4,
       "confidence_band": "high",
       "visibility_tier": "core",
       "display_sort_bucket": "core_priority",
