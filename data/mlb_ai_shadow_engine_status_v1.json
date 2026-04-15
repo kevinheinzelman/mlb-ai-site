@@ -1,0 +1,98 @@
+{
+  "generated_at": "2026-04-15T13:52:49.762Z",
+  "artifact_version": "v1",
+  "active_engine": {
+    "engine_family": "mlb_ai_ranker",
+    "engine_version": "v1",
+    "active_policy": "edge_gte_0_04_no_cap_challenger",
+    "engine_state": "shadow_challenger",
+    "model_lock_status": "ranker_quality_filtered_challenger",
+    "trusted_for_live_betting": false
+  },
+  "active_board_date": "2026-04-15",
+  "latest_canonical_board_date": "2026-04-15",
+  "site_system_contract": {
+    "primary_system": {
+      "system_key": "ranker_system",
+      "label": "Ranker System",
+      "role": "primary_site_surface",
+      "status": "live_site_surface",
+      "model_family": "mlb_ai_ranker",
+      "model_version": "v1",
+      "threshold": "edge_gte_0_03_cap_minus_150",
+      "description": "Quality-filtered public ranker surface using edge >= 0.03 while excluding prices below -150.",
+      "board_date": "2026-04-15"
+    },
+    "challenger_system": {
+      "system_key": "ranker_challenger_system",
+      "label": "Ranker Challenger",
+      "role": "shadow_challenger_surface",
+      "status": "shadow_not_official_public_record",
+      "model_family": "mlb_ai_ranker",
+      "model_version": "v1",
+      "threshold": "edge_gte_0_04_no_cap_challenger",
+      "description": "Separate challenger lane using edge >= 0.04 with no additional favorite cap. Not the official public betting record.",
+      "board_date": "2026-04-15"
+    },
+    "internal_research_lanes": [
+      {
+        "system_key": "ranker_canonical_research_lane",
+        "label": "Canonical Full Research Lane",
+        "role": "internal_research_lane",
+        "status": "not_publicly_surfaced",
+        "model_family": "mlb_ai_ranker",
+        "model_version": "v1",
+        "threshold": "edge_gte_0_03_canonical_full",
+        "description": "Broader canonical edge >= 0.03 ranker universe retained internally for prove-it research only."
+      }
+    ],
+    "retained_internal_systems": [
+      {
+        "system_key": "totals_unders_system",
+        "label": "Totals / Unders System",
+        "role": "retained_internal_system",
+        "status": "not_publicly_surfaced",
+        "engine_family": "mlb_ai_totals",
+        "engine_version": "v8",
+        "active_policy": "hostile_fix_with_caps",
+        "description": "Retained internally for historical comparison and specialist analysis, but removed from the current public site surface."
+      }
+    ]
+  },
+  "challenger_policy": {
+    "policy_name": "edge_gte_0_04_no_cap_challenger",
+    "label": "Ranker Challenger",
+    "role": "shadow_challenger_not_public_record",
+    "historical_summary": {
+      "bets": 2810,
+      "selected_bets": 2943,
+      "units": 143.633251,
+      "roi": 0.051115,
+      "win_rate": 0.604626,
+      "max_drawdown": -20.227809
+    },
+    "ytd_2026_summary": {
+      "bets": 59,
+      "units": -7.133993,
+      "roi": -0.120915
+    }
+  },
+  "live_policy_reference": {
+    "policy_name": "edge_gte_0_03_cap_minus_150",
+    "label": "Ranker System",
+    "role": "official_public_record",
+    "historical_summary": {
+      "bets": 2613,
+      "selected_bets": 2745,
+      "units": 99.206609,
+      "roi": 0.037967,
+      "win_rate": 0.536548,
+      "max_drawdown": -29.955258
+    },
+    "ytd_2026_summary": {
+      "bets": 67,
+      "units": 3.583615,
+      "roi": 0.053487
+    }
+  }
+}

@@ -1,0 +1,308 @@
+{
+  "generated_at": "2026-04-15T13:52:49.762Z",
+  "artifact_version": "v1",
+  "engine": {
+    "engine_family": "mlb_ai_ranker",
+    "engine_version": "v1",
+    "active_policy": "edge_gte_0_04_no_cap_challenger",
+    "engine_state": "shadow_challenger",
+    "model_lock_status": "ranker_quality_filtered_challenger",
+    "trusted_for_live_betting": false
+  },
+  "selection_contract": "edge_gte_0_04_no_cap_challenger",
+  "source_coverage": {
+    "historical_window": "2022-2025",
+    "results_through": "2026-04-14"
+  },
+  "active_policy_definition": {
+    "policy_name": "edge_gte_0_04_no_cap_challenger",
+    "version_family": "v1",
+    "selection_contract": "edge_gte_0_04_no_cap_challenger",
+    "scoring_backbone": "predicted_win_probability - market_implied_probability",
+    "scoring_adjustment": "none",
+    "portfolio_contract": "select every row with model_edge >= 0.04 after the validated market-quality eligibility screen, with no additional favorite cap"
+  },
+  "performance_contract": {
+    "canonical_source_table": "mlb_ai_ranker_predictions_v1",
+    "canonical_selection_contract": "edge_gte_0_04_no_cap_challenger",
+    "canonical_grading_source_table": "mlb_game_results_rebuilt",
+    "eligibility_source_table": "rebuild_mlb_betting_rows_v1",
+    "eligibility_contract": "quality_filtered_market_surface",
+    "historical_window": "2022-2025",
+    "live_window": "2026",
+    "results_through": "2026-04-14"
+  },
+  "active_policy_historical_summary": {
+    "bets": 2810,
+    "settled_bets": 2831,
+    "selected_bets": 2943,
+    "wins": 1699,
+    "losses": 1111,
+    "pushes": 21,
+    "win_rate": 0.604626,
+    "hit_rate": 0.604626,
+    "units": 143.633251,
+    "roi": 0.051115
+  },
+  "active_policy_live_summary": {
+    "bets": 59,
+    "settled_bets": 60,
+    "selected_bets": 61,
+    "wins": 29,
+    "losses": 30,
+    "pushes": 1,
+    "win_rate": 0.491525,
+    "hit_rate": 0.491525,
+    "units": -7.133993,
+    "roi": -0.120915
+  },
+  "active_board_date": "2026-04-15",
+  "site_surface": {
+    "system_key": "ranker_challenger_system",
+    "label": "Ranker Challenger",
+    "role": "shadow_challenger_surface",
+    "status": "shadow_not_official_public_record",
+    "model_family": "mlb_ai_ranker",
+    "model_version": "v1",
+    "threshold": "edge_gte_0_04_no_cap_challenger",
+    "description": "Separate challenger lane using edge >= 0.04 with no additional favorite cap. Not the official public betting record.",
+    "board_date": "2026-04-15"
+  },
+  "retained_internal_systems": [
+    {
+      "system_key": "totals_unders_system",
+      "label": "Totals / Unders System",
+      "role": "retained_internal_system",
+      "status": "not_publicly_surfaced",
+      "engine_family": "mlb_ai_totals",
+      "engine_version": "v8",
+      "active_policy": "hostile_fix_with_caps",
+      "description": "Retained internally for historical comparison and specialist analysis, but removed from the current public site surface."
+    }
+  ],
+  "context_breakdowns": {
+    "market_family": [
+      {
+        "bucket": "spread",
+        "selected_bet_count": 1318,
+        "settled_bet_count": 1265,
+        "graded_bet_count": 1265,
+        "pending_bet_count": 53,
+        "win_count": 734,
+        "loss_count": 531,
+        "push_count": 0,
+        "win_pct": 0.580237,
+        "avg_price": -129.7,
+        "avg_win_price": -136.55,
+        "roi": -0.003332,
+        "units": -4.214369
+      },
+      {
+        "bucket": "moneyline",
+        "selected_bet_count": 1083,
+        "settled_bet_count": 1048,
+        "graded_bet_count": 1048,
+        "pending_bet_count": 35,
+        "win_count": 682,
+        "loss_count": 366,
+        "push_count": 0,
+        "win_pct": 0.650763,
+        "avg_price": -107.33,
+        "avg_win_price": -149.23,
+        "roi": 0.115299,
+        "units": 120.833511
+      },
+      {
+        "bucket": "total",
+        "selected_bet_count": 542,
+        "settled_bet_count": 518,
+        "graded_bet_count": 497,
+        "pending_bet_count": 24,
+        "win_count": 283,
+        "loss_count": 214,
+        "push_count": 21,
+        "win_pct": 0.569416,
+        "avg_price": -106.51,
+        "avg_win_price": -109.42,
+        "roi": 0.054354,
+        "units": 27.014108
+      }
+    ],
+    "market_side": [
+      {
+        "bucket": "away",
+        "selected_bet_count": 1458,
+        "settled_bet_count": 1403,
+        "graded_bet_count": 1403,
+        "pending_bet_count": 55,
+        "win_count": 824,
+        "loss_count": 579,
+        "push_count": 0,
+        "win_pct": 0.587313,
+        "avg_price": -92.63,
+        "avg_win_price": -110.79,
+        "roi": 0.05445,
+        "units": 76.39374
+      },
+      {
+        "bucket": "home",
+        "selected_bet_count": 943,
+        "settled_bet_count": 910,
+        "graded_bet_count": 910,
+        "pending_bet_count": 33,
+        "win_count": 592,
+        "loss_count": 318,
+        "push_count": 0,
+        "win_pct": 0.650549,
+        "avg_price": -161.09,
+        "avg_win_price": -187.02,
+        "roi": 0.044204,
+        "units": 40.225402
+      },
+      {
+        "bucket": "under",
+        "selected_bet_count": 457,
+        "settled_bet_count": 439,
+        "graded_bet_count": 421,
+        "pending_bet_count": 18,
+        "win_count": 247,
+        "loss_count": 174,
+        "push_count": 18,
+        "win_pct": 0.586698,
+        "avg_price": -115.9,
+        "avg_win_price": -117.64,
+        "roi": 0.083183,
+        "units": 35.020042
+      },
+      {
+        "bucket": "over",
+        "selected_bet_count": 85,
+        "settled_bet_count": 79,
+        "graded_bet_count": 76,
+        "pending_bet_count": 6,
+        "win_count": 36,
+        "loss_count": 40,
+        "push_count": 3,
+        "win_pct": 0.473684,
+        "avg_price": -54.53,
+        "avg_win_price": -53.03,
+        "roi": -0.105341,
+        "units": -8.005934
+      }
+    ],
+    "price_bucket": [
+      {
+        "bucket": "-150 to -110",
+        "selected_bet_count": 1515,
+        "settled_bet_count": 1453,
+        "graded_bet_count": 1433,
+        "pending_bet_count": 62,
+        "win_count": 842,
+        "loss_count": 591,
+        "push_count": 20,
+        "win_pct": 0.587579,
+        "avg_price": -130.78,
+        "avg_win_price": -130.93,
+        "roi": 0.039876,
+        "units": 57.141654
+      },
+      {
+        "bucket": "<= -200",
+        "selected_bet_count": 557,
+        "settled_bet_count": 536,
+        "graded_bet_count": 536,
+        "pending_bet_count": 21,
+        "win_count": 414,
+        "loss_count": 122,
+        "push_count": 0,
+        "win_pct": 0.772388,
+        "avg_price": -288.79,
+        "avg_win_price": -287.08,
+        "roi": 0.051165,
+        "units": 27.424557
+      },
+      {
+        "bucket": "+110+",
+        "selected_bet_count": 428,
+        "settled_bet_count": 418,
+        "graded_bet_count": 418,
+        "pending_bet_count": 10,
+        "win_count": 192,
+        "loss_count": 226,
+        "push_count": 0,
+        "win_pct": 0.45933,
+        "avg_price": 154.26,
+        "avg_win_price": 149.34,
+        "roi": 0.145311,
+        "units": 60.74
+      },
+      {
+        "bucket": "-200 to -150",
+        "selected_bet_count": 320,
+        "settled_bet_count": 309,
+        "graded_bet_count": 309,
+        "pending_bet_count": 11,
+        "win_count": 195,
+        "loss_count": 114,
+        "push_count": 0,
+        "win_pct": 0.631068,
+        "avg_price": -170.56,
+        "avg_win_price": -172.12,
+        "roi": 0.000371,
+        "units": 0.114699
+      },
+      {
+        "bucket": "-110 to +110",
+        "selected_bet_count": 123,
+        "settled_bet_count": 115,
+        "graded_bet_count": 114,
+        "pending_bet_count": 8,
+        "win_count": 56,
+        "loss_count": 58,
+        "push_count": 1,
+        "win_pct": 0.491228,
+        "avg_price": 8.27,
+        "avg_win_price": 18.14,
+        "roi": -0.015681,
+        "units": -1.78766
+      }
+    ],
+    "edge_bucket": [
+      {
+        "bucket": "0.05+",
+        "selected_bet_count": 2072,
+        "settled_bet_count": 1995,
+        "graded_bet_count": 1982,
+        "pending_bet_count": 77,
+        "win_count": 1230,
+        "loss_count": 752,
+        "push_count": 13,
+        "win_pct": 0.620585,
+        "avg_price": -127.97,
+        "avg_win_price": -149.46,
+        "roi": 0.062984,
+        "units": 124.834206
+      },
+      {
+        "bucket": "0.04 to 0.049",
+        "selected_bet_count": 871,
+        "settled_bet_count": 836,
+        "graded_bet_count": 828,
+        "pending_bet_count": 35,
+        "win_count": 469,
+        "loss_count": 359,
+        "push_count": 8,
+        "win_pct": 0.566425,
+        "avg_price": -91.6,
+        "avg_win_price": -104.76,
+        "roi": 0.022704,
+        "units": 18.799045
+      }
+    ]
+  },
+  "notes": [
+    "This challenger lane is not the official public betting record.",
+    "It is tracked separately as the .04 no-cap challenger and must earn promotion with forward evidence.",
+    "Live/public results remain attached only to the capped .03 public policy."
+  ]
+}
