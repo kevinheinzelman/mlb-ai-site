@@ -166,70 +166,63 @@
     node.innerHTML = `<div class="trust-bar-copy"><p class="status-strip-label">${esc(config.kicker || 'Board trust')}</p><h2>${esc(config.title || '')}</h2><p>${esc(config.subtitle || '')}</p></div><div class="trust-bar-grid">${(config.items || []).map((item) => `<article class="trust-bar-item"><span>${esc(item.label)}</span><strong>${esc(item.value)}</strong><small>${esc(item.note || '')}</small></article>`).join('')}</div>`;
   }
 
-  function renderLeans(status, leans, op, performance) {
-    const primaryLabel = primarySurfaceLabel(leans, op);
+  function renderLeans(status, leans, op, performance, reporting) {
     const threshold = primaryThreshold(leans, op);
     const requested = leans.requested_board_date || op?.boards?.operating_date || 'unknown';
     const active = boardDate(leans);
     const latestValid = leans.latest_valid_mlb_ai_board_date || op?.boards?.latest_valid_mlb_ai_board_date || active || 'unknown';
     const noBoard = leans.board_available === false || leans.board_state === 'no_valid_board_for_requested_date';
+    const boardShown = active || requested;
     const rows = [...(leans.rows || [])].filter((row) => vis(row) !== 'hidden').sort(leanSort);
     const core = rows.filter((row) => vis(row) === 'core');
     const exploratory = rows.filter((row) => vis(row) === 'exploratory');
     const featured = core[0] || rows[0] || null;
+    const liveSummary = reporting?.active_policy_live_summary || reporting?.active_policy_shadow_summary || {};
+    const historicalSummary = reporting?.active_policy_historical_summary || {};
+    const resultsThrough = reporting?.source_coverage?.results_through || performance?.results_through || performance?.source_coverage?.shadow_results_through || latestPerformanceRow(performance)?.board_date || 'Unknown';
 
     const heroMeta = $('#leans-hero-meta');
-    if (heroMeta) heroMeta.innerHTML = pills([primaryLabel, `Threshold ${threshold}`, `Updated ${dt(leans?.generated_at)}`, `Requested ${requested}`, noBoard ? 'No official board' : `Board ${active}`, `Latest valid ${latestValid}`, op?.trust?.trusted_for_modeling ? 'Board trusted' : 'Trust blocked']);
+    if (heroMeta) heroMeta.innerHTML = pills([
+      `Board date ${boardShown}`,
+      `Updated ${dt(leans?.generated_at)}`,
+      `Results through ${resultsThrough}`,
+      noBoard ? 'No official board yet' : `${rows.length} official bet${rows.length === 1 ? '' : 's'}`
+    ]);
     const hero = $('#leans-hero-grid');
     if (hero) hero.innerHTML = [
-      { label: 'Surface shown', value: primaryLabel, note: 'This page shows the live public ranker card.' },
-      { label: 'Official plays', value: String(rows.length), note: noBoard ? 'A no-board day shows zero official plays on purpose.' : 'Only surfaced core and exploratory plays are shown.' },
-      { label: 'Core card', value: String(core.length), note: 'Highest-confidence positions.' },
-      { label: 'Selection threshold', value: threshold, note: 'Every public pick cleared this edge threshold.' }
+      { label: 'Since 2022', value: units(historicalSummary?.units), tone: Number(historicalSummary?.units || 0) > 0 ? 'metric-good' : Number(historicalSummary?.units || 0) < 0 ? 'metric-bad' : '', note: `${historicalSummary?.bets || 0} bets from 2022-2025` },
+      { label: '2026 YTD', value: units(liveSummary?.units), tone: Number(liveSummary?.units || 0) > 0 ? 'metric-good' : Number(liveSummary?.units || 0) < 0 ? 'metric-bad' : '', note: `${liveSummary?.bets || 0} graded bets | ${pct(liveSummary?.roi)} ROI` },
+      { label: 'Board date', value: boardShown, note: noBoard ? `Latest valid board ${latestValid}` : `${rows.length} official bet${rows.length === 1 ? '' : 's'} on the card` },
+      { label: 'Last updated', value: dt(leans?.generated_at), note: `Results through ${resultsThrough}` }
     ].map(card).join('');
     renderTrustBar('#leans-trust-bar', {
       severity: noBoard ? 'warning' : (op?.trust?.trusted_for_modeling ? 'ok' : 'fail'),
-      kicker: 'System identity',
-      title: noBoard ? `No ${primaryLabel} board for ${requested}` : `${primaryLabel}: ${core.length} core play${core.length === 1 ? '' : 's'} on the official board`,
+      kicker: 'Official public card',
+      title: noBoard ? `No official board for ${requested}` : `${rows.length} official bet${rows.length === 1 ? '' : 's'} for ${boardShown}`,
       subtitle: noBoard
         ? (leans.availability_reason || `The requested date ${requested} does not currently have a valid MLB AI board.`)
-        : `${primaryLabel} is the live public site surface for ${active}. Every public pick shown here comes from the fixed threshold contract ${threshold}.`,
+        : 'These bets are selected when the model edge is at least 3% and the price is not worse than -150.',
       items: [
-        { label: 'Primary surface', value: primaryLabel, note: 'Live public daily card' },
-        { label: 'Selection threshold', value: threshold, note: 'Public ranker contract' },
-        { label: 'Results through', value: performance?.results_through || performance?.source_coverage?.shadow_results_through || latestPerformanceRow(performance)?.board_date || 'Unknown', note: 'Latest graded MLB AI date' },
-        { label: 'Board state', value: noBoard ? 'No board' : `${rows.length} plays`, note: noBoard ? `Requested ${requested}` : `${core.length} core | ${exploratory.length} exploratory` }
+        { label: 'Selection rule', value: 'Edge >= 3%', note: 'Model win probability must beat the market by at least 3 points.' },
+        { label: 'Price guardrail', value: '-150 or better', note: 'Heavier favorites are excluded from the public card.' },
+        { label: 'Results through', value: resultsThrough, note: 'Latest graded date in the official record.' },
+        { label: 'Card mix', value: noBoard ? 'No board' : `${core.length} primary | ${exploratory.length} smaller`, note: noBoard ? `Requested ${requested}` : 'Primary bets are shown first, smaller bets below.' }
       ]
     });
-    const badge = $('#leans-summary-badge');
-    if (badge) badge.textContent = noBoard ? `No official plays for ${requested}` : `${rows.length} official plays`;
-    const summary = $('#leans-summary-grid');
-    if (summary) summary.innerHTML = noBoard
-      ? [
-          { label: `${primaryLabel} board for ${requested}`, value: 'No plays', note: leans.availability_reason || `No valid MLB AI board is available for ${requested}.` },
-          { label: 'Latest valid board', value: latestValid, note: 'This is the most recent date the model considers official.' },
-          { label: 'Selection threshold', value: threshold, note: 'Public ranker contract' }
-        ].map(card).join('')
-      : [
-          { label: 'Official board date', value: active, note: `${primaryLabel} | requested date ${requested}` },
-          { label: 'Slate rows scored', value: String(leans?.slate_summary?.total_rows_scored || '--'), note: 'Total rows evaluated by the active engine.' },
-          { label: 'Selected bets', value: String(leans?.slate_summary?.selected_bets || rows.length), note: Object.entries(leans?.slate_summary?.selected_by_market || {}).map(([key, value]) => `${title(key)} ${value}`).join(' | ') || 'Ranker picks on the public card' },
-          { label: 'Selection threshold', value: threshold, note: 'Public ranker contract' }
-        ].map(card).join('');
 
     const featureWrap = $('#leans-featured-section');
     const feature = $('#leans-featured-play');
     if (featureWrap && feature) {
       if (noBoard || !featured) featureWrap.style.display = 'none';
-      else feature.innerHTML = `<article class="lean-featured-card"><div class="lean-featured-top"><div><p class="lean-featured-matchup">${esc(featured.matchup)}</p><h3 class="lean-featured-play">${esc(featured.market_type === 'moneyline' ? `${featured.side === 'away' ? featured.away_team : featured.home_team} ${odds(featured.price_american)}` : market(featured))}</h3><p class="lean-featured-market">${esc(market(featured))} | ${esc(fixed(featured.suggested_units, 2))} unit official position</p></div><div class="history-chip-row"><span class="${confidenceClass(featured.confidence_band)}">${esc(title(featured.confidence_band || 'unknown'))} confidence</span><span class="badge">${esc(fixed(featured.suggested_units, 2))} units</span>${priceChip(featured.price_flag)}</div></div><div class="lean-featured-metrics"><div class="metric-tile"><label>Edge</label><strong>${esc(pctEdge(featured.edge))}</strong></div><div class="metric-tile"><label>Model</label><strong>${esc(pct(featured.model_probability))}</strong></div><div class="metric-tile"><label>Market</label><strong>${esc(pct(featured.market_probability))}</strong></div><div class="metric-tile"><label>Updated</label><strong>${esc(dt(leans?.generated_at))}</strong></div></div><div class="lean-explain-grid"><div class="lean-explain-block"><strong>Why it made the card</strong><ul>${(featured.primary_drivers || []).slice(0, 3).map((item) => `<li>${esc(item)}</li>`).join('')}</ul></div><div class="lean-explain-block"><strong>Short read</strong><ul><li>${esc(featured.explanation_summary || 'No explanation available.')}</li></ul></div></div></article>`;
+      else feature.innerHTML = `<article class="lean-featured-card"><div class="lean-featured-top"><div><p class="lean-featured-matchup">${esc(featured.matchup)}</p><h3 class="lean-featured-play">${esc(featured.bet_label || market(featured))}</h3><p class="lean-featured-market">${esc(odds(featured.price_american))} | ${esc(fixed(featured.suggested_units, 2))} unit${Number(featured.suggested_units) === 1 ? '' : 's'}</p></div><div class="history-chip-row"><span class="${confidenceClass(featured.confidence_band)}">${esc(title(featured.confidence_band || 'unknown'))} confidence</span><span class="badge">${esc(fixed(featured.suggested_units, 2))} units</span>${priceChip(featured.price_flag)}</div></div><div class="lean-featured-metrics"><div class="metric-tile"><label>Teams</label><strong>${esc(featured.matchup)}</strong></div><div class="metric-tile"><label>Edge</label><strong>${esc(pctEdge(featured.edge))}</strong></div><div class="metric-tile"><label>Model</label><strong>${esc(pct(featured.model_probability))}</strong></div><div class="metric-tile"><label>Market</label><strong>${esc(pct(featured.market_probability))}</strong></div></div><div class="lean-explain-grid"><div class="lean-explain-block"><strong>How bets are selected</strong><p>The model compares its projected win probability to the market's implied probability. If the edge is large enough and the price is reasonable, the bet makes the card.</p></div><div class="lean-explain-block"><strong>Additional context (for reference)</strong><p>${esc(featured.explanation_summary || 'This is the highest-ranked official play on today\'s card.')}</p><p class="subtle">These notes help explain the pick. They are not separate decision rules.</p></div></div></article>`;
     }
 
-    const leanCard = (row) => `<article class="lean-decision-card"><div class="lean-decision-head"><div><p class="lean-kicker">${esc(row.matchup)}</p><h3>${esc(String(row.away_team || '').toUpperCase())} vs ${esc(String(row.home_team || '').toUpperCase())}</h3><div class="lean-bet-callout">${esc(market(row))}</div><p class="lean-subline">Official side: ${esc(String(row.side || '').toUpperCase())} at ${esc(odds(row.price_american))}</p></div><div class="lean-score-stack"><span class="${confidenceClass(row.confidence_band)}">${esc(title(row.confidence_band || 'unknown'))} confidence</span><span class="badge">${esc(fixed(row.suggested_units, 2))} units</span>${priceChip(row.price_flag)}</div></div><div class="lean-decision-metrics"><div class="metric-tile"><label>Edge</label><strong>${esc(pctEdge(row.edge))}</strong></div><div class="metric-tile"><label>Model</label><strong>${esc(pct(row.model_probability))}</strong></div><div class="metric-tile"><label>Market</label><strong>${esc(pct(row.market_probability))}</strong></div><div class="metric-tile"><label>Slate rank</label><strong>#${esc(String(row.rank_on_slate || '--'))}</strong></div></div><div class="lean-explain-grid"><div class="lean-explain-block"><strong>Why it made the card</strong><ul>${(row.primary_drivers || []).slice(0, 3).map((item) => `<li>${esc(item)}</li>`).join('')}</ul></div><div class="lean-explain-block"><strong>Supporting context</strong><ul>${(row.supporting_context || []).slice(0, 3).map((item) => `<li>${esc(item)}</li>`).join('')}</ul></div></div></article>`;
+    const leanCard = (row) => `<article class="lean-decision-card"><div class="lean-decision-head"><div><p class="lean-kicker">${esc(row.matchup)}</p><h3>${esc(row.bet_label || market(row))}</h3><p class="lean-subline">${esc(odds(row.price_american))} | ${esc(fixed(row.suggested_units, 2))} unit${Number(row.suggested_units) === 1 ? '' : 's'}</p></div><div class="lean-score-stack"><span class="${confidenceClass(row.confidence_band)}">${esc(title(row.confidence_band || 'unknown'))} confidence</span><span class="badge">${esc(fixed(row.suggested_units, 2))} units</span>${priceChip(row.price_flag)}</div></div><div class="lean-decision-metrics"><div class="metric-tile"><label>Matchup</label><strong>${esc(row.matchup)}</strong></div><div class="metric-tile"><label>Edge</label><strong>${esc(pctEdge(row.edge))}</strong></div><div class="metric-tile"><label>Model</label><strong>${esc(pct(row.model_probability))}</strong></div><div class="metric-tile"><label>Market</label><strong>${esc(pct(row.market_probability))}</strong></div></div><div class="lean-explain-grid"><div class="lean-explain-block"><strong>How bets are selected</strong><p>${esc(row.explanation_summary || 'This bet cleared the edge requirement and the price guardrail for the public card.')}</p></div><div class="lean-explain-block"><strong>Additional context (for reference)</strong><ul>${(row.supporting_context || row.primary_drivers || []).slice(0, 3).map((item) => `<li>${esc(item)}</li>`).join('')}</ul><p class="subtle">These stats help explain the pick but are not separate decision rules.</p></div></div></article>`;
 
     const coreNode = $('#leans-core-cards');
-    if (coreNode) coreNode.innerHTML = noBoard ? `<div class="empty-state">No official MLB AI plays are available for ${esc(requested)}. The site does not fall back to yesterday's board.</div>` : core.length ? core.map(leanCard).join('') : '<div class="empty-state">No core plays made the official board today.</div>';
+    if (coreNode) coreNode.innerHTML = noBoard ? `<div class="empty-state">No official bets are available for ${esc(requested)}. The site does not fall back to yesterday's board.</div>` : core.length ? core.map(leanCard).join('') : '<div class="empty-state">No primary bets made the official card today.</div>';
     const expNode = $('#leans-exploratory-cards');
-    if (expNode) expNode.innerHTML = noBoard ? `<div class="empty-state">${esc(leans.availability_reason || `No valid MLB AI board is available for ${requested}.`)}</div>` : exploratory.length ? exploratory.map(leanCard).join('') : '<div class="empty-state">No exploratory plays are available on the official board.</div>';
+    if (expNode) expNode.innerHTML = noBoard ? `<div class="empty-state">${esc(leans.availability_reason || `No valid board is available for ${requested}.`)}</div>` : exploratory.length ? exploratory.map(leanCard).join('') : '<div class="empty-state">No smaller bets are available on today\'s official card.</div>';
   }
 
   function rangeDates(rows, mode) {
@@ -261,13 +254,13 @@
     const result = String(row.result || 'pending').toLowerCase();
     const resultText = result === 'win' ? 'Win' : result === 'loss' ? 'Loss' : result === 'push' ? 'Push' : 'Pending';
     const resultTone = result === 'win' ? 'metric-good' : result === 'loss' ? 'metric-bad' : '';
-    return `<article class="history-card"><div class="history-card-head"><div><p class="lean-kicker">${esc(row.board_date)}</p><h3>${esc(row.matchup || row.canonical_game_id || 'Unknown matchup')}</h3><p class="lean-subline">${esc(row.bet_label || market(row))} | ${esc(fixed(row.suggested_units, 2))} unit play</p></div><div class="history-chip-row"><span class="${confidenceClass(row.confidence_band)}">${esc(title(row.confidence_band || 'unknown'))}</span><span class="badge">${esc(pctEdge(row.model_edge ?? row.edge))} edge</span></div></div><div class="history-card-metrics"><div class="metric-tile"><label>Result</label><strong class="${esc(resultTone)}">${esc(resultText)}</strong></div><div class="metric-tile"><label>Unit profit</label><strong class="${esc(resultTone)}">${esc(units(row.unit_profit))}</strong></div><div class="metric-tile"><label>Cumulative</label><strong>${esc(units(row.cumulative_units_after_pick))}</strong></div><div class="metric-tile"><label>Price</label><strong>${esc(odds(row.price_american))}</strong></div></div><p class="history-summary">${esc(row.explanation_summary || 'This pick cleared the public edge threshold and was exported to the official card.')}</p></article>`;
+    return `<article class="history-card"><div class="history-card-head"><div><p class="lean-kicker">${esc(row.board_date)}</p><h3>${esc(row.matchup || row.canonical_game_id || 'Unknown matchup')}</h3><p class="lean-subline">${esc(row.bet_label || market(row))} | ${esc(fixed(row.suggested_units, 2))} unit bet</p></div><div class="history-chip-row"><span class="${confidenceClass(row.confidence_band)}">${esc(title(row.confidence_band || 'unknown'))}</span><span class="badge">${esc(pctEdge(row.model_edge ?? row.edge))} edge</span></div></div><div class="history-card-metrics"><div class="metric-tile"><label>Result</label><strong class="${esc(resultTone)}">${esc(resultText)}</strong></div><div class="metric-tile"><label>Unit profit</label><strong class="${esc(resultTone)}">${esc(units(row.unit_profit))}</strong></div><div class="metric-tile"><label>Cumulative</label><strong>${esc(units(row.cumulative_units_after_pick))}</strong></div><div class="metric-tile"><label>Price</label><strong>${esc(odds(row.price_american))}</strong></div></div><p class="history-summary">${esc(row.explanation_summary || 'This bet cleared the public selection rule and was posted to the official card.')}</p></article>`;
   }
 
   function renderPerformanceSurface(status, reporting, monthly, performance, pickHistory, op, config = {}) {
     const surfaceKind = config.surfaceKind || 'live';
     const primary = surfaceKind === 'challenger' ? challengerSurface(reporting, op) : primarySurface(reporting, op);
-    const primaryLabel = primary?.label || (surfaceKind === 'challenger' ? 'Ranker Challenger' : 'Ranker System');
+    const primaryLabel = primary?.label || (surfaceKind === 'challenger' ? 'Challenger model' : 'Official public model');
     const threshold = surfaceKind === 'challenger' ? challengerThreshold(reporting, op) : primaryThreshold(reporting, op);
     const rows = Array.isArray(performance?.rows) ? performance.rows.slice() : [];
     const latest = rows[rows.length - 1] || null;
@@ -278,39 +271,43 @@
     const titlePrefix = surfaceKind === 'challenger' ? 'Challenger lane' : 'Public record';
     const scopeDescription = surfaceKind === 'challenger'
       ? `${primaryLabel} is tracked separately from the official public card. Historical results are 2022-2025 backtest totals. 2026 is forward challenger behavior through ${resultsThrough}.`
-      : `${primaryLabel} is the official public performance surface. Historical results are 2022-2025 backtest totals. 2026 is the live out-of-sample record through ${resultsThrough}.`;
+      : `This page is the official public record. Historical results are 2022-2025 backtest totals. 2026 is the live out-of-sample record through ${resultsThrough}.`;
     const recordDescription = surfaceKind === 'challenger'
       ? 'Not the official public betting record.'
       : 'Official public site contract.';
 
     const heroMeta = $('#performance-hero-meta');
-    if (heroMeta) heroMeta.innerHTML = pills([primaryLabel, `Threshold ${threshold}`, `Updated ${dt(reporting?.generated_at)}`, `Results through ${resultsThrough}`, `Official board ${active}`, op?.trust?.trusted_for_modeling ? 'Board trusted' : 'Trust blocked']);
+    if (heroMeta) heroMeta.innerHTML = pills([
+      `Updated ${dt(reporting?.generated_at)}`,
+      `Results through ${resultsThrough}`,
+      `Board date ${active}`,
+      surfaceKind === 'challenger' ? 'Not official bets' : 'Official public record'
+    ]);
     const hero = $('#performance-hero-grid');
     if (hero) hero.innerHTML = [
-      { label: 'System shown', value: primaryLabel, note: recordDescription },
-      { label: '2026 YTD units', value: units(liveSummary?.units), note: `${liveSummary?.bets || 0} graded bets through ${resultsThrough}` },
-      { label: '2022-2025 backtest', value: units(historicalSummary?.units), note: `${historicalSummary?.bets || 0} graded bets` }
+      { label: '2026 YTD units', value: units(liveSummary?.units), tone: Number(liveSummary?.units || 0) > 0 ? 'metric-good' : Number(liveSummary?.units || 0) < 0 ? 'metric-bad' : '', note: `${liveSummary?.bets || 0} graded bets` },
+      { label: '2026 ROI', value: pct(liveSummary?.roi), tone: Number(liveSummary?.roi || 0) > 0 ? 'metric-good' : Number(liveSummary?.roi || 0) < 0 ? 'metric-bad' : '', note: `Results through ${resultsThrough}` },
+      { label: 'Results through', value: resultsThrough, note: recordDescription },
+      { label: '2022-2025 units', value: units(historicalSummary?.units), tone: Number(historicalSummary?.units || 0) > 0 ? 'metric-good' : Number(historicalSummary?.units || 0) < 0 ? 'metric-bad' : '', note: `${historicalSummary?.bets || 0} graded bets` }
     ].map(card).join('');
     renderTrustBar('#performance-trust-bar', {
       severity: surfaceKind === 'challenger' ? 'warning' : (op?.trust?.trusted_for_modeling ? 'ok' : 'fail'),
       kicker: titlePrefix,
-      title: `${primaryLabel} results are settled through ${resultsThrough}`,
+      title: `${surfaceKind === 'challenger' ? 'Challenger results' : 'Official results'} are settled through ${resultsThrough}`,
       subtitle: scopeDescription,
       items: [
-        { label: surfaceKind === 'challenger' ? 'Challenger surface' : 'Primary surface', value: primaryLabel, note: surfaceKind === 'challenger' ? 'Separate shadow/challenger reporting contract' : 'Live public reporting contract' },
-        { label: 'Selection threshold', value: threshold, note: 'Public ranker contract' },
+        { label: surfaceKind === 'challenger' ? 'Page type' : 'Record type', value: surfaceKind === 'challenger' ? 'Challenger only' : 'Official public record', note: surfaceKind === 'challenger' ? 'Tracked separately from the public card' : 'This page is the published bettor-facing ledger' },
+        { label: 'Selection rule', value: surfaceKind === 'challenger' ? 'Edge >= 4%' : 'Edge >= 3% and price >= -150', note: surfaceKind === 'challenger' ? 'No extra favorite cap' : 'Official public betting rule' },
         { label: 'Results through', value: resultsThrough, note: 'Latest graded MLB AI date' },
         { label: '2026 cumulative', value: units(latest?.cumulative_units), note: latest?.board_date ? `Full season through ${latest.board_date}` : 'No 2026 results available' }
       ]
     });
     const trust = $('#performance-trust-grid');
     if (trust) trust.innerHTML = [
-      { label: 'Results through', value: resultsThrough, note: `${primaryLabel} grading frontier.` },
-      { label: 'Artifact updated', value: dt(reporting?.generated_at), note: 'Exact export timestamp for this reporting file.' },
-      { label: 'Historical scope', value: '2022-2025', note: `${historicalSummary?.bets || 0} graded backtest bets` },
-      { label: surfaceKind === 'challenger' ? 'Forward challenger scope' : 'Live scope', value: '2026 YTD', note: `${liveSummary?.bets || 0} graded bets in this lane` },
-      { label: 'Filtered vs season', value: 'Separated', note: 'Range filters do not rewrite the full-season line.' },
-      { label: 'Selection threshold', value: threshold, note: surfaceKind === 'challenger' ? 'Challenger ranker contract' : 'Public ranker contract' }
+      { label: '2026 YTD', value: units(liveSummary?.units), tone: Number(liveSummary?.units || 0) > 0 ? 'metric-good' : Number(liveSummary?.units || 0) < 0 ? 'metric-bad' : '', note: `${liveSummary?.bets || 0} graded bets | ${pct(liveSummary?.roi)} ROI` },
+      { label: '2022-2025', value: units(historicalSummary?.units), tone: Number(historicalSummary?.units || 0) > 0 ? 'metric-good' : Number(historicalSummary?.units || 0) < 0 ? 'metric-bad' : '', note: `${historicalSummary?.bets || 0} graded bets | ${pct(historicalSummary?.roi)} ROI` },
+      { label: 'Updated', value: dt(reporting?.generated_at), note: 'Exact export time for this record' },
+      { label: 'Selection rule', value: surfaceKind === 'challenger' ? 'Edge >= 4%' : 'Edge >= 3% and price >= -150', note: surfaceKind === 'challenger' ? 'Challenger tracking only' : 'Official public betting rule' }
     ].map(card).join('');
     const windowGrid = $('#performance-window-grid');
     const recent = (label, mode) => {
@@ -334,9 +331,7 @@
     const summary = $('#performance-summary-grid');
     const dailyBody = $('#daily-performance-table tbody');
     const monthlyBody = $('#monthly-table tbody');
-    const comp = $('#performance-comparator-grid');
-    const context = $('#context-breakdowns');
-    if (!rows.length || !start || !end || !summary || !dailyBody || !monthlyBody || !comp || !context) return;
+    if (!rows.length || !start || !end || !summary || !dailyBody || !monthlyBody) return;
 
     const seasonRange = rangeDates(rows, 'season');
     start.min = rows[0].board_date; start.max = rows[rows.length - 1].board_date; start.value = seasonRange.start;
@@ -346,16 +341,16 @@
       const filtered = filterDate(rows, start.value, end.value);
       const sums = perfSummary(filtered);
       summary.innerHTML = [
-        { label: 'Filtered range', value: `${start.value || 'start'} to ${end.value || 'end'}`, note: `${sums.days} graded day${sums.days === 1 ? '' : 's'} in view` },
-        { label: 'Filtered bets', value: String(sums.bets), note: `${sums.wins} wins | ${sums.losses} losses | ${sums.pushes} pushes` },
-        { label: 'Filtered units', value: units(sums.units), tone: sums.units > 0 ? 'metric-good' : sums.units < 0 ? 'metric-bad' : '', note: `Only for the visible range | ROI ${pct(sums.roi)}` },
-        { label: 'Full 2026 cumulative', value: units(latest?.cumulative_units), tone: Number(latest?.cumulative_units || 0) > 0 ? 'metric-good' : Number(latest?.cumulative_units || 0) < 0 ? 'metric-bad' : '', note: `Separate YTD line through ${resultsThrough}` }
+        { label: 'Visible range', value: `${start.value || 'start'} to ${end.value || 'end'}`, note: `${sums.days} graded day${sums.days === 1 ? '' : 's'}` },
+        { label: 'Bets', value: String(sums.bets), note: `${sums.wins} wins | ${sums.losses} losses | ${sums.pushes} pushes` },
+        { label: 'Units', value: units(sums.units), tone: sums.units > 0 ? 'metric-good' : sums.units < 0 ? 'metric-bad' : '', note: `ROI ${pct(sums.roi)}` },
+        { label: '2026 running total', value: units(latest?.cumulative_units), tone: Number(latest?.cumulative_units || 0) > 0 ? 'metric-good' : Number(latest?.cumulative_units || 0) < 0 ? 'metric-bad' : '', note: `Season total through ${resultsThrough}` }
       ].map(card).join('');
       dailyBody.innerHTML = filtered.length ? filtered.map((row) => `<tr><td>${esc(row.board_date)}</td><td>${row.bets}</td><td>${row.wins}</td><td>${row.losses}</td><td>${row.pushes}</td><td>${pct(row.win_rate)}</td><td>${units(row.units)}</td><td>${pct(row.roi)}</td><td>${units(row.cumulative_units)}</td></tr>`).join('') : '<tr><td colspan="9" class="subtle">No 2026 daily rows are available for this filter.</td></tr>';
     }
 
     function drawMonthly() {
-      const order = [[threshold, `${primaryLabel} (${threshold})`]];
+      const order = [[threshold, surfaceKind === 'challenger' ? 'Challenger model' : 'Official public model']];
       monthlyBody.innerHTML = order.flatMap(([key, label]) => (monthly.policies?.[key] || []).map((row) => `<tr><td>${esc(row.month)}</td><td>${esc(label)}</td><td>${row.bets}</td><td>${row.wins}</td><td>${row.losses}</td><td>${row.pushes ?? '--'}</td><td>${pct(row.win_pct)}</td><td>${units(row.units)}</td><td>${pct(row.roi)}</td><td>${units(row.cumulative_units)}</td></tr>`)).join('');
     }
 
@@ -374,14 +369,6 @@
     start.addEventListener('change', () => { presets?.querySelectorAll('button').forEach((n) => n.classList.remove('is-active')); drawDaily(); });
     end.addEventListener('change', () => { presets?.querySelectorAll('button').forEach((n) => n.classList.remove('is-active')); drawDaily(); });
     monthlyFilter?.addEventListener('change', drawMonthly);
-
-    comp.innerHTML = [
-      { label: `${primaryLabel} 2026`, value: units(liveSummary?.units), note: `${liveSummary?.bets || 0} bets | ${pct(liveSummary?.roi)}` },
-      { label: `${primaryLabel} historical`, value: units(historicalSummary?.units), note: `2022-2025 ROI ${pct(historicalSummary?.roi)}` },
-      { label: 'Threshold contract', value: threshold, note: surfaceKind === 'challenger' ? 'Challenger selection rule' : 'Official public selection rule' },
-      { label: 'Surface role', value: surfaceKind === 'challenger' ? 'Challenger only' : 'Official public record', note: surfaceKind === 'challenger' ? 'Tracked separately until proven for promotion.' : 'This is the official bettor-facing record.' }
-    ].map(card).join('');
-    context.innerHTML = [['market_family', 'Market mix'], ['market_side', 'Side mix'], ['price_bucket', 'Price mix'], ['edge_bucket', 'Edge mix']].map(([key, label]) => `<article class="context-card"><strong>${esc(label)}</strong>${(reporting.context_breakdowns?.[key] || []).slice(0, 6).map((row) => `<div class="meta-line">${esc(row.bucket)} | ${row.bets} bets | ${units(row.units)} | ${pct(row.roi)}</div>`).join('')}</article>`).join('');
 
     drawDaily();
     drawMonthly();
@@ -409,12 +396,12 @@
       const settledUnits = settled.reduce((sum, row) => sum + Number(row.unit_profit || 0), 0);
       hSummary.innerHTML = [
         { label: 'Picks shown', value: String(filtered.length), note: `${hStart.value || 'start'} through ${hEnd.value || 'end'}` },
-        { label: 'Average edge', value: pctEdge(avgEdge), note: 'Mean model-vs-market edge inside the visible picks.' },
-        { label: 'Average stake', value: fixed(avgUnits, 2), note: 'Unit size from the history artifact.' },
-        { label: 'Settled units', value: units(settledUnits), note: `${settled.length} settled picks in view` }
+        { label: 'Average edge', value: pctEdge(avgEdge), note: 'Average model edge in the visible bets' },
+        { label: 'Average stake', value: fixed(avgUnits, 2), note: 'Average units per bet' },
+        { label: 'Settled units', value: units(settledUnits), note: `${settled.length} settled bets in view` }
       ].map(card).join('');
       hGrid.innerHTML = filtered.length ? filtered.slice().sort((a, b) => String(b.board_date).localeCompare(String(a.board_date)) || Number((b.model_edge ?? b.edge) || 0) - Number((a.model_edge ?? a.edge) || 0)).map(historyCard).join('') : '<div class="empty-state">No 2026 pick-history rows match the current filters.</div>';
-      hGap.innerHTML = `<h3>What this table is</h3><p>This is the exported 2026 pick ledger for the ${esc(primaryLabel)} threshold. Each row is a real pick, with its result and running cumulative units.</p><div class="meta-line">Results through ${esc(resultsThrough)} | Threshold ${esc(threshold)} | Updated ${esc(dt(pickHistory?.generated_at))}</div>`;
+      hGap.innerHTML = `<h3>What this table is</h3><p>This is the full 2026 ledger of posted bets for this page. Each row is a real bet with its odds, result, and running cumulative units.</p><div class="meta-line">Results through ${esc(resultsThrough)} | Updated ${esc(dt(pickHistory?.generated_at))}</div>`;
     }
 
     if (hPresets) {
@@ -559,7 +546,7 @@
     const op = await json('mlb_operational_status_v1.json');
     renderStatusStrip(op);
     const status = await json('mlb_ai_active_engine_status_v1.json');
-    if (page === 'leans') return renderLeans(status, await json('mlb_ai_daily_leans_v1.json'), op, await json('mlb_ai_daily_performance_2026_v1.json'));
+    if (page === 'leans') return renderLeans(status, await json('mlb_ai_daily_leans_v1.json'), op, await json('mlb_ai_daily_performance_2026_v1.json'), await json('mlb_ai_reporting_v1.json'));
     if (page === 'performance') return renderPerformanceSurface(status, await json('mlb_ai_reporting_v1.json'), await json('mlb_ai_reporting_monthly_v1.json'), await json('mlb_ai_daily_performance_2026_v1.json'), await json('mlb_ai_leans_history_view_v1.json'), op, { surfaceKind: 'live' });
     if (page === 'challenger') return renderPerformanceSurface(await json('mlb_ai_shadow_engine_status_v1.json'), await json('mlb_ai_shadow_reporting_v1.json'), await json('mlb_ai_shadow_reporting_monthly_v1.json'), await json('mlb_ai_shadow_daily_performance_2026_v1.json'), await json('mlb_ai_shadow_leans_history_view_v1.json'), op, { surfaceKind: 'challenger' });
     if (page === 'operations') return renderOperations(status, op);
@@ -567,7 +554,7 @@
     const shell = $('.page-shell') || document.body;
     const panel = document.createElement('section');
     panel.className = 'page-section';
-    panel.innerHTML = `<div class="empty-state">Failed to load the MLB AI site artifacts: ${esc(error.message)}</div>`;
+    panel.innerHTML = `<div class="empty-state">Failed to load the MLB AI site data: ${esc(error.message)}</div>`;
     shell.appendChild(panel);
   }
 }());

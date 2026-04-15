@@ -164,7 +164,7 @@ button, input, select { font: inherit; }
 
 .page-hero h1 {
   margin: 0.25rem 0 0.8rem;
-  font: 800 clamp(2.7rem, 5.8vw, 5rem)/0.92 "Aptos Display", "Aptos", sans-serif;
+  font: 800 clamp(2.25rem, 4.5vw, 3.9rem)/0.94 "Aptos Display", "Aptos", sans-serif;
   letter-spacing: -0.05em;
   text-wrap: balance;
 }
@@ -272,7 +272,7 @@ button, input, select { font: inherit; }
 
 .metric-value {
   margin: 0.35rem 0 0.4rem;
-  font: 800 clamp(1.8rem, 3vw, 2.45rem)/0.95 "Aptos Display", "Aptos", sans-serif;
+  font: 800 clamp(1.55rem, 2.5vw, 2.1rem)/0.98 "Aptos Display", "Aptos", sans-serif;
   letter-spacing: -0.04em;
 }
 
@@ -481,7 +481,7 @@ td.subtle {
 
 .lean-featured-play {
   margin: 0 0 0.35rem;
-  font: 900 clamp(2rem, 4vw, 3rem)/0.92 "Aptos Display", "Aptos", sans-serif;
+  font: 900 clamp(1.65rem, 3vw, 2.35rem)/0.96 "Aptos Display", "Aptos", sans-serif;
   letter-spacing: -0.05em;
 }
 
@@ -530,13 +530,13 @@ td.subtle {
 .lean-decision-head h3,
 .history-card h3 {
   margin: 0;
-  font: 800 clamp(1.9rem, 3.1vw, 2.3rem)/0.94 "Aptos Display", "Aptos", sans-serif;
+  font: 800 clamp(1.4rem, 2.2vw, 1.85rem)/1 "Aptos Display", "Aptos", sans-serif;
   letter-spacing: -0.04em;
 }
 
 .lean-bet-callout {
   margin-top: 0.48rem;
-  font: 900 clamp(1.7rem, 3.5vw, 2.25rem)/0.92 "Aptos Display", "Aptos", sans-serif;
+  font: 900 clamp(1.3rem, 2.4vw, 1.7rem)/0.98 "Aptos Display", "Aptos", sans-serif;
   letter-spacing: -0.04em;
 }
 
@@ -566,6 +566,17 @@ td.subtle {
   display: block;
   margin-bottom: 0.35rem;
   font-size: 0.95rem;
+}
+
+.lean-explain-block p,
+.prose-card p {
+  margin: 0.35rem 0 0;
+  color: var(--ink-soft);
+}
+
+.lean-explain-block p:first-of-type,
+.prose-card p:first-of-type {
+  margin-top: 0;
 }
 
 .lean-explain-block ul {

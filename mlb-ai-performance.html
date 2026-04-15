@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>MLB AI | Public Performance</title>
+    <title>MLB AI | Performance</title>
     <link rel="stylesheet" href="./assets/mlb-ai.css" />
   </head>
   <body data-page="performance">
@@ -11,10 +11,10 @@
       <div class="shell shell-nav">
         <a class="site-brand" href="./index.html" aria-label="MLB AI home">
           <span class="site-brand-mark">MLB AI</span>
-          <span class="site-brand-copy">System surfaces</span>
+          <span class="site-brand-copy">Official record</span>
         </a>
         <nav class="site-nav" aria-label="Primary">
-          <a class="site-nav-link" href="./index.html">Leans</a>
+          <a class="site-nav-link" href="./index.html">Bets</a>
           <a class="site-nav-link is-active" href="./mlb-ai-performance.html" aria-current="page">Performance</a>
           <a class="site-nav-link" href="./mlb-ai-challenger.html">Challenger</a>
           <a class="site-nav-link" href="./operations.html">Operations</a>
@@ -25,10 +25,10 @@
     <main class="shell page-shell">
       <section class="page-hero page-hero-performance">
         <div class="page-hero-copy">
-          <p class="eyebrow">Official Public Record</p>
-          <h1>How the live Ranker policy has actually performed.</h1>
+          <p class="eyebrow">Official record</p>
+          <h1>Performance</h1>
           <p class="lede">
-            This page is the official public record for the capped `.03` Ranker policy. Historical results are the 2022-2025 backtest for that exact contract. 2026 is the live out-of-sample record.
+            Official results of the public model. This page separates the live 2026 record from the 2022-2025 backtest on purpose.
           </p>
           <div id="performance-hero-meta" class="hero-meta"></div>
         </div>
@@ -40,8 +40,8 @@
       <section class="page-section page-section-emphasis">
         <div class="section-head">
           <div>
-            <p class="section-kicker">Trust layer</p>
-            <h2>Results framing</h2>
+            <p class="section-kicker">This season</p>
+            <h2>2026 summary</h2>
           </div>
           <span id="performance-coverage-badge" class="badge"></span>
         </div>
@@ -51,18 +51,8 @@
       <section class="page-section">
         <div class="section-head">
           <div>
-            <p class="section-kicker">Recent windows</p>
-            <h2>At-a-glance performance</h2>
-          </div>
-        </div>
-        <div id="performance-window-grid" class="summary-grid"></div>
-      </section>
-
-      <section class="page-section">
-        <div class="section-head">
-          <div>
-            <p class="section-kicker">Daily range</p>
-            <h2>Filter the 2026 ledger</h2>
+            <p class="section-kicker">Daily record</p>
+            <h2>2026 results by day</h2>
           </div>
         </div>
         <div class="filter-bar">
@@ -86,25 +76,11 @@
           <div class="control-group">
             <label class="control-label" for="monthly-policy-filter">Monthly view</label>
             <select id="monthly-policy-filter">
-              <option value="active_only">Official public policy only</option>
+              <option value="active_only">Official public model only</option>
             </select>
           </div>
         </div>
         <div id="performance-summary-grid" class="summary-grid"></div>
-      </section>
-
-      <section class="page-section">
-        <div class="section-head">
-          <div>
-            <p class="section-kicker">2026 ledger</p>
-            <h2>Daily performance</h2>
-          </div>
-          <span class="badge">Filtered range only</span>
-        </div>
-        <div class="table-note">
-          <div><span class="table-note-label">What this shows</span>Only the visible filter range.</div>
-          <div><span class="table-note-label">What stays separate</span>Full 2026 cumulative remains in the summary cards above.</div>
-        </div>
         <div class="table-wrap">
           <table id="daily-performance-table">
             <thead>
@@ -125,67 +101,13 @@
         </div>
       </section>
 
-      <section class="page-section page-section-emphasis">
-        <div class="section-head">
-          <div>
-            <p class="section-kicker">2026 picks</p>
-            <h2>Full 2026 pick history</h2>
-          </div>
-          <span class="badge">Every exported pick</span>
-        </div>
-        <div class="table-note">
-          <div><span class="table-note-label">What this shows</span>Every exported 2026 pick for the official public policy, including settled result and cumulative units.</div>
-          <div><span class="table-note-label">Why it matters</span>This is the bettor-facing ledger for what the site actually put on the board.</div>
-        </div>
-        <div class="filter-bar">
-          <div class="control-group control-group-wide">
-            <label class="control-label">Date preset</label>
-            <div class="segmented-control" id="history-range-presets">
-              <button type="button" data-range="7d">7D</button>
-              <button type="button" data-range="30d">30D</button>
-              <button type="button" data-range="season">Season</button>
-              <button type="button" data-range="all">All</button>
-            </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="history-start-date">Start</label>
-            <input id="history-start-date" type="date" />
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="history-end-date">End</label>
-            <input id="history-end-date" type="date" />
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="history-confidence-filter">Confidence</label>
-            <select id="history-confidence-filter">
-              <option value="all">All</option>
-              <option value="high">High</option>
-              <option value="medium">Medium</option>
-              <option value="low">Low</option>
-            </select>
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="history-market-filter">Market</label>
-            <select id="history-market-filter">
-              <option value="all">All</option>
-              <option value="total">Totals</option>
-              <option value="moneyline">Moneyline</option>
-              <option value="spread">Run line</option>
-            </select>
-          </div>
-        </div>
-        <div id="history-summary-grid" class="summary-grid"></div>
-        <div id="pick-history-grid" class="pick-history-grid"></div>
-        <div id="pick-history-gap" class="artifact-gap"></div>
-      </section>
-
       <section class="page-section">
         <div class="section-head">
           <div>
             <p class="section-kicker">Long-run record</p>
-            <h2>Monthly history</h2>
+            <h2>Monthly results</h2>
           </div>
-          <span class="badge">Official public policy only</span>
+          <span class="badge">Official public model only</span>
         </div>
         <div class="table-wrap">
           <table id="monthly-table">
@@ -208,15 +130,54 @@
         </div>
       </section>
 
-      <section class="page-section">
+      <section class="page-section page-section-emphasis">
         <div class="section-head">
           <div>
-            <p class="section-kicker">Profile</p>
-            <h2>Policy context</h2>
+            <p class="section-kicker">Full ledger</p>
+            <h2>Pick history</h2>
+          </div>
+          <span class="badge">Every posted bet</span>
+        </div>
+        <div class="filter-bar">
+          <div class="control-group control-group-wide">
+            <label class="control-label">Date preset</label>
+            <div class="segmented-control" id="history-range-presets">
+              <button type="button" data-range="7d">7D</button>
+              <button type="button" data-range="30d">30D</button>
+              <button type="button" data-range="season">Season</button>
+              <button type="button" data-range="all">All</button>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="history-start-date">Start</label>
+            <input id="history-start-date" type="date" />
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="history-end-date">End</label>
+            <input id="history-end-date" type="date" />
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="history-confidence-filter">Size tier</label>
+            <select id="history-confidence-filter">
+              <option value="all">All</option>
+              <option value="high">Primary</option>
+              <option value="medium">Smaller</option>
+              <option value="low">Low</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="history-market-filter">Market</label>
+            <select id="history-market-filter">
+              <option value="all">All</option>
+              <option value="total">Totals</option>
+              <option value="moneyline">Moneyline</option>
+              <option value="spread">Run line</option>
+            </select>
           </div>
         </div>
-        <div id="performance-comparator-grid" class="summary-grid"></div>
-        <div id="context-breakdowns" class="context-grid"></div>
+        <div id="history-summary-grid" class="summary-grid"></div>
+        <div id="pick-history-grid" class="pick-history-grid"></div>
+        <div id="pick-history-gap" class="artifact-gap"></div>
       </section>
     </main>
 

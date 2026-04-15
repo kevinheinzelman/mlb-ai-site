@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>MLB AI | Daily Leans</title>
+    <title>MLB AI | Today's Bets</title>
     <link rel="stylesheet" href="./assets/mlb-ai.css" />
   </head>
   <body data-page="leans">
@@ -11,10 +11,10 @@
       <div class="shell shell-nav">
         <a class="site-brand" href="./index.html" aria-label="MLB AI home">
           <span class="site-brand-mark">MLB AI</span>
-          <span class="site-brand-copy">System surfaces</span>
+          <span class="site-brand-copy">Official bets</span>
         </a>
         <nav class="site-nav" aria-label="Primary">
-          <a class="site-nav-link is-active" href="./index.html" aria-current="page">Leans</a>
+          <a class="site-nav-link is-active" href="./index.html" aria-current="page">Bets</a>
           <a class="site-nav-link" href="./mlb-ai-performance.html">Performance</a>
           <a class="site-nav-link" href="./mlb-ai-challenger.html">Challenger</a>
           <a class="site-nav-link" href="./operations.html">Operations</a>
@@ -25,10 +25,10 @@
     <main class="shell page-shell">
       <section class="page-hero page-hero-leans">
         <div class="page-hero-copy">
-          <p class="eyebrow">Official Public Card</p>
-          <h1>Today's official MLB AI bets.</h1>
+          <p class="eyebrow">Official public card</p>
+          <h1>Today&apos;s MLB Bets</h1>
           <p class="lede">
-            This page is the official public card. It uses the capped `.03` ranker policy only, with no challenger rows mixed into the live betting surface.
+            Official plays from the model. These bets are selected when the model&apos;s projected edge versus the market is at least 3% and the price is not worse than -150.
           </p>
           <div id="leans-hero-meta" class="hero-meta"></div>
         </div>
@@ -37,24 +37,34 @@
 
       <section id="leans-trust-bar" class="trust-bar-section"></section>
 
-      <section class="page-section">
+      <section class="page-section page-section-emphasis">
         <div class="section-head">
           <div>
-            <p class="section-kicker">Board clarity</p>
-            <h2>Today's board state</h2>
+            <p class="section-kicker">How the card works</p>
+            <h2>How bets are selected</h2>
           </div>
-          <span id="leans-summary-badge" class="badge"></span>
         </div>
-        <div id="leans-summary-grid" class="summary-grid"></div>
+        <div class="summary-grid">
+          <article class="metric-card prose-card">
+            <strong>What decides the card</strong>
+            <p>The model compares its projected win probability to the market&apos;s implied probability.</p>
+            <p>If that difference is large enough and the price is reasonable, the play makes the card.</p>
+          </article>
+          <article class="metric-card prose-card">
+            <strong>What the extra stats mean</strong>
+            <p>Additional stats shown below help explain the pick.</p>
+            <p>They do not act as separate decision rules or manual overrides.</p>
+          </article>
+        </div>
       </section>
 
       <section id="leans-featured-section" class="page-section page-section-emphasis">
         <div class="section-head">
           <div>
-            <p class="section-kicker">Top decision</p>
-            <h2>Featured play</h2>
+            <p class="section-kicker">Top play</p>
+            <h2>Top play today</h2>
           </div>
-          <span class="badge">Highest conviction</span>
+          <span class="badge">Highest-ranked official bet</span>
         </div>
         <div id="leans-featured-play"></div>
       </section>
@@ -63,9 +73,9 @@
         <div class="section-head">
           <div>
             <p class="section-kicker">Official card</p>
-            <h2>Core plays</h2>
+            <h2>Primary bets</h2>
           </div>
-          <span class="badge">Primary bets</span>
+          <span class="badge">Full-size positions</span>
         </div>
         <div id="leans-core-cards" class="lean-decision-grid"></div>
       </section>
@@ -74,9 +84,9 @@
         <div class="section-head">
           <div>
             <p class="section-kicker">Secondary card</p>
-            <h2>Exploratory plays</h2>
+            <h2>Smaller bets</h2>
           </div>
-          <span class="badge">Smaller exposure</span>
+          <span class="badge">Lower-priority positions</span>
         </div>
         <div id="leans-exploratory-cards" class="lean-decision-grid"></div>
       </section>

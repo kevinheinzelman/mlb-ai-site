@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-15T15:45:39.222Z",
+  "generated_at": "2026-04-15T17:32:12.604Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_ranker",
@@ -12,65 +12,6 @@
   "selection_contract": "edge_gte_0_04_no_cap_challenger",
   "season": 2026,
   "rows": [
-    {
-      "board_date": "2026-04-15",
-      "canonical_game_id": "mlb:286879",
-      "matchup": "Arizona Diamondbacks @ Baltimore Orioles",
-      "market_type": "total",
-      "side": "over",
-      "line_value": 9.5,
-      "price_american": 101,
-      "suggested_units": 1,
-      "edge": 0.502388,
-      "model_probability": 0.9999,
-      "market_probability": 0.497512,
-      "confidence_band": "high",
-      "selection_contract": "edge_gte_0_04_no_cap_challenger",
-      "final_score": 0.502388,
-      "context_score": null,
-      "hostile_penalty_multiplier": null,
-      "explanation_summary": "Total Over qualified for the public ranker card because model probability 100.0% exceeded market implied probability 49.8% by 50.2 points.",
-      "top_edge_drivers": [
-        {
-          "feature": "market_implied_probability",
-          "value": 0.497512,
-          "contribution": -0.137123
-        },
-        {
-          "feature": "price_american_norm",
-          "value": 0.505,
-          "contribution": -0.045857
-        },
-        {
-          "feature": "is_over_side",
-          "value": 1,
-          "contribution": -0.016456
-        }
-      ],
-      "top_context_drivers": [
-        {
-          "feature": "steam_move_count",
-          "value": 0,
-          "contribution": -0.009979
-        },
-        {
-          "feature": "sharp_count",
-          "value": 0,
-          "contribution": -0.008083
-        },
-        {
-          "feature": "market_micro_price_stddev",
-          "value": 0,
-          "contribution": -0.00703
-        }
-      ],
-      "historical_linkage": {
-        "model_family": "mlb_ai_ranker",
-        "model_version": "v1",
-        "training_window": "2022-2024",
-        "validation_window": "2025"
-      }
-    },
     {
       "board_date": "2026-04-15",
       "canonical_game_id": "mlb:286882",
