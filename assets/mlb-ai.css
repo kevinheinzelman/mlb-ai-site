@@ -288,6 +288,14 @@ td.subtle {
 
 .meta-line + .meta-line { margin-top: 0.24rem; }
 
+.context-only-label {
+  margin: 0.7rem 0 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .badge,
 .status-chip,
 .hero-pill,

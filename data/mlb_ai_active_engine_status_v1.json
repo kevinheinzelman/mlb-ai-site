@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-15T19:38:33.878Z",
+  "generated_at": "2026-04-15T22:39:50.056Z",
   "artifact_version": "v1",
   "active_engine": {
     "engine_family": "mlb_ai_ranker",
@@ -12,11 +12,11 @@
   "requested_board_date": "2026-04-15",
   "active_board_date": "2026-04-15",
   "freshness": {
-    "generated_at": "2026-04-15T19:38:33.878Z",
+    "generated_at": "2026-04-15T22:39:50.056Z",
     "board_date": "2026-04-15",
     "latest_canonical_board_date": "2026-04-15",
-    "current_source_scores_generated_at": "2026-04-15T19:35:26.850Z",
-    "historical_source_audit_generated_at": "2026-04-15T19:38:33.878Z"
+    "current_source_scores_generated_at": "2026-04-15T22:36:07.250Z",
+    "historical_source_audit_generated_at": "2026-04-15T22:39:50.056Z"
   },
   "source_date_coverage": {
     "current_window_end": "2026-04-15",
@@ -37,8 +37,8 @@
       "threshold_summary": {
         "historical_roi": 0.037967,
         "historical_units": 99.206609,
-        "settled_2026_roi": 0.053487,
-        "settled_2026_units": 3.583615
+        "settled_2026_roi": 0.037994,
+        "settled_2026_units": 2.583615
       }
     },
     "challenger_system": {
@@ -54,8 +54,8 @@
       "threshold_summary": {
         "historical_roi": 0.051115,
         "historical_units": 143.633251,
-        "settled_2026_roi": -0.120915,
-        "settled_2026_units": -7.133993
+        "settled_2026_roi": -0.149738,
+        "settled_2026_units": -9.133993
       }
     },
     "internal_research_lanes": [

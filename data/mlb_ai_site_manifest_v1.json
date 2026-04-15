@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-15T19:38:33.878Z",
+  "generated_at": "2026-04-15T22:39:50.056Z",
   "artifact_version": "v1",
   "site_system_contract": {
     "primary_system": {
@@ -15,8 +15,8 @@
       "threshold_summary": {
         "historical_roi": 0.037967,
         "historical_units": 99.206609,
-        "settled_2026_roi": 0.053487,
-        "settled_2026_units": 3.583615
+        "settled_2026_roi": 0.037994,
+        "settled_2026_units": 2.583615
       }
     },
     "challenger_system": {
@@ -32,8 +32,8 @@
       "threshold_summary": {
         "historical_roi": 0.051115,
         "historical_units": 143.633251,
-        "settled_2026_roi": -0.120915,
-        "settled_2026_units": -7.133993
+        "settled_2026_roi": -0.149738,
+        "settled_2026_units": -9.133993
       }
     },
     "internal_research_lanes": [
@@ -103,6 +103,7 @@
     "performance_2026": "mlb_ai_daily_performance_2026_v1.json",
     "pick_explanations_2026": "mlb_ai_pick_explanations_2026_v1.json",
     "public_ranker_explanations": "mlb_ai_ranker_explanations_v1.json",
+    "operations_trust_table": "mlb_ai_operations_trust_table_v1.json",
     "leans_history_view": "mlb_ai_leans_history_view_v1.json",
     "shadow_status": "mlb_ai_shadow_engine_status_v1.json",
     "shadow_daily_leans": "mlb_ai_shadow_daily_leans_v1.json",

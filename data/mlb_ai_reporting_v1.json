@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-15T19:38:33.878Z",
+  "generated_at": "2026-04-15T22:39:50.056Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_ranker",
@@ -12,7 +12,7 @@
   "selection_contract": "edge_gte_0_03_cap_minus_150",
   "source_coverage": {
     "historical_window": "2022-2025",
-    "results_through": "2026-04-14"
+    "results_through": "2026-04-15"
   },
   "active_policy_definition": {
     "policy_name": "edge_gte_0_03_cap_minus_150",
@@ -30,7 +30,7 @@
     "eligibility_contract": "quality_filtered_market_surface",
     "historical_window": "2022-2025",
     "live_window": "2026",
-    "results_through": "2026-04-14"
+    "results_through": "2026-04-15"
   },
   "active_policy_historical_summary": {
     "bets": 2613,
@@ -45,16 +45,16 @@
     "roi": 0.037967
   },
   "active_policy_live_summary": {
-    "bets": 67,
-    "settled_bets": 68,
-    "selected_bets": 73,
+    "bets": 68,
+    "settled_bets": 69,
+    "selected_bets": 70,
     "wins": 35,
-    "losses": 32,
+    "losses": 33,
     "pushes": 1,
-    "win_rate": 0.522388,
-    "hit_rate": 0.522388,
-    "units": 3.583615,
-    "roi": 0.053487
+    "win_rate": 0.514706,
+    "hit_rate": 0.514706,
+    "units": 2.583615,
+    "roi": 0.037994
   },
   "active_board_date": "2026-04-15",
   "site_surface": {

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-15T19:38:33.878Z",
+  "generated_at": "2026-04-15T22:39:50.056Z",
   "artifact_version": "v1",
   "active_engine": {
     "engine_family": "mlb_ai_ranker",
@@ -72,9 +72,9 @@
       "max_drawdown": -20.227809
     },
     "ytd_2026_summary": {
-      "bets": 59,
-      "units": -7.133993,
-      "roi": -0.120915
+      "bets": 61,
+      "units": -9.133993,
+      "roi": -0.149738
     }
   },
   "live_policy_reference": {
@@ -90,9 +90,9 @@
       "max_drawdown": -29.955258
     },
     "ytd_2026_summary": {
-      "bets": 67,
-      "units": 3.583615,
-      "roi": 0.053487
+      "bets": 68,
+      "units": 2.583615,
+      "roi": 0.037994
     }
   }
 }

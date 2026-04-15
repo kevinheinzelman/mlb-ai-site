@@ -182,7 +182,10 @@
       ? bulletList(context)
       : '<p>Additional context not available in current model output.</p>';
     const fallback = explanationRow?.explanation_summary || row.explanation_summary || 'This bet cleared the official public selection rule.';
-    return `${body}${missingContextNote(explanationRow, fallback)}`;
+    const contextOnly = Array.isArray(explanationRow?.context_only_notes) && explanationRow.context_only_notes.length
+      ? `<p class="subtle context-only-label">Context only</p>${bulletList(explanationRow.context_only_notes)}`
+      : '';
+    return `${body}${contextOnly}${missingContextNote(explanationRow, fallback)}`;
   }
 
   function betStartTime(explanationRow) {
@@ -601,7 +604,7 @@
     drawHistory();
   }
 
-  function renderOperations(status, op) {
+  function renderOperations(status, op, trustTable) {
     const primaryLabel = op?.site_system_contract?.primary_system?.label || status?.site_system_contract?.primary_system?.label || status?.active_engine?.engine_family || 'Primary system';
     const challengerLabel = op?.site_system_contract?.challenger_system?.label || status?.site_system_contract?.challenger_system?.label || 'Challenger';
     const threshold = op.summary?.live_public_selection_threshold || op.boards?.live_public_threshold || status?.site_system_contract?.primary_system?.threshold || 'edge_gte_0_03_cap_minus_150';
@@ -635,6 +638,16 @@
       if (fresh === 'green') return 'Healthy';
       return 'Unknown';
     };
+    const trustSummary = trustTable?.summary || {};
+    const trustRows = Array.isArray(trustTable?.rows) ? trustTable.rows : [];
+    const usageLabel = (row) => {
+      const parts = [];
+      if (row.used_in_live_model) parts.push('Live');
+      if (row.used_in_challenger) parts.push('Challenger');
+      if (row.used_in_explanations) parts.push('Expl.');
+      return parts.length ? parts.join(' | ') : 'Reference only';
+    };
+    const trustExplanation = (row) => row.explanation || 'No explanation recorded.';
     const heroMeta = $('#operations-hero-meta');
     if (heroMeta) heroMeta.innerHTML = pills([`Live rule ${threshold}`, `Challenger ${challengerThresholdValue}`, `Run ${op.run?.overall_status || 'unknown'}`, `Operating ${op.boards?.operating_date || 'unknown'}`, `Board ${op.boards?.active_board_date || 'unknown'}`]);
     const hero = $('#operations-hero-grid');
@@ -651,8 +664,8 @@
       priority.innerHTML = `<div class="section-head"><div><p class="section-kicker">Attention</p><h2>What needs action now</h2></div></div><div class="summary-grid">${[
         { label: 'Failures', value: String(failures.length), tone: failures.length ? 'metric-bad' : '', note: failures[0] ? failures[0].code : 'No blocking failures' },
         { label: 'Warnings', value: String(warnings.length), tone: warnings.length ? 'metric-warn' : '', note: warnings[0] ? warnings[0].code : 'No active warnings' },
-        { label: 'Latest graded date', value: op.summary?.latest_graded_date || 'unknown', note: 'Latest settled results attached to the official record' },
-        { label: 'Publish target', value: op.publish?.public_site_publish?.status || 'unknown', note: `Latest publish ${dt(op.summary?.latest_published_at)}` }
+        { label: 'Trust rows', value: String(trustRows.length), note: `${trustSummary.red || 0} red | ${trustSummary.yellow || 0} watch | ${trustSummary.green || 0} healthy` },
+        { label: 'Latest graded date', value: op.summary?.latest_graded_date || 'unknown', note: 'Latest settled results attached to the official record' }
       ].map(card).join('')}</div>`;
     }
 
@@ -662,28 +675,26 @@
       { label: 'Viewer export', value: op.publish?.viewer_publish?.status || 'unknown', note: dt(op.publish?.viewer_publish?.updated_at) },
       { label: 'Live board', value: op.boards?.active_board_date || 'unknown', note: `${primaryLabel} | ${threshold}` },
       { label: 'Challenger', value: challengerThresholdValue, note: `${challengerLabel} tracked separately` },
-      { label: 'Action coverage', value: pct(op.key_metrics?.action_coverage_pct), note: 'Current action feature coverage' },
-      { label: 'Weather coverage', value: pct(op.key_metrics?.weather_coverage_pct), note: 'Current board-date weather coverage' }
+      { label: 'Model-driving rows', value: String(trustSummary.live_rows || 0), note: 'Rows that directly drive the live system' },
+      { label: 'Explanation rows', value: String(trustSummary.explanation_rows || 0), note: 'Rows that feed public explanations' }
     ].map(card).join('');
 
     const objectBody = $('#operations-freshness-table tbody');
     if (objectBody) {
-      const rows = Array.isArray(op.loop_objects) ? op.loop_objects.filter((item) => item.object_type !== 'stage') : [];
-      objectBody.innerHTML = rows.length
-        ? rows
-          .sort((a, b) => (severityRank[String(a.freshness_status || '').toLowerCase()] ?? 4) - (severityRank[String(b.freshness_status || '').toLowerCase()] ?? 4)
-            || String(a.domain).localeCompare(String(b.domain))
-            || String(a.object_name).localeCompare(String(b.object_name)))
-          .map((row) => `<tr class="ops-row-${esc(freshnessSeverity(row))}">
-              <td><span class="${statusClass(row.freshness_status)}">${esc(opStatusLabel(row))}</span></td>
-              <td>${esc(row.object_name)}</td>
-              <td>${esc(row.domain)}</td>
-              <td>${esc(dt(row.last_refresh_timestamp || row.latest_generated_at_current || row.latest_generated_at_previous))}</td>
-              <td>${esc(row.expected_date || '--')}</td>
-              <td>${esc(row.latest_game_date_or_board_date || '--')}</td>
-              <td>${esc(opMeaning(row))}</td>
+      objectBody.innerHTML = trustRows.length
+        ? trustRows
+          .sort((a, b) => (severityRank[String(a.status || '').toLowerCase()] ?? 4) - (severityRank[String(b.status || '').toLowerCase()] ?? 4)
+            || String(a.source_name).localeCompare(String(b.source_name)))
+          .map((row) => `<tr class="ops-row-${esc(String(row.status || 'green'))}">
+              <td><span class="${statusClass(row.status)}">${esc(String(row.status || 'green').replaceAll('_', ' '))}</span></td>
+              <td>${esc(row.source_name)}</td>
+              <td>${esc(row.purpose)}</td>
+              <td>${esc(dt(row.last_updated_at))}</td>
+              <td>${esc(row.expected_cadence || '--')}</td>
+              <td>${esc(usageLabel(row))}</td>
+              <td>${esc(trustExplanation(row))}</td>
             </tr>`).join('')
-        : '<tr><td colspan="7" class="subtle">No loop object records are available.</td></tr>';
+        : '<tr><td colspan="7" class="subtle">No system-driving trust rows are available.</td></tr>';
     }
 
     const stageBody = $('#operations-stage-table tbody');
@@ -717,7 +728,7 @@
     if (page === 'leans') return renderLeans(status, await json('mlb_ai_daily_leans_v1.json'), op, await json('mlb_ai_daily_performance_2026_v1.json'), await json('mlb_ai_reporting_v1.json'), await json('mlb_ai_ranker_explanations_v1.json'));
     if (page === 'performance') return renderPerformanceSurface(status, await json('mlb_ai_reporting_v1.json'), await json('mlb_ai_reporting_monthly_v1.json'), await json('mlb_ai_daily_performance_2026_v1.json'), await json('mlb_ai_leans_history_view_v1.json'), op, { surfaceKind: 'live' });
     if (page === 'challenger') return renderPerformanceSurface(await json('mlb_ai_shadow_engine_status_v1.json'), await json('mlb_ai_shadow_reporting_v1.json'), await json('mlb_ai_shadow_reporting_monthly_v1.json'), await json('mlb_ai_shadow_daily_performance_2026_v1.json'), await json('mlb_ai_shadow_leans_history_view_v1.json'), op, { surfaceKind: 'challenger' });
-    if (page === 'operations') return renderOperations(status, op);
+    if (page === 'operations') return renderOperations(status, op, await json('mlb_ai_operations_trust_table_v1.json'));
   } catch (error) {
     const shell = $('.page-shell') || document.body;
     const panel = document.createElement('section');

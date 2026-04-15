@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-15T19:38:33.878Z",
+  "generated_at": "2026-04-15T22:39:50.056Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_ranker",
@@ -11,7 +11,7 @@
   },
   "selection_contract": "edge_gte_0_04_no_cap_challenger",
   "season": 2026,
-  "results_through": "2026-04-14",
+  "results_through": "2026-04-15",
   "rows": [
     {
       "board_date": "2026-03-20",
@@ -483,32 +483,32 @@
     },
     {
       "board_date": "2026-04-15",
-      "bets": 0,
-      "selected_bets": 4,
-      "settled_bets": 0,
-      "pending_bets": 4,
+      "bets": 2,
+      "selected_bets": 3,
+      "settled_bets": 2,
+      "pending_bets": 1,
       "wins": 0,
-      "losses": 0,
+      "losses": 2,
       "pushes": 0,
-      "win_rate": null,
-      "avg_price": null,
+      "win_rate": 0,
+      "avg_price": -251.5,
       "avg_win_price": null,
-      "units": 0,
-      "roi": null,
-      "cumulative_units": -7.133992,
-      "drawdown_to_date": -14.280694,
-      "selection_pct": 0.047619
+      "units": -2,
+      "roi": -1,
+      "cumulative_units": -9.133992,
+      "drawdown_to_date": -16.280694,
+      "selection_pct": 0.035714
     }
   ],
   "summary": {
-    "bets": 59,
-    "selected_bets": 64,
-    "settled_bets": 60,
-    "pending_bets": 4,
+    "bets": 61,
+    "selected_bets": 63,
+    "settled_bets": 62,
+    "pending_bets": 1,
     "wins": 29,
-    "losses": 30,
+    "losses": 32,
     "pushes": 1,
-    "units": -7.133993,
-    "roi": -0.120915
+    "units": -9.133993,
+    "roi": -0.149738
   }
 }
