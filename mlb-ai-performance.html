@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>MLB AI | Performance</title>
+    <title>MLB AI | Public Performance</title>
     <link rel="stylesheet" href="./assets/mlb-ai.css" />
   </head>
   <body data-page="performance">
@@ -16,6 +16,7 @@
         <nav class="site-nav" aria-label="Primary">
           <a class="site-nav-link" href="./index.html">Leans</a>
           <a class="site-nav-link is-active" href="./mlb-ai-performance.html" aria-current="page">Performance</a>
+          <a class="site-nav-link" href="./mlb-ai-challenger.html">Challenger</a>
           <a class="site-nav-link" href="./operations.html">Operations</a>
         </nav>
       </div>
@@ -24,10 +25,10 @@
     <main class="shell page-shell">
       <section class="page-hero page-hero-performance">
         <div class="page-hero-copy">
-          <p class="eyebrow">Performance</p>
-          <h1>See what the Ranker System has done, not just what it says.</h1>
+          <p class="eyebrow">Official Public Record</p>
+          <h1>How the live Ranker policy has actually performed.</h1>
           <p class="lede">
-            This page reports the current public Ranker record. The threshold contract is fixed, the scoring contract is unchanged, and the public performance surface matches the public picks surface.
+            This page is the official public record for the capped `.03` Ranker policy. Historical results are the 2022-2025 backtest for that exact contract. 2026 is the live out-of-sample record.
           </p>
           <div id="performance-hero-meta" class="hero-meta"></div>
         </div>
@@ -85,8 +86,7 @@
           <div class="control-group">
             <label class="control-label" for="monthly-policy-filter">Monthly view</label>
             <select id="monthly-policy-filter">
-              <option value="active_only">Public threshold only</option>
-              <option value="all_thresholds">Include threshold comparators</option>
+              <option value="active_only">Official public policy only</option>
             </select>
           </div>
         </div>
@@ -129,13 +129,13 @@
         <div class="section-head">
           <div>
             <p class="section-kicker">2026 picks</p>
-            <h2>Pick history explorer</h2>
+            <h2>Full 2026 pick history</h2>
           </div>
-          <span class="badge">Artifact-driven inspection</span>
+          <span class="badge">Every exported pick</span>
         </div>
         <div class="table-note">
-          <div><span class="table-note-label">What this shows</span>Every exported 2026 pick explanation that matches your filters.</div>
-          <div><span class="table-note-label">Current limit</span>Settled pick-by-pick outcomes still need the next history-view artifact.</div>
+          <div><span class="table-note-label">What this shows</span>Every exported 2026 pick for the official public policy, including settled result and cumulative units.</div>
+          <div><span class="table-note-label">Why it matters</span>This is the bettor-facing ledger for what the site actually put on the board.</div>
         </div>
         <div class="filter-bar">
           <div class="control-group control-group-wide">
@@ -185,7 +185,7 @@
             <p class="section-kicker">Long-run record</p>
             <h2>Monthly history</h2>
           </div>
-          <span class="badge">Public threshold plus comparators</span>
+          <span class="badge">Official public policy only</span>
         </div>
         <div class="table-wrap">
           <table id="monthly-table">
@@ -211,8 +211,8 @@
       <section class="page-section">
         <div class="section-head">
           <div>
-            <p class="section-kicker">Benchmarks</p>
-            <h2>System context</h2>
+            <p class="section-kicker">Profile</p>
+            <h2>Policy context</h2>
           </div>
         </div>
         <div id="performance-comparator-grid" class="summary-grid"></div>

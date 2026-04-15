@@ -1,69 +1,71 @@
 {
-  "generated_at": "2026-04-14T22:30:35.223Z",
+  "generated_at": "2026-04-15T15:45:39.222Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_ranker",
     "engine_version": "v1",
-    "active_policy": "edge_gte_0_03",
+    "active_policy": "edge_gte_0_03_cap_minus_150",
     "engine_state": "public_primary",
-    "model_lock_status": "ranker_public_primary",
+    "model_lock_status": "ranker_quality_filtered_cap_primary",
     "trusted_for_live_betting": false
   },
-  "selection_contract": "edge_gte_0_03",
+  "selection_contract": "edge_gte_0_03_cap_minus_150",
   "board_state": "ready",
   "board_available": true,
-  "requested_board_date": "2026-04-14",
-  "board_date": "2026-04-14",
-  "active_board_date": "2026-04-14",
-  "latest_valid_mlb_ai_board_date": "2026-04-14",
-  "latest_canonical_board_date": "2026-04-14",
+  "requested_board_date": "2026-04-15",
+  "board_date": "2026-04-15",
+  "active_board_date": "2026-04-15",
+  "latest_valid_mlb_ai_board_date": "2026-04-15",
+  "latest_canonical_board_date": "2026-04-15",
   "availability_reason": null,
   "slate_summary": {
     "total_rows_scored": 90,
-    "selected_bets": 3,
+    "selected_bets": 4,
     "selected_by_market": {
-      "spread": 3
+      "total": 1,
+      "spread": 2,
+      "moneyline": 1
     }
   },
   "rows": [
     {
-      "board_date": "2026-04-14",
-      "canonical_game_id": "mlb:286831",
-      "matchup": "Colorado Rockies @ Houston Astros",
-      "away_team": "Colorado Rockies",
-      "home_team": "Houston Astros",
-      "market_type": "spread",
-      "side": "away",
-      "line_value": 1.5,
-      "price_american": -138,
-      "market_probability": 0.579832,
-      "model_probability": 0.636923,
-      "edge": 0.057091,
-      "selection_contract": "edge_gte_0_03",
+      "board_date": "2026-04-15",
+      "canonical_game_id": "mlb:286879",
+      "matchup": "Arizona Diamondbacks @ Baltimore Orioles",
+      "away_team": "Arizona Diamondbacks",
+      "home_team": "Baltimore Orioles",
+      "market_type": "total",
+      "side": "over",
+      "line_value": 9.5,
+      "price_american": 101,
+      "market_probability": 0.497512,
+      "model_probability": 0.9999,
+      "edge": 0.502388,
+      "selection_contract": "edge_gte_0_03_cap_minus_150",
       "rank_on_slate": 1,
       "confidence_band": "high",
       "visibility_tier": "core",
       "display_sort_bucket": "core_priority",
       "primary_drivers": [
-        "Market Implied Probability +0.169",
-        "Price American Norm +0.080",
-        "Selected Is Home +0.043"
+        "Market Implied Probability -0.137",
+        "Price American Norm -0.046",
+        "Is Over Side -0.016"
       ],
       "supporting_context": [
-        "Price American Norm +0.080",
-        "Selected Is Home +0.043"
+        "Price American Norm -0.046",
+        "Is Over Side -0.016"
       ],
       "suggested_units": 1,
-      "explanation_summary": "Run line Away at -138 cleared the edge_gte_0_03 threshold with model probability 63.7% versus market 58.0%.",
+      "explanation_summary": "Total Over at +101 cleared the edge_gte_0_03_cap_minus_150 threshold with model probability 100.0% versus market 49.8%.",
       "comparator_flags": {},
-      "ev_proxy": 0.098462
+      "ev_proxy": 1.009799
     },
     {
-      "board_date": "2026-04-14",
-      "canonical_game_id": "mlb:286825",
-      "matchup": "Los Angeles Angels @ New York Yankees",
-      "away_team": "Los Angeles Angels",
-      "home_team": "New York Yankees",
+      "board_date": "2026-04-15",
+      "canonical_game_id": "mlb:286882",
+      "matchup": "Washington Nationals @ Pittsburgh Pirates",
+      "away_team": "Washington Nationals",
+      "home_team": "Pittsburgh Pirates",
       "market_type": "spread",
       "side": "away",
       "line_value": 1.5,
@@ -71,7 +73,7 @@
       "market_probability": 0.576271,
       "model_probability": 0.628571,
       "edge": 0.0523,
-      "selection_contract": "edge_gte_0_03",
+      "selection_contract": "edge_gte_0_03_cap_minus_150",
       "rank_on_slate": 2,
       "confidence_band": "high",
       "visibility_tier": "core",
@@ -86,41 +88,73 @@
         "Selected Is Home +0.043"
       ],
       "suggested_units": 1,
-      "explanation_summary": "Run line Away at -136 cleared the edge_gte_0_03 threshold with model probability 62.9% versus market 57.6%.",
+      "explanation_summary": "Run line Away at -136 cleared the edge_gte_0_03_cap_minus_150 threshold with model probability 62.9% versus market 57.6%.",
       "comparator_flags": {},
       "ev_proxy": 0.090756
     },
     {
-      "board_date": "2026-04-14",
-      "canonical_game_id": "mlb:286826",
+      "board_date": "2026-04-15",
+      "canonical_game_id": "mlb:286887",
       "matchup": "Miami Marlins @ Atlanta Braves",
       "away_team": "Miami Marlins",
       "home_team": "Atlanta Braves",
       "market_type": "spread",
       "side": "away",
       "line_value": 1.5,
-      "price_american": -156,
-      "market_probability": 0.609375,
-      "model_probability": 0.641628,
-      "edge": 0.032253,
-      "selection_contract": "edge_gte_0_03",
+      "price_american": -149,
+      "market_probability": 0.598394,
+      "model_probability": 0.636923,
+      "edge": 0.03853,
+      "selection_contract": "edge_gte_0_03_cap_minus_150",
       "rank_on_slate": 3,
       "confidence_band": "medium",
       "visibility_tier": "exploratory",
       "display_sort_bucket": "exploratory_priority",
       "primary_drivers": [
-        "Market Implied Probability +0.257",
-        "Price American Norm +0.095",
+        "Market Implied Probability +0.225",
+        "Price American Norm +0.089",
         "Selected Is Home +0.043"
       ],
       "supporting_context": [
-        "Price American Norm +0.095",
+        "Price American Norm +0.089",
         "Selected Is Home +0.043"
       ],
       "suggested_units": 1,
-      "explanation_summary": "Run line Away at -156 cleared the edge_gte_0_03 threshold with model probability 64.2% versus market 60.9%.",
+      "explanation_summary": "Run line Away at -149 cleared the edge_gte_0_03_cap_minus_150 threshold with model probability 63.7% versus market 59.8%.",
       "comparator_flags": {},
-      "ev_proxy": 0.052927
+      "ev_proxy": 0.064388
+    },
+    {
+      "board_date": "2026-04-15",
+      "canonical_game_id": "mlb:286882",
+      "matchup": "Washington Nationals @ Pittsburgh Pirates",
+      "away_team": "Washington Nationals",
+      "home_team": "Pittsburgh Pirates",
+      "market_type": "moneyline",
+      "side": "away",
+      "line_value": 0,
+      "price_american": 149,
+      "market_probability": 0.401606,
+      "model_probability": 0.4375,
+      "edge": 0.035894,
+      "selection_contract": "edge_gte_0_03_cap_minus_150",
+      "rank_on_slate": 4,
+      "confidence_band": "medium",
+      "visibility_tier": "exploratory",
+      "display_sort_bucket": "exploratory_priority",
+      "primary_drivers": [
+        "Market Implied Probability -0.422",
+        "Price American Norm -0.050",
+        "Opponent Team Statcast Available Flag +0.028"
+      ],
+      "supporting_context": [
+        "Price American Norm -0.050",
+        "Opponent Team Statcast Available Flag +0.028"
+      ],
+      "suggested_units": 1,
+      "explanation_summary": "Moneyline Away at +149 cleared the edge_gte_0_03_cap_minus_150 threshold with model probability 43.8% versus market 40.2%.",
+      "comparator_flags": {},
+      "ev_proxy": 0.089375
     }
   ],
   "site_surface": {
@@ -130,9 +164,9 @@
     "status": "live_site_surface",
     "model_family": "mlb_ai_ranker",
     "model_version": "v1",
-    "threshold": "edge_gte_0_03",
-    "description": "Full-board daily ranking surface using predicted win probability minus implied probability.",
-    "board_date": "2026-04-14"
+    "threshold": "edge_gte_0_03_cap_minus_150",
+    "description": "Quality-filtered public ranker surface using edge >= 0.03 while excluding prices below -150.",
+    "board_date": "2026-04-15"
   },
   "retained_internal_systems": [
     {

@@ -1,14 +1,6 @@
 {
-  "generated_at": "2026-04-14T22:30:35.223Z",
+  "generated_at": "2026-04-15T15:45:39.222Z",
   "artifact_version": "v1",
-  "engine": {
-    "engine_family": "mlb_ai_ranker",
-    "engine_version": "v1",
-    "active_policy": "edge_gte_0_03",
-    "engine_state": "public_primary",
-    "model_lock_status": "ranker_public_primary",
-    "trusted_for_live_betting": false
-  },
   "site_surface": {
     "system_key": "ranker_system",
     "label": "Ranker System",
@@ -16,9 +8,31 @@
     "status": "live_site_surface",
     "model_family": "mlb_ai_ranker",
     "model_version": "v1",
-    "threshold": "edge_gte_0_03",
-    "description": "Full-board daily ranking surface using predicted win probability minus implied probability."
+    "threshold": "edge_gte_0_03_cap_minus_150",
+    "description": "Quality-filtered public ranker surface using edge >= 0.03 while excluding prices below -150."
   },
+  "challenger_surface": {
+    "system_key": "ranker_challenger_system",
+    "label": "Ranker Challenger",
+    "role": "shadow_challenger_surface",
+    "status": "shadow_not_official_public_record",
+    "model_family": "mlb_ai_ranker",
+    "model_version": "v1",
+    "threshold": "edge_gte_0_04_no_cap_challenger",
+    "description": "Separate challenger lane using edge >= 0.04 with no additional favorite cap. Not the official public betting record."
+  },
+  "internal_research_lanes": [
+    {
+      "system_key": "ranker_canonical_research_lane",
+      "label": "Canonical Full Research Lane",
+      "role": "internal_research_lane",
+      "status": "not_publicly_surfaced",
+      "model_family": "mlb_ai_ranker",
+      "model_version": "v1",
+      "threshold": "edge_gte_0_03_canonical_full",
+      "description": "Broader canonical edge >= 0.03 ranker universe retained internally for prove-it research only."
+    }
+  ],
   "retained_internal_systems": [
     {
       "system_key": "totals_unders_system",
@@ -31,89 +45,45 @@
       "description": "Retained internally for historical comparison and specialist analysis, but removed from the current public site surface."
     }
   ],
-  "active_policy": {
-    "policy_name": "edge_gte_0_03",
+  "live_policy": {
+    "policy_name": "edge_gte_0_03_cap_minus_150",
+    "label": "Ranker System",
+    "role": "official_public_record",
     "historical_summary": {
-      "bets": 4006,
-      "units": 126.1073,
-      "roi": 0.033,
-      "win_rate": 0.5844
+      "bets": 2613,
+      "selected_bets": 2745,
+      "units": 99.206609,
+      "roi": 0.037967,
+      "win_rate": 0.536548,
+      "max_drawdown": -29.955258
     },
-    "shadow_summary": {
-      "bets": null,
-      "units": -1.5412,
-      "roi": -0.0186,
-      "win_rate": null
+    "ytd_2026_summary": {
+      "bets": 67,
+      "units": 3.583615,
+      "roi": 0.053487
     }
   },
-  "comparators": [
-    {
-      "policy_name": "edge_gte_0_01",
-      "family": "threshold",
-      "label": "Edge >= 0.01",
-      "historical_summary": {
-        "bets": 7752,
-        "units": 176.0812,
-        "roi": 0.0238,
-        "win_rate": 0.5599
-      },
-      "shadow_summary": {
-        "bets": null,
-        "units": -13.49,
-        "roi": -0.0627,
-        "win_rate": null
-      }
+  "challenger_policy": {
+    "policy_name": "edge_gte_0_04_no_cap_challenger",
+    "label": "Ranker Challenger",
+    "role": "shadow_challenger_not_public_record",
+    "historical_summary": {
+      "bets": 2810,
+      "selected_bets": 2943,
+      "units": 143.633251,
+      "roi": 0.051115,
+      "win_rate": 0.604626,
+      "max_drawdown": -20.227809
     },
-    {
-      "policy_name": "edge_gte_0_02",
-      "family": "threshold",
-      "label": "Edge >= 0.02",
-      "historical_summary": {
-        "bets": 5433,
-        "units": 154.159,
-        "roi": 0.0298,
-        "win_rate": 0.5727
-      },
-      "shadow_summary": {
-        "bets": null,
-        "units": -12.8485,
-        "roi": -0.0905,
-        "win_rate": null
-      }
-    },
-    {
-      "policy_name": "edge_gte_0_04",
-      "family": "threshold",
-      "label": "Edge >= 0.04",
-      "historical_summary": {
-        "bets": 3003,
-        "units": 138.5277,
-        "roi": 0.0483,
-        "win_rate": 0.6027
-      },
-      "shadow_summary": {
-        "bets": null,
-        "units": -5.1057,
-        "roi": -0.0896,
-        "win_rate": null
-      }
-    },
-    {
-      "policy_name": "top5",
-      "family": "baseline",
-      "label": "Top 5 baseline",
-      "historical_summary": {
-        "bets": 3734,
-        "units": 147.649,
-        "roi": 0.0415,
-        "win_rate": 0.5872
-      },
-      "shadow_summary": {
-        "bets": null,
-        "units": -9.6793,
-        "roi": -0.0827,
-        "win_rate": null
-      }
+    "ytd_2026_summary": {
+      "bets": 59,
+      "units": -7.133993,
+      "roi": -0.120915
     }
+  },
+  "promotion_rule": "Challenger policy cannot become live without explicit forward evidence, reconciliation, and doc updates.",
+  "notes": [
+    "The public site surface is the capped .03 live policy.",
+    "The challenger .04 no-cap policy is tracked separately and must not contaminate the official public record."
   ]
 }

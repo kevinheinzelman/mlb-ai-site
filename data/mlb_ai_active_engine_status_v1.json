@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-04-14T22:30:35.223Z",
+  "generated_at": "2026-04-15T15:45:39.222Z",
   "artifact_version": "v1",
   "active_engine": {
     "engine_family": "mlb_ai_ranker",
     "engine_version": "v1",
-    "active_policy": "edge_gte_0_03",
+    "active_policy": "edge_gte_0_03_cap_minus_150",
     "engine_state": "public_primary",
-    "model_lock_status": "ranker_public_primary",
+    "model_lock_status": "ranker_quality_filtered_cap_primary",
     "trusted_for_live_betting": false
   },
-  "requested_board_date": "2026-04-14",
-  "active_board_date": "2026-04-14",
+  "requested_board_date": "2026-04-15",
+  "active_board_date": "2026-04-15",
   "freshness": {
-    "generated_at": "2026-04-14T22:30:35.223Z",
-    "board_date": "2026-04-14",
-    "latest_canonical_board_date": "2026-04-14",
-    "current_source_scores_generated_at": "2026-04-14T22:28:06.215Z",
-    "historical_source_audit_generated_at": "2026-04-14T22:30:27.785Z"
+    "generated_at": "2026-04-15T15:45:39.222Z",
+    "board_date": "2026-04-15",
+    "latest_canonical_board_date": "2026-04-15",
+    "current_source_scores_generated_at": "2026-04-15T15:42:39.304Z",
+    "historical_source_audit_generated_at": "2026-04-15T15:45:39.222Z"
   },
   "source_date_coverage": {
-    "current_window_end": "2026-04-14",
+    "current_window_end": "2026-04-15",
     "historical_start": "2022-04-07",
     "historical_end": "2025-09-30"
   },
@@ -31,16 +31,45 @@
       "status": "live_site_surface",
       "model_family": "mlb_ai_ranker",
       "model_version": "v1",
-      "threshold": "edge_gte_0_03",
-      "description": "Full-board daily ranking surface using predicted win probability minus implied probability.",
-      "board_date": "2026-04-14",
+      "threshold": "edge_gte_0_03_cap_minus_150",
+      "description": "Quality-filtered public ranker surface using edge >= 0.03 while excluding prices below -150.",
+      "board_date": "2026-04-15",
       "threshold_summary": {
-        "historical_roi": 0.033,
-        "historical_units": 126.1073,
-        "settled_2026_roi": -0.0186,
-        "settled_2026_units": -1.5412
+        "historical_roi": 0.037967,
+        "historical_units": 99.206609,
+        "settled_2026_roi": 0.053487,
+        "settled_2026_units": 3.583615
       }
     },
+    "challenger_system": {
+      "system_key": "ranker_challenger_system",
+      "label": "Ranker Challenger",
+      "role": "shadow_challenger_surface",
+      "status": "shadow_not_official_public_record",
+      "model_family": "mlb_ai_ranker",
+      "model_version": "v1",
+      "threshold": "edge_gte_0_04_no_cap_challenger",
+      "description": "Separate challenger lane using edge >= 0.04 with no additional favorite cap. Not the official public betting record.",
+      "board_date": "2026-04-15",
+      "threshold_summary": {
+        "historical_roi": 0.051115,
+        "historical_units": 143.633251,
+        "settled_2026_roi": -0.120915,
+        "settled_2026_units": -7.133993
+      }
+    },
+    "internal_research_lanes": [
+      {
+        "system_key": "ranker_canonical_research_lane",
+        "label": "Canonical Full Research Lane",
+        "role": "internal_research_lane",
+        "status": "not_publicly_surfaced",
+        "model_family": "mlb_ai_ranker",
+        "model_version": "v1",
+        "threshold": "edge_gte_0_03_canonical_full",
+        "description": "Broader canonical edge >= 0.03 ranker universe retained internally for prove-it research only."
+      }
+    ],
     "retained_internal_systems": [
       {
         "system_key": "totals_unders_system",
@@ -65,10 +94,20 @@
           "mlb_ai_reporting_v1.json",
           "mlb_ai_reporting_monthly_v1.json",
           "mlb_ai_daily_performance_2026_v1.json",
-          "mlb_ai_policy_comparison_v1.json",
           "mlb_ai_pick_explanations_2026_v1.json"
         ],
         "system_key": "ranker_system"
+      },
+      "challenger": {
+        "page": "mlb-ai-challenger.html",
+        "primary_artifacts": [
+          "mlb_ai_shadow_daily_leans_v1.json",
+          "mlb_ai_shadow_reporting_v1.json",
+          "mlb_ai_shadow_reporting_monthly_v1.json",
+          "mlb_ai_shadow_daily_performance_2026_v1.json",
+          "mlb_ai_shadow_leans_history_view_v1.json"
+        ],
+        "system_key": "ranker_challenger_system"
       },
       "operations": {
         "page": "operations.html",
