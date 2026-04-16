@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-16T11:37:08.982Z",
+  "generated_at": "2026-04-16T12:30:41.898Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_ranker",
@@ -32,32 +32,32 @@
       "matchup": "Los Angeles Angels @ New York Yankees",
       "away_team": "Los Angeles Angels",
       "home_team": "New York Yankees",
-      "bet_label": "New York Yankees ML (-280)",
+      "bet_label": "New York Yankees ML (-286)",
       "market_type": "moneyline",
       "side": "home",
       "line_value": 0,
-      "price_american": -280,
-      "market_probability": 0.736842,
+      "price_american": -286,
+      "market_probability": 0.740933,
       "model_probability": 0.789474,
-      "edge": 0.052632,
+      "edge": 0.048541,
       "selection_contract": "edge_gte_0_04_no_cap_challenger",
       "rank_on_slate": 1,
       "confidence_band": "high",
       "visibility_tier": "core",
       "display_sort_bucket": "core_priority",
       "primary_drivers": [
-        "Market Implied Probability +0.767",
-        "Price American Norm +0.039",
+        "Market Implied Probability +0.782",
+        "Price American Norm +0.040",
         "Selected Team Statcast Available Flag -0.028"
       ],
       "supporting_context": [
-        "Price American Norm +0.039",
+        "Price American Norm +0.040",
         "Selected Team Statcast Available Flag -0.028"
       ],
       "suggested_units": 1,
-      "explanation_summary": "Moneyline Home at -280 cleared the edge_gte_0_04_no_cap_challenger threshold with model probability 78.9% versus market 73.7%.",
+      "explanation_summary": "Moneyline Home at -286 cleared the edge_gte_0_04_no_cap_challenger threshold with model probability 78.9% versus market 74.1%.",
       "comparator_flags": {},
-      "ev_proxy": 0.071429
+      "ev_proxy": 0.065513
     }
   ],
   "site_surface": {

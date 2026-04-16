@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-16T11:37:08.982Z",
+  "generated_at": "2026-04-16T12:30:41.898Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_ranker",
@@ -19,27 +19,27 @@
       "market_type": "moneyline",
       "side": "home",
       "line_value": 0,
-      "price_american": -280,
+      "price_american": -286,
       "suggested_units": 1,
-      "edge": 0.052632,
+      "edge": 0.048541,
       "model_probability": 0.789474,
-      "market_probability": 0.736842,
+      "market_probability": 0.740933,
       "confidence_band": "high",
       "selection_contract": "edge_gte_0_04_no_cap_challenger",
-      "final_score": 0.052632,
+      "final_score": 0.048541,
       "context_score": null,
       "hostile_penalty_multiplier": null,
-      "explanation_summary": "Moneyline Home qualified for the public ranker card because model probability 78.9% exceeded market implied probability 73.7% by 5.3 points.",
+      "explanation_summary": "Moneyline Home qualified for the public ranker card because model probability 78.9% exceeded market implied probability 74.1% by 4.9 points.",
       "top_edge_drivers": [
         {
           "feature": "market_implied_probability",
-          "value": 0.736842,
-          "contribution": 0.767356
+          "value": 0.740933,
+          "contribution": 0.781906
         },
         {
           "feature": "price_american_norm",
-          "value": -1.4,
-          "contribution": 0.038654
+          "value": -1.43,
+          "contribution": 0.039896
         },
         {
           "feature": "selected_team_statcast_available_flag",
