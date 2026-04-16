@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-15T22:39:50.056Z",
+  "generated_at": "2026-04-16T11:37:08.982Z",
   "artifact_version": "v1",
   "site_surface": {
     "system_key": "ranker_system",
@@ -50,17 +50,17 @@
     "label": "Ranker System",
     "role": "official_public_record",
     "historical_summary": {
-      "bets": 2613,
-      "selected_bets": 2745,
-      "units": 99.206609,
-      "roi": 0.037967,
-      "win_rate": 0.536548,
-      "max_drawdown": -29.955258
+      "bets": 2194,
+      "selected_bets": 2281,
+      "units": 84.154635,
+      "roi": 0.038357,
+      "win_rate": 0.52917,
+      "max_drawdown": -22.876292
     },
     "ytd_2026_summary": {
-      "bets": 68,
-      "units": 2.583615,
-      "roi": 0.037994
+      "bets": 57,
+      "units": 3.016888,
+      "roi": 0.052928
     }
   },
   "challenger_policy": {
@@ -68,17 +68,17 @@
     "label": "Ranker Challenger",
     "role": "shadow_challenger_not_public_record",
     "historical_summary": {
-      "bets": 2810,
-      "selected_bets": 2943,
-      "units": 143.633251,
-      "roi": 0.051115,
-      "win_rate": 0.604626,
-      "max_drawdown": -20.227809
+      "bets": 2313,
+      "selected_bets": 2401,
+      "units": 103.780184,
+      "roi": 0.044868,
+      "win_rate": 0.602681,
+      "max_drawdown": -30.669549
     },
     "ytd_2026_summary": {
-      "bets": 61,
-      "units": -9.133993,
-      "roi": -0.149738
+      "bets": 54,
+      "units": -6.7669,
+      "roi": -0.125313
     }
   },
   "promotion_rule": "Challenger policy cannot become live without explicit forward evidence, reconciliation, and doc updates.",

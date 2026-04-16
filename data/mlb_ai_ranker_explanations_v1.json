@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-15T22:39:50.056Z",
+  "generated_at": "2026-04-16T11:37:08.982Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_ranker",
@@ -10,122 +10,16 @@
     "trusted_for_live_betting": false
   },
   "selection_contract": "edge_gte_0_03_cap_minus_150",
-  "board_date": "2026-04-15",
-  "rows": [
-    {
-      "board_date": "2026-04-15",
-      "canonical_game_id": "mlb:286879",
-      "market_type": "total",
-      "side": "under",
-      "bet_label": "Under 11.5 (-148)",
-      "matchup": "Arizona Diamondbacks @ Baltimore Orioles",
-      "start_time_utc": "2026-04-15T16:36:00Z",
-      "start_time_et": "Apr 15, 12:36 PM",
-      "first_pitch_et": "12:36 PM",
-      "model_probability": 0.9999,
-      "market_implied_probability": 0.596774,
-      "edge": 0.403126,
-      "selection_logic_note": "Selection logic uses model edge versus market implied probability plus the public price rule. Extra notes below explain the bet but are not separate approval rules.",
-      "why_this_bet": [
-        "Model 100.0% vs market 59.7% for a 40.3 point edge.",
-        "Weather: 17 mph crosswind, 31F. Those conditions generally lean lower scoring."
-      ],
-      "context_only_notes": [
-        "Context only: Under side bullpen context suggests bullpen availability looks thin, bullpen quality score 5.9.",
-        "Context only: recent team form reads stable."
-      ],
-      "market_context": {
-        "summary": "Model 100.0% vs market 59.7%.",
-        "edge_text": "40.3 point edge",
-        "current_price": "-148"
-      },
-      "line_movement": {
-        "summary": "Additional context not available in current model output",
-        "missing": [
-          "line movement"
-        ]
-      },
-      "sharp_public_context": {
-        "summary": "Additional context not available in current model output",
-        "missing": [
-          "sharp/public context"
-        ]
-      },
-      "weather_context": {
-        "wind_direction": "crosswind",
-        "wind_speed": 17.3,
-        "temperature": 30.8,
-        "summary": "Weather: 17 mph crosswind, 31F. Those conditions generally lean lower scoring."
-      },
-      "pitching_bullpen_context": {
-        "summary": "Pitching/bullpen context available"
-      },
-      "matchup_context": {
-        "summary": "Matchup context available"
-      },
-      "missing_context": [
-        "line movement",
-        "sharp/public context"
-      ]
+  "board_date": "2026-04-16",
+  "display_units": {
+    "model_weather": {
+      "temperature_unit": "celsius",
+      "wind_speed_unit": "km/h"
     },
-    {
-      "board_date": "2026-04-15",
-      "canonical_game_id": "mlb:286882",
-      "market_type": "spread",
-      "side": "away",
-      "bet_label": "Washington Nationals +1.5 (-143)",
-      "matchup": "Washington Nationals @ Pittsburgh Pirates",
-      "start_time_utc": "2026-04-15T22:41:00Z",
-      "start_time_et": "Apr 15, 6:41 PM",
-      "first_pitch_et": "6:41 PM",
-      "model_probability": 0.636923,
-      "market_implied_probability": 0.588477,
-      "edge": 0.048446,
-      "selection_logic_note": "Selection logic uses model edge versus market implied probability plus the public price rule. Extra notes below explain the bet but are not separate approval rules.",
-      "why_this_bet": [
-        "Model 63.7% vs market 58.8% for a 4.8 point edge.",
-        "Weather: 25 mph crosswind, 29F. Crosswind and cold conditions can suppress carry, which is generally friendlier to a plus run line."
-      ],
-      "context_only_notes": [
-        "Context only: Away side bullpen context suggests bullpen availability looks thin, bullpen quality score 5.9."
-      ],
-      "market_context": {
-        "summary": "Model 63.7% vs market 58.8%.",
-        "edge_text": "4.8 point edge",
-        "current_price": "-143"
-      },
-      "line_movement": {
-        "summary": "Additional context not available in current model output",
-        "missing": [
-          "line movement"
-        ]
-      },
-      "sharp_public_context": {
-        "summary": "Additional context not available in current model output",
-        "missing": [
-          "sharp/public context"
-        ]
-      },
-      "weather_context": {
-        "wind_direction": "crosswind",
-        "wind_speed": 24.7,
-        "temperature": 29.3,
-        "summary": "Weather: 25 mph crosswind, 29F. Crosswind and cold conditions can suppress carry, which is generally friendlier to a plus run line."
-      },
-      "pitching_bullpen_context": {
-        "summary": "Pitching/bullpen context available"
-      },
-      "matchup_context": {
-        "summary": "Additional context not available in current model output",
-        "missing": [
-          "matchup context"
-        ]
-      },
-      "missing_context": [
-        "line movement",
-        "sharp/public context",
-        "matchup context"
-      ]
+    "export_weather": {
+      "temperature_unit": "fahrenheit",
+      "wind_speed_unit": "mph"
     }
-  ]
+  },
+  "rows": []
 }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-15T22:39:50.056Z",
+  "generated_at": "2026-04-16T11:37:08.982Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_ranker",
@@ -12,120 +12,52 @@
   "selection_contract": "edge_gte_0_04_no_cap_challenger",
   "board_state": "ready",
   "board_available": true,
-  "requested_board_date": "2026-04-15",
-  "board_date": "2026-04-15",
-  "active_board_date": "2026-04-15",
-  "latest_valid_mlb_ai_board_date": "2026-04-15",
-  "latest_canonical_board_date": "2026-04-15",
+  "requested_board_date": "2026-04-16",
+  "board_date": "2026-04-16",
+  "active_board_date": "2026-04-16",
+  "latest_valid_mlb_ai_board_date": "2026-04-16",
+  "latest_canonical_board_date": "2026-04-16",
   "availability_reason": null,
   "slate_summary": {
-    "total_rows_scored": 90,
-    "selected_bets": 3,
+    "total_rows_scored": 60,
+    "selected_bets": 1,
     "selected_by_market": {
-      "total": 1,
-      "moneyline": 1,
-      "spread": 1
+      "moneyline": 1
     }
   },
   "rows": [
     {
-      "board_date": "2026-04-15",
-      "canonical_game_id": "mlb:286879",
-      "matchup": "Arizona Diamondbacks @ Baltimore Orioles",
-      "away_team": "Arizona Diamondbacks",
-      "home_team": "Baltimore Orioles",
-      "bet_label": "Under 11.5 (-148)",
-      "market_type": "total",
-      "side": "under",
-      "line_value": 11.5,
-      "price_american": -148,
-      "market_probability": 0.596774,
-      "model_probability": 0.9999,
-      "edge": 0.403126,
+      "board_date": "2026-04-16",
+      "canonical_game_id": "mlb:286951",
+      "matchup": "Los Angeles Angels @ New York Yankees",
+      "away_team": "Los Angeles Angels",
+      "home_team": "New York Yankees",
+      "bet_label": "New York Yankees ML (-280)",
+      "market_type": "moneyline",
+      "side": "home",
+      "line_value": 0,
+      "price_american": -280,
+      "market_probability": 0.736842,
+      "model_probability": 0.789474,
+      "edge": 0.052632,
       "selection_contract": "edge_gte_0_04_no_cap_challenger",
       "rank_on_slate": 1,
       "confidence_band": "high",
       "visibility_tier": "core",
       "display_sort_bucket": "core_priority",
       "primary_drivers": [
-        "Market Implied Probability +0.383",
-        "Is Over Side +0.016",
-        "Price American Norm +0.014"
+        "Market Implied Probability +0.767",
+        "Price American Norm +0.039",
+        "Selected Team Statcast Available Flag -0.028"
       ],
       "supporting_context": [
-        "Is Over Side +0.016",
-        "Price American Norm +0.014"
+        "Price American Norm +0.039",
+        "Selected Team Statcast Available Flag -0.028"
       ],
       "suggested_units": 1,
-      "explanation_summary": "Total Under at -148 cleared the edge_gte_0_04_no_cap_challenger threshold with model probability 100.0% versus market 59.7%.",
+      "explanation_summary": "Moneyline Home at -280 cleared the edge_gte_0_04_no_cap_challenger threshold with model probability 78.9% versus market 73.7%.",
       "comparator_flags": {},
-      "ev_proxy": 0.675508
-    },
-    {
-      "board_date": "2026-04-15",
-      "canonical_game_id": "mlb:286879",
-      "matchup": "Arizona Diamondbacks @ Baltimore Orioles",
-      "away_team": "Arizona Diamondbacks",
-      "home_team": "Baltimore Orioles",
-      "bet_label": "Baltimore Orioles ML (-355)",
-      "market_type": "moneyline",
-      "side": "home",
-      "line_value": 0,
-      "price_american": -355,
-      "market_probability": 0.78022,
-      "model_probability": 0.846154,
-      "edge": 0.065934,
-      "selection_contract": "edge_gte_0_04_no_cap_challenger",
-      "rank_on_slate": 2,
-      "confidence_band": "high",
-      "visibility_tier": "core",
-      "display_sort_bucket": "core_priority",
-      "primary_drivers": [
-        "Market Implied Probability +0.916",
-        "Selected Minus Opponent Avg Ipouts Last3 -0.060",
-        "Price American Norm +0.054"
-      ],
-      "supporting_context": [
-        "Selected Minus Opponent Avg Ipouts Last3 -0.060",
-        "Price American Norm +0.054"
-      ],
-      "suggested_units": 1,
-      "explanation_summary": "Moneyline Home at -355 cleared the edge_gte_0_04_no_cap_challenger threshold with model probability 84.6% versus market 78.0%.",
-      "comparator_flags": {},
-      "ev_proxy": 0.084507
-    },
-    {
-      "board_date": "2026-04-15",
-      "canonical_game_id": "mlb:286882",
-      "matchup": "Washington Nationals @ Pittsburgh Pirates",
-      "away_team": "Washington Nationals",
-      "home_team": "Pittsburgh Pirates",
-      "bet_label": "Washington Nationals +1.5 (-143)",
-      "market_type": "spread",
-      "side": "away",
-      "line_value": 1.5,
-      "price_american": -143,
-      "market_probability": 0.588477,
-      "model_probability": 0.636923,
-      "edge": 0.048446,
-      "selection_contract": "edge_gte_0_04_no_cap_challenger",
-      "rank_on_slate": 3,
-      "confidence_band": "high",
-      "visibility_tier": "core",
-      "display_sort_bucket": "core_priority",
-      "primary_drivers": [
-        "Market Implied Probability +0.195",
-        "Price American Norm +0.084",
-        "Selected Is Home +0.043"
-      ],
-      "supporting_context": [
-        "Price American Norm +0.084",
-        "Selected Is Home +0.043"
-      ],
-      "suggested_units": 1,
-      "explanation_summary": "Run line Away at -143 cleared the edge_gte_0_04_no_cap_challenger threshold with model probability 63.7% versus market 58.8%.",
-      "comparator_flags": {},
-      "ev_proxy": 0.082324
+      "ev_proxy": 0.071429
     }
   ],
   "site_surface": {
@@ -137,7 +69,7 @@
     "model_version": "v1",
     "threshold": "edge_gte_0_04_no_cap_challenger",
     "description": "Separate challenger lane using edge >= 0.04 with no additional favorite cap. Not the official public betting record.",
-    "board_date": "2026-04-15"
+    "board_date": "2026-04-16"
   },
   "retained_internal_systems": [
     {

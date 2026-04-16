@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-15T22:39:50.056Z",
+  "generated_at": "2026-04-16T11:37:08.982Z",
   "artifact_version": "v1",
   "active_engine": {
     "engine_family": "mlb_ai_ranker",
@@ -9,17 +9,17 @@
     "model_lock_status": "ranker_quality_filtered_cap_primary",
     "trusted_for_live_betting": false
   },
-  "requested_board_date": "2026-04-15",
-  "active_board_date": "2026-04-15",
+  "requested_board_date": "2026-04-16",
+  "active_board_date": "2026-04-16",
   "freshness": {
-    "generated_at": "2026-04-15T22:39:50.056Z",
-    "board_date": "2026-04-15",
-    "latest_canonical_board_date": "2026-04-15",
-    "current_source_scores_generated_at": "2026-04-15T22:36:07.250Z",
-    "historical_source_audit_generated_at": "2026-04-15T22:39:50.056Z"
+    "generated_at": "2026-04-16T11:37:08.982Z",
+    "board_date": "2026-04-16",
+    "latest_canonical_board_date": "2026-04-16",
+    "current_source_scores_generated_at": "2026-04-16T11:34:17.914Z",
+    "historical_source_audit_generated_at": "2026-04-16T11:37:08.982Z"
   },
   "source_date_coverage": {
-    "current_window_end": "2026-04-15",
+    "current_window_end": "2026-04-16",
     "historical_start": "2022-04-07",
     "historical_end": "2025-09-30"
   },
@@ -33,12 +33,12 @@
       "model_version": "v1",
       "threshold": "edge_gte_0_03_cap_minus_150",
       "description": "Quality-filtered public ranker surface using edge >= 0.03 while excluding prices below -150.",
-      "board_date": "2026-04-15",
+      "board_date": "2026-04-16",
       "threshold_summary": {
-        "historical_roi": 0.037967,
-        "historical_units": 99.206609,
-        "settled_2026_roi": 0.037994,
-        "settled_2026_units": 2.583615
+        "historical_roi": 0.038357,
+        "historical_units": 84.154635,
+        "settled_2026_roi": 0.052928,
+        "settled_2026_units": 3.016888
       }
     },
     "challenger_system": {
@@ -50,12 +50,12 @@
       "model_version": "v1",
       "threshold": "edge_gte_0_04_no_cap_challenger",
       "description": "Separate challenger lane using edge >= 0.04 with no additional favorite cap. Not the official public betting record.",
-      "board_date": "2026-04-15",
+      "board_date": "2026-04-16",
       "threshold_summary": {
-        "historical_roi": 0.051115,
-        "historical_units": 143.633251,
-        "settled_2026_roi": -0.149738,
-        "settled_2026_units": -9.133993
+        "historical_roi": 0.044868,
+        "historical_units": 103.780184,
+        "settled_2026_roi": -0.125313,
+        "settled_2026_units": -6.7669
       }
     },
     "internal_research_lanes": [

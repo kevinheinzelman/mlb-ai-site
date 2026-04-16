@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-15T22:39:50.056Z",
+  "generated_at": "2026-04-16T11:37:08.982Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_ranker",
@@ -10,90 +10,20 @@
     "trusted_for_live_betting": false
   },
   "selection_contract": "edge_gte_0_03_cap_minus_150",
-  "board_state": "ready",
-  "board_available": true,
-  "requested_board_date": "2026-04-15",
-  "board_date": "2026-04-15",
-  "active_board_date": "2026-04-15",
-  "latest_valid_mlb_ai_board_date": "2026-04-15",
-  "latest_canonical_board_date": "2026-04-15",
-  "availability_reason": null,
+  "board_state": "no_valid_board_for_requested_date",
+  "board_available": false,
+  "requested_board_date": "2026-04-16",
+  "board_date": null,
+  "active_board_date": "2026-04-16",
+  "latest_valid_mlb_ai_board_date": "2026-04-16",
+  "latest_canonical_board_date": "2026-04-16",
+  "availability_reason": "No Ranker System board is available for 2026-04-16. Latest valid ranker board remains 2026-04-16. Latest canonical betting date is 2026-04-16. Prior-day picks are not surfaced as the official public board.",
   "slate_summary": {
-    "total_rows_scored": 90,
-    "selected_bets": 2,
-    "selected_by_market": {
-      "total": 1,
-      "spread": 1
-    }
+    "total_rows_scored": null,
+    "selected_bets": 0,
+    "selected_by_market": {}
   },
-  "rows": [
-    {
-      "board_date": "2026-04-15",
-      "canonical_game_id": "mlb:286879",
-      "matchup": "Arizona Diamondbacks @ Baltimore Orioles",
-      "away_team": "Arizona Diamondbacks",
-      "home_team": "Baltimore Orioles",
-      "bet_label": "Under 11.5 (-148)",
-      "market_type": "total",
-      "side": "under",
-      "line_value": 11.5,
-      "price_american": -148,
-      "market_probability": 0.596774,
-      "model_probability": 0.9999,
-      "edge": 0.403126,
-      "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "rank_on_slate": 1,
-      "confidence_band": "high",
-      "visibility_tier": "core",
-      "display_sort_bucket": "core_priority",
-      "primary_drivers": [
-        "Market Implied Probability +0.383",
-        "Is Over Side +0.016",
-        "Price American Norm +0.014"
-      ],
-      "supporting_context": [
-        "Is Over Side +0.016",
-        "Price American Norm +0.014"
-      ],
-      "suggested_units": 1,
-      "explanation_summary": "Total Under at -148 cleared the edge_gte_0_03_cap_minus_150 threshold with model probability 100.0% versus market 59.7%.",
-      "comparator_flags": {},
-      "ev_proxy": 0.675508
-    },
-    {
-      "board_date": "2026-04-15",
-      "canonical_game_id": "mlb:286882",
-      "matchup": "Washington Nationals @ Pittsburgh Pirates",
-      "away_team": "Washington Nationals",
-      "home_team": "Pittsburgh Pirates",
-      "bet_label": "Washington Nationals +1.5 (-143)",
-      "market_type": "spread",
-      "side": "away",
-      "line_value": 1.5,
-      "price_american": -143,
-      "market_probability": 0.588477,
-      "model_probability": 0.636923,
-      "edge": 0.048446,
-      "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "rank_on_slate": 2,
-      "confidence_band": "high",
-      "visibility_tier": "core",
-      "display_sort_bucket": "core_priority",
-      "primary_drivers": [
-        "Market Implied Probability +0.195",
-        "Price American Norm +0.084",
-        "Selected Is Home +0.043"
-      ],
-      "supporting_context": [
-        "Price American Norm +0.084",
-        "Selected Is Home +0.043"
-      ],
-      "suggested_units": 1,
-      "explanation_summary": "Run line Away at -143 cleared the edge_gte_0_03_cap_minus_150 threshold with model probability 63.7% versus market 58.8%.",
-      "comparator_flags": {},
-      "ev_proxy": 0.082324
-    }
-  ],
+  "rows": [],
   "site_surface": {
     "system_key": "ranker_system",
     "label": "Ranker System",
@@ -103,7 +33,7 @@
     "model_version": "v1",
     "threshold": "edge_gte_0_03_cap_minus_150",
     "description": "Quality-filtered public ranker surface using edge >= 0.03 while excluding prices below -150.",
-    "board_date": "2026-04-15"
+    "board_date": "2026-04-16"
   },
   "retained_internal_systems": [
     {

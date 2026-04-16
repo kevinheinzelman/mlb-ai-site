@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-15T22:39:50.056Z",
+  "generated_at": "2026-04-16T11:37:08.982Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_ranker",
@@ -34,34 +34,93 @@
         {
           "feature": "market_implied_probability",
           "value": 0.596774,
-          "contribution": 0.383175
+          "contribution": 0.385603
         },
         {
           "feature": "is_over_side",
           "value": 0,
-          "contribution": 0.016456
+          "contribution": 0.02281
         },
         {
           "feature": "price_american_norm",
           "value": -0.74,
-          "contribution": 0.013759
+          "contribution": 0.01431
         }
       ],
       "top_context_drivers": [
         {
-          "feature": "steam_move_count",
-          "value": 0,
-          "contribution": -0.009979
-        },
-        {
-          "feature": "sharp_count",
-          "value": 0,
-          "contribution": -0.008083
-        },
-        {
           "feature": "market_micro_price_stddev",
           "value": 0,
-          "contribution": -0.00703
+          "contribution": -0.007212
+        },
+        {
+          "feature": "market_micro_move_count",
+          "value": 0,
+          "contribution": 0.006509
+        },
+        {
+          "feature": "market_micro_price_range",
+          "value": 0,
+          "contribution": -0.005705
+        }
+      ],
+      "historical_linkage": {
+        "model_family": "mlb_ai_ranker",
+        "model_version": "v1",
+        "training_window": "2022-2024",
+        "validation_window": "2025"
+      }
+    },
+    {
+      "board_date": "2026-04-15",
+      "canonical_game_id": "mlb:286886",
+      "matchup": "Los Angeles Angels @ New York Yankees",
+      "market_type": "moneyline",
+      "side": "away",
+      "line_value": 0,
+      "price_american": 157,
+      "suggested_units": 1,
+      "edge": 0.054781,
+      "model_probability": 0.443886,
+      "market_probability": 0.389105,
+      "confidence_band": "high",
+      "selection_contract": "edge_gte_0_03_cap_minus_150",
+      "final_score": 0.054781,
+      "context_score": null,
+      "hostile_penalty_multiplier": null,
+      "explanation_summary": "Moneyline Away qualified for the public ranker card because model probability 44.4% exceeded market implied probability 38.9% by 5.5 points.",
+      "top_edge_drivers": [
+        {
+          "feature": "market_implied_probability",
+          "value": 0.389105,
+          "contribution": -0.469546
+        },
+        {
+          "feature": "selected_minus_opponent_avg_ipouts_last3",
+          "value": 7,
+          "contribution": 0.070859
+        },
+        {
+          "feature": "price_american_norm",
+          "value": 0.785,
+          "contribution": -0.051844
+        }
+      ],
+      "top_context_drivers": [
+        {
+          "feature": "selected_minus_opponent_er_per_27_outs_last3",
+          "value": -6.039474,
+          "contribution": -0.019839
+        },
+        {
+          "feature": "selected_team_statcast_available_flag",
+          "value": 1,
+          "contribution": 0.019147
+        },
+        {
+          "feature": "opponent_team_statcast_available_flag",
+          "value": 1,
+          "contribution": -0.018892
         }
       ],
       "historical_linkage": {
@@ -80,15 +139,15 @@
       "line_value": 1.5,
       "price_american": -143,
       "suggested_units": 1,
-      "edge": 0.048446,
-      "model_probability": 0.636923,
+      "edge": 0.05315,
+      "model_probability": 0.641628,
       "market_probability": 0.588477,
       "confidence_band": "high",
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.048446,
+      "final_score": 0.05315,
       "context_score": null,
       "hostile_penalty_multiplier": null,
-      "explanation_summary": "Run line Away qualified for the public ranker card because model probability 63.7% exceeded market implied probability 58.8% by 4.8 points.",
+      "explanation_summary": "Run line Away qualified for the public ranker card because model probability 64.2% exceeded market implied probability 58.8% by 5.3 points.",
       "top_edge_drivers": [
         {
           "feature": "market_implied_probability",
@@ -101,26 +160,85 @@
           "contribution": 0.084252
         },
         {
-          "feature": "selected_is_home",
-          "value": 0,
-          "contribution": 0.043469
+          "feature": "selected_minus_opponent_avg_ipouts_last3",
+          "value": 13.5,
+          "contribution": 0.06987
         }
       ],
       "top_context_drivers": [
         {
+          "feature": "selected_minus_opponent_er_per_27_outs_last3",
+          "value": 9,
+          "contribution": 0.047534
+        },
+        {
+          "feature": "selected_is_home",
+          "value": 0,
+          "contribution": 0.043469
+        },
+        {
           "feature": "line_value",
           "value": 1.5,
           "contribution": -0.031509
+        }
+      ],
+      "historical_linkage": {
+        "model_family": "mlb_ai_ranker",
+        "model_version": "v1",
+        "training_window": "2022-2024",
+        "validation_window": "2025"
+      }
+    },
+    {
+      "board_date": "2026-04-15",
+      "canonical_game_id": "mlb:286882",
+      "matchup": "Washington Nationals @ Pittsburgh Pirates",
+      "market_type": "moneyline",
+      "side": "away",
+      "line_value": 0,
+      "price_american": 149,
+      "suggested_units": 1,
+      "edge": 0.04228,
+      "model_probability": 0.443886,
+      "market_probability": 0.401606,
+      "confidence_band": "high",
+      "selection_contract": "edge_gte_0_03_cap_minus_150",
+      "final_score": 0.04228,
+      "context_score": null,
+      "hostile_penalty_multiplier": null,
+      "explanation_summary": "Moneyline Away qualified for the public ranker card because model probability 44.4% exceeded market implied probability 40.2% by 4.2 points.",
+      "top_edge_drivers": [
+        {
+          "feature": "market_implied_probability",
+          "value": 0.401606,
+          "contribution": -0.425078
+        },
+        {
+          "feature": "selected_minus_opponent_avg_ipouts_last3",
+          "value": 13.5,
+          "contribution": 0.136657
+        },
+        {
+          "feature": "price_american_norm",
+          "value": 0.745,
+          "contribution": -0.050188
+        }
+      ],
+      "top_context_drivers": [
+        {
+          "feature": "selected_minus_opponent_er_per_27_outs_last3",
+          "value": 9,
+          "contribution": 0.029565
+        },
+        {
+          "feature": "opponent_team_delta_velo",
+          "value": 1.4496,
+          "contribution": -0.021081
         },
         {
           "feature": "selected_team_statcast_available_flag",
-          "value": 0,
-          "contribution": -0.012724
-        },
-        {
-          "feature": "opponent_team_statcast_available_flag",
-          "value": 0,
-          "contribution": 0.012366
+          "value": 1,
+          "contribution": 0.019147
         }
       ],
       "historical_linkage": {
@@ -257,106 +375,47 @@
       "line_value": 0,
       "price_american": 150,
       "suggested_units": 1,
-      "edge": 0.0375,
-      "model_probability": 0.4375,
+      "edge": 0.043886,
+      "model_probability": 0.443886,
       "market_probability": 0.4,
-      "confidence_band": "medium",
+      "confidence_band": "high",
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.0375,
+      "final_score": 0.043886,
       "context_score": null,
       "hostile_penalty_multiplier": null,
-      "explanation_summary": "Moneyline Away qualified for the public ranker card because model probability 43.8% exceeded market implied probability 40.0% by 3.8 points.",
+      "explanation_summary": "Moneyline Away qualified for the public ranker card because model probability 44.4% exceeded market implied probability 40.0% by 4.4 points.",
       "top_edge_drivers": [
         {
           "feature": "market_implied_probability",
           "value": 0.4,
-          "contribution": -0.428173
+          "contribution": -0.430793
         },
         {
           "feature": "price_american_norm",
           "value": 0.75,
-          "contribution": -0.050257
+          "contribution": -0.050395
         },
-        {
-          "feature": "opponent_team_statcast_available_flag",
-          "value": 0,
-          "contribution": 0.027696
-        }
-      ],
-      "top_context_drivers": [
         {
           "feature": "selected_team_statcast_available_flag",
           "value": 0,
-          "contribution": -0.02746
-        },
-        {
-          "feature": "steam_move_count",
-          "value": 0,
-          "contribution": -0.007728
-        },
-        {
-          "feature": "reverse_line_move_count",
-          "value": 0,
-          "contribution": 0.007422
-        }
-      ],
-      "historical_linkage": {
-        "model_family": "mlb_ai_ranker",
-        "model_version": "v1",
-        "training_window": "2022-2024",
-        "validation_window": "2025"
-      }
-    },
-    {
-      "board_date": "2026-04-13",
-      "canonical_game_id": "mlb:286761",
-      "matchup": "Arizona Diamondbacks @ Baltimore Orioles",
-      "market_type": "total",
-      "side": "under",
-      "line_value": 7.5,
-      "price_american": 102,
-      "suggested_units": 1,
-      "edge": 0.50485,
-      "model_probability": 0.9999,
-      "market_probability": 0.49505,
-      "confidence_band": "high",
-      "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.50485,
-      "context_score": null,
-      "hostile_penalty_multiplier": null,
-      "explanation_summary": "Total Under qualified for the public ranker card because model probability 100.0% exceeded market implied probability 49.5% by 50.5 points.",
-      "top_edge_drivers": [
-        {
-          "feature": "market_implied_probability",
-          "value": 0.49505,
-          "contribution": -0.150032
-        },
-        {
-          "feature": "price_american_norm",
-          "value": 0.51,
-          "contribution": -0.046096
-        },
-        {
-          "feature": "is_over_side",
-          "value": 0,
-          "contribution": 0.016456
+          "contribution": -0.027792
         }
       ],
       "top_context_drivers": [
         {
-          "feature": "steam_move_count",
+          "feature": "opponent_team_statcast_available_flag",
           "value": 0,
-          "contribution": -0.009979
+          "contribution": 0.027422
         },
         {
-          "feature": "sharp_count",
+          "feature": "pro_system_count",
           "value": 0,
-          "contribution": -0.008083
+          "contribution": 0.004262
         },
         {
-          "feature": "market_micro_price_stddev",
+          "feature": "selected_is_home",
           "value": 0,
-          "contribution": -0.00703
+          "contribution": 0.00392
         }
       ],
       "historical_linkage": {
@@ -375,47 +434,47 @@
       "line_value": 0,
       "price_american": -150,
       "suggested_units": 1,
-      "edge": 0.076471,
-      "model_probability": 0.676471,
+      "edge": 0.062069,
+      "model_probability": 0.662069,
       "market_probability": 0.6,
       "confidence_band": "high",
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.076471,
+      "final_score": 0.062069,
       "context_score": null,
       "hostile_penalty_multiplier": null,
-      "explanation_summary": "Moneyline Away qualified for the public ranker card because model probability 67.6% exceeded market implied probability 60.0% by 7.6 points.",
+      "explanation_summary": "Moneyline Away qualified for the public ranker card because model probability 66.2% exceeded market implied probability 60.0% by 6.2 points.",
       "top_edge_drivers": [
         {
           "feature": "market_implied_probability",
           "value": 0.6,
-          "contribution": 0.278901
+          "contribution": 0.280608
         },
         {
           "feature": "selected_minus_opponent_avg_ipouts_last3",
           "value": 15.5,
-          "contribution": 0.154036
+          "contribution": 0.156902
         },
         {
           "feature": "opponent_team_statcast_available_flag",
           "value": 0,
-          "contribution": 0.027696
+          "contribution": 0.027422
         }
       ],
       "top_context_drivers": [
         {
           "feature": "selected_team_statcast_available_flag",
           "value": 1,
-          "contribution": 0.018918
+          "contribution": 0.019147
         },
         {
           "feature": "market_micro_move_count",
           "value": 0,
-          "contribution": 0.013637
+          "contribution": 0.013808
         },
         {
           "feature": "price_american_norm",
           "value": -0.75,
-          "contribution": 0.0117
+          "contribution": 0.011732
         }
       ],
       "historical_linkage": {
@@ -534,65 +593,6 @@
           "feature": "opponent_team_statcast_available_flag",
           "value": 0,
           "contribution": 0.012366
-        }
-      ],
-      "historical_linkage": {
-        "model_family": "mlb_ai_ranker",
-        "model_version": "v1",
-        "training_window": "2022-2024",
-        "validation_window": "2025"
-      }
-    },
-    {
-      "board_date": "2026-04-13",
-      "canonical_game_id": "mlb:286760",
-      "matchup": "Astros @ Mariners",
-      "market_type": "moneyline",
-      "side": "away",
-      "line_value": 0,
-      "price_american": 149,
-      "suggested_units": 1,
-      "edge": 0.035894,
-      "model_probability": 0.4375,
-      "market_probability": 0.401606,
-      "confidence_band": "medium",
-      "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.035894,
-      "context_score": null,
-      "hostile_penalty_multiplier": null,
-      "explanation_summary": "Moneyline Away qualified for the public ranker card because model probability 43.8% exceeded market implied probability 40.2% by 3.6 points.",
-      "top_edge_drivers": [
-        {
-          "feature": "market_implied_probability",
-          "value": 0.401606,
-          "contribution": -0.422493
-        },
-        {
-          "feature": "price_american_norm",
-          "value": 0.745,
-          "contribution": -0.05005
-        },
-        {
-          "feature": "opponent_team_statcast_available_flag",
-          "value": 0,
-          "contribution": 0.027696
-        }
-      ],
-      "top_context_drivers": [
-        {
-          "feature": "selected_team_statcast_available_flag",
-          "value": 0,
-          "contribution": -0.02746
-        },
-        {
-          "feature": "steam_move_count",
-          "value": 0,
-          "contribution": -0.007728
-        },
-        {
-          "feature": "reverse_line_move_count",
-          "value": 0,
-          "contribution": 0.007422
         }
       ],
       "historical_linkage": {
@@ -788,12 +788,12 @@
       "line_value": 0,
       "price_american": 145,
       "suggested_units": 1,
-      "edge": 0.035926,
-      "model_probability": 0.444089,
+      "edge": 0.035723,
+      "model_probability": 0.443886,
       "market_probability": 0.408163,
       "confidence_band": "medium",
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.035926,
+      "final_score": 0.035723,
       "context_score": null,
       "hostile_penalty_multiplier": null,
       "explanation_summary": "Moneyline Home qualified for the public ranker card because model probability 44.4% exceeded market implied probability 40.8% by 3.6 points.",
@@ -801,34 +801,34 @@
         {
           "feature": "market_implied_probability",
           "value": 0.408163,
-          "contribution": -0.399312
+          "contribution": -0.401756
         },
         {
           "feature": "price_american_norm",
           "value": 0.725,
-          "contribution": -0.049224
+          "contribution": -0.049359
         },
         {
-          "feature": "opponent_team_statcast_available_flag",
+          "feature": "selected_team_statcast_available_flag",
           "value": 0,
-          "contribution": 0.027696
+          "contribution": -0.027792
         }
       ],
       "top_context_drivers": [
         {
-          "feature": "selected_team_statcast_available_flag",
+          "feature": "opponent_team_statcast_available_flag",
           "value": 0,
-          "contribution": -0.02746
+          "contribution": 0.027422
         },
         {
-          "feature": "steam_move_count",
+          "feature": "pro_system_count",
           "value": 0,
-          "contribution": -0.007728
+          "contribution": 0.004262
         },
         {
-          "feature": "reverse_line_move_count",
-          "value": 0,
-          "contribution": 0.007422
+          "feature": "selected_is_home",
+          "value": 1,
+          "contribution": -0.00392
         }
       ],
       "historical_linkage": {
@@ -1083,12 +1083,12 @@
       "line_value": 0,
       "price_american": 145,
       "suggested_units": 1,
-      "edge": 0.035926,
-      "model_probability": 0.444089,
+      "edge": 0.035723,
+      "model_probability": 0.443886,
       "market_probability": 0.408163,
       "confidence_band": "medium",
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.035926,
+      "final_score": 0.035723,
       "context_score": null,
       "hostile_penalty_multiplier": null,
       "explanation_summary": "Moneyline Away qualified for the public ranker card because model probability 44.4% exceeded market implied probability 40.8% by 3.6 points.",
@@ -1096,34 +1096,34 @@
         {
           "feature": "market_implied_probability",
           "value": 0.408163,
-          "contribution": -0.399312
+          "contribution": -0.401756
         },
         {
           "feature": "price_american_norm",
           "value": 0.725,
-          "contribution": -0.049224
+          "contribution": -0.049359
         },
         {
-          "feature": "opponent_team_statcast_available_flag",
+          "feature": "selected_team_statcast_available_flag",
           "value": 0,
-          "contribution": 0.027696
+          "contribution": -0.027792
         }
       ],
       "top_context_drivers": [
         {
-          "feature": "selected_team_statcast_available_flag",
+          "feature": "opponent_team_statcast_available_flag",
           "value": 0,
-          "contribution": -0.02746
+          "contribution": 0.027422
         },
         {
-          "feature": "steam_move_count",
+          "feature": "pro_system_count",
           "value": 0,
-          "contribution": -0.007728
+          "contribution": 0.004262
         },
         {
-          "feature": "reverse_line_move_count",
+          "feature": "selected_is_home",
           "value": 0,
-          "contribution": 0.007422
+          "contribution": 0.00392
         }
       ],
       "historical_linkage": {
@@ -1142,12 +1142,12 @@
       "line_value": 0,
       "price_american": 145,
       "suggested_units": 1,
-      "edge": 0.035926,
-      "model_probability": 0.444089,
+      "edge": 0.035723,
+      "model_probability": 0.443886,
       "market_probability": 0.408163,
       "confidence_band": "medium",
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.035926,
+      "final_score": 0.035723,
       "context_score": null,
       "hostile_penalty_multiplier": null,
       "explanation_summary": "Moneyline Away qualified for the public ranker card because model probability 44.4% exceeded market implied probability 40.8% by 3.6 points.",
@@ -1155,211 +1155,34 @@
         {
           "feature": "market_implied_probability",
           "value": 0.408163,
-          "contribution": -0.399312
+          "contribution": -0.401756
         },
         {
           "feature": "price_american_norm",
           "value": 0.725,
-          "contribution": -0.049224
+          "contribution": -0.049359
         },
-        {
-          "feature": "opponent_team_statcast_available_flag",
-          "value": 0,
-          "contribution": 0.027696
-        }
-      ],
-      "top_context_drivers": [
         {
           "feature": "selected_team_statcast_available_flag",
           "value": 0,
-          "contribution": -0.02746
-        },
-        {
-          "feature": "steam_move_count",
-          "value": 0,
-          "contribution": -0.007728
-        },
-        {
-          "feature": "reverse_line_move_count",
-          "value": 0,
-          "contribution": 0.007422
-        }
-      ],
-      "historical_linkage": {
-        "model_family": "mlb_ai_ranker",
-        "model_version": "v1",
-        "training_window": "2022-2024",
-        "validation_window": "2025"
-      }
-    },
-    {
-      "board_date": "2026-04-10",
-      "canonical_game_id": "mlb:286511",
-      "matchup": "Red Sox @ Cardinals",
-      "market_type": "total",
-      "side": "under",
-      "line_value": 7.5,
-      "price_american": -125,
-      "suggested_units": 1,
-      "edge": 0.034188,
-      "model_probability": 0.589744,
-      "market_probability": 0.555556,
-      "confidence_band": "medium",
-      "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.034188,
-      "context_score": null,
-      "hostile_penalty_multiplier": null,
-      "explanation_summary": "Total Under qualified for the public ranker card because model probability 59.0% exceeded market implied probability 55.6% by 3.4 points.",
-      "top_edge_drivers": [
-        {
-          "feature": "market_implied_probability",
-          "value": 0.555556,
-          "contribution": 0.16712
-        },
-        {
-          "feature": "is_over_side",
-          "value": 0,
-          "contribution": 0.016456
-        },
-        {
-          "feature": "steam_move_count",
-          "value": 0,
-          "contribution": -0.009979
-        }
-      ],
-      "top_context_drivers": [
-        {
-          "feature": "price_american_norm",
-          "value": -0.625,
-          "contribution": 0.008252
-        },
-        {
-          "feature": "sharp_count",
-          "value": 0,
-          "contribution": -0.008083
-        },
-        {
-          "feature": "bullpen_role_context_complete_flag",
-          "value": 0,
-          "contribution": 0.005698
-        }
-      ],
-      "historical_linkage": {
-        "model_family": "mlb_ai_ranker",
-        "model_version": "v1",
-        "training_window": "2022-2024",
-        "validation_window": "2025"
-      }
-    },
-    {
-      "board_date": "2026-04-09",
-      "canonical_game_id": "mlb:286454",
-      "matchup": "Chicago White Sox @ Kansas City Royals",
-      "market_type": "moneyline",
-      "side": "away",
-      "line_value": 0,
-      "price_american": 159,
-      "suggested_units": 1,
-      "edge": 0.6138,
-      "model_probability": 0.9999,
-      "market_probability": 0.3861,
-      "confidence_band": "high",
-      "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.6138,
-      "context_score": null,
-      "hostile_penalty_multiplier": null,
-      "explanation_summary": "Moneyline Away qualified for the public ranker card because model probability 100.0% exceeded market implied probability 38.6% by 61.4 points.",
-      "top_edge_drivers": [
-        {
-          "feature": "market_implied_probability",
-          "value": 0.3861,
-          "contribution": -0.477313
-        },
-        {
-          "feature": "selected_minus_opponent_avg_ipouts_last3",
-          "value": -15,
-          "contribution": -0.149067
-        },
-        {
-          "feature": "price_american_norm",
-          "value": 0.795,
-          "contribution": -0.052116
+          "contribution": -0.027792
         }
       ],
       "top_context_drivers": [
         {
           "feature": "opponent_team_statcast_available_flag",
-          "value": 1,
-          "contribution": -0.019081
+          "value": 0,
+          "contribution": 0.027422
         },
         {
-          "feature": "selected_team_statcast_available_flag",
-          "value": 1,
-          "contribution": 0.018918
+          "feature": "pro_system_count",
+          "value": 0,
+          "contribution": 0.004262
         },
         {
-          "feature": "selected_minus_opponent_er_per_27_outs_last3",
-          "value": -3.6,
-          "contribution": -0.012619
-        }
-      ],
-      "historical_linkage": {
-        "model_family": "mlb_ai_ranker",
-        "model_version": "v1",
-        "training_window": "2022-2024",
-        "validation_window": "2025"
-      }
-    },
-    {
-      "board_date": "2026-04-09",
-      "canonical_game_id": "mlb:286453",
-      "matchup": "Arizona Diamondbacks @ New York Mets",
-      "market_type": "moneyline",
-      "side": "away",
-      "line_value": 0,
-      "price_american": 135,
-      "suggested_units": 1,
-      "edge": 0.574368,
-      "model_probability": 0.9999,
-      "market_probability": 0.425532,
-      "confidence_band": "high",
-      "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.574368,
-      "context_score": null,
-      "hostile_penalty_multiplier": null,
-      "explanation_summary": "Moneyline Away qualified for the public ranker card because model probability 100.0% exceeded market implied probability 42.6% by 57.4 points.",
-      "top_edge_drivers": [
-        {
-          "feature": "market_implied_probability",
-          "value": 0.425532,
-          "contribution": -0.337908
-        },
-        {
-          "feature": "selected_minus_opponent_avg_ipouts_last3",
-          "value": 5,
-          "contribution": 0.049689
-        },
-        {
-          "feature": "price_american_norm",
-          "value": 0.675,
-          "contribution": -0.047159
-        }
-      ],
-      "top_context_drivers": [
-        {
-          "feature": "selected_team_avg_ipouts_last3",
-          "value": 21,
-          "contribution": 0.019777
-        },
-        {
-          "feature": "opponent_team_statcast_available_flag",
-          "value": 1,
-          "contribution": -0.019081
-        },
-        {
-          "feature": "selected_team_statcast_available_flag",
-          "value": 1,
-          "contribution": 0.018918
+          "feature": "selected_is_home",
+          "value": 0,
+          "contribution": 0.00392
         }
       ],
       "historical_linkage": {
@@ -1489,54 +1312,54 @@
     },
     {
       "board_date": "2026-04-08",
-      "canonical_game_id": "mlb:286383",
-      "matchup": "Cardinals @ Nationals",
+      "canonical_game_id": "mlb:286375",
+      "matchup": "Padres @ Pirates",
       "market_type": "moneyline",
       "side": "home",
       "line_value": 0,
-      "price_american": 105,
+      "price_american": 104,
       "suggested_units": 1,
-      "edge": 0.512095,
+      "edge": 0.509704,
       "model_probability": 0.9999,
-      "market_probability": 0.487805,
+      "market_probability": 0.490196,
       "confidence_band": "high",
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.512095,
+      "final_score": 0.509704,
       "context_score": null,
       "hostile_penalty_multiplier": null,
-      "explanation_summary": "Moneyline Home qualified for the public ranker card because model probability 100.0% exceeded market implied probability 48.8% by 51.2 points.",
+      "explanation_summary": "Moneyline Home qualified for the public ranker card because model probability 100.0% exceeded market implied probability 49.0% by 51.0 points.",
       "top_edge_drivers": [
         {
           "feature": "market_implied_probability",
-          "value": 0.487805,
-          "contribution": -0.11775
+          "value": 0.490196,
+          "contribution": -0.109965
         },
         {
           "feature": "price_american_norm",
-          "value": 0.525,
-          "contribution": -0.040963
+          "value": 0.52,
+          "contribution": -0.040869
         },
         {
-          "feature": "opponent_team_statcast_available_flag",
+          "feature": "selected_team_statcast_available_flag",
           "value": 0,
-          "contribution": 0.027696
+          "contribution": -0.027792
         }
       ],
       "top_context_drivers": [
         {
-          "feature": "selected_team_statcast_available_flag",
+          "feature": "opponent_team_statcast_available_flag",
           "value": 0,
-          "contribution": -0.02746
+          "contribution": 0.027422
         },
         {
-          "feature": "steam_move_count",
+          "feature": "pro_system_count",
           "value": 0,
-          "contribution": -0.007728
+          "contribution": 0.004262
         },
         {
-          "feature": "reverse_line_move_count",
-          "value": 0,
-          "contribution": 0.007422
+          "feature": "selected_is_home",
+          "value": 1,
+          "contribution": -0.00392
         }
       ],
       "historical_linkage": {
@@ -1555,106 +1378,47 @@
       "line_value": 8,
       "price_american": -144,
       "suggested_units": 1,
-      "edge": 0.102144,
-      "model_probability": 0.692308,
+      "edge": 0.409736,
+      "model_probability": 0.9999,
       "market_probability": 0.590164,
       "confidence_band": "high",
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.102144,
+      "final_score": 0.409736,
       "context_score": null,
       "hostile_penalty_multiplier": null,
-      "explanation_summary": "Total Under qualified for the public ranker card because model probability 69.2% exceeded market implied probability 59.0% by 10.2 points.",
+      "explanation_summary": "Total Under qualified for the public ranker card because model probability 100.0% exceeded market implied probability 59.0% by 41.0 points.",
       "top_edge_drivers": [
         {
           "feature": "market_implied_probability",
           "value": 0.590164,
-          "contribution": 0.348526
+          "contribution": 0.350735
         },
         {
           "feature": "is_over_side",
           "value": 0,
-          "contribution": 0.016456
+          "contribution": 0.02281
         },
         {
           "feature": "price_american_norm",
           "value": -0.72,
-          "contribution": 0.012801
+          "contribution": 0.013314
         }
       ],
       "top_context_drivers": [
         {
-          "feature": "steam_move_count",
-          "value": 0,
-          "contribution": -0.009979
+          "feature": "is_wind_in",
+          "value": 1,
+          "contribution": -0.005045
         },
         {
-          "feature": "sharp_count",
+          "feature": "pro_system_count",
           "value": 0,
-          "contribution": -0.008083
+          "contribution": -0.004187
         },
         {
-          "feature": "bullpen_role_context_complete_flag",
+          "feature": "expert_count",
           "value": 0,
-          "contribution": 0.005698
-        }
-      ],
-      "historical_linkage": {
-        "model_family": "mlb_ai_ranker",
-        "model_version": "v1",
-        "training_window": "2022-2024",
-        "validation_window": "2025"
-      }
-    },
-    {
-      "board_date": "2026-04-07",
-      "canonical_game_id": "mlb:286330",
-      "matchup": "Reds @ Marlins",
-      "market_type": "total",
-      "side": "under",
-      "line_value": 7,
-      "price_american": 105,
-      "suggested_units": 1,
-      "edge": 0.512095,
-      "model_probability": 0.9999,
-      "market_probability": 0.487805,
-      "confidence_band": "high",
-      "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.512095,
-      "context_score": null,
-      "hostile_penalty_multiplier": null,
-      "explanation_summary": "Total Under qualified for the public ranker card because model probability 100.0% exceeded market implied probability 48.8% by 51.2 points.",
-      "top_edge_drivers": [
-        {
-          "feature": "market_implied_probability",
-          "value": 0.487805,
-          "contribution": -0.188006
-        },
-        {
-          "feature": "price_american_norm",
-          "value": 0.525,
-          "contribution": -0.046815
-        },
-        {
-          "feature": "is_over_side",
-          "value": 0,
-          "contribution": 0.016456
-        }
-      ],
-      "top_context_drivers": [
-        {
-          "feature": "steam_move_count",
-          "value": 0,
-          "contribution": -0.009979
-        },
-        {
-          "feature": "sharp_count",
-          "value": 0,
-          "contribution": -0.008083
-        },
-        {
-          "feature": "bullpen_role_context_complete_flag",
-          "value": 0,
-          "contribution": 0.005698
+          "contribution": -0.003479
         }
       ],
       "historical_linkage": {
@@ -1673,12 +1437,12 @@
       "line_value": 0,
       "price_american": 142,
       "suggested_units": 1,
-      "edge": 0.030866,
-      "model_probability": 0.444089,
+      "edge": 0.030663,
+      "model_probability": 0.443886,
       "market_probability": 0.413223,
       "confidence_band": "medium",
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.030866,
+      "final_score": 0.030663,
       "context_score": null,
       "hostile_penalty_multiplier": null,
       "explanation_summary": "Moneyline Home qualified for the public ranker card because model probability 44.4% exceeded market implied probability 41.3% by 3.1 points.",
@@ -1686,34 +1450,34 @@
         {
           "feature": "market_implied_probability",
           "value": 0.413223,
-          "contribution": -0.381424
+          "contribution": -0.383758
         },
         {
           "feature": "price_american_norm",
           "value": 0.71,
-          "contribution": -0.048605
+          "contribution": -0.048738
         },
         {
-          "feature": "opponent_team_statcast_available_flag",
+          "feature": "selected_team_statcast_available_flag",
           "value": 0,
-          "contribution": 0.027696
+          "contribution": -0.027792
         }
       ],
       "top_context_drivers": [
         {
-          "feature": "selected_team_statcast_available_flag",
+          "feature": "opponent_team_statcast_available_flag",
           "value": 0,
-          "contribution": -0.02746
+          "contribution": 0.027422
         },
         {
-          "feature": "steam_move_count",
+          "feature": "pro_system_count",
           "value": 0,
-          "contribution": -0.007728
+          "contribution": 0.004262
         },
         {
-          "feature": "reverse_line_move_count",
-          "value": 0,
-          "contribution": 0.007422
+          "feature": "selected_is_home",
+          "value": 1,
+          "contribution": -0.00392
         }
       ],
       "historical_linkage": {
@@ -1732,12 +1496,12 @@
       "line_value": 0,
       "price_american": 145,
       "suggested_units": 1,
-      "edge": 0.035926,
-      "model_probability": 0.444089,
+      "edge": 0.035723,
+      "model_probability": 0.443886,
       "market_probability": 0.408163,
       "confidence_band": "medium",
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.035926,
+      "final_score": 0.035723,
       "context_score": null,
       "hostile_penalty_multiplier": null,
       "explanation_summary": "Moneyline Home qualified for the public ranker card because model probability 44.4% exceeded market implied probability 40.8% by 3.6 points.",
@@ -1745,152 +1509,34 @@
         {
           "feature": "market_implied_probability",
           "value": 0.408163,
-          "contribution": -0.399312
+          "contribution": -0.401756
         },
         {
           "feature": "price_american_norm",
           "value": 0.725,
-          "contribution": -0.049224
-        },
-        {
-          "feature": "opponent_team_statcast_available_flag",
-          "value": 0,
-          "contribution": 0.027696
-        }
-      ],
-      "top_context_drivers": [
-        {
-          "feature": "selected_team_statcast_available_flag",
-          "value": 0,
-          "contribution": -0.02746
-        },
-        {
-          "feature": "steam_move_count",
-          "value": 0,
-          "contribution": -0.007728
-        },
-        {
-          "feature": "reverse_line_move_count",
-          "value": 0,
-          "contribution": 0.007422
-        }
-      ],
-      "historical_linkage": {
-        "model_family": "mlb_ai_ranker",
-        "model_version": "v1",
-        "training_window": "2022-2024",
-        "validation_window": "2025"
-      }
-    },
-    {
-      "board_date": "2026-04-05",
-      "canonical_game_id": "mlb:286178",
-      "matchup": "Cubs @ Guardians",
-      "market_type": "moneyline",
-      "side": "away",
-      "line_value": 0,
-      "price_american": -130,
-      "suggested_units": 1,
-      "edge": 0.434683,
-      "model_probability": 0.9999,
-      "market_probability": 0.565217,
-      "confidence_band": "high",
-      "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.434683,
-      "context_score": null,
-      "hostile_penalty_multiplier": null,
-      "explanation_summary": "Moneyline Away qualified for the public ranker card because model probability 100.0% exceeded market implied probability 56.5% by 43.5 points.",
-      "top_edge_drivers": [
-        {
-          "feature": "market_implied_probability",
-          "value": 0.565217,
-          "contribution": 0.155932
-        },
-        {
-          "feature": "opponent_team_statcast_available_flag",
-          "value": 0,
-          "contribution": 0.027696
+          "contribution": -0.049359
         },
         {
           "feature": "selected_team_statcast_available_flag",
           "value": 0,
-          "contribution": -0.02746
+          "contribution": -0.027792
         }
       ],
       "top_context_drivers": [
-        {
-          "feature": "steam_move_count",
-          "value": 0,
-          "contribution": -0.007728
-        },
-        {
-          "feature": "price_american_norm",
-          "value": -0.65,
-          "contribution": 0.00757
-        },
-        {
-          "feature": "reverse_line_move_count",
-          "value": 0,
-          "contribution": 0.007422
-        }
-      ],
-      "historical_linkage": {
-        "model_family": "mlb_ai_ranker",
-        "model_version": "v1",
-        "training_window": "2022-2024",
-        "validation_window": "2025"
-      }
-    },
-    {
-      "board_date": "2026-04-05",
-      "canonical_game_id": "mlb:288013",
-      "matchup": "Cubs @ Guardians",
-      "market_type": "moneyline",
-      "side": "away",
-      "line_value": 0,
-      "price_american": -130,
-      "suggested_units": 1,
-      "edge": 0.434683,
-      "model_probability": 0.9999,
-      "market_probability": 0.565217,
-      "confidence_band": "high",
-      "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.434683,
-      "context_score": null,
-      "hostile_penalty_multiplier": null,
-      "explanation_summary": "Moneyline Away qualified for the public ranker card because model probability 100.0% exceeded market implied probability 56.5% by 43.5 points.",
-      "top_edge_drivers": [
-        {
-          "feature": "market_implied_probability",
-          "value": 0.565217,
-          "contribution": 0.155932
-        },
         {
           "feature": "opponent_team_statcast_available_flag",
           "value": 0,
-          "contribution": 0.027696
+          "contribution": 0.027422
         },
         {
-          "feature": "selected_team_statcast_available_flag",
+          "feature": "pro_system_count",
           "value": 0,
-          "contribution": -0.02746
-        }
-      ],
-      "top_context_drivers": [
-        {
-          "feature": "steam_move_count",
-          "value": 0,
-          "contribution": -0.007728
+          "contribution": 0.004262
         },
         {
-          "feature": "price_american_norm",
-          "value": -0.65,
-          "contribution": 0.00757
-        },
-        {
-          "feature": "reverse_line_move_count",
-          "value": 0,
-          "contribution": 0.007422
+          "feature": "selected_is_home",
+          "value": 1,
+          "contribution": -0.00392
         }
       ],
       "historical_linkage": {
@@ -1909,12 +1555,12 @@
       "line_value": 0,
       "price_american": 142,
       "suggested_units": 1,
-      "edge": 0.030866,
-      "model_probability": 0.444089,
+      "edge": 0.030663,
+      "model_probability": 0.443886,
       "market_probability": 0.413223,
       "confidence_band": "medium",
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.030866,
+      "final_score": 0.030663,
       "context_score": null,
       "hostile_penalty_multiplier": null,
       "explanation_summary": "Moneyline Home qualified for the public ranker card because model probability 44.4% exceeded market implied probability 41.3% by 3.1 points.",
@@ -1922,34 +1568,34 @@
         {
           "feature": "market_implied_probability",
           "value": 0.413223,
-          "contribution": -0.381424
+          "contribution": -0.383758
         },
         {
           "feature": "price_american_norm",
           "value": 0.71,
-          "contribution": -0.048605
+          "contribution": -0.048738
         },
         {
-          "feature": "opponent_team_statcast_available_flag",
+          "feature": "selected_team_statcast_available_flag",
           "value": 0,
-          "contribution": 0.027696
+          "contribution": -0.027792
         }
       ],
       "top_context_drivers": [
         {
-          "feature": "selected_team_statcast_available_flag",
+          "feature": "opponent_team_statcast_available_flag",
           "value": 0,
-          "contribution": -0.02746
+          "contribution": 0.027422
         },
         {
-          "feature": "steam_move_count",
+          "feature": "pro_system_count",
           "value": 0,
-          "contribution": -0.007728
+          "contribution": 0.004262
         },
         {
-          "feature": "reverse_line_move_count",
-          "value": 0,
-          "contribution": 0.007422
+          "feature": "selected_is_home",
+          "value": 1,
+          "contribution": -0.00392
         }
       ],
       "historical_linkage": {
@@ -1968,47 +1614,106 @@
       "line_value": 0,
       "price_american": 143,
       "suggested_units": 1,
-      "edge": 0.032567,
-      "model_probability": 0.444089,
+      "edge": 0.032363,
+      "model_probability": 0.443886,
       "market_probability": 0.411523,
       "confidence_band": "medium",
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.032567,
+      "final_score": 0.032363,
       "context_score": null,
       "hostile_penalty_multiplier": null,
-      "explanation_summary": "Moneyline Away qualified for the public ranker card because model probability 44.4% exceeded market implied probability 41.2% by 3.3 points.",
+      "explanation_summary": "Moneyline Away qualified for the public ranker card because model probability 44.4% exceeded market implied probability 41.2% by 3.2 points.",
       "top_edge_drivers": [
         {
           "feature": "market_implied_probability",
           "value": 0.411523,
-          "contribution": -0.387436
+          "contribution": -0.389807
         },
         {
           "feature": "price_american_norm",
           "value": 0.715,
-          "contribution": -0.048811
+          "contribution": -0.048945
         },
         {
-          "feature": "opponent_team_statcast_available_flag",
+          "feature": "selected_team_statcast_available_flag",
           "value": 0,
-          "contribution": 0.027696
+          "contribution": -0.027792
         }
       ],
       "top_context_drivers": [
         {
-          "feature": "selected_team_statcast_available_flag",
+          "feature": "opponent_team_statcast_available_flag",
           "value": 0,
-          "contribution": -0.02746
+          "contribution": 0.027422
         },
         {
-          "feature": "steam_move_count",
+          "feature": "pro_system_count",
           "value": 0,
-          "contribution": -0.007728
+          "contribution": 0.004262
         },
         {
-          "feature": "reverse_line_move_count",
+          "feature": "selected_is_home",
           "value": 0,
-          "contribution": 0.007422
+          "contribution": 0.00392
+        }
+      ],
+      "historical_linkage": {
+        "model_family": "mlb_ai_ranker",
+        "model_version": "v1",
+        "training_window": "2022-2024",
+        "validation_window": "2025"
+      }
+    },
+    {
+      "board_date": "2026-04-03",
+      "canonical_game_id": "mlb:286113",
+      "matchup": "Mets @ Giants",
+      "market_type": "total",
+      "side": "over",
+      "line_value": 7.5,
+      "price_american": -116,
+      "suggested_units": 1,
+      "edge": 0.462863,
+      "model_probability": 0.9999,
+      "market_probability": 0.537037,
+      "confidence_band": "high",
+      "selection_contract": "edge_gte_0_03_cap_minus_150",
+      "final_score": 0.462863,
+      "context_score": null,
+      "hostile_penalty_multiplier": null,
+      "explanation_summary": "Total Over qualified for the public ranker card because model probability 100.0% exceeded market implied probability 53.7% by 46.3 points.",
+      "top_edge_drivers": [
+        {
+          "feature": "market_implied_probability",
+          "value": 0.537037,
+          "contribution": 0.070496
+        },
+        {
+          "feature": "is_over_side",
+          "value": 1,
+          "contribution": -0.02281
+        },
+        {
+          "feature": "price_american_norm",
+          "value": -0.58,
+          "contribution": 0.006341
+        }
+      ],
+      "top_context_drivers": [
+        {
+          "feature": "pro_system_count",
+          "value": 0,
+          "contribution": -0.004187
+        },
+        {
+          "feature": "expert_count",
+          "value": 0,
+          "contribution": -0.003479
+        },
+        {
+          "feature": "opposing_expert_count",
+          "value": 0,
+          "contribution": 0.00199
         }
       ],
       "historical_linkage": {
@@ -2127,65 +1832,6 @@
           "feature": "opponent_team_statcast_available_flag",
           "value": 0,
           "contribution": 0.012366
-        }
-      ],
-      "historical_linkage": {
-        "model_family": "mlb_ai_ranker",
-        "model_version": "v1",
-        "training_window": "2022-2024",
-        "validation_window": "2025"
-      }
-    },
-    {
-      "board_date": "2026-04-01",
-      "canonical_game_id": "mlb:286048",
-      "matchup": "Twins @ Royals",
-      "market_type": "total",
-      "side": "under",
-      "line_value": 8,
-      "price_american": -124,
-      "suggested_units": 1,
-      "edge": 0.036172,
-      "model_probability": 0.589744,
-      "market_probability": 0.553571,
-      "confidence_band": "medium",
-      "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.036172,
-      "context_score": null,
-      "hostile_penalty_multiplier": null,
-      "explanation_summary": "Total Under qualified for the public ranker card because model probability 59.0% exceeded market implied probability 55.4% by 3.6 points.",
-      "top_edge_drivers": [
-        {
-          "feature": "market_implied_probability",
-          "value": 0.553571,
-          "contribution": 0.15672
-        },
-        {
-          "feature": "is_over_side",
-          "value": 0,
-          "contribution": 0.016456
-        },
-        {
-          "feature": "steam_move_count",
-          "value": 0,
-          "contribution": -0.009979
-        }
-      ],
-      "top_context_drivers": [
-        {
-          "feature": "sharp_count",
-          "value": 0,
-          "contribution": -0.008083
-        },
-        {
-          "feature": "price_american_norm",
-          "value": -0.62,
-          "contribution": 0.008013
-        },
-        {
-          "feature": "bullpen_role_context_complete_flag",
-          "value": 0,
-          "contribution": 0.005698
         }
       ],
       "historical_linkage": {
@@ -2322,12 +1968,12 @@
       "line_value": 0,
       "price_american": 145,
       "suggested_units": 1,
-      "edge": 0.035926,
-      "model_probability": 0.444089,
+      "edge": 0.035723,
+      "model_probability": 0.443886,
       "market_probability": 0.408163,
       "confidence_band": "medium",
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.035926,
+      "final_score": 0.035723,
       "context_score": null,
       "hostile_penalty_multiplier": null,
       "explanation_summary": "Moneyline Away qualified for the public ranker card because model probability 44.4% exceeded market implied probability 40.8% by 3.6 points.",
@@ -2335,34 +1981,34 @@
         {
           "feature": "market_implied_probability",
           "value": 0.408163,
-          "contribution": -0.399312
+          "contribution": -0.401756
         },
         {
           "feature": "price_american_norm",
           "value": 0.725,
-          "contribution": -0.049224
+          "contribution": -0.049359
         },
         {
-          "feature": "opponent_team_statcast_available_flag",
+          "feature": "selected_team_statcast_available_flag",
           "value": 0,
-          "contribution": 0.027696
+          "contribution": -0.027792
         }
       ],
       "top_context_drivers": [
         {
-          "feature": "selected_team_statcast_available_flag",
+          "feature": "opponent_team_statcast_available_flag",
           "value": 0,
-          "contribution": -0.02746
+          "contribution": 0.027422
         },
         {
-          "feature": "steam_move_count",
+          "feature": "pro_system_count",
           "value": 0,
-          "contribution": -0.007728
+          "contribution": 0.004262
         },
         {
-          "feature": "reverse_line_move_count",
+          "feature": "selected_is_home",
           "value": 0,
-          "contribution": 0.007422
+          "contribution": 0.00392
         }
       ],
       "historical_linkage": {
@@ -2551,65 +2197,6 @@
     },
     {
       "board_date": "2026-03-28",
-      "canonical_game_id": "mlb:285643",
-      "matchup": "Diamondbacks @ Dodgers",
-      "market_type": "moneyline",
-      "side": "away",
-      "line_value": 0,
-      "price_american": 200,
-      "suggested_units": 1,
-      "edge": 0.666567,
-      "model_probability": 0.9999,
-      "market_probability": 0.333333,
-      "confidence_band": "high",
-      "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.666567,
-      "context_score": null,
-      "hostile_penalty_multiplier": null,
-      "explanation_summary": "Moneyline Away qualified for the public ranker card because model probability 100.0% exceeded market implied probability 33.3% by 66.7 points.",
-      "top_edge_drivers": [
-        {
-          "feature": "market_implied_probability",
-          "value": 0.333333,
-          "contribution": -0.663864
-        },
-        {
-          "feature": "pro_system_count",
-          "value": 1,
-          "contribution": -0.117175
-        },
-        {
-          "feature": "price_american_norm",
-          "value": 1,
-          "contribution": -0.060583
-        }
-      ],
-      "top_context_drivers": [
-        {
-          "feature": "selected_team_statcast_available_flag",
-          "value": 0,
-          "contribution": -0.02746
-        },
-        {
-          "feature": "opponent_team_avg_ipouts_last3",
-          "value": 0,
-          "contribution": 0.022982
-        },
-        {
-          "feature": "market_micro_move_count",
-          "value": 6,
-          "contribution": -0.019947
-        }
-      ],
-      "historical_linkage": {
-        "model_family": "mlb_ai_ranker",
-        "model_version": "v1",
-        "training_window": "2022-2024",
-        "validation_window": "2025"
-      }
-    },
-    {
-      "board_date": "2026-03-28",
       "canonical_game_id": "mlb:285635",
       "matchup": "Rockies @ Marlins",
       "market_type": "spread",
@@ -2658,183 +2245,6 @@
           "feature": "market_micro_bookmaker_count",
           "value": 7,
           "contribution": -0.012498
-        }
-      ],
-      "historical_linkage": {
-        "model_family": "mlb_ai_ranker",
-        "model_version": "v1",
-        "training_window": "2022-2024",
-        "validation_window": "2025"
-      }
-    },
-    {
-      "board_date": "2026-03-28",
-      "canonical_game_id": "mlb:285631",
-      "matchup": "Nationals @ Cubs",
-      "market_type": "total",
-      "side": "under",
-      "line_value": 9.5,
-      "price_american": -116,
-      "suggested_units": 1,
-      "edge": 0.052707,
-      "model_probability": 0.589744,
-      "market_probability": 0.537037,
-      "confidence_band": "high",
-      "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.052707,
-      "context_score": null,
-      "hostile_penalty_multiplier": null,
-      "explanation_summary": "Total Under qualified for the public ranker card because model probability 59.0% exceeded market implied probability 53.7% by 5.3 points.",
-      "top_edge_drivers": [
-        {
-          "feature": "market_implied_probability",
-          "value": 0.537037,
-          "contribution": 0.070052
-        },
-        {
-          "feature": "market_micro_price_stddev",
-          "value": 75.281,
-          "contribution": 0.027165
-        },
-        {
-          "feature": "market_micro_price_range",
-          "value": 202,
-          "contribution": 0.026904
-        }
-      ],
-      "top_context_drivers": [
-        {
-          "feature": "sharp_count",
-          "value": 6,
-          "contribution": 0.01996
-        },
-        {
-          "feature": "is_over_side",
-          "value": 0,
-          "contribution": 0.016456
-        },
-        {
-          "feature": "steam_move_count",
-          "value": 3,
-          "contribution": 0.015134
-        }
-      ],
-      "historical_linkage": {
-        "model_family": "mlb_ai_ranker",
-        "model_version": "v1",
-        "training_window": "2022-2024",
-        "validation_window": "2025"
-      }
-    },
-    {
-      "board_date": "2026-03-28",
-      "canonical_game_id": "mlb:285630",
-      "matchup": "Rays @ Cardinals",
-      "market_type": "total",
-      "side": "under",
-      "line_value": 7.5,
-      "price_american": -120,
-      "suggested_units": 1,
-      "edge": 0.044289,
-      "model_probability": 0.589744,
-      "market_probability": 0.545455,
-      "confidence_band": "high",
-      "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.044289,
-      "context_score": null,
-      "hostile_penalty_multiplier": null,
-      "explanation_summary": "Total Under qualified for the public ranker card because model probability 59.0% exceeded market implied probability 54.5% by 4.4 points.",
-      "top_edge_drivers": [
-        {
-          "feature": "market_implied_probability",
-          "value": 0.545455,
-          "contribution": 0.114174
-        },
-        {
-          "feature": "sharp_count",
-          "value": 7,
-          "contribution": 0.024634
-        },
-        {
-          "feature": "is_over_side",
-          "value": 0,
-          "contribution": 0.016456
-        }
-      ],
-      "top_context_drivers": [
-        {
-          "feature": "steam_move_count",
-          "value": 3,
-          "contribution": 0.015134
-        },
-        {
-          "feature": "market_micro_move_count",
-          "value": 3,
-          "contribution": -0.008013
-        },
-        {
-          "feature": "reverse_line_move_count",
-          "value": 4,
-          "contribution": 0.00707
-        }
-      ],
-      "historical_linkage": {
-        "model_family": "mlb_ai_ranker",
-        "model_version": "v1",
-        "training_window": "2022-2024",
-        "validation_window": "2025"
-      }
-    },
-    {
-      "board_date": "2026-03-27",
-      "canonical_game_id": "mlb:285624",
-      "matchup": "Rockies @ Marlins",
-      "market_type": "total",
-      "side": "under",
-      "line_value": 8,
-      "price_american": -115,
-      "suggested_units": 1,
-      "edge": 0.05486,
-      "model_probability": 0.589744,
-      "market_probability": 0.534884,
-      "confidence_band": "high",
-      "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.05486,
-      "context_score": null,
-      "hostile_penalty_multiplier": null,
-      "explanation_summary": "Total Under qualified for the public ranker card because model probability 59.0% exceeded market implied probability 53.5% by 5.5 points.",
-      "top_edge_drivers": [
-        {
-          "feature": "market_implied_probability",
-          "value": 0.534884,
-          "contribution": 0.058765
-        },
-        {
-          "feature": "market_micro_price_stddev",
-          "value": 95.1418,
-          "contribution": 0.036187
-        },
-        {
-          "feature": "sharp_count",
-          "value": 9,
-          "contribution": 0.033982
-        }
-      ],
-      "top_context_drivers": [
-        {
-          "feature": "market_micro_price_range",
-          "value": 212,
-          "contribution": 0.028511
-        },
-        {
-          "feature": "is_over_side",
-          "value": 0,
-          "contribution": 0.016456
-        },
-        {
-          "feature": "steam_move_count",
-          "value": 3,
-          "contribution": 0.015134
         }
       ],
       "historical_linkage": {
@@ -3012,124 +2422,6 @@
           "feature": "opponent_team_avg_ipouts_last3",
           "value": 0,
           "contribution": 0.010359
-        }
-      ],
-      "historical_linkage": {
-        "model_family": "mlb_ai_ranker",
-        "model_version": "v1",
-        "training_window": "2022-2024",
-        "validation_window": "2025"
-      }
-    },
-    {
-      "board_date": "2026-03-26",
-      "canonical_game_id": "mlb:285610",
-      "matchup": "White Sox @ Brewers",
-      "market_type": "total",
-      "side": "under",
-      "line_value": 8.5,
-      "price_american": -115,
-      "suggested_units": 1,
-      "edge": 0.05486,
-      "model_probability": 0.589744,
-      "market_probability": 0.534884,
-      "confidence_band": "high",
-      "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.05486,
-      "context_score": null,
-      "hostile_penalty_multiplier": null,
-      "explanation_summary": "Total Under qualified for the public ranker card because model probability 59.0% exceeded market implied probability 53.5% by 5.5 points.",
-      "top_edge_drivers": [
-        {
-          "feature": "market_implied_probability",
-          "value": 0.534884,
-          "contribution": 0.058765
-        },
-        {
-          "feature": "market_micro_price_stddev",
-          "value": 97.1145,
-          "contribution": 0.037083
-        },
-        {
-          "feature": "market_micro_price_range",
-          "value": 208,
-          "contribution": 0.027868
-        }
-      ],
-      "top_context_drivers": [
-        {
-          "feature": "sharp_count",
-          "value": 7,
-          "contribution": 0.024634
-        },
-        {
-          "feature": "is_over_side",
-          "value": 0,
-          "contribution": 0.016456
-        },
-        {
-          "feature": "expert_count",
-          "value": 1,
-          "contribution": 0.013429
-        }
-      ],
-      "historical_linkage": {
-        "model_family": "mlb_ai_ranker",
-        "model_version": "v1",
-        "training_window": "2022-2024",
-        "validation_window": "2025"
-      }
-    },
-    {
-      "board_date": "2026-03-26",
-      "canonical_game_id": "mlb:285611",
-      "matchup": "Nationals @ Cubs",
-      "market_type": "total",
-      "side": "under",
-      "line_value": 7,
-      "price_american": -115,
-      "suggested_units": 1,
-      "edge": 0.05486,
-      "model_probability": 0.589744,
-      "market_probability": 0.534884,
-      "confidence_band": "high",
-      "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.05486,
-      "context_score": null,
-      "hostile_penalty_multiplier": null,
-      "explanation_summary": "Total Under qualified for the public ranker card because model probability 59.0% exceeded market implied probability 53.5% by 5.5 points.",
-      "top_edge_drivers": [
-        {
-          "feature": "market_implied_probability",
-          "value": 0.534884,
-          "contribution": 0.058765
-        },
-        {
-          "feature": "pro_system_count",
-          "value": 1,
-          "contribution": 0.046388
-        },
-        {
-          "feature": "sharp_count",
-          "value": 8,
-          "contribution": 0.029308
-        }
-      ],
-      "top_context_drivers": [
-        {
-          "feature": "is_over_side",
-          "value": 0,
-          "contribution": 0.016456
-        },
-        {
-          "feature": "steam_move_count",
-          "value": 3,
-          "contribution": 0.015134
-        },
-        {
-          "feature": "expert_count",
-          "value": 1,
-          "contribution": 0.013429
         }
       ],
       "historical_linkage": {
@@ -3325,12 +2617,12 @@
       "line_value": 0,
       "price_american": 150,
       "suggested_units": 1,
-      "edge": 0.044089,
-      "model_probability": 0.444089,
+      "edge": 0.043886,
+      "model_probability": 0.443886,
       "market_probability": 0.4,
       "confidence_band": "high",
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.044089,
+      "final_score": 0.043886,
       "context_score": null,
       "hostile_penalty_multiplier": null,
       "explanation_summary": "Moneyline Away qualified for the public ranker card because model probability 44.4% exceeded market implied probability 40.0% by 4.4 points.",
@@ -3338,34 +2630,34 @@
         {
           "feature": "market_implied_probability",
           "value": 0.4,
-          "contribution": -0.428173
+          "contribution": -0.430793
         },
         {
           "feature": "price_american_norm",
           "value": 0.75,
-          "contribution": -0.050257
+          "contribution": -0.050395
         },
         {
           "feature": "opponent_team_statcast_available_flag",
           "value": 0,
-          "contribution": 0.027696
+          "contribution": 0.027422
         }
       ],
       "top_context_drivers": [
         {
           "feature": "selected_team_avg_ipouts_last3",
           "value": 0,
-          "contribution": -0.02184
+          "contribution": -0.023136
         },
         {
           "feature": "selected_team_statcast_available_flag",
           "value": 1,
-          "contribution": 0.018918
+          "contribution": 0.019147
         },
         {
           "feature": "market_micro_move_count",
           "value": 5,
-          "contribution": -0.014349
+          "contribution": -0.01453
         }
       ],
       "historical_linkage": {
@@ -3384,12 +2676,12 @@
       "line_value": 0,
       "price_american": 145,
       "suggested_units": 1,
-      "edge": 0.035926,
-      "model_probability": 0.444089,
+      "edge": 0.035723,
+      "model_probability": 0.443886,
       "market_probability": 0.408163,
       "confidence_band": "medium",
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.035926,
+      "final_score": 0.035723,
       "context_score": null,
       "hostile_penalty_multiplier": null,
       "explanation_summary": "Moneyline Away qualified for the public ranker card because model probability 44.4% exceeded market implied probability 40.8% by 3.6 points.",
@@ -3397,34 +2689,34 @@
         {
           "feature": "market_implied_probability",
           "value": 0.408163,
-          "contribution": -0.399312
+          "contribution": -0.401756
         },
         {
           "feature": "price_american_norm",
           "value": 0.725,
-          "contribution": -0.049224
+          "contribution": -0.049359
         },
         {
           "feature": "opponent_team_statcast_available_flag",
           "value": 0,
-          "contribution": 0.027696
+          "contribution": 0.027422
         }
       ],
       "top_context_drivers": [
         {
           "feature": "selected_team_avg_ipouts_last3",
           "value": 0,
-          "contribution": -0.02184
+          "contribution": -0.023136
         },
         {
           "feature": "selected_team_statcast_available_flag",
           "value": 1,
-          "contribution": 0.018918
+          "contribution": 0.019147
         },
         {
           "feature": "expert_count",
           "value": 1,
-          "contribution": -0.010395
+          "contribution": -0.011188
         }
       ],
       "historical_linkage": {
@@ -3561,47 +2853,47 @@
       "line_value": 0,
       "price_american": 143,
       "suggested_units": 1,
-      "edge": 0.032567,
-      "model_probability": 0.444089,
+      "edge": 0.032363,
+      "model_probability": 0.443886,
       "market_probability": 0.411523,
       "confidence_band": "medium",
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.032567,
+      "final_score": 0.032363,
       "context_score": null,
       "hostile_penalty_multiplier": null,
-      "explanation_summary": "Moneyline Away qualified for the public ranker card because model probability 44.4% exceeded market implied probability 41.2% by 3.3 points.",
+      "explanation_summary": "Moneyline Away qualified for the public ranker card because model probability 44.4% exceeded market implied probability 41.2% by 3.2 points.",
       "top_edge_drivers": [
         {
           "feature": "market_implied_probability",
           "value": 0.411523,
-          "contribution": -0.387436
+          "contribution": -0.389807
         },
         {
           "feature": "price_american_norm",
           "value": 0.715,
-          "contribution": -0.048811
+          "contribution": -0.048945
         },
         {
           "feature": "opponent_team_statcast_available_flag",
           "value": 0,
-          "contribution": 0.027696
+          "contribution": 0.027422
         }
       ],
       "top_context_drivers": [
         {
           "feature": "selected_team_statcast_available_flag",
           "value": 1,
-          "contribution": 0.018918
+          "contribution": 0.019147
         },
         {
           "feature": "market_micro_move_count",
           "value": 5,
-          "contribution": -0.014349
+          "contribution": -0.01453
         },
         {
           "feature": "market_micro_price_stddev",
           "value": 8.4591,
-          "contribution": -0.009057
+          "contribution": -0.009075
         }
       ],
       "historical_linkage": {
@@ -3738,47 +3030,47 @@
       "line_value": 0,
       "price_american": 143,
       "suggested_units": 1,
-      "edge": 0.032567,
-      "model_probability": 0.444089,
+      "edge": 0.032363,
+      "model_probability": 0.443886,
       "market_probability": 0.411523,
       "confidence_band": "medium",
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.032567,
+      "final_score": 0.032363,
       "context_score": null,
       "hostile_penalty_multiplier": null,
-      "explanation_summary": "Moneyline Away qualified for the public ranker card because model probability 44.4% exceeded market implied probability 41.2% by 3.3 points.",
+      "explanation_summary": "Moneyline Away qualified for the public ranker card because model probability 44.4% exceeded market implied probability 41.2% by 3.2 points.",
       "top_edge_drivers": [
         {
           "feature": "market_implied_probability",
           "value": 0.411523,
-          "contribution": -0.387436
+          "contribution": -0.389807
         },
         {
           "feature": "price_american_norm",
           "value": 0.715,
-          "contribution": -0.048811
+          "contribution": -0.048945
         },
         {
-          "feature": "opponent_team_statcast_available_flag",
+          "feature": "selected_team_statcast_available_flag",
           "value": 0,
-          "contribution": 0.027696
+          "contribution": -0.027792
         }
       ],
       "top_context_drivers": [
         {
-          "feature": "selected_team_statcast_available_flag",
+          "feature": "opponent_team_statcast_available_flag",
           "value": 0,
-          "contribution": -0.02746
+          "contribution": 0.027422
         },
         {
           "feature": "market_micro_move_count",
           "value": 5,
-          "contribution": -0.014349
+          "contribution": -0.01453
         },
         {
           "feature": "market_micro_price_stddev",
           "value": 11.4661,
-          "contribution": -0.008867
+          "contribution": -0.008884
         }
       ],
       "historical_linkage": {
@@ -3967,54 +3259,54 @@
     },
     {
       "board_date": "2026-03-22",
-      "canonical_game_id": "mlb:285481",
-      "matchup": "Mets @ Marlins",
+      "canonical_game_id": "mlb:285482",
+      "matchup": "Nationals @ Orioles",
       "market_type": "moneyline",
-      "side": "home",
+      "side": "away",
       "line_value": 0,
-      "price_american": 143,
+      "price_american": 145,
       "suggested_units": 1,
-      "edge": 0.032567,
-      "model_probability": 0.444089,
-      "market_probability": 0.411523,
+      "edge": 0.035723,
+      "model_probability": 0.443886,
+      "market_probability": 0.408163,
       "confidence_band": "medium",
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.032567,
+      "final_score": 0.035723,
       "context_score": null,
       "hostile_penalty_multiplier": null,
-      "explanation_summary": "Moneyline Home qualified for the public ranker card because model probability 44.4% exceeded market implied probability 41.2% by 3.3 points.",
+      "explanation_summary": "Moneyline Away qualified for the public ranker card because model probability 44.4% exceeded market implied probability 40.8% by 3.6 points.",
       "top_edge_drivers": [
         {
           "feature": "market_implied_probability",
-          "value": 0.411523,
-          "contribution": -0.387436
+          "value": 0.408163,
+          "contribution": -0.401756
         },
         {
           "feature": "price_american_norm",
-          "value": 0.715,
-          "contribution": -0.048811
+          "value": 0.725,
+          "contribution": -0.049359
         },
         {
-          "feature": "opponent_team_statcast_available_flag",
+          "feature": "selected_team_statcast_available_flag",
           "value": 0,
-          "contribution": 0.027696
+          "contribution": -0.027792
         }
       ],
       "top_context_drivers": [
         {
-          "feature": "selected_team_statcast_available_flag",
+          "feature": "opponent_team_statcast_available_flag",
           "value": 0,
-          "contribution": -0.02746
+          "contribution": 0.027422
         },
         {
           "feature": "market_micro_move_count",
-          "value": 4,
-          "contribution": -0.008752
+          "value": 0,
+          "contribution": 0.013808
         },
         {
-          "feature": "steam_move_count",
+          "feature": "market_micro_price_stddev",
           "value": 0,
-          "contribution": -0.007728
+          "contribution": -0.00961
         }
       ],
       "historical_linkage": {
@@ -4025,55 +3317,55 @@
       }
     },
     {
-      "board_date": "2026-03-21",
-      "canonical_game_id": "mlb:285426",
-      "matchup": "Marlins @ Cardinals",
+      "board_date": "2026-03-22",
+      "canonical_game_id": "mlb:285481",
+      "matchup": "Mets @ Marlins",
       "market_type": "moneyline",
       "side": "home",
       "line_value": 0,
-      "price_american": 105,
+      "price_american": 143,
       "suggested_units": 1,
-      "edge": 0.512095,
-      "model_probability": 0.9999,
-      "market_probability": 0.487805,
-      "confidence_band": "high",
+      "edge": 0.032363,
+      "model_probability": 0.443886,
+      "market_probability": 0.411523,
+      "confidence_band": "medium",
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.512095,
+      "final_score": 0.032363,
       "context_score": null,
       "hostile_penalty_multiplier": null,
-      "explanation_summary": "Moneyline Home qualified for the public ranker card because model probability 100.0% exceeded market implied probability 48.8% by 51.2 points.",
+      "explanation_summary": "Moneyline Home qualified for the public ranker card because model probability 44.4% exceeded market implied probability 41.2% by 3.2 points.",
       "top_edge_drivers": [
         {
           "feature": "market_implied_probability",
-          "value": 0.487805,
-          "contribution": -0.11775
+          "value": 0.411523,
+          "contribution": -0.389807
         },
         {
           "feature": "price_american_norm",
-          "value": 0.525,
-          "contribution": -0.040963
+          "value": 0.715,
+          "contribution": -0.048945
         },
         {
-          "feature": "opponent_team_statcast_available_flag",
+          "feature": "selected_team_statcast_available_flag",
           "value": 0,
-          "contribution": 0.027696
+          "contribution": -0.027792
         }
       ],
       "top_context_drivers": [
         {
-          "feature": "selected_team_statcast_available_flag",
+          "feature": "opponent_team_statcast_available_flag",
           "value": 0,
-          "contribution": -0.02746
+          "contribution": 0.027422
         },
         {
           "feature": "market_micro_move_count",
           "value": 4,
-          "contribution": -0.008752
+          "contribution": -0.008862
         },
         {
-          "feature": "steam_move_count",
+          "feature": "pro_system_count",
           "value": 0,
-          "contribution": -0.007728
+          "contribution": 0.004262
         }
       ],
       "historical_linkage": {
