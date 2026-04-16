@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-16T12:30:41.898Z",
+  "generated_at": "2026-04-16T14:41:49.044Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_ranker",
@@ -502,9 +502,9 @@
     {
       "board_date": "2026-04-16",
       "bets": 0,
-      "selected_bets": 1,
+      "selected_bets": 0,
       "settled_bets": 0,
-      "pending_bets": 1,
+      "pending_bets": 0,
       "wins": 0,
       "losses": 0,
       "pushes": 0,
@@ -515,14 +515,14 @@
       "roi": null,
       "cumulative_units": -6.766899,
       "drawdown_to_date": -14.708322,
-      "selection_pct": 0.016667
+      "selection_pct": 0
     }
   ],
   "summary": {
     "bets": 54,
-    "selected_bets": 56,
+    "selected_bets": 55,
     "settled_bets": 55,
-    "pending_bets": 1,
+    "pending_bets": 0,
     "wins": 27,
     "losses": 27,
     "pushes": 1,

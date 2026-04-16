@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-16T12:30:41.898Z",
+  "generated_at": "2026-04-16T14:41:49.044Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_ranker",
@@ -10,56 +10,20 @@
     "trusted_for_live_betting": false
   },
   "selection_contract": "edge_gte_0_04_no_cap_challenger",
-  "board_state": "ready",
-  "board_available": true,
+  "board_state": "no_valid_board_for_requested_date",
+  "board_available": false,
   "requested_board_date": "2026-04-16",
-  "board_date": "2026-04-16",
+  "board_date": null,
   "active_board_date": "2026-04-16",
   "latest_valid_mlb_ai_board_date": "2026-04-16",
   "latest_canonical_board_date": "2026-04-16",
-  "availability_reason": null,
+  "availability_reason": "No Ranker System board is available for 2026-04-16. Latest valid ranker board remains 2026-04-16. Latest canonical betting date is 2026-04-16. Prior-day picks are not surfaced as the official public board.",
   "slate_summary": {
-    "total_rows_scored": 60,
-    "selected_bets": 1,
-    "selected_by_market": {
-      "moneyline": 1
-    }
+    "total_rows_scored": null,
+    "selected_bets": 0,
+    "selected_by_market": {}
   },
-  "rows": [
-    {
-      "board_date": "2026-04-16",
-      "canonical_game_id": "mlb:286951",
-      "matchup": "Los Angeles Angels @ New York Yankees",
-      "away_team": "Los Angeles Angels",
-      "home_team": "New York Yankees",
-      "bet_label": "New York Yankees ML (-286)",
-      "market_type": "moneyline",
-      "side": "home",
-      "line_value": 0,
-      "price_american": -286,
-      "market_probability": 0.740933,
-      "model_probability": 0.789474,
-      "edge": 0.048541,
-      "selection_contract": "edge_gte_0_04_no_cap_challenger",
-      "rank_on_slate": 1,
-      "confidence_band": "high",
-      "visibility_tier": "core",
-      "display_sort_bucket": "core_priority",
-      "primary_drivers": [
-        "Market Implied Probability +0.782",
-        "Price American Norm +0.040",
-        "Selected Team Statcast Available Flag -0.028"
-      ],
-      "supporting_context": [
-        "Price American Norm +0.040",
-        "Selected Team Statcast Available Flag -0.028"
-      ],
-      "suggested_units": 1,
-      "explanation_summary": "Moneyline Home at -286 cleared the edge_gte_0_04_no_cap_challenger threshold with model probability 78.9% versus market 74.1%.",
-      "comparator_flags": {},
-      "ev_proxy": 0.065513
-    }
-  ],
+  "rows": [],
   "site_surface": {
     "system_key": "ranker_challenger_system",
     "label": "Ranker Challenger",
