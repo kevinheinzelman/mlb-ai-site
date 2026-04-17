@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T13:31:32.258Z",
+  "generated_at": "2026-04-17T14:31:59.728Z",
   "artifact_version": "v1",
   "active_engine": {
     "engine_family": "mlb_ai_ranker",
@@ -12,11 +12,11 @@
   "requested_board_date": "2026-04-17",
   "active_board_date": "2026-04-17",
   "freshness": {
-    "generated_at": "2026-04-17T13:31:32.258Z",
+    "generated_at": "2026-04-17T14:31:59.728Z",
     "board_date": "2026-04-17",
     "latest_canonical_board_date": "2026-04-17",
-    "current_source_scores_generated_at": "2026-04-17T13:28:22.588Z",
-    "historical_source_audit_generated_at": "2026-04-17T13:31:32.258Z"
+    "current_source_scores_generated_at": "2026-04-17T14:28:53.019Z",
+    "historical_source_audit_generated_at": "2026-04-17T14:31:59.728Z"
   },
   "source_date_coverage": {
     "current_window_end": "2026-04-17",

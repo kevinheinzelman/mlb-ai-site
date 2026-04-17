@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T13:31:32.258Z",
+  "generated_at": "2026-04-17T14:31:59.728Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_ranker",
@@ -73,65 +73,6 @@
     },
     {
       "board_date": "2026-04-17",
-      "canonical_game_id": "mlb:287013",
-      "matchup": "San Diego Padres @ Los Angeles Angels",
-      "market_type": "spread",
-      "side": "home",
-      "line_value": -1.5,
-      "price_american": 144,
-      "suggested_units": 1,
-      "edge": 0.125273,
-      "model_probability": 0.535109,
-      "market_probability": 0.409836,
-      "confidence_band": "high",
-      "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.125273,
-      "context_score": null,
-      "hostile_penalty_multiplier": null,
-      "explanation_summary": "Run line Home qualified for the public ranker card because model probability 53.5% exceeded market implied probability 41.0% by 12.5 points.",
-      "top_edge_drivers": [
-        {
-          "feature": "selected_minus_opponent_avg_ipouts_last3",
-          "value": 63,
-          "contribution": 0.266494
-        },
-        {
-          "feature": "market_implied_probability",
-          "value": 0.409836,
-          "contribution": -0.221194
-        },
-        {
-          "feature": "selected_team_avg_ipouts_last3",
-          "value": 63,
-          "contribution": 0.177548
-        }
-      ],
-      "top_context_drivers": [
-        {
-          "feature": "price_american_norm",
-          "value": 0.72,
-          "contribution": -0.150813
-        },
-        {
-          "feature": "line_value",
-          "value": -1.5,
-          "contribution": -0.049271
-        },
-        {
-          "feature": "opponent_team_avg_ipouts_last3",
-          "value": 0,
-          "contribution": 0.047905
-        }
-      ],
-      "historical_linkage": {
-        "model_family": "mlb_ai_ranker",
-        "model_version": "v1",
-        "training_window": "2022-2024",
-        "validation_window": "2025"
-      }
-    },
-    {
-      "board_date": "2026-04-17",
       "canonical_game_id": "mlb:287008",
       "matchup": "Milwaukee Brewers @ Miami Marlins",
       "market_type": "moneyline",
@@ -191,37 +132,96 @@
     },
     {
       "board_date": "2026-04-17",
+      "canonical_game_id": "mlb:287013",
+      "matchup": "San Diego Padres @ Los Angeles Angels",
+      "market_type": "spread",
+      "side": "home",
+      "line_value": -1.5,
+      "price_american": 141,
+      "suggested_units": 1,
+      "edge": 0.120171,
+      "model_probability": 0.535109,
+      "market_probability": 0.414938,
+      "confidence_band": "high",
+      "selection_contract": "edge_gte_0_03_cap_minus_150",
+      "final_score": 0.120171,
+      "context_score": null,
+      "hostile_penalty_multiplier": null,
+      "explanation_summary": "Run line Home qualified for the public ranker card because model probability 53.5% exceeded market implied probability 41.5% by 12.0 points.",
+      "top_edge_drivers": [
+        {
+          "feature": "selected_minus_opponent_avg_ipouts_last3",
+          "value": 63,
+          "contribution": 0.266494
+        },
+        {
+          "feature": "market_implied_probability",
+          "value": 0.414938,
+          "contribution": -0.211004
+        },
+        {
+          "feature": "selected_team_avg_ipouts_last3",
+          "value": 63,
+          "contribution": 0.177548
+        }
+      ],
+      "top_context_drivers": [
+        {
+          "feature": "price_american_norm",
+          "value": 0.705,
+          "contribution": -0.148093
+        },
+        {
+          "feature": "line_value",
+          "value": -1.5,
+          "contribution": -0.049271
+        },
+        {
+          "feature": "opponent_team_avg_ipouts_last3",
+          "value": 0,
+          "contribution": 0.047905
+        }
+      ],
+      "historical_linkage": {
+        "model_family": "mlb_ai_ranker",
+        "model_version": "v1",
+        "training_window": "2022-2024",
+        "validation_window": "2025"
+      }
+    },
+    {
+      "board_date": "2026-04-17",
       "canonical_game_id": "mlb:287014",
       "matchup": "Toronto Blue Jays @ Arizona Diamondbacks",
       "market_type": "moneyline",
       "side": "home",
       "line_value": 0,
-      "price_american": -136,
+      "price_american": -143,
       "suggested_units": 1,
-      "edge": 0.062618,
-      "model_probability": 0.638889,
-      "market_probability": 0.576271,
+      "edge": 0.0643,
+      "model_probability": 0.652778,
+      "market_probability": 0.588477,
       "confidence_band": "high",
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.062618,
+      "final_score": 0.0643,
       "context_score": null,
       "hostile_penalty_multiplier": null,
-      "explanation_summary": "Moneyline Home qualified for the public ranker card because model probability 63.9% exceeded market implied probability 57.6% by 6.3 points.",
+      "explanation_summary": "Moneyline Home qualified for the public ranker card because model probability 65.3% exceeded market implied probability 58.8% by 6.4 points.",
       "top_edge_drivers": [
+        {
+          "feature": "market_implied_probability",
+          "value": 0.588477,
+          "contribution": 0.154486
+        },
+        {
+          "feature": "price_american_norm",
+          "value": -0.715,
+          "contribution": 0.135787
+        },
         {
           "feature": "selected_team_avg_ipouts_last3",
           "value": 47,
           "contribution": 0.133814
-        },
-        {
-          "feature": "price_american_norm",
-          "value": -0.68,
-          "contribution": 0.127736
-        },
-        {
-          "feature": "market_implied_probability",
-          "value": 0.576271,
-          "contribution": 0.126793
         }
       ],
       "top_context_drivers": [
@@ -368,6 +368,65 @@
     },
     {
       "board_date": "2026-04-17",
+      "canonical_game_id": "mlb:287016",
+      "matchup": "Chicago White Sox @ Athletics",
+      "market_type": "spread",
+      "side": "away",
+      "line_value": 1.5,
+      "price_american": -143,
+      "suggested_units": 1,
+      "edge": 0.048794,
+      "model_probability": 0.637271,
+      "market_probability": 0.588477,
+      "confidence_band": "high",
+      "selection_contract": "edge_gte_0_03_cap_minus_150",
+      "final_score": 0.048794,
+      "context_score": null,
+      "hostile_penalty_multiplier": null,
+      "explanation_summary": "Run line Away qualified for the public ranker card because model probability 63.7% exceeded market implied probability 58.8% by 4.9 points.",
+      "top_edge_drivers": [
+        {
+          "feature": "selected_team_avg_ipouts_last3",
+          "value": 54,
+          "contribution": 0.144218
+        },
+        {
+          "feature": "market_implied_probability",
+          "value": 0.588477,
+          "contribution": 0.135596
+        },
+        {
+          "feature": "price_american_norm",
+          "value": -0.715,
+          "contribution": 0.109445
+        }
+      ],
+      "top_context_drivers": [
+        {
+          "feature": "opponent_team_avg_ipouts_last3",
+          "value": 47,
+          "contribution": -0.101627
+        },
+        {
+          "feature": "line_value",
+          "value": 1.5,
+          "contribution": 0.049215
+        },
+        {
+          "feature": "bet_minus_opp_bullpen_ipouts_last3",
+          "value": 17,
+          "contribution": -0.034492
+        }
+      ],
+      "historical_linkage": {
+        "model_family": "mlb_ai_ranker",
+        "model_version": "v1",
+        "training_window": "2022-2024",
+        "validation_window": "2025"
+      }
+    },
+    {
+      "board_date": "2026-04-17",
       "canonical_game_id": "mlb:287010",
       "matchup": "St. Louis Cardinals @ Houston Astros",
       "market_type": "moneyline",
@@ -475,65 +534,6 @@
           "feature": "bet_team_bullpen_er_last3",
           "value": 0,
           "contribution": -0.016458
-        }
-      ],
-      "historical_linkage": {
-        "model_family": "mlb_ai_ranker",
-        "model_version": "v1",
-        "training_window": "2022-2024",
-        "validation_window": "2025"
-      }
-    },
-    {
-      "board_date": "2026-04-17",
-      "canonical_game_id": "mlb:287016",
-      "matchup": "Chicago White Sox @ Athletics",
-      "market_type": "spread",
-      "side": "away",
-      "line_value": 1.5,
-      "price_american": -149,
-      "suggested_units": 1,
-      "edge": 0.038878,
-      "model_probability": 0.637271,
-      "market_probability": 0.598394,
-      "confidence_band": "medium",
-      "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.038878,
-      "context_score": null,
-      "hostile_penalty_multiplier": null,
-      "explanation_summary": "Run line Away qualified for the public ranker card because model probability 63.7% exceeded market implied probability 59.8% by 3.9 points.",
-      "top_edge_drivers": [
-        {
-          "feature": "market_implied_probability",
-          "value": 0.598394,
-          "contribution": 0.155401
-        },
-        {
-          "feature": "selected_team_avg_ipouts_last3",
-          "value": 54,
-          "contribution": 0.144218
-        },
-        {
-          "feature": "price_american_norm",
-          "value": -0.745,
-          "contribution": 0.114886
-        }
-      ],
-      "top_context_drivers": [
-        {
-          "feature": "opponent_team_avg_ipouts_last3",
-          "value": 47,
-          "contribution": -0.101627
-        },
-        {
-          "feature": "line_value",
-          "value": 1.5,
-          "contribution": 0.049215
-        },
-        {
-          "feature": "bet_minus_opp_bullpen_ipouts_last3",
-          "value": 17,
-          "contribution": -0.034492
         }
       ],
       "historical_linkage": {

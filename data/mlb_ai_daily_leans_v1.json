@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T13:31:32.258Z",
+  "generated_at": "2026-04-17T14:31:59.728Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_ranker",
@@ -62,39 +62,6 @@
     },
     {
       "board_date": "2026-04-17",
-      "canonical_game_id": "mlb:287013",
-      "matchup": "San Diego Padres @ Los Angeles Angels",
-      "away_team": "San Diego Padres",
-      "home_team": "Los Angeles Angels",
-      "bet_label": "Los Angeles Angels +1.5 (+144)",
-      "market_type": "spread",
-      "side": "home",
-      "line_value": -1.5,
-      "price_american": 144,
-      "market_probability": 0.409836,
-      "model_probability": 0.535109,
-      "edge": 0.125273,
-      "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "rank_on_slate": 2,
-      "confidence_band": "high",
-      "visibility_tier": "core",
-      "display_sort_bucket": "core_priority",
-      "primary_drivers": [
-        "Selected Minus Opponent Avg Ipouts Last3 +0.266",
-        "Market Implied Probability -0.221",
-        "Selected Team Avg Ipouts Last3 +0.178"
-      ],
-      "supporting_context": [
-        "Market Implied Probability -0.221",
-        "Selected Team Avg Ipouts Last3 +0.178"
-      ],
-      "suggested_units": 1,
-      "explanation_summary": "Run line Home at +144 cleared the edge_gte_0_03_cap_minus_150 threshold with model probability 53.5% versus market 41.0%.",
-      "comparator_flags": {},
-      "ev_proxy": 0.305666
-    },
-    {
-      "board_date": "2026-04-17",
       "canonical_game_id": "mlb:287008",
       "matchup": "Milwaukee Brewers @ Miami Marlins",
       "away_team": "Milwaukee Brewers",
@@ -108,7 +75,7 @@
       "model_probability": 0.655963,
       "edge": 0.12108,
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "rank_on_slate": 3,
+      "rank_on_slate": 2,
       "confidence_band": "high",
       "visibility_tier": "core",
       "display_sort_bucket": "core_priority",
@@ -128,36 +95,69 @@
     },
     {
       "board_date": "2026-04-17",
+      "canonical_game_id": "mlb:287013",
+      "matchup": "San Diego Padres @ Los Angeles Angels",
+      "away_team": "San Diego Padres",
+      "home_team": "Los Angeles Angels",
+      "bet_label": "Los Angeles Angels +1.5 (+141)",
+      "market_type": "spread",
+      "side": "home",
+      "line_value": -1.5,
+      "price_american": 141,
+      "market_probability": 0.414938,
+      "model_probability": 0.535109,
+      "edge": 0.120171,
+      "selection_contract": "edge_gte_0_03_cap_minus_150",
+      "rank_on_slate": 3,
+      "confidence_band": "high",
+      "visibility_tier": "core",
+      "display_sort_bucket": "core_priority",
+      "primary_drivers": [
+        "Selected Minus Opponent Avg Ipouts Last3 +0.266",
+        "Market Implied Probability -0.211",
+        "Selected Team Avg Ipouts Last3 +0.178"
+      ],
+      "supporting_context": [
+        "Market Implied Probability -0.211",
+        "Selected Team Avg Ipouts Last3 +0.178"
+      ],
+      "suggested_units": 1,
+      "explanation_summary": "Run line Home at +141 cleared the edge_gte_0_03_cap_minus_150 threshold with model probability 53.5% versus market 41.5%.",
+      "comparator_flags": {},
+      "ev_proxy": 0.289613
+    },
+    {
+      "board_date": "2026-04-17",
       "canonical_game_id": "mlb:287014",
       "matchup": "Toronto Blue Jays @ Arizona Diamondbacks",
       "away_team": "Toronto Blue Jays",
       "home_team": "Arizona Diamondbacks",
-      "bet_label": "Arizona Diamondbacks ML (-136)",
+      "bet_label": "Arizona Diamondbacks ML (-143)",
       "market_type": "moneyline",
       "side": "home",
       "line_value": 0,
-      "price_american": -136,
-      "market_probability": 0.576271,
-      "model_probability": 0.638889,
-      "edge": 0.062618,
+      "price_american": -143,
+      "market_probability": 0.588477,
+      "model_probability": 0.652778,
+      "edge": 0.0643,
       "selection_contract": "edge_gte_0_03_cap_minus_150",
       "rank_on_slate": 4,
       "confidence_band": "high",
       "visibility_tier": "core",
       "display_sort_bucket": "core_priority",
       "primary_drivers": [
-        "Selected Team Avg Ipouts Last3 +0.134",
-        "Price American Norm +0.128",
-        "Market Implied Probability +0.127"
+        "Market Implied Probability +0.154",
+        "Price American Norm +0.136",
+        "Selected Team Avg Ipouts Last3 +0.134"
       ],
       "supporting_context": [
-        "Price American Norm +0.128",
-        "Market Implied Probability +0.127"
+        "Price American Norm +0.136",
+        "Selected Team Avg Ipouts Last3 +0.134"
       ],
       "suggested_units": 1,
-      "explanation_summary": "Moneyline Home at -136 cleared the edge_gte_0_03_cap_minus_150 threshold with model probability 63.9% versus market 57.6%.",
+      "explanation_summary": "Moneyline Home at -143 cleared the edge_gte_0_03_cap_minus_150 threshold with model probability 65.3% versus market 58.8%.",
       "comparator_flags": {},
-      "ev_proxy": 0.10866
+      "ev_proxy": 0.109266
     },
     {
       "board_date": "2026-04-17",
@@ -227,6 +227,39 @@
     },
     {
       "board_date": "2026-04-17",
+      "canonical_game_id": "mlb:287016",
+      "matchup": "Chicago White Sox @ Athletics",
+      "away_team": "Chicago White Sox",
+      "home_team": "Athletics",
+      "bet_label": "Chicago White Sox +1.5 (-143)",
+      "market_type": "spread",
+      "side": "away",
+      "line_value": 1.5,
+      "price_american": -143,
+      "market_probability": 0.588477,
+      "model_probability": 0.637271,
+      "edge": 0.048794,
+      "selection_contract": "edge_gte_0_03_cap_minus_150",
+      "rank_on_slate": 7,
+      "confidence_band": "high",
+      "visibility_tier": "core",
+      "display_sort_bucket": "core_priority",
+      "primary_drivers": [
+        "Selected Team Avg Ipouts Last3 +0.144",
+        "Market Implied Probability +0.136",
+        "Price American Norm +0.109"
+      ],
+      "supporting_context": [
+        "Market Implied Probability +0.136",
+        "Price American Norm +0.109"
+      ],
+      "suggested_units": 1,
+      "explanation_summary": "Run line Away at -143 cleared the edge_gte_0_03_cap_minus_150 threshold with model probability 63.7% versus market 58.8%.",
+      "comparator_flags": {},
+      "ev_proxy": 0.082915
+    },
+    {
+      "board_date": "2026-04-17",
       "canonical_game_id": "mlb:287010",
       "matchup": "St. Louis Cardinals @ Houston Astros",
       "away_team": "St. Louis Cardinals",
@@ -240,7 +273,7 @@
       "model_probability": 0.499146,
       "edge": 0.042525,
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "rank_on_slate": 7,
+      "rank_on_slate": 8,
       "confidence_band": "high",
       "visibility_tier": "core",
       "display_sort_bucket": "core_priority",
@@ -273,51 +306,18 @@
       "model_probability": 0.637271,
       "edge": 0.038878,
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "rank_on_slate": 8,
-      "confidence_band": "medium",
-      "visibility_tier": "exploratory",
-      "display_sort_bucket": "exploratory_priority",
-      "primary_drivers": [
-        "Market Implied Probability +0.155",
-        "Price American Norm +0.115",
-        "Selected Team Avg Ipouts Last3 +0.115"
-      ],
-      "supporting_context": [
-        "Price American Norm +0.115",
-        "Selected Team Avg Ipouts Last3 +0.115"
-      ],
-      "suggested_units": 1,
-      "explanation_summary": "Run line Away at -149 cleared the edge_gte_0_03_cap_minus_150 threshold with model probability 63.7% versus market 59.8%.",
-      "comparator_flags": {},
-      "ev_proxy": 0.06497
-    },
-    {
-      "board_date": "2026-04-17",
-      "canonical_game_id": "mlb:287016",
-      "matchup": "Chicago White Sox @ Athletics",
-      "away_team": "Chicago White Sox",
-      "home_team": "Athletics",
-      "bet_label": "Chicago White Sox +1.5 (-149)",
-      "market_type": "spread",
-      "side": "away",
-      "line_value": 1.5,
-      "price_american": -149,
-      "market_probability": 0.598394,
-      "model_probability": 0.637271,
-      "edge": 0.038878,
-      "selection_contract": "edge_gte_0_03_cap_minus_150",
       "rank_on_slate": 9,
       "confidence_band": "medium",
       "visibility_tier": "exploratory",
       "display_sort_bucket": "exploratory_priority",
       "primary_drivers": [
         "Market Implied Probability +0.155",
-        "Selected Team Avg Ipouts Last3 +0.144",
-        "Price American Norm +0.115"
+        "Price American Norm +0.115",
+        "Selected Team Avg Ipouts Last3 +0.115"
       ],
       "supporting_context": [
-        "Selected Team Avg Ipouts Last3 +0.144",
-        "Price American Norm +0.115"
+        "Price American Norm +0.115",
+        "Selected Team Avg Ipouts Last3 +0.115"
       ],
       "suggested_units": 1,
       "explanation_summary": "Run line Away at -149 cleared the edge_gte_0_03_cap_minus_150 threshold with model probability 63.7% versus market 59.8%.",
