@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T11:21:29.882Z",
+  "generated_at": "2026-04-17T12:34:23.973Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_ranker",
@@ -99,14 +99,14 @@
       "matchup": "San Diego Padres @ Los Angeles Angels",
       "away_team": "San Diego Padres",
       "home_team": "Los Angeles Angels",
-      "bet_label": "Los Angeles Angels +1.5 (+139)",
+      "bet_label": "Los Angeles Angels +1.5 (+141)",
       "market_type": "spread",
       "side": "home",
       "line_value": -1.5,
-      "price_american": 139,
-      "market_probability": 0.41841,
+      "price_american": 141,
+      "market_probability": 0.414938,
       "model_probability": 0.535109,
-      "edge": 0.116699,
+      "edge": 0.120171,
       "selection_contract": "edge_gte_0_03_cap_minus_150",
       "rank_on_slate": 3,
       "confidence_band": "high",
@@ -114,17 +114,17 @@
       "display_sort_bucket": "core_priority",
       "primary_drivers": [
         "Selected Minus Opponent Avg Ipouts Last3 +0.266",
-        "Market Implied Probability -0.204",
+        "Market Implied Probability -0.211",
         "Selected Team Avg Ipouts Last3 +0.178"
       ],
       "supporting_context": [
-        "Market Implied Probability -0.204",
+        "Market Implied Probability -0.211",
         "Selected Team Avg Ipouts Last3 +0.178"
       ],
       "suggested_units": 1,
-      "explanation_summary": "Run line Home at +139 cleared the edge_gte_0_03_cap_minus_150 threshold with model probability 53.5% versus market 41.8%.",
+      "explanation_summary": "Run line Home at +141 cleared the edge_gte_0_03_cap_minus_150 threshold with model probability 53.5% versus market 41.5%.",
       "comparator_flags": {},
-      "ev_proxy": 0.27891
+      "ev_proxy": 0.289613
     },
     {
       "board_date": "2026-04-17",
@@ -132,32 +132,32 @@
       "matchup": "Toronto Blue Jays @ Arizona Diamondbacks",
       "away_team": "Toronto Blue Jays",
       "home_team": "Arizona Diamondbacks",
-      "bet_label": "Arizona Diamondbacks ML (-143)",
+      "bet_label": "Arizona Diamondbacks ML (-136)",
       "market_type": "moneyline",
       "side": "home",
       "line_value": 0,
-      "price_american": -143,
-      "market_probability": 0.588477,
-      "model_probability": 0.652778,
-      "edge": 0.0643,
+      "price_american": -136,
+      "market_probability": 0.576271,
+      "model_probability": 0.638889,
+      "edge": 0.062618,
       "selection_contract": "edge_gte_0_03_cap_minus_150",
       "rank_on_slate": 4,
       "confidence_band": "high",
       "visibility_tier": "core",
       "display_sort_bucket": "core_priority",
       "primary_drivers": [
-        "Market Implied Probability +0.154",
-        "Price American Norm +0.136",
-        "Selected Team Avg Ipouts Last3 +0.134"
+        "Selected Team Avg Ipouts Last3 +0.134",
+        "Price American Norm +0.128",
+        "Market Implied Probability +0.127"
       ],
       "supporting_context": [
-        "Price American Norm +0.136",
-        "Selected Team Avg Ipouts Last3 +0.134"
+        "Price American Norm +0.128",
+        "Market Implied Probability +0.127"
       ],
       "suggested_units": 1,
-      "explanation_summary": "Moneyline Home at -143 cleared the edge_gte_0_03_cap_minus_150 threshold with model probability 65.3% versus market 58.8%.",
+      "explanation_summary": "Moneyline Home at -136 cleared the edge_gte_0_03_cap_minus_150 threshold with model probability 63.9% versus market 57.6%.",
       "comparator_flags": {},
-      "ev_proxy": 0.109266
+      "ev_proxy": 0.10866
     },
     {
       "board_date": "2026-04-17",
@@ -198,40 +198,7 @@
       "matchup": "Kansas City Royals @ New York Yankees",
       "away_team": "Kansas City Royals",
       "home_team": "New York Yankees",
-      "bet_label": "Kansas City Royals +1.5 (-136)",
-      "market_type": "spread",
-      "side": "away",
-      "line_value": 1.5,
-      "price_american": -136,
-      "market_probability": 0.576271,
-      "model_probability": 0.637271,
-      "edge": 0.061,
-      "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "rank_on_slate": 6,
-      "confidence_band": "high",
-      "visibility_tier": "core",
-      "display_sort_bucket": "core_priority",
-      "primary_drivers": [
-        "Market Implied Probability +0.111",
-        "Selected Team Avg Ipouts Last3 +0.111",
-        "Opponent Team Avg Ipouts Last3 -0.108"
-      ],
-      "supporting_context": [
-        "Selected Team Avg Ipouts Last3 +0.111",
-        "Opponent Team Avg Ipouts Last3 -0.108"
-      ],
-      "suggested_units": 1,
-      "explanation_summary": "Run line Away at -136 cleared the edge_gte_0_03_cap_minus_150 threshold with model probability 63.7% versus market 57.6%.",
-      "comparator_flags": {},
-      "ev_proxy": 0.105853
-    },
-    {
-      "board_date": "2026-04-17",
-      "canonical_game_id": "mlb:287011",
-      "matchup": "Cincinnati Reds @ Minnesota Twins",
-      "away_team": "Cincinnati Reds",
-      "home_team": "Minnesota Twins",
-      "bet_label": "Cincinnati Reds +1.5 (-143)",
+      "bet_label": "Kansas City Royals +1.5 (-143)",
       "market_type": "spread",
       "side": "away",
       "line_value": 1.5,
@@ -240,17 +207,17 @@
       "model_probability": 0.637271,
       "edge": 0.048794,
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "rank_on_slate": 7,
+      "rank_on_slate": 6,
       "confidence_band": "high",
       "visibility_tier": "core",
       "display_sort_bucket": "core_priority",
       "primary_drivers": [
         "Market Implied Probability +0.136",
-        "Selected Team Avg Ipouts Last3 +0.115",
+        "Selected Team Avg Ipouts Last3 +0.111",
         "Price American Norm +0.109"
       ],
       "supporting_context": [
-        "Selected Team Avg Ipouts Last3 +0.115",
+        "Selected Team Avg Ipouts Last3 +0.111",
         "Price American Norm +0.109"
       ],
       "suggested_units": 1,
@@ -273,7 +240,7 @@
       "model_probability": 0.499146,
       "edge": 0.042525,
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "rank_on_slate": 8,
+      "rank_on_slate": 7,
       "confidence_band": "high",
       "visibility_tier": "core",
       "display_sort_bucket": "core_priority",
@@ -285,39 +252,6 @@
       "supporting_context": [
         "Market Implied Probability -0.145",
         "Opponent Team Avg Ipouts Last3 -0.127"
-      ],
-      "suggested_units": 1,
-      "explanation_summary": "Moneyline Away at +119 cleared the edge_gte_0_03_cap_minus_150 threshold with model probability 49.9% versus market 45.7%.",
-      "comparator_flags": {},
-      "ev_proxy": 0.09313
-    },
-    {
-      "board_date": "2026-04-17",
-      "canonical_game_id": "mlb:287006",
-      "matchup": "Tampa Bay Rays @ Pittsburgh Pirates",
-      "away_team": "Tampa Bay Rays",
-      "home_team": "Pittsburgh Pirates",
-      "bet_label": "Tampa Bay Rays ML (+119)",
-      "market_type": "moneyline",
-      "side": "away",
-      "line_value": 0,
-      "price_american": 119,
-      "market_probability": 0.456621,
-      "model_probability": 0.499146,
-      "edge": 0.042525,
-      "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "rank_on_slate": 9,
-      "confidence_band": "high",
-      "visibility_tier": "core",
-      "display_sort_bucket": "core_priority",
-      "primary_drivers": [
-        "Price American Norm -0.166",
-        "Selected Team Avg Ipouts Last3 +0.146",
-        "Market Implied Probability -0.145"
-      ],
-      "supporting_context": [
-        "Selected Team Avg Ipouts Last3 +0.146",
-        "Market Implied Probability -0.145"
       ],
       "suggested_units": 1,
       "explanation_summary": "Moneyline Away at +119 cleared the edge_gte_0_03_cap_minus_150 threshold with model probability 49.9% versus market 45.7%.",
@@ -339,7 +273,7 @@
       "model_probability": 0.499146,
       "edge": 0.042525,
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "rank_on_slate": 10,
+      "rank_on_slate": 8,
       "confidence_band": "high",
       "visibility_tier": "core",
       "display_sort_bucket": "core_priority",
@@ -372,7 +306,7 @@
       "model_probability": 0.637271,
       "edge": 0.038878,
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "rank_on_slate": 11,
+      "rank_on_slate": 9,
       "confidence_band": "medium",
       "visibility_tier": "exploratory",
       "display_sort_bucket": "exploratory_priority",
@@ -389,6 +323,72 @@
       "explanation_summary": "Run line Away at -149 cleared the edge_gte_0_03_cap_minus_150 threshold with model probability 63.7% versus market 59.8%.",
       "comparator_flags": {},
       "ev_proxy": 0.06497
+    },
+    {
+      "board_date": "2026-04-17",
+      "canonical_game_id": "mlb:287011",
+      "matchup": "Cincinnati Reds @ Minnesota Twins",
+      "away_team": "Cincinnati Reds",
+      "home_team": "Minnesota Twins",
+      "bet_label": "Cincinnati Reds +1.5 (-149)",
+      "market_type": "spread",
+      "side": "away",
+      "line_value": 1.5,
+      "price_american": -149,
+      "market_probability": 0.598394,
+      "model_probability": 0.637271,
+      "edge": 0.038878,
+      "selection_contract": "edge_gte_0_03_cap_minus_150",
+      "rank_on_slate": 10,
+      "confidence_band": "medium",
+      "visibility_tier": "exploratory",
+      "display_sort_bucket": "exploratory_priority",
+      "primary_drivers": [
+        "Market Implied Probability +0.155",
+        "Price American Norm +0.115",
+        "Selected Team Avg Ipouts Last3 +0.115"
+      ],
+      "supporting_context": [
+        "Price American Norm +0.115",
+        "Selected Team Avg Ipouts Last3 +0.115"
+      ],
+      "suggested_units": 1,
+      "explanation_summary": "Run line Away at -149 cleared the edge_gte_0_03_cap_minus_150 threshold with model probability 63.7% versus market 59.8%.",
+      "comparator_flags": {},
+      "ev_proxy": 0.06497
+    },
+    {
+      "board_date": "2026-04-17",
+      "canonical_game_id": "mlb:287004",
+      "matchup": "Atlanta Braves @ Philadelphia Phillies",
+      "away_team": "Atlanta Braves",
+      "home_team": "Philadelphia Phillies",
+      "bet_label": "Philadelphia Phillies ML (-105)",
+      "market_type": "moneyline",
+      "side": "home",
+      "line_value": 0,
+      "price_american": -105,
+      "market_probability": 0.512195,
+      "model_probability": 0.542373,
+      "edge": 0.030178,
+      "selection_contract": "edge_gte_0_03_cap_minus_150",
+      "rank_on_slate": 11,
+      "confidence_band": "medium",
+      "visibility_tier": "exploratory",
+      "display_sort_bucket": "exploratory_priority",
+      "primary_drivers": [
+        "Selected Team Avg Ipouts Last3 +0.121",
+        "Price American Norm +0.092",
+        "Selected Minus Opponent Avg Ipouts Last3 +0.067"
+      ],
+      "supporting_context": [
+        "Price American Norm +0.092",
+        "Selected Minus Opponent Avg Ipouts Last3 +0.067"
+      ],
+      "suggested_units": 1,
+      "explanation_summary": "Moneyline Home at -105 cleared the edge_gte_0_03_cap_minus_150 threshold with model probability 54.2% versus market 51.2%.",
+      "comparator_flags": {},
+      "ev_proxy": 0.058918
     }
   ],
   "site_surface": {

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T11:21:29.882Z",
+  "generated_at": "2026-04-17T12:34:23.973Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_ranker",
@@ -35,6 +35,7 @@
     "edge_gte_0_04_no_cap_challenger": [
       {
         "month": "2022-04",
+        "performance_window": "backtest_2022_2025",
         "bets": 158,
         "selected_bets": 162,
         "wins": 95,
@@ -43,10 +44,12 @@
         "win_pct": 0.601266,
         "units": 12.436488,
         "roi": 0.078712,
-        "cumulative_units": 12.436488
+        "cumulative_units": 12.436488,
+        "all_time_cumulative_units": 12.436488
       },
       {
         "month": "2022-05",
+        "performance_window": "backtest_2022_2025",
         "bets": 215,
         "selected_bets": 224,
         "wins": 121,
@@ -55,10 +58,12 @@
         "win_pct": 0.562791,
         "units": 4.937725,
         "roi": 0.022966,
-        "cumulative_units": 17.374213
+        "cumulative_units": 17.374213,
+        "all_time_cumulative_units": 17.374213
       },
       {
         "month": "2022-06",
+        "performance_window": "backtest_2022_2025",
         "bets": 199,
         "selected_bets": 204,
         "wins": 111,
@@ -67,10 +72,12 @@
         "win_pct": 0.557789,
         "units": -4.194639,
         "roi": -0.021079,
-        "cumulative_units": 13.179574
+        "cumulative_units": 13.179574,
+        "all_time_cumulative_units": 13.179574
       },
       {
         "month": "2022-07",
+        "performance_window": "backtest_2022_2025",
         "bets": 168,
         "selected_bets": 176,
         "wins": 98,
@@ -79,10 +86,12 @@
         "win_pct": 0.583333,
         "units": 5.846724,
         "roi": 0.034802,
-        "cumulative_units": 19.026298
+        "cumulative_units": 19.026298,
+        "all_time_cumulative_units": 19.026298
       },
       {
         "month": "2022-08",
+        "performance_window": "backtest_2022_2025",
         "bets": 210,
         "selected_bets": 239,
         "wins": 118,
@@ -91,10 +100,12 @@
         "win_pct": 0.561905,
         "units": -4.643124,
         "roi": -0.02211,
-        "cumulative_units": 14.383174
+        "cumulative_units": 14.383174,
+        "all_time_cumulative_units": 14.383174
       },
       {
         "month": "2022-09",
+        "performance_window": "backtest_2022_2025",
         "bets": 178,
         "selected_bets": 192,
         "wins": 89,
@@ -103,10 +114,12 @@
         "win_pct": 0.5,
         "units": -20.16794,
         "roi": -0.113303,
-        "cumulative_units": -5.784766
+        "cumulative_units": -5.784766,
+        "all_time_cumulative_units": -5.784766
       },
       {
         "month": "2022-10",
+        "performance_window": "backtest_2022_2025",
         "bets": 32,
         "selected_bets": 36,
         "wins": 19,
@@ -115,10 +128,12 @@
         "win_pct": 0.59375,
         "units": 0.438306,
         "roi": 0.013697,
-        "cumulative_units": -5.34646
+        "cumulative_units": -5.34646,
+        "all_time_cumulative_units": -5.34646
       },
       {
         "month": "2023-03",
+        "performance_window": "backtest_2022_2025",
         "bets": 8,
         "selected_bets": 8,
         "wins": 6,
@@ -127,10 +142,12 @@
         "win_pct": 0.75,
         "units": 2.534559,
         "roi": 0.31682,
-        "cumulative_units": -2.811901
+        "cumulative_units": -2.811901,
+        "all_time_cumulative_units": -2.811901
       },
       {
         "month": "2023-04",
+        "performance_window": "backtest_2022_2025",
         "bets": 187,
         "selected_bets": 202,
         "wins": 104,
@@ -139,10 +156,12 @@
         "win_pct": 0.55615,
         "units": -0.595974,
         "roi": -0.003187,
-        "cumulative_units": -3.407875
+        "cumulative_units": -3.407875,
+        "all_time_cumulative_units": -3.407875
       },
       {
         "month": "2023-05",
+        "performance_window": "backtest_2022_2025",
         "bets": 179,
         "selected_bets": 186,
         "wins": 105,
@@ -151,10 +170,12 @@
         "win_pct": 0.586592,
         "units": 8.840005,
         "roi": 0.049386,
-        "cumulative_units": 5.43213
+        "cumulative_units": 5.43213,
+        "all_time_cumulative_units": 5.43213
       },
       {
         "month": "2023-06",
+        "performance_window": "backtest_2022_2025",
         "bets": 167,
         "selected_bets": 175,
         "wins": 83,
@@ -163,10 +184,12 @@
         "win_pct": 0.497006,
         "units": -12.657332,
         "roi": -0.075792,
-        "cumulative_units": -7.225202
+        "cumulative_units": -7.225202,
+        "all_time_cumulative_units": -7.225202
       },
       {
         "month": "2023-07",
+        "performance_window": "backtest_2022_2025",
         "bets": 146,
         "selected_bets": 155,
         "wins": 66,
@@ -175,10 +198,12 @@
         "win_pct": 0.452055,
         "units": -25.677867,
         "roi": -0.175876,
-        "cumulative_units": -32.903069
+        "cumulative_units": -32.903069,
+        "all_time_cumulative_units": -32.903069
       },
       {
         "month": "2023-08",
+        "performance_window": "backtest_2022_2025",
         "bets": 175,
         "selected_bets": 181,
         "wins": 98,
@@ -187,10 +212,12 @@
         "win_pct": 0.56,
         "units": -6.048474,
         "roi": -0.034563,
-        "cumulative_units": -38.951543
+        "cumulative_units": -38.951543,
+        "all_time_cumulative_units": -38.951543
       },
       {
         "month": "2023-09",
+        "performance_window": "backtest_2022_2025",
         "bets": 160,
         "selected_bets": 164,
         "wins": 96,
@@ -199,10 +226,12 @@
         "win_pct": 0.6,
         "units": 9.03388,
         "roi": 0.056462,
-        "cumulative_units": -29.917663
+        "cumulative_units": -29.917663,
+        "all_time_cumulative_units": -29.917663
       },
       {
         "month": "2023-10",
+        "performance_window": "backtest_2022_2025",
         "bets": 3,
         "selected_bets": 3,
         "wins": 2,
@@ -211,10 +240,12 @@
         "win_pct": 0.666667,
         "units": 0.292461,
         "roi": 0.097487,
-        "cumulative_units": -29.625202
+        "cumulative_units": -29.625202,
+        "all_time_cumulative_units": -29.625202
       },
       {
         "month": "2024-03",
+        "performance_window": "backtest_2022_2025",
         "bets": 17,
         "selected_bets": 17,
         "wins": 12,
@@ -223,10 +254,12 @@
         "win_pct": 0.705882,
         "units": 7.687405,
         "roi": 0.4522,
-        "cumulative_units": -21.937797
+        "cumulative_units": -21.937797,
+        "all_time_cumulative_units": -21.937797
       },
       {
         "month": "2024-04",
+        "performance_window": "backtest_2022_2025",
         "bets": 148,
         "selected_bets": 153,
         "wins": 91,
@@ -235,10 +268,12 @@
         "win_pct": 0.614865,
         "units": 18.614504,
         "roi": 0.125774,
-        "cumulative_units": -3.323293
+        "cumulative_units": -3.323293,
+        "all_time_cumulative_units": -3.323293
       },
       {
         "month": "2024-05",
+        "performance_window": "backtest_2022_2025",
         "bets": 148,
         "selected_bets": 155,
         "wins": 93,
@@ -247,10 +282,12 @@
         "win_pct": 0.628378,
         "units": 17.357141,
         "roi": 0.117278,
-        "cumulative_units": 14.033848
+        "cumulative_units": 14.033848,
+        "all_time_cumulative_units": 14.033848
       },
       {
         "month": "2024-06",
+        "performance_window": "backtest_2022_2025",
         "bets": 155,
         "selected_bets": 155,
         "wins": 90,
@@ -259,10 +296,12 @@
         "win_pct": 0.580645,
         "units": 8.798167,
         "roi": 0.056762,
-        "cumulative_units": 22.832015
+        "cumulative_units": 22.832015,
+        "all_time_cumulative_units": 22.832015
       },
       {
         "month": "2024-07",
+        "performance_window": "backtest_2022_2025",
         "bets": 129,
         "selected_bets": 131,
         "wins": 86,
@@ -271,10 +310,12 @@
         "win_pct": 0.666667,
         "units": 30.124624,
         "roi": 0.233524,
-        "cumulative_units": 52.956639
+        "cumulative_units": 52.956639,
+        "all_time_cumulative_units": 52.956639
       },
       {
         "month": "2024-08",
+        "performance_window": "backtest_2022_2025",
         "bets": 178,
         "selected_bets": 179,
         "wins": 106,
@@ -283,10 +324,12 @@
         "win_pct": 0.595506,
         "units": 12.941458,
         "roi": 0.072705,
-        "cumulative_units": 65.898097
+        "cumulative_units": 65.898097,
+        "all_time_cumulative_units": 65.898097
       },
       {
         "month": "2024-09",
+        "performance_window": "backtest_2022_2025",
         "bets": 150,
         "selected_bets": 152,
         "wins": 84,
@@ -295,10 +338,12 @@
         "win_pct": 0.56,
         "units": -1.151707,
         "roi": -0.007678,
-        "cumulative_units": 64.74639
+        "cumulative_units": 64.74639,
+        "all_time_cumulative_units": 64.74639
       },
       {
         "month": "2025-03",
+        "performance_window": "backtest_2022_2025",
         "bets": 18,
         "selected_bets": 18,
         "wins": 12,
@@ -307,10 +352,12 @@
         "win_pct": 0.666667,
         "units": 3.075031,
         "roi": 0.170835,
-        "cumulative_units": 67.821421
+        "cumulative_units": 67.821421,
+        "all_time_cumulative_units": 67.821421
       },
       {
         "month": "2025-04",
+        "performance_window": "backtest_2022_2025",
         "bets": 159,
         "selected_bets": 159,
         "wins": 112,
@@ -319,10 +366,12 @@
         "win_pct": 0.704403,
         "units": 42.44718,
         "roi": 0.266963,
-        "cumulative_units": 110.268601
+        "cumulative_units": 110.268601,
+        "all_time_cumulative_units": 110.268601
       },
       {
         "month": "2025-05",
+        "performance_window": "backtest_2022_2025",
         "bets": 168,
         "selected_bets": 170,
         "wins": 118,
@@ -331,10 +380,12 @@
         "win_pct": 0.702381,
         "units": 41.408769,
         "roi": 0.246481,
-        "cumulative_units": 151.67737
+        "cumulative_units": 151.67737,
+        "all_time_cumulative_units": 151.67737
       },
       {
         "month": "2025-06",
+        "performance_window": "backtest_2022_2025",
         "bets": 149,
         "selected_bets": 150,
         "wins": 102,
@@ -343,10 +394,12 @@
         "win_pct": 0.684564,
         "units": 27.493912,
         "roi": 0.184523,
-        "cumulative_units": 179.171282
+        "cumulative_units": 179.171282,
+        "all_time_cumulative_units": 179.171282
       },
       {
         "month": "2025-07",
+        "performance_window": "backtest_2022_2025",
         "bets": 124,
         "selected_bets": 125,
         "wins": 86,
@@ -355,10 +408,12 @@
         "win_pct": 0.693548,
         "units": 30.642189,
         "roi": 0.247114,
-        "cumulative_units": 209.813471
+        "cumulative_units": 209.813471,
+        "all_time_cumulative_units": 209.813471
       },
       {
         "month": "2025-08",
+        "performance_window": "backtest_2022_2025",
         "bets": 142,
         "selected_bets": 143,
         "wins": 86,
@@ -367,10 +422,12 @@
         "win_pct": 0.605634,
         "units": 9.408013,
         "roi": 0.066254,
-        "cumulative_units": 219.221484
+        "cumulative_units": 219.221484,
+        "all_time_cumulative_units": 219.221484
       },
       {
         "month": "2025-09",
+        "performance_window": "backtest_2022_2025",
         "bets": 117,
         "selected_bets": 118,
         "wins": 81,
@@ -379,10 +436,12 @@
         "win_pct": 0.692308,
         "units": 23.003603,
         "roi": 0.196612,
-        "cumulative_units": 242.225087
+        "cumulative_units": 242.225087,
+        "all_time_cumulative_units": 242.225087
       },
       {
         "month": "2026-03",
+        "performance_window": "live_2026",
         "bets": 46,
         "selected_bets": 46,
         "wins": 28,
@@ -391,19 +450,22 @@
         "win_pct": 0.608696,
         "units": 2.072173,
         "roi": 0.045047,
-        "cumulative_units": 244.29726
+        "cumulative_units": 2.072173,
+        "all_time_cumulative_units": 244.29726
       },
       {
         "month": "2026-04",
+        "performance_window": "live_2026",
         "bets": 75,
-        "selected_bets": 89,
+        "selected_bets": 87,
         "wins": 45,
         "losses": 30,
         "pushes": 0,
         "win_pct": 0.6,
         "units": 11.391039,
         "roi": 0.151881,
-        "cumulative_units": 255.688299
+        "cumulative_units": 13.463212,
+        "all_time_cumulative_units": 255.688299
       }
     ]
   }
