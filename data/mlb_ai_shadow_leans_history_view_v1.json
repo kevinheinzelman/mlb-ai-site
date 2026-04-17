@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T14:31:59.728Z",
+  "generated_at": "2026-04-17T15:34:17.290Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_ranker",
@@ -31,7 +31,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": -1,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.596774,\"contribution\":0.152167},{\"feature\":\"price_american_norm\",\"value\":-0.74,\"contribution\":0.113979},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-21",
@@ -52,7 +52,7 @@
       "unit_profit": 0.740741,
       "cumulative_units_after_pick": -0.259259,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.574468,\"contribution\":0.107616},{\"feature\":\"price_american_norm\",\"value\":-0.675,\"contribution\":0.10219},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-21",
@@ -73,7 +73,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": -1.259259,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.574468,\"contribution\":0.107616},{\"feature\":\"price_american_norm\",\"value\":-0.675,\"contribution\":0.10219},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-21",
@@ -94,7 +94,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": -2.259259,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.574468,\"contribution\":0.107616},{\"feature\":\"price_american_norm\",\"value\":-0.675,\"contribution\":0.10219},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-21",
@@ -115,7 +115,7 @@
       "unit_profit": 0.704225,
       "cumulative_units_after_pick": -1.555034,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.586777,\"contribution\":0.1322},{\"feature\":\"price_american_norm\",\"value\":-0.71,\"contribution\":0.108538},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-21",
@@ -136,7 +136,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": -2.555034,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.596774,\"contribution\":0.152167},{\"feature\":\"price_american_norm\",\"value\":-0.74,\"contribution\":0.113979},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-22",
@@ -157,7 +157,7 @@
       "unit_profit": 0.769231,
       "cumulative_units_after_pick": -1.785803,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":-0.65,\"contribution\":0.097656},{\"feature\":\"market_implied_probability\",\"value\":0.565217,\"contribution\":0.08914},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-22",
@@ -178,7 +178,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": -2.785803,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.574468,\"contribution\":0.107616},{\"feature\":\"price_american_norm\",\"value\":-0.675,\"contribution\":0.10219},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-22",
@@ -199,7 +199,7 @@
       "unit_profit": 0.724638,
       "cumulative_units_after_pick": -2.061165,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.579832,\"contribution\":0.118329},{\"feature\":\"price_american_norm\",\"value\":-0.69,\"contribution\":0.104911},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-22",
@@ -220,7 +220,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": -3.061165,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.583333,\"contribution\":0.125322},{\"feature\":\"price_american_norm\",\"value\":-0.7,\"contribution\":0.106724},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-22",
@@ -241,7 +241,7 @@
       "unit_profit": 0.769231,
       "cumulative_units_after_pick": -2.291935,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":-0.65,\"contribution\":0.097656},{\"feature\":\"market_implied_probability\",\"value\":0.565217,\"contribution\":0.08914},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-23",
@@ -262,7 +262,7 @@
       "unit_profit": 0.740741,
       "cumulative_units_after_pick": -1.551194,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.574468,\"contribution\":0.107616},{\"feature\":\"price_american_norm\",\"value\":-0.675,\"contribution\":0.10219},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-23",
@@ -283,7 +283,7 @@
       "unit_profit": 0.769231,
       "cumulative_units_after_pick": -0.781963,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":-0.65,\"contribution\":0.097656},{\"feature\":\"market_implied_probability\",\"value\":0.565217,\"contribution\":0.08914},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-23",
@@ -304,7 +304,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": -1.781963,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.586777,\"contribution\":0.1322},{\"feature\":\"price_american_norm\",\"value\":-0.71,\"contribution\":0.108538},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-23",
@@ -325,7 +325,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": -2.781963,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":-0.66,\"contribution\":0.09947},{\"feature\":\"market_implied_probability\",\"value\":0.568966,\"contribution\":0.096626},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-23",
@@ -346,7 +346,7 @@
       "unit_profit": 0.689655,
       "cumulative_units_after_pick": -2.092308,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.591837,\"contribution\":0.142306},{\"feature\":\"price_american_norm\",\"value\":-0.725,\"contribution\":0.111258},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-23",
@@ -367,7 +367,7 @@
       "unit_profit": 0.689655,
       "cumulative_units_after_pick": -1.402653,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.591837,\"contribution\":0.142306},{\"feature\":\"price_american_norm\",\"value\":-0.725,\"contribution\":0.111258},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-23",
@@ -388,7 +388,7 @@
       "unit_profit": 0.675676,
       "cumulative_units_after_pick": -0.726977,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.596774,\"contribution\":0.152167},{\"feature\":\"price_american_norm\",\"value\":-0.74,\"contribution\":0.113979},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-24",
@@ -409,7 +409,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": -1.726977,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.744898,\"contribution\":0.509369},{\"feature\":\"price_american_norm\",\"value\":-1.46,\"contribution\":0.307157},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.063076},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.039008},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.03191},{\"feature\":\"selected_team_er_per_27_outs_last3\",\"value\":0,\"contribution\":-0.016089},{\"feature\":\"market_micro_price_stddev\",\"value\":6.1847,\"contribution\":-0.01518}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-24",
@@ -430,7 +430,7 @@
       "unit_profit": 0.740741,
       "cumulative_units_after_pick": -0.986236,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.574468,\"contribution\":0.107616},{\"feature\":\"price_american_norm\",\"value\":-0.675,\"contribution\":0.10219},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-26",
@@ -451,7 +451,7 @@
       "unit_profit": 1.1,
       "cumulative_units_after_pick": 0.113764,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":0.55,\"contribution\":-0.119981},{\"feature\":\"market_implied_probability\",\"value\":0.47619,\"contribution\":-0.088668},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":-1.5,\"contribution\":-0.049271},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-26",
@@ -472,7 +472,7 @@
       "unit_profit": 0.75188,
       "cumulative_units_after_pick": 0.865643,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":-0.665,\"contribution\":0.100377},{\"feature\":\"market_implied_probability\",\"value\":0.570815,\"contribution\":0.100321},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-26",
@@ -493,7 +493,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": -0.134357,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.574468,\"contribution\":0.107616},{\"feature\":\"price_american_norm\",\"value\":-0.675,\"contribution\":0.10219},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-26",
@@ -514,7 +514,7 @@
       "unit_profit": 0.70922,
       "cumulative_units_after_pick": 0.574863,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.585062,\"contribution\":0.128775},{\"feature\":\"price_american_norm\",\"value\":-0.705,\"contribution\":0.107631},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-26",
@@ -535,7 +535,7 @@
       "unit_profit": 0.684932,
       "cumulative_units_after_pick": 1.259795,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.593496,\"contribution\":0.145619},{\"feature\":\"price_american_norm\",\"value\":-0.73,\"contribution\":0.112165},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-26",
@@ -556,7 +556,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 0.259795,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.574468,\"contribution\":0.107616},{\"feature\":\"price_american_norm\",\"value\":-0.675,\"contribution\":0.10219},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-27",
@@ -577,7 +577,7 @@
       "unit_profit": 0.746269,
       "cumulative_units_after_pick": 1.006063,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.57265,\"contribution\":0.103984},{\"feature\":\"price_american_norm\",\"value\":-0.67,\"contribution\":0.101283},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-27",
@@ -598,7 +598,7 @@
       "unit_profit": 0.729927,
       "cumulative_units_after_pick": 1.73599,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.578059,\"contribution\":0.114788},{\"feature\":\"price_american_norm\",\"value\":-0.685,\"contribution\":0.104004},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-27",
@@ -619,7 +619,7 @@
       "unit_profit": 0.689655,
       "cumulative_units_after_pick": 2.425645,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.591837,\"contribution\":0.142306},{\"feature\":\"price_american_norm\",\"value\":-0.725,\"contribution\":0.111258},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-28",
@@ -640,7 +640,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 1.425645,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.409836,\"contribution\":-0.250811},{\"feature\":\"price_american_norm\",\"value\":0.72,\"contribution\":-0.194301},{\"feature\":\"pro_system_count\",\"value\":1,\"contribution\":-0.100713},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.063076},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.039008},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.03191},{\"feature\":\"market_micro_move_count\",\"value\":5,\"contribution\":-0.017284}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-28",
@@ -661,7 +661,7 @@
       "unit_profit": 0.769231,
       "cumulative_units_after_pick": 2.194876,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":-0.65,\"contribution\":0.097656},{\"feature\":\"market_implied_probability\",\"value\":0.565217,\"contribution\":0.08914},{\"feature\":\"pro_system_count\",\"value\":1,\"contribution\":0.075345},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-28",
@@ -682,7 +682,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 1.194876,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":-0.65,\"contribution\":0.097656},{\"feature\":\"market_implied_probability\",\"value\":0.565217,\"contribution\":0.08914},{\"feature\":\"pro_system_count\",\"value\":1,\"contribution\":0.075345},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-28",
@@ -703,7 +703,7 @@
       "unit_profit": 0.666667,
       "cumulative_units_after_pick": 1.861543,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.6,\"contribution\":0.339643},{\"feature\":\"market_micro_price_stddev\",\"value\":84.5435,\"contribution\":0.030707},{\"feature\":\"market_micro_price_range\",\"value\":215,\"contribution\":0.026326},{\"feature\":\"price_american_norm\",\"value\":-0.75,\"contribution\":0.025996},{\"feature\":\"is_over_side\",\"value\":0,\"contribution\":0.018192},{\"feature\":\"market_micro_move_count\",\"value\":4,\"contribution\":-0.011232},{\"feature\":\"pro_system_count\",\"value\":0,\"contribution\":-0.005769},{\"feature\":\"expert_count\",\"value\":0,\"contribution\":-0.002794}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-28",
@@ -724,7 +724,7 @@
       "unit_profit": 0.735294,
       "cumulative_units_after_pick": 2.596837,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.576271,\"contribution\":0.111217},{\"feature\":\"price_american_norm\",\"value\":-0.68,\"contribution\":0.103097},{\"feature\":\"pro_system_count\",\"value\":1,\"contribution\":0.075345},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-28",
@@ -745,7 +745,7 @@
       "unit_profit": 0.689655,
       "cumulative_units_after_pick": 3.286492,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.591837,\"contribution\":0.142306},{\"feature\":\"price_american_norm\",\"value\":-0.725,\"contribution\":0.111258},{\"feature\":\"pro_system_count\",\"value\":1,\"contribution\":0.075345},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-29",
@@ -766,7 +766,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 2.286492,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.408163,\"contribution\":-0.254606},{\"feature\":\"price_american_norm\",\"value\":0.725,\"contribution\":-0.195452},{\"feature\":\"pro_system_count\",\"value\":1,\"contribution\":-0.100713},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.063076},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.039008},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.03191},{\"feature\":\"market_micro_move_count\",\"value\":7,\"contribution\":-0.030774}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-29",
@@ -787,7 +787,7 @@
       "unit_profit": 0.735294,
       "cumulative_units_after_pick": 3.021786,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.576271,\"contribution\":0.111217},{\"feature\":\"price_american_norm\",\"value\":-0.68,\"contribution\":0.103097},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-29",
@@ -808,7 +808,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 2.021786,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.585062,\"contribution\":0.128775},{\"feature\":\"price_american_norm\",\"value\":-0.705,\"contribution\":0.107631},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-30",
@@ -829,7 +829,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 1.021786,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.74359,\"contribution\":0.506401},{\"feature\":\"price_american_norm\",\"value\":-1.45,\"contribution\":0.304857},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.063076},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.039008},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.03191},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"selected_team_er_per_27_outs_last3\",\"value\":0,\"contribution\":-0.016089}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-30",
@@ -850,7 +850,7 @@
       "unit_profit": 0.78125,
       "cumulative_units_after_pick": 1.803036,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":-0.64,\"contribution\":0.095842},{\"feature\":\"market_implied_probability\",\"value\":0.561404,\"contribution\":0.081523},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-30",
@@ -871,7 +871,7 @@
       "unit_profit": 0.740741,
       "cumulative_units_after_pick": 2.543777,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.574468,\"contribution\":0.107616},{\"feature\":\"price_american_norm\",\"value\":-0.675,\"contribution\":0.10219},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-30",
@@ -892,7 +892,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 1.543777,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":-0.625,\"contribution\":0.093122},{\"feature\":\"market_implied_probability\",\"value\":0.555556,\"contribution\":0.069843},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-30",
@@ -913,7 +913,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 0.543777,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":-0.655,\"contribution\":0.098563},{\"feature\":\"market_implied_probability\",\"value\":0.5671,\"contribution\":0.0929},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":0.05853},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":0,\"contribution\":-0.057112},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-31",
@@ -934,7 +934,7 @@
       "unit_profit": 0.377358,
       "cumulative_units_after_pick": 0.921136,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.726027,\"contribution\":0.466556},{\"feature\":\"price_american_norm\",\"value\":-1.325,\"contribution\":0.276103},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.063076},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":9,\"contribution\":-0.02317},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":15,\"contribution\":0.021201},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"selected_team_er_per_27_outs_last3\",\"value\":0,\"contribution\":-0.016089}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-31",
@@ -955,7 +955,7 @@
       "unit_profit": 0.363636,
       "cumulative_units_after_pick": 1.284772,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.733333,\"contribution\":0.483132},{\"feature\":\"price_american_norm\",\"value\":-1.375,\"contribution\":0.287605},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.063076},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":13,\"contribution\":-0.019286},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"selected_team_er_per_27_outs_last3\",\"value\":0,\"contribution\":-0.016089},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-03-31",
@@ -976,7 +976,7 @@
       "unit_profit": 0.787402,
       "cumulative_units_after_pick": 2.072173,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":-0.635,\"contribution\":0.094936},{\"feature\":\"market_implied_probability\",\"value\":0.559471,\"contribution\":0.077664},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":12,\"contribution\":0.037156},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":13,\"contribution\":-0.034518},{\"feature\":\"bet_minus_opp_bullpen_er_last3\",\"value\":-6,\"contribution\":-0.021784}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-01",
@@ -997,7 +997,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 1.072173,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.75,\"contribution\":0.520945},{\"feature\":\"price_american_norm\",\"value\":-1.5,\"contribution\":0.316358},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.063076},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":9,\"contribution\":-0.02317},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":15,\"contribution\":0.021201},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"selected_team_er_per_27_outs_last3\",\"value\":0,\"contribution\":-0.016089}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-01",
@@ -1018,7 +1018,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 0.072173,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.733333,\"contribution\":0.483132},{\"feature\":\"price_american_norm\",\"value\":-1.375,\"contribution\":0.287605},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.063076},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":13,\"contribution\":-0.019286},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"selected_team_er_per_27_outs_last3\",\"value\":0,\"contribution\":-0.016089},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-01",
@@ -1039,7 +1039,7 @@
       "unit_profit": 0.729927,
       "cumulative_units_after_pick": 0.802101,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.578059,\"contribution\":0.114788},{\"feature\":\"price_american_norm\",\"value\":-0.685,\"contribution\":0.104004},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":12,\"contribution\":0.037156},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":13,\"contribution\":-0.034518},{\"feature\":\"selected_is_home\",\"value\":1,\"contribution\":-0.015193}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-01",
@@ -1060,7 +1060,7 @@
       "unit_profit": 0.357143,
       "cumulative_units_after_pick": 1.159243,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.736842,\"contribution\":0.491092},{\"feature\":\"price_american_norm\",\"value\":-1.4,\"contribution\":0.293355},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.063076},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":13,\"contribution\":0.023576},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":12,\"contribution\":-0.020257},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"selected_team_er_per_27_outs_last3\",\"value\":0,\"contribution\":-0.016089}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-01",
@@ -1081,7 +1081,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 0.159243,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.585062,\"contribution\":0.128775},{\"feature\":\"price_american_norm\",\"value\":-0.705,\"contribution\":0.107631},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":6,\"contribution\":-0.046684},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":12,\"contribution\":0.037156},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-01",
@@ -1102,7 +1102,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": -0.840757,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":0.595,\"contribution\":-0.165548},{\"feature\":\"market_implied_probability\",\"value\":0.456621,\"contribution\":-0.144666},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.063076},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":9,\"contribution\":0.028324},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":12,\"contribution\":-0.020257},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"selected_team_er_per_27_outs_last3\",\"value\":0,\"contribution\":-0.016089}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-01",
@@ -1123,7 +1123,7 @@
       "unit_profit": 0.675676,
       "cumulative_units_after_pick": -0.165081,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.596774,\"contribution\":0.152167},{\"feature\":\"price_american_norm\",\"value\":-0.74,\"contribution\":0.113979},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":6,\"contribution\":0.047843},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":11,\"contribution\":-0.037994},{\"feature\":\"bet_team_bullpen_er_last3\",\"value\":0,\"contribution\":-0.016458}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-03",
@@ -1144,7 +1144,7 @@
       "unit_profit": 0.350877,
       "cumulative_units_after_pick": 0.185796,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.74026,\"contribution\":0.498846},{\"feature\":\"price_american_norm\",\"value\":-1.425,\"contribution\":0.299106},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.063076},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"selected_team_er_per_27_outs_last3\",\"value\":0,\"contribution\":-0.016089},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824},{\"feature\":\"opponent_team_er_per_27_outs_last3\",\"value\":0,\"contribution\":0.013626}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-04",
@@ -1165,7 +1165,7 @@
       "unit_profit": 0.571429,
       "cumulative_units_after_pick": 0.757225,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.636364,\"contribution\":0.231237},{\"feature\":\"price_american_norm\",\"value\":-0.875,\"contribution\":0.138463},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"selected_is_home\",\"value\":0,\"contribution\":0.015193},{\"feature\":\"opponent_team_statcast_available_flag\",\"value\":0,\"contribution\":0.010077},{\"feature\":\"market_micro_price_range\",\"value\":0,\"contribution\":-0.009895}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-04",
@@ -1186,7 +1186,7 @@
       "unit_profit": 0.320513,
       "cumulative_units_after_pick": 1.077738,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.757282,\"contribution\":0.537465},{\"feature\":\"price_american_norm\",\"value\":-1.56,\"contribution\":0.33016},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.063076},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"selected_team_er_per_27_outs_last3\",\"value\":0,\"contribution\":-0.016089},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824},{\"feature\":\"opponent_team_er_per_27_outs_last3\",\"value\":0,\"contribution\":0.013626}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-04",
@@ -1207,7 +1207,7 @@
       "unit_profit": 1.21,
       "cumulative_units_after_pick": 2.287738,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":0.605,\"contribution\":-0.167848},{\"feature\":\"market_implied_probability\",\"value\":0.452489,\"contribution\":-0.154041},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.063076},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"selected_team_er_per_27_outs_last3\",\"value\":0,\"contribution\":-0.016089},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824},{\"feature\":\"opponent_team_er_per_27_outs_last3\",\"value\":0,\"contribution\":0.013626}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-04",
@@ -1228,7 +1228,7 @@
       "unit_profit": 1.19,
       "cumulative_units_after_pick": 3.477738,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":0.595,\"contribution\":-0.165548},{\"feature\":\"market_implied_probability\",\"value\":0.456621,\"contribution\":-0.144666},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.063076},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"selected_team_er_per_27_outs_last3\",\"value\":0,\"contribution\":-0.016089},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824},{\"feature\":\"opponent_team_er_per_27_outs_last3\",\"value\":0,\"contribution\":0.013626}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-05",
@@ -1249,7 +1249,7 @@
       "unit_profit": 1.71,
       "cumulative_units_after_pick": 5.187738,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.369004,\"contribution\":-0.302746},{\"feature\":\"price_american_norm\",\"value\":0.855,\"contribution\":-0.175297},{\"feature\":\"line_value\",\"value\":-1.5,\"contribution\":-0.049271},{\"feature\":\"bet_minus_opp_bullpen_er_last3\",\"value\":-10,\"contribution\":-0.036306},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":11,\"contribution\":-0.023559},{\"feature\":\"selected_is_home\",\"value\":0,\"contribution\":0.015193},{\"feature\":\"bet_team_bullpen_er_last3\",\"value\":1,\"contribution\":-0.013078},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":18,\"contribution\":0.010899}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-05",
@@ -1270,7 +1270,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 4.187738,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.75,\"contribution\":0.520945},{\"feature\":\"price_american_norm\",\"value\":-1.5,\"contribution\":0.316358},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":21,\"contribution\":0.100954},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":21,\"contribution\":0.024896},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"selected_team_er_per_27_outs_last3\",\"value\":0,\"contribution\":-0.016089},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-05",
@@ -1291,7 +1291,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 3.187738,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":-0.55,\"contribution\":0.07952},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":-29,\"contribution\":0.058838},{\"feature\":\"line_value\",\"value\":-1.5,\"contribution\":-0.049271},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":58,\"contribution\":0.043691},{\"feature\":\"selected_minus_opponent_er_per_27_outs_last3\",\"value\":9.642857,\"contribution\":0.016778},{\"feature\":\"selected_is_home\",\"value\":0,\"contribution\":0.015193},{\"feature\":\"selected_team_er_per_27_outs_last3\",\"value\":11.571429,\"contribution\":0.012933},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":2,\"contribution\":0.011029}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-05",
@@ -1312,7 +1312,7 @@
       "unit_profit": 0.8,
       "cumulative_units_after_pick": 3.987738,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":-0.625,\"contribution\":0.093122},{\"feature\":\"market_implied_probability\",\"value\":0.555556,\"contribution\":0.069843},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":15,\"contribution\":0.063451},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":66,\"contribution\":-0.059025},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":17,\"contribution\":-0.034492},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":49,\"contribution\":0.028049}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-05",
@@ -1333,7 +1333,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 2.987738,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":-0.66,\"contribution\":0.09947},{\"feature\":\"market_implied_probability\",\"value\":0.568966,\"contribution\":0.096626},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":21,\"contribution\":0.088831},{\"feature\":\"line_value\",\"value\":-1.5,\"contribution\":-0.049271},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":12,\"contribution\":-0.024347},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":21,\"contribution\":0.022009},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":22,\"contribution\":-0.018876}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-05",
@@ -1354,7 +1354,7 @@
       "unit_profit": 1.32,
       "cumulative_units_after_pick": 4.307738,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.431034,\"contribution\":-0.202716},{\"feature\":\"price_american_norm\",\"value\":0.66,\"contribution\":-0.1805},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":15,\"contribution\":0.07211},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":66,\"contribution\":-0.039341},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":17,\"contribution\":-0.021152},{\"feature\":\"selected_minus_opponent_er_per_27_outs_last3\",\"value\":5.4,\"contribution\":0.019912},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-05",
@@ -1375,7 +1375,7 @@
       "unit_profit": 0.909091,
       "cumulative_units_after_pick": 5.216829,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":-0.55,\"contribution\":0.097833},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":18,\"contribution\":0.086532},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"selected_minus_opponent_er_per_27_outs_last3\",\"value\":7.5,\"contribution\":0.027656},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824},{\"feature\":\"opponent_team_er_per_27_outs_last3\",\"value\":0,\"contribution\":0.013626},{\"feature\":\"selected_team_er_per_27_outs_last3\",\"value\":7.5,\"contribution\":0.012666}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-05",
@@ -1396,7 +1396,7 @@
       "unit_profit": 0.510204,
       "cumulative_units_after_pick": 5.727033,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.662162,\"contribution\":0.282763},{\"feature\":\"price_american_norm\",\"value\":-0.98,\"contribution\":0.157506},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":15,\"contribution\":0.063451},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":14,\"contribution\":-0.028405},{\"feature\":\"selected_is_home\",\"value\":0,\"contribution\":0.015193},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":1,\"contribution\":0.014873}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-05",
@@ -1417,7 +1417,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 4.727033,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.6139,\"contribution\":0.212164},{\"feature\":\"price_american_norm\",\"value\":-0.795,\"contribution\":0.154189},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":-29,\"contribution\":0.036083},{\"feature\":\"selected_minus_opponent_er_per_27_outs_last3\",\"value\":9.642857,\"contribution\":0.035558},{\"feature\":\"selected_team_er_per_27_outs_last3\",\"value\":11.571429,\"contribution\":0.028276},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":58,\"contribution\":0.024413},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-05",
@@ -1438,7 +1438,7 @@
       "unit_profit": 1.18,
       "cumulative_units_after_pick": 5.907033,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":0.59,\"contribution\":-0.164398},{\"feature\":\"market_implied_probability\",\"value\":0.458716,\"contribution\":-0.139914},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":15,\"contribution\":0.07211},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"selected_minus_opponent_er_per_27_outs_last3\",\"value\":7.2,\"contribution\":0.02655},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":14,\"contribution\":-0.017419},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-06",
@@ -1459,7 +1459,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 4.907033,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.666667,\"contribution\":0.291759},{\"feature\":\"price_american_norm\",\"value\":-1,\"contribution\":0.161134},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":12,\"contribution\":0.050761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":-10,\"contribution\":0.020289},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":42,\"contribution\":0.015883},{\"feature\":\"selected_is_home\",\"value\":1,\"contribution\":-0.015193}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-06",
@@ -1480,7 +1480,7 @@
       "unit_profit": 1.19,
       "cumulative_units_after_pick": 6.097033,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":0.595,\"contribution\":-0.165548},{\"feature\":\"market_implied_probability\",\"value\":0.456621,\"contribution\":-0.144666},{\"feature\":\"selected_team_er_per_27_outs_last3\",\"value\":11.571429,\"contribution\":0.028276},{\"feature\":\"selected_minus_opponent_er_per_27_outs_last3\",\"value\":7.417582,\"contribution\":0.027352},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":-16,\"contribution\":0.019908},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":46,\"contribution\":0.01276}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-06",
@@ -1501,7 +1501,7 @@
       "unit_profit": 0.680272,
       "cumulative_units_after_pick": 6.777305,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.595142,\"contribution\":0.148906},{\"feature\":\"price_american_norm\",\"value\":-0.735,\"contribution\":0.113072},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":60,\"contribution\":-0.048338},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":3,\"contribution\":-0.044651},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":22,\"contribution\":-0.044636},{\"feature\":\"selected_is_home\",\"value\":1,\"contribution\":-0.015193}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-06",
@@ -1522,7 +1522,7 @@
       "unit_profit": 1.18,
       "cumulative_units_after_pick": 7.957305,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":0.59,\"contribution\":-0.164398},{\"feature\":\"market_implied_probability\",\"value\":0.458716,\"contribution\":-0.139914},{\"feature\":\"selected_minus_opponent_er_per_27_outs_last3\",\"value\":12,\"contribution\":0.04425},{\"feature\":\"selected_team_er_per_27_outs_last3\",\"value\":12,\"contribution\":0.029919},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":9,\"contribution\":-0.025374},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":-4,\"contribution\":-0.019229},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-07",
@@ -1543,7 +1543,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 6.957305,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.579832,\"contribution\":0.118329},{\"feature\":\"price_american_norm\",\"value\":-0.69,\"contribution\":0.104911},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":27,\"contribution\":-0.054781},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":60,\"contribution\":-0.048338},{\"feature\":\"bet_minus_opp_bullpen_er_last3\",\"value\":12,\"contribution\":0.043568},{\"feature\":\"bet_team_bullpen_er_last3\",\"value\":16,\"contribution\":0.037615},{\"feature\":\"selected_is_home\",\"value\":1,\"contribution\":-0.015193}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-07",
@@ -1564,7 +1564,7 @@
       "unit_profit": 0.724638,
       "cumulative_units_after_pick": 7.681942,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.579832,\"contribution\":0.118329},{\"feature\":\"price_american_norm\",\"value\":-0.69,\"contribution\":0.104911},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"bet_minus_opp_bullpen_er_last3\",\"value\":8,\"contribution\":0.029045},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":0,\"contribution\":0.018716},{\"feature\":\"selected_is_home\",\"value\":1,\"contribution\":-0.015193},{\"feature\":\"bet_team_bullpen_er_last3\",\"value\":8,\"contribution\":0.010579},{\"feature\":\"market_micro_price_range\",\"value\":0,\"contribution\":-0.009895}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-07",
@@ -1585,7 +1585,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 6.681942,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.591837,\"contribution\":0.142306},{\"feature\":\"price_american_norm\",\"value\":-0.725,\"contribution\":0.111258},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":11,\"contribution\":-0.022318},{\"feature\":\"selected_is_home\",\"value\":1,\"contribution\":-0.015193},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":1,\"contribution\":0.014873},{\"feature\":\"bet_minus_opp_bullpen_er_last3\",\"value\":4,\"contribution\":0.014523},{\"feature\":\"selected_minus_opponent_er_per_27_outs_last3\",\"value\":6.6375,\"contribution\":0.011549}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-07",
@@ -1606,7 +1606,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 5.681942,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":0.59,\"contribution\":-0.164398},{\"feature\":\"market_implied_probability\",\"value\":0.458716,\"contribution\":-0.139914},{\"feature\":\"selected_minus_opponent_er_per_27_outs_last3\",\"value\":18,\"contribution\":0.066374},{\"feature\":\"selected_team_er_per_27_outs_last3\",\"value\":21,\"contribution\":0.064426},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":-9,\"contribution\":-0.043266},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":57,\"contribution\":-0.028657},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":9,\"contribution\":-0.025374},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":19,\"contribution\":-0.02364}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-08",
@@ -1627,7 +1627,7 @@
       "unit_profit": 1.15,
       "cumulative_units_after_pick": 6.831942,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":0.575,\"contribution\":-0.160948},{\"feature\":\"market_implied_probability\",\"value\":0.465116,\"contribution\":-0.125392},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824},{\"feature\":\"opponent_team_er_per_27_outs_last3\",\"value\":0,\"contribution\":0.013626},{\"feature\":\"market_micro_price_range\",\"value\":0,\"contribution\":-0.011808},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":9,\"contribution\":-0.011198},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":18,\"contribution\":-0.010699}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-08",
@@ -1648,7 +1648,7 @@
       "unit_profit": 0.813008,
       "cumulative_units_after_pick": 7.644951,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":-0.615,\"contribution\":0.091308},{\"feature\":\"market_implied_probability\",\"value\":0.55157,\"contribution\":0.061882},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"bet_team_bullpen_er_last3\",\"value\":16,\"contribution\":0.037615},{\"feature\":\"bet_minus_opp_bullpen_er_last3\",\"value\":9,\"contribution\":0.032676},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":-7,\"contribution\":-0.02961},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":44,\"contribution\":-0.01984},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":10,\"contribution\":-0.018728}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-08",
@@ -1669,7 +1669,7 @@
       "unit_profit": 0.735294,
       "cumulative_units_after_pick": 8.380245,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.576271,\"contribution\":0.111217},{\"feature\":\"price_american_norm\",\"value\":-0.68,\"contribution\":0.103097},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":-6,\"contribution\":-0.02538},{\"feature\":\"selected_is_home\",\"value\":1,\"contribution\":-0.015193},{\"feature\":\"selected_minus_opponent_er_per_27_outs_last3\",\"value\":6.75,\"contribution\":0.011744},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":12,\"contribution\":-0.011321},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":-5,\"contribution\":0.010145}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-08",
@@ -1690,7 +1690,7 @@
       "unit_profit": 0.78125,
       "cumulative_units_after_pick": 9.161495,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":-0.64,\"contribution\":0.095842},{\"feature\":\"market_implied_probability\",\"value\":0.561404,\"contribution\":0.081523},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"bet_minus_opp_bullpen_er_last3\",\"value\":13,\"contribution\":0.047198},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":17,\"contribution\":-0.034492},{\"feature\":\"bet_team_bullpen_er_last3\",\"value\":14,\"contribution\":0.030856},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":50,\"contribution\":-0.030527},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":-5,\"contribution\":-0.02115}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-08",
@@ -1711,7 +1711,7 @@
       "unit_profit": 0.662252,
       "cumulative_units_after_pick": 9.823746,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.601594,\"contribution\":0.184244},{\"feature\":\"price_american_norm\",\"value\":-0.755,\"contribution\":0.144988},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":12,\"contribution\":0.057688},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"selected_minus_opponent_er_per_27_outs_last3\",\"value\":9,\"contribution\":0.033187},{\"feature\":\"selected_team_er_per_27_outs_last3\",\"value\":9,\"contribution\":0.018417},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-08",
@@ -1732,7 +1732,7 @@
       "unit_profit": 1.22,
       "cumulative_units_after_pick": 11.043746,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":0.61,\"contribution\":-0.168999},{\"feature\":\"market_implied_probability\",\"value\":0.45045,\"contribution\":-0.158666},{\"feature\":\"selected_team_er_per_27_outs_last3\",\"value\":27,\"contribution\":0.08743},{\"feature\":\"selected_minus_opponent_er_per_27_outs_last3\",\"value\":12.272727,\"contribution\":0.045255},{\"feature\":\"opponent_team_er_per_27_outs_last3\",\"value\":14.727273,\"contribution\":-0.034197},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":9,\"contribution\":-0.025374},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-09",
@@ -1753,7 +1753,7 @@
       "unit_profit": 0.793651,
       "cumulative_units_after_pick": 11.837397,
       "top_drivers_json": "[{\"feature\":\"market_micro_price_stddev\",\"value\":1464.3387,\"contribution\":0.136661},{\"feature\":\"price_american_norm\",\"value\":-0.63,\"contribution\":0.116235},{\"feature\":\"market_micro_price_range\",\"value\":3582,\"contribution\":0.097113},{\"feature\":\"market_implied_probability\",\"value\":0.557522,\"contribution\":0.084256},{\"feature\":\"market_micro_move_count\",\"value\":6,\"contribution\":-0.024029},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":-4,\"contribution\":-0.019229},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":-15,\"contribution\":0.018663},{\"feature\":\"selected_minus_opponent_er_per_27_outs_last3\",\"value\":3.857143,\"contribution\":0.014223}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-09",
@@ -1774,7 +1774,7 @@
       "unit_profit": 0.793651,
       "cumulative_units_after_pick": 12.631048,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":-0.63,\"contribution\":0.094029},{\"feature\":\"market_implied_probability\",\"value\":0.557522,\"contribution\":0.073771},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":6,\"contribution\":0.02538},{\"feature\":\"bet_minus_opp_bullpen_er_last3\",\"value\":5,\"contribution\":0.018153},{\"feature\":\"bet_team_bullpen_er_last3\",\"value\":10,\"contribution\":0.017338},{\"feature\":\"selected_is_home\",\"value\":0,\"contribution\":0.015193},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":6,\"contribution\":-0.012173}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-10",
@@ -1795,7 +1795,7 @@
       "unit_profit": 0.862069,
       "cumulative_units_after_pick": 13.493117,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":-0.58,\"contribution\":0.084961},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":12,\"contribution\":0.050761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"bet_minus_opp_bullpen_er_last3\",\"value\":10,\"contribution\":0.036306},{\"feature\":\"market_implied_probability\",\"value\":0.537037,\"contribution\":0.032857},{\"feature\":\"bet_team_bullpen_er_last3\",\"value\":13,\"contribution\":0.027476},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":12,\"contribution\":-0.024347}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-10",
@@ -1816,7 +1816,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 12.493117,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.434783,\"contribution\":-0.194212},{\"feature\":\"price_american_norm\",\"value\":0.65,\"contribution\":-0.1782},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":17.5,\"contribution\":0.084129},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":-17,\"contribution\":0.021152},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824},{\"feature\":\"opponent_team_er_per_27_outs_last3\",\"value\":0,\"contribution\":0.013626}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-10",
@@ -1837,7 +1837,7 @@
       "unit_profit": 0.735294,
       "cumulative_units_after_pick": 13.228411,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.576271,\"contribution\":0.111217},{\"feature\":\"price_american_norm\",\"value\":-0.68,\"contribution\":0.103097},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":-9,\"contribution\":0.01826},{\"feature\":\"selected_is_home\",\"value\":0,\"contribution\":0.015193},{\"feature\":\"bet_minus_opp_bullpen_er_last3\",\"value\":3,\"contribution\":0.010892},{\"feature\":\"market_micro_price_range\",\"value\":0,\"contribution\":-0.009895},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":38,\"contribution\":0.008932}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-10",
@@ -1858,7 +1858,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 12.228411,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.6,\"contribution\":0.180629},{\"feature\":\"price_american_norm\",\"value\":-0.75,\"contribution\":0.143838},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":19,\"contribution\":0.09134},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":19,\"contribution\":0.016518},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824},{\"feature\":\"opponent_team_er_per_27_outs_last3\",\"value\":0,\"contribution\":0.013626}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-10",
@@ -1879,7 +1879,7 @@
       "unit_profit": 1.67,
       "cumulative_units_after_pick": 13.898411,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.374532,\"contribution\":-0.330908},{\"feature\":\"price_american_norm\",\"value\":0.835,\"contribution\":-0.220755},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":12,\"contribution\":0.057688},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"selected_minus_opponent_er_per_27_outs_last3\",\"value\":13.5,\"contribution\":0.049781},{\"feature\":\"selected_team_er_per_27_outs_last3\",\"value\":13.5,\"contribution\":0.03567},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-10",
@@ -1900,7 +1900,7 @@
       "unit_profit": 0.704225,
       "cumulative_units_after_pick": 14.602636,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.586777,\"contribution\":0.1322},{\"feature\":\"price_american_norm\",\"value\":-0.71,\"contribution\":0.108538},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":-5,\"contribution\":-0.02115},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":20,\"contribution\":-0.015726},{\"feature\":\"selected_is_home\",\"value\":0,\"contribution\":0.015193},{\"feature\":\"bet_team_bullpen_er_last3\",\"value\":1,\"contribution\":-0.013078},{\"feature\":\"market_micro_price_range\",\"value\":0,\"contribution\":-0.009895}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-10",
@@ -1921,7 +1921,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 13.602636,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.596774,\"contribution\":0.152167},{\"feature\":\"price_american_norm\",\"value\":-0.74,\"contribution\":0.113979},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":49,\"contribution\":-0.028746},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":6,\"contribution\":0.02538},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":12,\"contribution\":-0.024347},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":10,\"contribution\":0.016089},{\"feature\":\"selected_is_home\",\"value\":0,\"contribution\":0.015193}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-11",
@@ -1942,7 +1942,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 12.602636,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.619772,\"contribution\":0.225486},{\"feature\":\"price_american_norm\",\"value\":-0.815,\"contribution\":0.15879},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":5,\"contribution\":0.024037},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824},{\"feature\":\"selected_minus_opponent_er_per_27_outs_last3\",\"value\":-3.394286,\"contribution\":-0.012516},{\"feature\":\"market_micro_price_range\",\"value\":0,\"contribution\":-0.011808},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":17.5,\"contribution\":0.010234}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-11",
@@ -1963,7 +1963,7 @@
       "unit_profit": 0.704225,
       "cumulative_units_after_pick": 13.306862,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.586777,\"contribution\":0.1322},{\"feature\":\"price_american_norm\",\"value\":-0.71,\"contribution\":0.108538},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":46,\"contribution\":-0.023402},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":44,\"contribution\":0.019359},{\"feature\":\"selected_is_home\",\"value\":0,\"contribution\":0.015193},{\"feature\":\"bet_team_bullpen_er_last3\",\"value\":8,\"contribution\":0.010579},{\"feature\":\"market_micro_price_range\",\"value\":0,\"contribution\":-0.009895}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-11",
@@ -1984,7 +1984,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 12.306862,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":-0.665,\"contribution\":0.100377},{\"feature\":\"market_implied_probability\",\"value\":0.570815,\"contribution\":0.100321},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":8,\"contribution\":-0.016231},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":24,\"contribution\":-0.0154},{\"feature\":\"selected_is_home\",\"value\":0,\"contribution\":0.015193},{\"feature\":\"market_micro_price_range\",\"value\":0,\"contribution\":-0.009895},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.007539}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-11",
@@ -2005,7 +2005,7 @@
       "unit_profit": 1.2,
       "cumulative_units_after_pick": 13.506862,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":0.6,\"contribution\":-0.166698},{\"feature\":\"market_implied_probability\",\"value\":0.454545,\"contribution\":-0.149375},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824},{\"feature\":\"opponent_team_er_per_27_outs_last3\",\"value\":0,\"contribution\":0.013626},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":18,\"contribution\":0.012329},{\"feature\":\"market_micro_price_range\",\"value\":0,\"contribution\":-0.011808},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":17.5,\"contribution\":-0.008881}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-12",
@@ -2026,7 +2026,7 @@
       "unit_profit": 0.440529,
       "cumulative_units_after_pick": 13.94739,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.69419,\"contribution\":0.394324},{\"feature\":\"price_american_norm\",\"value\":-1.135,\"contribution\":0.232398},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":12,\"contribution\":0.057688},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":3,\"contribution\":0.043831},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":50,\"contribution\":0.016645},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824},{\"feature\":\"opponent_team_er_per_27_outs_last3\",\"value\":0,\"contribution\":0.013626}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-12",
@@ -2047,7 +2047,7 @@
       "unit_profit": 0.793651,
       "cumulative_units_after_pick": 14.741041,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":-0.63,\"contribution\":0.094029},{\"feature\":\"market_implied_probability\",\"value\":0.557522,\"contribution\":0.073771},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":50,\"contribution\":0.029787},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":-9,\"contribution\":0.01826},{\"feature\":\"selected_is_home\",\"value\":0,\"contribution\":0.015193},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":41,\"contribution\":-0.014497},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":8,\"contribution\":-0.01203}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-12",
@@ -2068,7 +2068,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 13.741041,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.579832,\"contribution\":0.118329},{\"feature\":\"price_american_norm\",\"value\":-0.69,\"contribution\":0.104911},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"selected_is_home\",\"value\":0,\"contribution\":0.015193},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":-7,\"contribution\":0.014202},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":25,\"contribution\":0.014001},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":8,\"contribution\":-0.01203},{\"feature\":\"market_micro_price_range\",\"value\":0,\"contribution\":-0.009895}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-12",
@@ -2089,7 +2089,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 12.741041,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.583333,\"contribution\":0.125322},{\"feature\":\"price_american_norm\",\"value\":-0.7,\"contribution\":0.106724},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"bet_minus_opp_bullpen_er_last3\",\"value\":13,\"contribution\":0.047198},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":56,\"contribution\":-0.041214},{\"feature\":\"bet_team_bullpen_er_last3\",\"value\":16,\"contribution\":0.037615},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":18,\"contribution\":-0.03652},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":-4,\"contribution\":-0.01692}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-12",
@@ -2110,7 +2110,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 11.741041,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.666667,\"contribution\":0.291759},{\"feature\":\"price_american_norm\",\"value\":-1,\"contribution\":0.161134},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":17,\"contribution\":0.071911},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":-12,\"contribution\":0.024347},{\"feature\":\"selected_is_home\",\"value\":0,\"contribution\":0.015193},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":25,\"contribution\":0.014001}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-12",
@@ -2131,7 +2131,7 @@
       "unit_profit": 1.2,
       "cumulative_units_after_pick": 12.941041,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":0.6,\"contribution\":-0.166698},{\"feature\":\"market_implied_probability\",\"value\":0.454545,\"contribution\":-0.149375},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":16.5,\"contribution\":0.079321},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824},{\"feature\":\"opponent_team_er_per_27_outs_last3\",\"value\":0,\"contribution\":0.013626},{\"feature\":\"selected_team_er_per_27_outs_last3\",\"value\":0.818182,\"contribution\":-0.012952}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-13",
@@ -2152,7 +2152,7 @@
       "unit_profit": 0.8,
       "cumulative_units_after_pick": 13.741041,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":-0.625,\"contribution\":0.093122},{\"feature\":\"market_implied_probability\",\"value\":0.555556,\"contribution\":0.069843},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"bet_minus_opp_bullpen_er_last3\",\"value\":5,\"contribution\":0.018153},{\"feature\":\"selected_is_home\",\"value\":0,\"contribution\":0.015193},{\"feature\":\"bet_team_bullpen_er_last3\",\"value\":9,\"contribution\":0.013958},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":25,\"contribution\":-0.013662},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":5,\"contribution\":-0.010145}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-13",
@@ -2173,7 +2173,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 12.741041,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.6,\"contribution\":0.180629},{\"feature\":\"price_american_norm\",\"value\":-0.75,\"contribution\":0.143838},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":15.5,\"contribution\":0.074514},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824},{\"feature\":\"opponent_team_er_per_27_outs_last3\",\"value\":0,\"contribution\":0.013626},{\"feature\":\"market_micro_price_range\",\"value\":0,\"contribution\":-0.011808}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-13",
@@ -2194,7 +2194,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 11.741041,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.591837,\"contribution\":0.142306},{\"feature\":\"price_american_norm\",\"value\":-0.725,\"contribution\":0.111258},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"selected_is_home\",\"value\":0,\"contribution\":0.015193},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":7,\"contribution\":-0.014202},{\"feature\":\"selected_minus_opponent_er_per_27_outs_last3\",\"value\":7.842857,\"contribution\":0.013646},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":40,\"contribution\":-0.012715},{\"feature\":\"market_micro_price_range\",\"value\":0,\"contribution\":-0.009895}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-13",
@@ -2215,7 +2215,7 @@
       "unit_profit": 1.18,
       "cumulative_units_after_pick": 12.921041,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":0.59,\"contribution\":-0.164398},{\"feature\":\"market_implied_probability\",\"value\":0.458716,\"contribution\":-0.139914},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":-5.5,\"contribution\":-0.02644},{\"feature\":\"selected_minus_opponent_er_per_27_outs_last3\",\"value\":4.578947,\"contribution\":0.016885},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":-13,\"contribution\":0.016175},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":19,\"contribution\":-0.014334}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-14",
@@ -2236,7 +2236,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 11.921041,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.373134,\"contribution\":-0.334079},{\"feature\":\"price_american_norm\",\"value\":0.84,\"contribution\":-0.221905},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":11,\"contribution\":-0.013687},{\"feature\":\"market_micro_price_range\",\"value\":0,\"contribution\":-0.011808},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":18,\"contribution\":-0.010699},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":17.5,\"contribution\":0.010234}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-14",
@@ -2257,7 +2257,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 10.921041,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.392157,\"contribution\":-0.290921},{\"feature\":\"price_american_norm\",\"value\":0.775,\"contribution\":-0.206953},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":13,\"contribution\":0.062496},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"selected_minus_opponent_er_per_27_outs_last3\",\"value\":10.384615,\"contribution\":0.038293},{\"feature\":\"selected_team_er_per_27_outs_last3\",\"value\":10.384615,\"contribution\":0.023726},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-14",
@@ -2278,7 +2278,7 @@
       "unit_profit": 0.75188,
       "cumulative_units_after_pick": 11.672921,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":-0.665,\"contribution\":0.100377},{\"feature\":\"market_implied_probability\",\"value\":0.570815,\"contribution\":0.100321},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":11,\"contribution\":-0.022318},{\"feature\":\"selected_is_home\",\"value\":0,\"contribution\":0.015193},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":2,\"contribution\":0.011029},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":27,\"contribution\":-0.010186},{\"feature\":\"market_micro_price_range\",\"value\":0,\"contribution\":-0.009895}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-14",
@@ -2299,7 +2299,7 @@
       "unit_profit": 0.746269,
       "cumulative_units_after_pick": 12.419189,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.57265,\"contribution\":0.103984},{\"feature\":\"price_american_norm\",\"value\":-0.67,\"contribution\":0.101283},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"bet_team_bullpen_er_last3\",\"value\":15,\"contribution\":0.034235},{\"feature\":\"bet_minus_opp_bullpen_er_last3\",\"value\":6,\"contribution\":0.021784},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":9,\"contribution\":-0.01826},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":9,\"contribution\":-0.015873},{\"feature\":\"selected_is_home\",\"value\":0,\"contribution\":0.015193}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-14",
@@ -2320,7 +2320,7 @@
       "unit_profit": 0.735294,
       "cumulative_units_after_pick": 13.154484,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.576271,\"contribution\":0.111217},{\"feature\":\"price_american_norm\",\"value\":-0.68,\"contribution\":0.103097},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":13,\"contribution\":0.054991},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"bet_team_bullpen_er_last3\",\"value\":11,\"contribution\":0.020717},{\"feature\":\"bet_minus_opp_bullpen_er_last3\",\"value\":5,\"contribution\":0.018153},{\"feature\":\"selected_minus_opponent_er_per_27_outs_last3\",\"value\":10.384615,\"contribution\":0.018068}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-14",
@@ -2341,7 +2341,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 12.154484,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.595142,\"contribution\":0.169606},{\"feature\":\"price_american_norm\",\"value\":-0.735,\"contribution\":0.140388},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":18.5,\"contribution\":0.088936},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":18.5,\"contribution\":0.014423},{\"feature\":\"opponent_team_er_per_27_outs_last3\",\"value\":0,\"contribution\":0.013626}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-14",
@@ -2362,7 +2362,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 11.154484,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.612403,\"contribution\":0.208768},{\"feature\":\"price_american_norm\",\"value\":-0.79,\"contribution\":0.153039},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":18,\"contribution\":0.086532},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824},{\"feature\":\"opponent_team_er_per_27_outs_last3\",\"value\":0,\"contribution\":0.013626},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":18,\"contribution\":0.012329}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-15",
@@ -2383,7 +2383,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 10.154484,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.78022,\"contribution\":0.589507},{\"feature\":\"price_american_norm\",\"value\":-1.775,\"contribution\":0.379615},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":-6,\"contribution\":-0.028844},{\"feature\":\"selected_minus_opponent_er_per_27_outs_last3\",\"value\":5.307692,\"contribution\":0.019572},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":19.5,\"contribution\":-0.016152},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824},{\"feature\":\"market_micro_price_range\",\"value\":0,\"contribution\":-0.011808}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-15",
@@ -2404,7 +2404,7 @@
       "unit_profit": 0.826446,
       "cumulative_units_after_pick": 10.98093,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":-0.605,\"contribution\":0.089495},{\"feature\":\"market_implied_probability\",\"value\":0.547511,\"contribution\":0.053777},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":7,\"contribution\":0.02961},{\"feature\":\"bet_team_bullpen_er_last3\",\"value\":13,\"contribution\":0.027476},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":-11,\"contribution\":0.022318},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":10,\"contribution\":-0.019716},{\"feature\":\"selected_is_home\",\"value\":0,\"contribution\":0.015193}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-15",
@@ -2425,7 +2425,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 9.98093,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":-0.65,\"contribution\":0.097656},{\"feature\":\"market_implied_probability\",\"value\":0.565217,\"contribution\":0.08914},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":21,\"contribution\":0.021126},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":22,\"contribution\":-0.018876},{\"feature\":\"selected_is_home\",\"value\":0,\"contribution\":0.015193},{\"feature\":\"bet_team_bullpen_er_last3\",\"value\":1,\"contribution\":-0.013078},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":2,\"contribution\":0.011029}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-15",
@@ -2446,7 +2446,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 8.98093,
       "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":-0.66,\"contribution\":0.09947},{\"feature\":\"market_implied_probability\",\"value\":0.568966,\"contribution\":0.096626},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":49,\"contribution\":-0.028746},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":43,\"contribution\":0.017621},{\"feature\":\"selected_is_home\",\"value\":0,\"contribution\":0.015193}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-15",
@@ -2467,7 +2467,7 @@
       "unit_profit": -1,
       "cumulative_units_after_pick": 7.98093,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.588477,\"contribution\":0.135596},{\"feature\":\"price_american_norm\",\"value\":-0.715,\"contribution\":0.109445},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":13.5,\"contribution\":0.057106},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":23,\"contribution\":-0.046665},{\"feature\":\"bet_team_bullpen_er_last3\",\"value\":18,\"contribution\":0.044374},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":56,\"contribution\":-0.041214}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-16",
@@ -2488,7 +2488,7 @@
       "unit_profit": 2.92,
       "cumulative_units_after_pick": 10.90093,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.255102,\"contribution\":-0.601867},{\"feature\":\"price_american_norm\",\"value\":1.46,\"contribution\":-0.364521},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":-21.666667,\"contribution\":-0.104159},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.063076},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":21.666667,\"contribution\":-0.024028},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":-15,\"contribution\":0.018663},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"selected_team_er_per_27_outs_last3\",\"value\":0,\"contribution\":-0.016089}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-16",
@@ -2509,7 +2509,7 @@
       "unit_profit": 1.53,
       "cumulative_units_after_pick": 12.43093,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.395257,\"contribution\":-0.283887},{\"feature\":\"price_american_norm\",\"value\":0.765,\"contribution\":-0.204653},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":16.5,\"contribution\":0.079321},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824},{\"feature\":\"opponent_team_er_per_27_outs_last3\",\"value\":0,\"contribution\":0.013626},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":46,\"contribution\":0.01276}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-16",
@@ -2530,7 +2530,7 @@
       "unit_profit": 0.337838,
       "cumulative_units_after_pick": 12.768768,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.747475,\"contribution\":0.515216},{\"feature\":\"price_american_norm\",\"value\":-1.48,\"contribution\":0.311757},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":53,\"contribution\":-0.023909},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":48,\"contribution\":0.014702},{\"feature\":\"market_micro_price_range\",\"value\":0,\"contribution\":-0.011808},{\"feature\":\"selected_team_er_per_27_outs_last3\",\"value\":1.76087,\"contribution\":-0.009337}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-16",
@@ -2551,7 +2551,7 @@
       "unit_profit": 0.694444,
       "cumulative_units_after_pick": 13.463212,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.590164,\"contribution\":0.138965},{\"feature\":\"price_american_norm\",\"value\":-0.72,\"contribution\":0.110352},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":0,\"contribution\":-0.055761},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":19,\"contribution\":-0.038549},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":50,\"contribution\":-0.030527},{\"feature\":\"selected_is_home\",\"value\":0,\"contribution\":0.015193}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-17",
@@ -2572,7 +2572,28 @@
       "unit_profit": null,
       "cumulative_units_after_pick": 13.463212,
       "top_drivers_json": "[{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":63,\"contribution\":0.302863},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":63,\"contribution\":0.20084},{\"feature\":\"price_american_norm\",\"value\":-0.68,\"contribution\":0.127736},{\"feature\":\"market_implied_probability\",\"value\":0.576271,\"contribution\":0.126793},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824},{\"feature\":\"selected_team_er_per_27_outs_last3\",\"value\":0.428571,\"contribution\":-0.014446}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
+    },
+    {
+      "board_date": "2026-04-17",
+      "canonical_game_id": "mlb:287013",
+      "matchup": "San Diego Padres @ Los Angeles Angels",
+      "market_type": "spread",
+      "market_side": "home",
+      "bet_label": "Los Angeles Angels -1.5 (+144)",
+      "line_value": -1.5,
+      "price_american": 144,
+      "predicted_prob": 0.535109,
+      "implied_prob": 0.409836,
+      "model_edge": 0.125273,
+      "lean_rank": 2,
+      "suggested_units": 1,
+      "result": "pending",
+      "settled_flag": 0,
+      "unit_profit": null,
+      "cumulative_units_after_pick": 13.463212,
+      "top_drivers_json": "[{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":63,\"contribution\":0.266494},{\"feature\":\"market_implied_probability\",\"value\":0.409836,\"contribution\":-0.221194},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":63,\"contribution\":0.177548},{\"feature\":\"price_american_norm\",\"value\":0.72,\"contribution\":-0.150813},{\"feature\":\"line_value\",\"value\":-1.5,\"contribution\":-0.049271},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"selected_is_home\",\"value\":1,\"contribution\":-0.015193},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":2,\"contribution\":0.011029}]",
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-17",
@@ -2586,35 +2607,14 @@
       "predicted_prob": 0.655963,
       "implied_prob": 0.534884,
       "model_edge": 0.12108,
-      "lean_rank": 2,
-      "suggested_units": 1,
-      "result": "pending",
-      "settled_flag": 0,
-      "unit_profit": null,
-      "cumulative_units_after_pick": 13.463212,
-      "top_drivers_json": "[{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":50,\"contribution\":0.240368},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":50,\"contribution\":0.146381},{\"feature\":\"price_american_norm\",\"value\":-0.575,\"contribution\":0.103583},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"market_implied_probability\",\"value\":0.534884,\"contribution\":0.032894},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"selected_minus_opponent_er_per_27_outs_last3\",\"value\":4.32,\"contribution\":0.01593},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
-    },
-    {
-      "board_date": "2026-04-17",
-      "canonical_game_id": "mlb:287013",
-      "matchup": "San Diego Padres @ Los Angeles Angels",
-      "market_type": "spread",
-      "market_side": "home",
-      "bet_label": "Los Angeles Angels -1.5 (+141)",
-      "line_value": -1.5,
-      "price_american": 141,
-      "predicted_prob": 0.535109,
-      "implied_prob": 0.414938,
-      "model_edge": 0.120171,
       "lean_rank": 3,
       "suggested_units": 1,
       "result": "pending",
       "settled_flag": 0,
       "unit_profit": null,
       "cumulative_units_after_pick": 13.463212,
-      "top_drivers_json": "[{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":63,\"contribution\":0.266494},{\"feature\":\"market_implied_probability\",\"value\":0.414938,\"contribution\":-0.211004},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":63,\"contribution\":0.177548},{\"feature\":\"price_american_norm\",\"value\":0.705,\"contribution\":-0.148093},{\"feature\":\"line_value\",\"value\":-1.5,\"contribution\":-0.049271},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"selected_is_home\",\"value\":1,\"contribution\":-0.015193},{\"feature\":\"opp_team_bullpen_er_last3\",\"value\":2,\"contribution\":0.011029}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "top_drivers_json": "[{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":50,\"contribution\":0.240368},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":50,\"contribution\":0.146381},{\"feature\":\"price_american_norm\",\"value\":-0.575,\"contribution\":0.103583},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"market_implied_probability\",\"value\":0.534884,\"contribution\":0.032894},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"selected_minus_opponent_er_per_27_outs_last3\",\"value\":4.32,\"contribution\":0.01593},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824}]",
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-17",
@@ -2635,7 +2635,7 @@
       "unit_profit": null,
       "cumulative_units_after_pick": 13.463212,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.758454,\"contribution\":0.540125},{\"feature\":\"price_american_norm\",\"value\":-1.57,\"contribution\":0.33246},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":50,\"contribution\":-0.12703},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":36,\"contribution\":0.087733},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":-14,\"contribution\":-0.067303},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":-38,\"contribution\":0.047281},{\"feature\":\"opp_team_bullpen_ipouts_last3\",\"value\":54,\"contribution\":0.020529},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":16,\"contribution\":0.020014}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-17",
@@ -2643,20 +2643,20 @@
       "matchup": "Milwaukee Brewers @ Miami Marlins",
       "market_type": "spread",
       "market_side": "home",
-      "bet_label": "Miami Marlins +1.5 (-178)",
+      "bet_label": "Miami Marlins +1.5 (-181)",
       "line_value": 1.5,
-      "price_american": -178,
+      "price_american": -181,
       "predicted_prob": 0.716667,
-      "implied_prob": 0.640288,
-      "model_edge": 0.076379,
+      "implied_prob": 0.644128,
+      "model_edge": 0.072539,
       "lean_rank": 5,
       "suggested_units": 1,
       "result": "pending",
       "settled_flag": 0,
       "unit_profit": null,
       "cumulative_units_after_pick": 13.463212,
-      "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.640288,\"contribution\":0.239074},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":50,\"contribution\":0.211503},{\"feature\":\"price_american_norm\",\"value\":-0.89,\"contribution\":0.141183},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":50,\"contribution\":0.129405},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"selected_is_home\",\"value\":1,\"contribution\":-0.015193},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":6,\"contribution\":-0.012173}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.644128,\"contribution\":0.246744},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":50,\"contribution\":0.211503},{\"feature\":\"price_american_norm\",\"value\":-0.905,\"contribution\":0.143904},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":50,\"contribution\":0.129405},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"selected_is_home\",\"value\":1,\"contribution\":-0.015193},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":6,\"contribution\":-0.012173}]",
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-17",
@@ -2677,7 +2677,7 @@
       "unit_profit": null,
       "cumulative_units_after_pick": 13.463212,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.65035,\"contribution\":0.25917},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":42,\"contribution\":0.177663},{\"feature\":\"price_american_norm\",\"value\":-0.93,\"contribution\":0.148438},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":42,\"contribution\":0.099778},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.047905},{\"feature\":\"selected_is_home\",\"value\":0,\"contribution\":0.015193},{\"feature\":\"bet_minus_opp_bullpen_er_last3\",\"value\":4,\"contribution\":0.014523}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-17",
@@ -2685,41 +2685,20 @@
       "matchup": "Toronto Blue Jays @ Arizona Diamondbacks",
       "market_type": "moneyline",
       "market_side": "home",
-      "bet_label": "Arizona Diamondbacks (-143)",
+      "bet_label": "Arizona Diamondbacks (-136)",
       "line_value": 0,
-      "price_american": -143,
-      "predicted_prob": 0.652778,
-      "implied_prob": 0.588477,
-      "model_edge": 0.0643,
+      "price_american": -136,
+      "predicted_prob": 0.638889,
+      "implied_prob": 0.576271,
+      "model_edge": 0.062618,
       "lean_rank": 7,
       "suggested_units": 1,
       "result": "pending",
       "settled_flag": 0,
       "unit_profit": null,
       "cumulative_units_after_pick": 13.463212,
-      "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.588477,\"contribution\":0.154486},{\"feature\":\"price_american_norm\",\"value\":-0.715,\"contribution\":0.135787},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":47,\"contribution\":0.133814},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":25,\"contribution\":0.120184},{\"feature\":\"selected_minus_opponent_er_per_27_outs_last3\",\"value\":-8.173115,\"contribution\":-0.030138},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":22,\"contribution\":-0.02524},{\"feature\":\"opponent_team_er_per_27_outs_last3\",\"value\":11.045455,\"contribution\":-0.022241},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
-    },
-    {
-      "board_date": "2026-04-17",
-      "canonical_game_id": "mlb:287005",
-      "matchup": "San Francisco Giants @ Washington Nationals",
-      "market_type": "moneyline",
-      "market_side": "away",
-      "bet_label": "San Francisco Giants (-156)",
-      "line_value": 0,
-      "price_american": -156,
-      "predicted_prob": 0.672131,
-      "implied_prob": 0.609375,
-      "model_edge": 0.062756,
-      "lean_rank": 8,
-      "suggested_units": 1,
-      "result": "pending",
-      "settled_flag": 0,
-      "unit_profit": null,
-      "cumulative_units_after_pick": 13.463212,
-      "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.609375,\"contribution\":0.201898},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":57,\"contribution\":0.175705},{\"feature\":\"price_american_norm\",\"value\":-0.78,\"contribution\":0.150739},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":27,\"contribution\":0.129799},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":30,\"contribution\":-0.054323},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":-17,\"contribution\":0.021152},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "top_drivers_json": "[{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":47,\"contribution\":0.133814},{\"feature\":\"price_american_norm\",\"value\":-0.68,\"contribution\":0.127736},{\"feature\":\"market_implied_probability\",\"value\":0.576271,\"contribution\":0.126793},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":25,\"contribution\":0.120184},{\"feature\":\"selected_minus_opponent_er_per_27_outs_last3\",\"value\":-8.173115,\"contribution\":-0.030138},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":22,\"contribution\":-0.02524},{\"feature\":\"opponent_team_er_per_27_outs_last3\",\"value\":11.045455,\"contribution\":-0.022241},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444}]",
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-17",
@@ -2727,20 +2706,20 @@
       "matchup": "New York Mets @ Chicago Cubs",
       "market_type": "moneyline",
       "market_side": "away",
-      "bet_label": "New York Mets (+123)",
+      "bet_label": "New York Mets (+129)",
       "line_value": 0,
-      "price_american": 123,
+      "price_american": 129,
       "predicted_prob": 0.499146,
-      "implied_prob": 0.44843,
-      "model_edge": 0.050716,
-      "lean_rank": 9,
+      "implied_prob": 0.436681,
+      "model_edge": 0.062465,
+      "lean_rank": 8,
       "suggested_units": 1,
       "result": "pending",
       "settled_flag": 0,
       "unit_profit": null,
       "cumulative_units_after_pick": 13.463212,
-      "top_drivers_json": "[{\"feature\":\"price_american_norm\",\"value\":0.615,\"contribution\":-0.170149},{\"feature\":\"market_implied_probability\",\"value\":0.44843,\"contribution\":-0.163248},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":50,\"contribution\":-0.12703},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":42,\"contribution\":0.112868},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":-8,\"contribution\":-0.038459},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":-23,\"contribution\":0.028617},{\"feature\":\"selected_minus_opponent_er_per_27_outs_last3\",\"value\":5.451429,\"contribution\":0.020102},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.436681,\"contribution\":-0.189905},{\"feature\":\"price_american_norm\",\"value\":0.645,\"contribution\":-0.177049},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":50,\"contribution\":-0.12703},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":42,\"contribution\":0.112868},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":-8,\"contribution\":-0.038459},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":-23,\"contribution\":0.028617},{\"feature\":\"selected_minus_opponent_er_per_27_outs_last3\",\"value\":5.451429,\"contribution\":0.020102},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444}]",
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-17",
@@ -2754,14 +2733,14 @@
       "predicted_prob": 0.637271,
       "implied_prob": 0.588477,
       "model_edge": 0.048794,
-      "lean_rank": 10,
+      "lean_rank": 9,
       "suggested_units": 1,
       "result": "pending",
       "settled_flag": 0,
       "unit_profit": null,
       "cumulative_units_after_pick": 13.463212,
       "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.588477,\"contribution\":0.135596},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":45,\"contribution\":0.110888},{\"feature\":\"price_american_norm\",\"value\":-0.715,\"contribution\":0.109445},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":49,\"contribution\":-0.10799},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":-13,\"contribution\":0.026376},{\"feature\":\"bet_team_bullpen_ipouts_last3\",\"value\":22,\"contribution\":0.019345},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":-4,\"contribution\":-0.01692}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-17",
@@ -2775,14 +2754,35 @@
       "predicted_prob": 0.637271,
       "implied_prob": 0.588477,
       "model_edge": 0.048794,
-      "lean_rank": 11,
+      "lean_rank": 10,
       "suggested_units": 1,
       "result": "pending",
       "settled_flag": 0,
       "unit_profit": null,
       "cumulative_units_after_pick": 13.463212,
       "top_drivers_json": "[{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":54,\"contribution\":0.144218},{\"feature\":\"market_implied_probability\",\"value\":0.588477,\"contribution\":0.135596},{\"feature\":\"price_american_norm\",\"value\":-0.715,\"contribution\":0.109445},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":47,\"contribution\":-0.101627},{\"feature\":\"line_value\",\"value\":1.5,\"contribution\":0.049215},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":17,\"contribution\":-0.034492},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":7,\"contribution\":0.02961},{\"feature\":\"bet_team_bullpen_er_last3\",\"value\":13,\"contribution\":0.027476}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
+    },
+    {
+      "board_date": "2026-04-17",
+      "canonical_game_id": "mlb:287005",
+      "matchup": "San Francisco Giants @ Washington Nationals",
+      "market_type": "moneyline",
+      "market_side": "away",
+      "bet_label": "San Francisco Giants (-156)",
+      "line_value": 0,
+      "price_american": -156,
+      "predicted_prob": 0.655963,
+      "implied_prob": 0.609375,
+      "model_edge": 0.046588,
+      "lean_rank": 11,
+      "suggested_units": 1,
+      "result": "pending",
+      "settled_flag": 0,
+      "unit_profit": null,
+      "cumulative_units_after_pick": 13.463212,
+      "top_drivers_json": "[{\"feature\":\"market_implied_probability\",\"value\":0.609375,\"contribution\":0.201898},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":57,\"contribution\":0.175705},{\"feature\":\"price_american_norm\",\"value\":-0.78,\"contribution\":0.150739},{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":27,\"contribution\":0.129799},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":30,\"contribution\":-0.054323},{\"feature\":\"bet_minus_opp_bullpen_ipouts_last3\",\"value\":-17,\"contribution\":0.021152},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824}]",
+      "generated_at": "2026-04-17T15:30:43.030Z"
     },
     {
       "board_date": "2026-04-17",
@@ -2803,7 +2803,7 @@
       "unit_profit": null,
       "cumulative_units_after_pick": 13.463212,
       "top_drivers_json": "[{\"feature\":\"selected_minus_opponent_avg_ipouts_last3\",\"value\":42,\"contribution\":0.201909},{\"feature\":\"price_american_norm\",\"value\":0.595,\"contribution\":-0.165548},{\"feature\":\"market_implied_probability\",\"value\":0.456621,\"contribution\":-0.144666},{\"feature\":\"selected_team_avg_ipouts_last3\",\"value\":42,\"contribution\":0.112868},{\"feature\":\"opponent_team_avg_ipouts_last3\",\"value\":0,\"contribution\":0.054737},{\"feature\":\"selected_minus_opponent_er_per_27_outs_last3\",\"value\":5.142857,\"contribution\":0.018964},{\"feature\":\"market_micro_move_count\",\"value\":0,\"contribution\":0.016444},{\"feature\":\"market_micro_price_stddev\",\"value\":0,\"contribution\":-0.015824}]",
-      "generated_at": "2026-04-17T14:28:53.019Z"
+      "generated_at": "2026-04-17T15:30:43.030Z"
     }
   ]
 }
