@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T12:34:23.973Z",
+  "generated_at": "2026-04-17T13:31:32.258Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_ranker",
@@ -457,7 +457,7 @@
         "month": "2026-04",
         "performance_window": "live_2026",
         "bets": 75,
-        "selected_bets": 87,
+        "selected_bets": 86,
         "wins": 45,
         "losses": 30,
         "pushes": 0,
