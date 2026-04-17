@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-16T14:41:49.044Z",
+  "generated_at": "2026-04-17T11:21:29.882Z",
   "artifact_version": "v1",
   "active_engine": {
     "engine_family": "mlb_ai_ranker",
@@ -9,8 +9,8 @@
     "model_lock_status": "ranker_quality_filtered_challenger",
     "trusted_for_live_betting": false
   },
-  "active_board_date": "2026-04-16",
-  "latest_canonical_board_date": "2026-04-16",
+  "active_board_date": "2026-04-17",
+  "latest_canonical_board_date": "2026-04-17",
   "site_system_contract": {
     "primary_system": {
       "system_key": "ranker_system",
@@ -21,7 +21,7 @@
       "model_version": "v1",
       "threshold": "edge_gte_0_03_cap_minus_150",
       "description": "Quality-filtered public ranker surface using edge >= 0.03 while excluding prices below -150.",
-      "board_date": "2026-04-16"
+      "board_date": "2026-04-17"
     },
     "challenger_system": {
       "system_key": "ranker_challenger_system",
@@ -32,7 +32,7 @@
       "model_version": "v1",
       "threshold": "edge_gte_0_04_no_cap_challenger",
       "description": "Separate challenger lane using edge >= 0.04 with no additional favorite cap. Not the official public betting record.",
-      "board_date": "2026-04-16"
+      "board_date": "2026-04-17"
     },
     "internal_research_lanes": [
       {
@@ -64,17 +64,17 @@
     "label": "Ranker Challenger",
     "role": "shadow_challenger_not_public_record",
     "historical_summary": {
-      "bets": 2313,
-      "selected_bets": 2401,
-      "units": 103.780184,
-      "roi": 0.044868,
-      "win_rate": 0.602681,
-      "max_drawdown": -30.669549
+      "bets": 3987,
+      "selected_bets": 4132,
+      "units": 242.225088,
+      "roi": 0.060754,
+      "win_rate": 0.594432,
+      "max_drawdown": -57.977841
     },
     "ytd_2026_summary": {
-      "bets": 54,
-      "units": -6.7669,
-      "roi": -0.125313
+      "bets": 121,
+      "units": 13.463212,
+      "roi": 0.111266
     }
   },
   "live_policy_reference": {
@@ -82,17 +82,17 @@
     "label": "Ranker System",
     "role": "official_public_record",
     "historical_summary": {
-      "bets": 2194,
-      "selected_bets": 2281,
-      "units": 84.154635,
-      "roi": 0.038357,
-      "win_rate": 0.52917,
-      "max_drawdown": -22.876292
+      "bets": 4303,
+      "selected_bets": 4463,
+      "units": 148.080475,
+      "roi": 0.034413,
+      "win_rate": 0.545201,
+      "max_drawdown": -64.344355
     },
     "ytd_2026_summary": {
-      "bets": 57,
-      "units": 3.016888,
-      "roi": 0.052928
+      "bets": 141,
+      "units": 11.011235,
+      "roi": 0.078094
     }
   }
 }

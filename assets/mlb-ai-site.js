@@ -604,7 +604,7 @@
     drawHistory();
   }
 
-  function renderOperations(status, op, trustTable) {
+  function renderOperations(status, op, trustTable, featureCoverage) {
     const primaryLabel = op?.site_system_contract?.primary_system?.label || status?.site_system_contract?.primary_system?.label || status?.active_engine?.engine_family || 'Primary system';
     const challengerLabel = op?.site_system_contract?.challenger_system?.label || status?.site_system_contract?.challenger_system?.label || 'Challenger';
     const threshold = op.summary?.live_public_selection_threshold || op.boards?.live_public_threshold || status?.site_system_contract?.primary_system?.threshold || 'edge_gte_0_03_cap_minus_150';
@@ -640,6 +640,8 @@
     };
     const trustSummary = trustTable?.summary || {};
     const trustRows = Array.isArray(trustTable?.rows) ? trustTable.rows : [];
+    const featureSummary = featureCoverage?.summary || {};
+    const featureRows = Array.isArray(featureCoverage?.rows) ? featureCoverage.rows : [];
     const usageLabel = (row) => {
       const parts = [];
       if (row.used_in_live_model) parts.push('Live');
@@ -664,6 +666,7 @@
       priority.innerHTML = `<div class="section-head"><div><p class="section-kicker">Attention</p><h2>What needs action now</h2></div></div><div class="summary-grid">${[
         { label: 'Failures', value: String(failures.length), tone: failures.length ? 'metric-bad' : '', note: failures[0] ? failures[0].code : 'No blocking failures' },
         { label: 'Warnings', value: String(warnings.length), tone: warnings.length ? 'metric-warn' : '', note: warnings[0] ? warnings[0].code : 'No active warnings' },
+        { label: 'Feature gaps', value: String((featureSummary.red || 0) + (featureSummary.yellow || 0)), tone: (featureSummary.red || 0) ? 'metric-bad' : (featureSummary.yellow || 0) ? 'metric-warn' : '', note: `${featureSummary.red || 0} red | ${featureSummary.yellow || 0} yellow` },
         { label: 'Trust rows', value: String(trustRows.length), note: `${trustSummary.red || 0} red | ${trustSummary.yellow || 0} watch | ${trustSummary.green || 0} healthy` },
         { label: 'Latest graded date', value: op.summary?.latest_graded_date || 'unknown', note: 'Latest settled results attached to the official record' }
       ].map(card).join('')}</div>`;
@@ -678,6 +681,38 @@
       { label: 'Model-driving rows', value: String(trustSummary.live_rows || 0), note: 'Rows that directly drive the live system' },
       { label: 'Explanation rows', value: String(trustSummary.explanation_rows || 0), note: 'Rows that feed public explanations' }
     ].map(card).join('');
+
+    const coverageCell = (present, total) => total
+      ? `${present}/${total} (${((present / total) * 100).toFixed(0)}%)`
+      : 'n/a';
+
+    const featureSummaryNode = $('#operations-feature-summary');
+    if (featureSummaryNode) featureSummaryNode.innerHTML = [
+      { label: 'Healthy families', value: String(featureSummary.green || 0), note: 'No current board-date degradation detected' },
+      { label: 'Degraded families', value: String(featureSummary.yellow || 0), tone: (featureSummary.yellow || 0) ? 'metric-warn' : '', note: 'Partial attachment or incomplete board-date survival' },
+      { label: 'Broken families', value: String(featureSummary.red || 0), tone: (featureSummary.red || 0) ? 'metric-bad' : '', note: 'Current benchmark board cannot be trusted if a hard-fail family is red' },
+      { label: 'Selected bets', value: String(featureCoverage?.board_summary?.selected_rows || 0), note: `${featureCoverage?.board_summary?.board_rows || 0} board rows on ${featureCoverage?.board_date || 'unknown'}` }
+    ].map(card).join('');
+
+    const featureBody = $('#operations-feature-table tbody');
+    if (featureBody) {
+      featureBody.innerHTML = featureRows.length
+        ? featureRows
+          .sort((a, b) => (severityRank[String(a.status || '').toLowerCase()] ?? 4) - (severityRank[String(b.status || '').toLowerCase()] ?? 4)
+            || String(a.family_label).localeCompare(String(b.family_label)))
+          .map((row) => `<tr class="ops-row-${esc(String(row.status || 'green'))}">
+            <td><span class="${statusClass(row.status)}">${esc(String(row.status || 'green'))}</span></td>
+            <td>${esc(row.family_label)}</td>
+            <td>${esc(coverageCell(Number(row.source_rows_present || 0), Number(row.board_rows || 0)))}</td>
+            <td>${esc(coverageCell(Number(row.research_ready_rows_present || 0), Number(row.board_rows || 0)))}</td>
+            <td>${esc(coverageCell(Number(row.model_rows_present || 0), Number(row.board_rows || 0)))}</td>
+            <td>${esc(coverageCell(Number(row.selected_rows_present || 0), Number(row.selected_rows || 0)))}</td>
+            <td>${esc(dt(row.freshest_source_timestamp))}</td>
+            <td>${esc(dt(row.freshest_attached_timestamp))}</td>
+            <td>${esc(row.explanation || '--')}</td>
+          </tr>`).join('')
+        : '<tr><td colspan="9" class="subtle">No feature coverage rows are available.</td></tr>';
+    }
 
     const objectBody = $('#operations-freshness-table tbody');
     if (objectBody) {
@@ -728,7 +763,7 @@
     if (page === 'leans') return renderLeans(status, await json('mlb_ai_daily_leans_v1.json'), op, await json('mlb_ai_daily_performance_2026_v1.json'), await json('mlb_ai_reporting_v1.json'), await json('mlb_ai_ranker_explanations_v1.json'));
     if (page === 'performance') return renderPerformanceSurface(status, await json('mlb_ai_reporting_v1.json'), await json('mlb_ai_reporting_monthly_v1.json'), await json('mlb_ai_daily_performance_2026_v1.json'), await json('mlb_ai_leans_history_view_v1.json'), op, { surfaceKind: 'live' });
     if (page === 'challenger') return renderPerformanceSurface(await json('mlb_ai_shadow_engine_status_v1.json'), await json('mlb_ai_shadow_reporting_v1.json'), await json('mlb_ai_shadow_reporting_monthly_v1.json'), await json('mlb_ai_shadow_daily_performance_2026_v1.json'), await json('mlb_ai_shadow_leans_history_view_v1.json'), op, { surfaceKind: 'challenger' });
-    if (page === 'operations') return renderOperations(status, op, await json('mlb_ai_operations_trust_table_v1.json'));
+    if (page === 'operations') return renderOperations(status, op, await json('mlb_ai_operations_trust_table_v1.json'), await json('mlb_ai_feature_coverage_status_v1.json'));
   } catch (error) {
     const shell = $('.page-shell') || document.body;
     const panel = document.createElement('section');
