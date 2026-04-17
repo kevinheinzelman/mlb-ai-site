@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T16:33:45.904Z",
+  "generated_at": "2026-04-17T17:33:02.878Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_ranker",
@@ -19,17 +19,17 @@
       "market_type": "moneyline",
       "side": "home",
       "line_value": 0,
-      "price_american": -136,
+      "price_american": -131,
       "suggested_units": 1,
-      "edge": 0.295524,
-      "model_probability": 0.871795,
-      "market_probability": 0.576271,
+      "edge": 0.25643,
+      "model_probability": 0.823529,
+      "market_probability": 0.5671,
       "confidence_band": "high",
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.295524,
+      "final_score": 0.25643,
       "context_score": null,
       "hostile_penalty_multiplier": null,
-      "explanation_summary": "Moneyline Home qualified for the public ranker card because model probability 87.2% exceeded market implied probability 57.6% by 29.6 points.",
+      "explanation_summary": "Moneyline Home qualified for the public ranker card because model probability 82.4% exceeded market implied probability 56.7% by 25.6 points.",
       "top_edge_drivers": [
         {
           "feature": "selected_minus_opponent_avg_ipouts_last3",
@@ -43,15 +43,15 @@
         },
         {
           "feature": "price_american_norm",
-          "value": -0.68,
-          "contribution": 0.127736
+          "value": -0.655,
+          "contribution": 0.121985
         }
       ],
       "top_context_drivers": [
         {
           "feature": "market_implied_probability",
-          "value": 0.576271,
-          "contribution": 0.126793
+          "value": 0.5671,
+          "contribution": 0.105985
         },
         {
           "feature": "opponent_team_avg_ipouts_last3",
@@ -137,17 +137,17 @@
       "market_type": "spread",
       "side": "home",
       "line_value": -1.5,
-      "price_american": 144,
+      "price_american": 149,
       "suggested_units": 1,
-      "edge": 0.125273,
-      "model_probability": 0.535109,
-      "market_probability": 0.409836,
+      "edge": 0.104887,
+      "model_probability": 0.506494,
+      "market_probability": 0.401606,
       "confidence_band": "high",
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.125273,
+      "final_score": 0.104887,
       "context_score": null,
       "hostile_penalty_multiplier": null,
-      "explanation_summary": "Run line Home qualified for the public ranker card because model probability 53.5% exceeded market implied probability 41.0% by 12.5 points.",
+      "explanation_summary": "Run line Home qualified for the public ranker card because model probability 50.6% exceeded market implied probability 40.2% by 10.5 points.",
       "top_edge_drivers": [
         {
           "feature": "selected_minus_opponent_avg_ipouts_last3",
@@ -156,8 +156,8 @@
         },
         {
           "feature": "market_implied_probability",
-          "value": 0.409836,
-          "contribution": -0.221194
+          "value": 0.401606,
+          "contribution": -0.23763
         },
         {
           "feature": "selected_team_avg_ipouts_last3",
@@ -168,8 +168,8 @@
       "top_context_drivers": [
         {
           "feature": "price_american_norm",
-          "value": 0.72,
-          "contribution": -0.150813
+          "value": 0.745,
+          "contribution": -0.155347
         },
         {
           "feature": "line_value",
@@ -309,65 +309,6 @@
     },
     {
       "board_date": "2026-04-17",
-      "canonical_game_id": "mlb:287002",
-      "matchup": "New York Mets @ Chicago Cubs",
-      "market_type": "spread",
-      "side": "away",
-      "line_value": 1.5,
-      "price_american": -143,
-      "suggested_units": 1,
-      "edge": 0.048794,
-      "model_probability": 0.637271,
-      "market_probability": 0.588477,
-      "confidence_band": "high",
-      "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "final_score": 0.048794,
-      "context_score": null,
-      "hostile_penalty_multiplier": null,
-      "explanation_summary": "Run line Away qualified for the public ranker card because model probability 63.7% exceeded market implied probability 58.8% by 4.9 points.",
-      "top_edge_drivers": [
-        {
-          "feature": "market_implied_probability",
-          "value": 0.588477,
-          "contribution": 0.135596
-        },
-        {
-          "feature": "opponent_team_avg_ipouts_last3",
-          "value": 50,
-          "contribution": -0.111172
-        },
-        {
-          "feature": "price_american_norm",
-          "value": -0.715,
-          "contribution": 0.109445
-        }
-      ],
-      "top_context_drivers": [
-        {
-          "feature": "selected_team_avg_ipouts_last3",
-          "value": 42,
-          "contribution": 0.099778
-        },
-        {
-          "feature": "line_value",
-          "value": 1.5,
-          "contribution": 0.049215
-        },
-        {
-          "feature": "bet_minus_opp_bullpen_ipouts_last3",
-          "value": -23,
-          "contribution": 0.046665
-        }
-      ],
-      "historical_linkage": {
-        "model_family": "mlb_ai_ranker",
-        "model_version": "v1",
-        "training_window": "2022-2024",
-        "validation_window": "2025"
-      }
-    },
-    {
-      "board_date": "2026-04-17",
       "canonical_game_id": "mlb:287007",
       "matchup": "Kansas City Royals @ New York Yankees",
       "market_type": "spread",
@@ -475,6 +416,65 @@
           "feature": "bet_minus_opp_bullpen_ipouts_last3",
           "value": 17,
           "contribution": -0.034492
+        }
+      ],
+      "historical_linkage": {
+        "model_family": "mlb_ai_ranker",
+        "model_version": "v1",
+        "training_window": "2022-2024",
+        "validation_window": "2025"
+      }
+    },
+    {
+      "board_date": "2026-04-17",
+      "canonical_game_id": "mlb:287002",
+      "matchup": "New York Mets @ Chicago Cubs",
+      "market_type": "spread",
+      "side": "away",
+      "line_value": 1.5,
+      "price_american": -144,
+      "suggested_units": 1,
+      "edge": 0.047107,
+      "model_probability": 0.637271,
+      "market_probability": 0.590164,
+      "confidence_band": "high",
+      "selection_contract": "edge_gte_0_03_cap_minus_150",
+      "final_score": 0.047107,
+      "context_score": null,
+      "hostile_penalty_multiplier": null,
+      "explanation_summary": "Run line Away qualified for the public ranker card because model probability 63.7% exceeded market implied probability 59.0% by 4.7 points.",
+      "top_edge_drivers": [
+        {
+          "feature": "market_implied_probability",
+          "value": 0.590164,
+          "contribution": 0.138965
+        },
+        {
+          "feature": "opponent_team_avg_ipouts_last3",
+          "value": 50,
+          "contribution": -0.111172
+        },
+        {
+          "feature": "price_american_norm",
+          "value": -0.72,
+          "contribution": 0.110352
+        }
+      ],
+      "top_context_drivers": [
+        {
+          "feature": "selected_team_avg_ipouts_last3",
+          "value": 42,
+          "contribution": 0.099778
+        },
+        {
+          "feature": "line_value",
+          "value": 1.5,
+          "contribution": 0.049215
+        },
+        {
+          "feature": "bet_minus_opp_bullpen_ipouts_last3",
+          "value": -23,
+          "contribution": 0.046665
         }
       ],
       "historical_linkage": {
