@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T17:33:02.878Z",
+  "generated_at": "2026-04-17T18:33:07.756Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_ranker",
@@ -165,32 +165,32 @@
       "matchup": "Milwaukee Brewers @ Miami Marlins",
       "away_team": "Milwaukee Brewers",
       "home_team": "Miami Marlins",
-      "bet_label": "Miami Marlins -1.5 (-176)",
+      "bet_label": "Miami Marlins -1.5 (-178)",
       "market_type": "spread",
       "side": "home",
       "line_value": 1.5,
-      "price_american": -176,
-      "market_probability": 0.637681,
+      "price_american": -178,
+      "market_probability": 0.640288,
       "model_probability": 0.716667,
-      "edge": 0.078986,
+      "edge": 0.076379,
       "selection_contract": "edge_gte_0_04_no_cap_challenger",
       "rank_on_slate": 5,
       "confidence_band": "high",
       "visibility_tier": "core",
       "display_sort_bucket": "core_priority",
       "primary_drivers": [
-        "Market Implied Probability +0.234",
+        "Market Implied Probability +0.239",
         "Selected Minus Opponent Avg Ipouts Last3 +0.212",
-        "Price American Norm +0.139"
+        "Price American Norm +0.141"
       ],
       "supporting_context": [
         "Selected Minus Opponent Avg Ipouts Last3 +0.212",
-        "Price American Norm +0.139"
+        "Price American Norm +0.141"
       ],
       "suggested_units": 1,
-      "explanation_summary": "Run line Home at -176 cleared the edge_gte_0_04_no_cap_challenger threshold with model probability 71.7% versus market 63.8%.",
+      "explanation_summary": "Run line Home at -178 cleared the edge_gte_0_04_no_cap_challenger threshold with model probability 71.7% versus market 64.0%.",
       "comparator_flags": {},
-      "ev_proxy": 0.123864
+      "ev_proxy": 0.119288
     },
     {
       "board_date": "2026-04-17",
@@ -260,6 +260,39 @@
     },
     {
       "board_date": "2026-04-17",
+      "canonical_game_id": "mlb:287005",
+      "matchup": "San Francisco Giants @ Washington Nationals",
+      "away_team": "San Francisco Giants",
+      "home_team": "Washington Nationals",
+      "bet_label": "San Francisco Giants ML (-149)",
+      "market_type": "moneyline",
+      "side": "away",
+      "line_value": 0,
+      "price_american": -149,
+      "market_probability": 0.598394,
+      "model_probability": 0.655963,
+      "edge": 0.05757,
+      "selection_contract": "edge_gte_0_04_no_cap_challenger",
+      "rank_on_slate": 8,
+      "confidence_band": "high",
+      "visibility_tier": "core",
+      "display_sort_bucket": "core_priority",
+      "primary_drivers": [
+        "Market Implied Probability +0.177",
+        "Selected Team Avg Ipouts Last3 +0.176",
+        "Price American Norm +0.143"
+      ],
+      "supporting_context": [
+        "Selected Team Avg Ipouts Last3 +0.176",
+        "Price American Norm +0.143"
+      ],
+      "suggested_units": 1,
+      "explanation_summary": "Moneyline Away at -149 cleared the edge_gte_0_04_no_cap_challenger threshold with model probability 65.6% versus market 59.8%.",
+      "comparator_flags": {},
+      "ev_proxy": 0.096207
+    },
+    {
+      "board_date": "2026-04-17",
       "canonical_game_id": "mlb:287002",
       "matchup": "New York Mets @ Chicago Cubs",
       "away_team": "New York Mets",
@@ -273,7 +306,7 @@
       "model_probability": 0.499146,
       "edge": 0.052718,
       "selection_contract": "edge_gte_0_04_no_cap_challenger",
-      "rank_on_slate": 8,
+      "rank_on_slate": 9,
       "confidence_band": "high",
       "visibility_tier": "core",
       "display_sort_bucket": "core_priority",
@@ -306,7 +339,7 @@
       "model_probability": 0.637271,
       "edge": 0.048794,
       "selection_contract": "edge_gte_0_04_no_cap_challenger",
-      "rank_on_slate": 9,
+      "rank_on_slate": 10,
       "confidence_band": "high",
       "visibility_tier": "core",
       "display_sort_bucket": "core_priority",
@@ -339,7 +372,7 @@
       "model_probability": 0.637271,
       "edge": 0.048794,
       "selection_contract": "edge_gte_0_04_no_cap_challenger",
-      "rank_on_slate": 10,
+      "rank_on_slate": 11,
       "confidence_band": "high",
       "visibility_tier": "core",
       "display_sort_bucket": "core_priority",
@@ -372,7 +405,7 @@
       "model_probability": 0.637271,
       "edge": 0.047107,
       "selection_contract": "edge_gte_0_04_no_cap_challenger",
-      "rank_on_slate": 11,
+      "rank_on_slate": 12,
       "confidence_band": "high",
       "visibility_tier": "core",
       "display_sort_bucket": "core_priority",
@@ -389,39 +422,6 @@
       "explanation_summary": "Run line Away at -144 cleared the edge_gte_0_04_no_cap_challenger threshold with model probability 63.7% versus market 59.0%.",
       "comparator_flags": {},
       "ev_proxy": 0.079821
-    },
-    {
-      "board_date": "2026-04-17",
-      "canonical_game_id": "mlb:287005",
-      "matchup": "San Francisco Giants @ Washington Nationals",
-      "away_team": "San Francisco Giants",
-      "home_team": "Washington Nationals",
-      "bet_label": "San Francisco Giants ML (-156)",
-      "market_type": "moneyline",
-      "side": "away",
-      "line_value": 0,
-      "price_american": -156,
-      "market_probability": 0.609375,
-      "model_probability": 0.655963,
-      "edge": 0.046588,
-      "selection_contract": "edge_gte_0_04_no_cap_challenger",
-      "rank_on_slate": 12,
-      "confidence_band": "high",
-      "visibility_tier": "core",
-      "display_sort_bucket": "core_priority",
-      "primary_drivers": [
-        "Market Implied Probability +0.202",
-        "Selected Team Avg Ipouts Last3 +0.176",
-        "Price American Norm +0.151"
-      ],
-      "supporting_context": [
-        "Selected Team Avg Ipouts Last3 +0.176",
-        "Price American Norm +0.151"
-      ],
-      "suggested_units": 1,
-      "explanation_summary": "Moneyline Away at -156 cleared the edge_gte_0_04_no_cap_challenger threshold with model probability 65.6% versus market 60.9%.",
-      "comparator_flags": {},
-      "ev_proxy": 0.076453
     },
     {
       "board_date": "2026-04-17",

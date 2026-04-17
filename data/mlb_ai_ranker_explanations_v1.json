@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T17:33:02.878Z",
+  "generated_at": "2026-04-17T18:33:07.756Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_ranker",
@@ -38,7 +38,7 @@
       "selection_logic_note": "Selection logic uses model edge versus market implied probability plus the public price rule. Extra notes below explain the bet but are not separate approval rules.",
       "why_this_bet": [
         "Model 82.4% vs market 56.7% for a 25.6 point edge.",
-        "Market activity: 70% of money vs 62% of bets on this side.",
+        "Market activity: 69% of money vs 63% of bets on this side.",
         "Weather: 6 mph wind out, 75F."
       ],
       "context_only_notes": [
@@ -57,7 +57,7 @@
       },
       "sharp_public_context": {
         "data_role": "model_used",
-        "summary": "70% money vs 62% bets"
+        "summary": "69% money vs 63% bets"
       },
       "weather_context": {
         "data_role": "model_used",
@@ -102,7 +102,7 @@
       "selection_logic_note": "Selection logic uses model edge versus market implied probability plus the public price rule. Extra notes below explain the bet but are not separate approval rules.",
       "why_this_bet": [
         "Model 65.6% vs market 52.8% for a 12.8 point edge.",
-        "Market activity: 42% of money vs 38% of bets on this side.",
+        "Market activity: 43% of money vs 38% of bets on this side.",
         "Weather: 9 mph, 78F."
       ],
       "context_only_notes": [
@@ -121,7 +121,7 @@
       },
       "sharp_public_context": {
         "data_role": "model_used",
-        "summary": "42% money vs 38% bets"
+        "summary": "43% money vs 38% bets"
       },
       "weather_context": {
         "data_role": "model_used",
@@ -166,7 +166,7 @@
       "selection_logic_note": "Selection logic uses model edge versus market implied probability plus the public price rule. Extra notes below explain the bet but are not separate approval rules.",
       "why_this_bet": [
         "Model 50.6% vs market 40.2% for a 10.5 point edge.",
-        "Market activity: 90% of money vs 86% of bets on this side.",
+        "Market activity: 90% of money vs 85% of bets on this side.",
         "Weather: 6 mph wind out, 75F."
       ],
       "context_only_notes": [
@@ -185,7 +185,7 @@
       },
       "sharp_public_context": {
         "data_role": "model_used",
-        "summary": "90% money vs 86% bets"
+        "summary": "90% money vs 85% bets"
       },
       "weather_context": {
         "data_role": "model_used",
@@ -230,7 +230,7 @@
       "selection_logic_note": "Selection logic uses model edge versus market implied probability plus the public price rule. Extra notes below explain the bet but are not separate approval rules.",
       "why_this_bet": [
         "Model 63.9% vs market 57.6% for a 6.3 point edge.",
-        "Market activity: 2 sharp signals, 2 reverse-line moves, 84% of money vs 79% of bets on this side.",
+        "Market activity: 2 sharp signals, 2 reverse-line moves, 85% of money vs 79% of bets on this side.",
         "Weather: 6 mph, 84F."
       ],
       "context_only_notes": [
@@ -249,7 +249,7 @@
       },
       "sharp_public_context": {
         "data_role": "model_used",
-        "summary": "2 sharp signals, 2 reverse-line moves, 84% money vs 79% bets"
+        "summary": "2 sharp signals, 2 reverse-line moves, 85% money vs 79% bets"
       },
       "weather_context": {
         "data_role": "model_used",
@@ -261,6 +261,70 @@
         "source_wind_unit": "km/h",
         "source_temperature_unit": "celsius",
         "summary": "Weather: 6 mph, 84F."
+      },
+      "pitching_bullpen_context": {
+        "data_role": "context_only",
+        "summary": "Pitching/bullpen context available"
+      },
+      "matchup_context": {
+        "data_role": "missing",
+        "summary": "Additional context not available in current model output",
+        "missing": [
+          "matchup context"
+        ]
+      },
+      "missing_context": [
+        "line movement",
+        "matchup context"
+      ]
+    },
+    {
+      "board_date": "2026-04-17",
+      "canonical_game_id": "mlb:287005",
+      "market_type": "moneyline",
+      "side": "away",
+      "bet_label": "San Francisco Giants ML (-149)",
+      "matchup": "San Francisco Giants @ Washington Nationals",
+      "start_time_utc": "2026-04-17T22:46:00Z",
+      "start_time_et": "Apr 17, 6:46 PM",
+      "first_pitch_et": "6:46 PM",
+      "model_probability": 0.655963,
+      "market_implied_probability": 0.598394,
+      "edge": 0.05757,
+      "selection_logic_note": "Selection logic uses model edge versus market implied probability plus the public price rule. Extra notes below explain the bet but are not separate approval rules.",
+      "why_this_bet": [
+        "Model 65.6% vs market 59.8% for a 5.8 point edge.",
+        "Market activity: 1 sharp signals, 1 steam moves, 41% of money vs 56% of bets on this side.",
+        "Weather: 8 mph crosswind, 82F."
+      ],
+      "context_only_notes": [
+        "Context only: Away side bullpen context suggests bullpen availability looks thin, bullpen quality score 3.5."
+      ],
+      "market_context": {
+        "summary": "Model 65.6% vs market 59.8%.",
+        "edge_text": "5.8 point edge",
+        "current_price": "-149"
+      },
+      "line_movement": {
+        "summary": "Additional context not available in current model output",
+        "missing": [
+          "line movement"
+        ]
+      },
+      "sharp_public_context": {
+        "data_role": "model_used",
+        "summary": "1 sharp signals, 1 steam moves, 41% money vs 56% bets"
+      },
+      "weather_context": {
+        "data_role": "model_used",
+        "wind_direction": "crosswind",
+        "wind_speed_mph": 7.954,
+        "temperature_f": 81.5,
+        "wind_unit": "mph",
+        "temperature_unit": "fahrenheit",
+        "source_wind_unit": "km/h",
+        "source_temperature_unit": "celsius",
+        "summary": "Weather: 8 mph crosswind, 82F."
       },
       "pitching_bullpen_context": {
         "data_role": "context_only",
@@ -294,7 +358,7 @@
       "selection_logic_note": "Selection logic uses model edge versus market implied probability plus the public price rule. Extra notes below explain the bet but are not separate approval rules.",
       "why_this_bet": [
         "Model 49.9% vs market 44.6% for a 5.3 point edge.",
-        "Market activity: 2 sharp signals, 1 steam moves, 1 reverse-line moves, 31% of money vs 27% of bets on this side.",
+        "Market activity: 2 sharp signals, 1 steam moves, 1 reverse-line moves, 34% of money vs 27% of bets on this side.",
         "Weather: 10 mph crosswind, 73F."
       ],
       "context_only_notes": [
@@ -313,7 +377,7 @@
       },
       "sharp_public_context": {
         "data_role": "model_used",
-        "summary": "2 sharp signals, 1 steam moves, 1 reverse-line moves, 31% money vs 27% bets"
+        "summary": "2 sharp signals, 1 steam moves, 1 reverse-line moves, 34% money vs 27% bets"
       },
       "weather_context": {
         "data_role": "model_used",
@@ -358,7 +422,7 @@
       "selection_logic_note": "Selection logic uses model edge versus market implied probability plus the public price rule. Extra notes below explain the bet but are not separate approval rules.",
       "why_this_bet": [
         "Model 63.7% vs market 58.8% for a 4.9 point edge.",
-        "Market activity: 14% of money vs 23% of bets on this side.",
+        "Market activity: 13% of money vs 22% of bets on this side.",
         "Weather: 12 mph crosswind, 68F. Crosswind conditions can suppress carry, which is generally friendlier to a plus run line."
       ],
       "context_only_notes": [
@@ -377,7 +441,7 @@
       },
       "sharp_public_context": {
         "data_role": "model_used",
-        "summary": "14% money vs 23% bets"
+        "summary": "13% money vs 22% bets"
       },
       "weather_context": {
         "data_role": "model_used",
@@ -422,7 +486,7 @@
       "selection_logic_note": "Selection logic uses model edge versus market implied probability plus the public price rule. Extra notes below explain the bet but are not separate approval rules.",
       "why_this_bet": [
         "Model 63.7% vs market 58.8% for a 4.9 point edge.",
-        "Market activity: 2% of money vs 8% of bets on this side.",
+        "Market activity: 3% of money vs 8% of bets on this side.",
         "Weather: 3 mph crosswind, 75F. Crosswind conditions can suppress carry, which is generally friendlier to a plus run line."
       ],
       "context_only_notes": [
@@ -441,7 +505,7 @@
       },
       "sharp_public_context": {
         "data_role": "model_used",
-        "summary": "2% money vs 8% bets"
+        "summary": "3% money vs 8% bets"
       },
       "weather_context": {
         "data_role": "model_used",
@@ -486,7 +550,7 @@
       "selection_logic_note": "Selection logic uses model edge versus market implied probability plus the public price rule. Extra notes below explain the bet but are not separate approval rules.",
       "why_this_bet": [
         "Model 63.7% vs market 59.0% for a 4.7 point edge.",
-        "Market activity: 12% of money vs 15% of bets on this side.",
+        "Market activity: 9% of money vs 16% of bets on this side.",
         "Weather: 10 mph crosswind, 73F. Crosswind conditions can suppress carry, which is generally friendlier to a plus run line."
       ],
       "context_only_notes": [
@@ -505,7 +569,7 @@
       },
       "sharp_public_context": {
         "data_role": "model_used",
-        "summary": "12% money vs 15% bets"
+        "summary": "9% money vs 16% bets"
       },
       "weather_context": {
         "data_role": "model_used",
@@ -550,7 +614,7 @@
       "selection_logic_note": "Selection logic uses model edge versus market implied probability plus the public price rule. Extra notes below explain the bet but are not separate approval rules.",
       "why_this_bet": [
         "Model 49.9% vs market 45.7% for a 4.3 point edge.",
-        "Market activity: 42% of money vs 40% of bets on this side.",
+        "Market activity: 43% of money vs 39% of bets on this side.",
         "Weather: 12 mph, 75F."
       ],
       "context_only_notes": [
@@ -569,7 +633,7 @@
       },
       "sharp_public_context": {
         "data_role": "model_used",
-        "summary": "42% money vs 40% bets"
+        "summary": "43% money vs 39% bets"
       },
       "weather_context": {
         "data_role": "model_used",
@@ -614,7 +678,7 @@
       "selection_logic_note": "Selection logic uses model edge versus market implied probability plus the public price rule. Extra notes below explain the bet but are not separate approval rules.",
       "why_this_bet": [
         "Model 63.7% vs market 59.8% for a 3.9 point edge.",
-        "Market activity: 3% of money vs 12% of bets on this side.",
+        "Market activity: 4% of money vs 12% of bets on this side.",
         "Weather: 13 mph crosswind, 41F. Crosswind conditions can suppress carry, which is generally friendlier to a plus run line."
       ],
       "context_only_notes": [
@@ -633,7 +697,7 @@
       },
       "sharp_public_context": {
         "data_role": "model_used",
-        "summary": "3% money vs 12% bets"
+        "summary": "4% money vs 12% bets"
       },
       "weather_context": {
         "data_role": "model_used",

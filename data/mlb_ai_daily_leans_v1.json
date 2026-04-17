@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T17:33:02.878Z",
+  "generated_at": "2026-04-17T18:33:07.756Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_ranker",
@@ -20,9 +20,9 @@
   "availability_reason": null,
   "slate_summary": {
     "total_rows_scored": 90,
-    "selected_bets": 10,
+    "selected_bets": 11,
     "selected_by_market": {
-      "moneyline": 5,
+      "moneyline": 6,
       "spread": 5
     }
   },
@@ -161,6 +161,39 @@
     },
     {
       "board_date": "2026-04-17",
+      "canonical_game_id": "mlb:287005",
+      "matchup": "San Francisco Giants @ Washington Nationals",
+      "away_team": "San Francisco Giants",
+      "home_team": "Washington Nationals",
+      "bet_label": "San Francisco Giants ML (-149)",
+      "market_type": "moneyline",
+      "side": "away",
+      "line_value": 0,
+      "price_american": -149,
+      "market_probability": 0.598394,
+      "model_probability": 0.655963,
+      "edge": 0.05757,
+      "selection_contract": "edge_gte_0_03_cap_minus_150",
+      "rank_on_slate": 5,
+      "confidence_band": "high",
+      "visibility_tier": "core",
+      "display_sort_bucket": "core_priority",
+      "primary_drivers": [
+        "Market Implied Probability +0.177",
+        "Selected Team Avg Ipouts Last3 +0.176",
+        "Price American Norm +0.143"
+      ],
+      "supporting_context": [
+        "Selected Team Avg Ipouts Last3 +0.176",
+        "Price American Norm +0.143"
+      ],
+      "suggested_units": 1,
+      "explanation_summary": "Moneyline Away at -149 cleared the edge_gte_0_03_cap_minus_150 threshold with model probability 65.6% versus market 59.8%.",
+      "comparator_flags": {},
+      "ev_proxy": 0.096207
+    },
+    {
+      "board_date": "2026-04-17",
       "canonical_game_id": "mlb:287002",
       "matchup": "New York Mets @ Chicago Cubs",
       "away_team": "New York Mets",
@@ -174,7 +207,7 @@
       "model_probability": 0.499146,
       "edge": 0.052718,
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "rank_on_slate": 5,
+      "rank_on_slate": 6,
       "confidence_band": "high",
       "visibility_tier": "core",
       "display_sort_bucket": "core_priority",
@@ -207,7 +240,7 @@
       "model_probability": 0.637271,
       "edge": 0.048794,
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "rank_on_slate": 6,
+      "rank_on_slate": 7,
       "confidence_band": "high",
       "visibility_tier": "core",
       "display_sort_bucket": "core_priority",
@@ -240,7 +273,7 @@
       "model_probability": 0.637271,
       "edge": 0.048794,
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "rank_on_slate": 7,
+      "rank_on_slate": 8,
       "confidence_band": "high",
       "visibility_tier": "core",
       "display_sort_bucket": "core_priority",
@@ -273,7 +306,7 @@
       "model_probability": 0.637271,
       "edge": 0.047107,
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "rank_on_slate": 8,
+      "rank_on_slate": 9,
       "confidence_band": "high",
       "visibility_tier": "core",
       "display_sort_bucket": "core_priority",
@@ -306,7 +339,7 @@
       "model_probability": 0.499146,
       "edge": 0.042525,
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "rank_on_slate": 9,
+      "rank_on_slate": 10,
       "confidence_band": "high",
       "visibility_tier": "core",
       "display_sort_bucket": "core_priority",
@@ -339,7 +372,7 @@
       "model_probability": 0.637271,
       "edge": 0.038878,
       "selection_contract": "edge_gte_0_03_cap_minus_150",
-      "rank_on_slate": 10,
+      "rank_on_slate": 11,
       "confidence_band": "medium",
       "visibility_tier": "exploratory",
       "display_sort_bucket": "exploratory_priority",

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T17:33:02.878Z",
+  "generated_at": "2026-04-17T18:33:07.756Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_ranker",
@@ -239,6 +239,65 @@
           "feature": "opponent_team_avg_ipouts_last3",
           "value": 22,
           "contribution": -0.02524
+        }
+      ],
+      "historical_linkage": {
+        "model_family": "mlb_ai_ranker",
+        "model_version": "v1",
+        "training_window": "2022-2024",
+        "validation_window": "2025"
+      }
+    },
+    {
+      "board_date": "2026-04-17",
+      "canonical_game_id": "mlb:287005",
+      "matchup": "San Francisco Giants @ Washington Nationals",
+      "market_type": "moneyline",
+      "side": "away",
+      "line_value": 0,
+      "price_american": -149,
+      "suggested_units": 1,
+      "edge": 0.05757,
+      "model_probability": 0.655963,
+      "market_probability": 0.598394,
+      "confidence_band": "high",
+      "selection_contract": "edge_gte_0_03_cap_minus_150",
+      "final_score": 0.05757,
+      "context_score": null,
+      "hostile_penalty_multiplier": null,
+      "explanation_summary": "Moneyline Away qualified for the public ranker card because model probability 65.6% exceeded market implied probability 59.8% by 5.8 points.",
+      "top_edge_drivers": [
+        {
+          "feature": "market_implied_probability",
+          "value": 0.598394,
+          "contribution": 0.176984
+        },
+        {
+          "feature": "selected_team_avg_ipouts_last3",
+          "value": 57,
+          "contribution": 0.175705
+        },
+        {
+          "feature": "price_american_norm",
+          "value": -0.745,
+          "contribution": 0.142688
+        }
+      ],
+      "top_context_drivers": [
+        {
+          "feature": "selected_minus_opponent_avg_ipouts_last3",
+          "value": 27,
+          "contribution": 0.129799
+        },
+        {
+          "feature": "opponent_team_avg_ipouts_last3",
+          "value": 30,
+          "contribution": -0.054323
+        },
+        {
+          "feature": "bet_minus_opp_bullpen_ipouts_last3",
+          "value": -17,
+          "contribution": 0.021152
         }
       ],
       "historical_linkage": {
