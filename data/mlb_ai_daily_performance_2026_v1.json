@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T18:33:07.756Z",
+  "generated_at": "2026-04-17T20:01:40.769Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_ranker",
@@ -533,7 +533,7 @@
       "roi": null,
       "cumulative_units": 11.011236,
       "drawdown_to_date": -0.053506,
-      "selection_pct": 0.122222
+      "selection_pct": 0.123596
     }
   ],
   "summary": {
