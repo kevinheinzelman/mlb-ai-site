@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T15:34:17.290Z",
+  "generated_at": "2026-04-17T16:33:45.904Z",
   "operating_date": "2026-04-17",
   "live_policy": "edge_gte_0_03_cap_minus_150",
   "challenger_policy": "edge_gte_0_04_no_cap_challenger",
@@ -15,7 +15,7 @@
     {
       "source_name": "game_market_snapshots",
       "purpose": "Supporting Action snapshot market feed used for fallback market rows and Action feature construction.",
-      "last_updated_at": "2026-04-17T15:00:32.709Z",
+      "last_updated_at": "2026-04-17T16:00:25.051Z",
       "expected_cadence": "daily",
       "latest_available_date": "2026-09-06",
       "status": "green",
@@ -28,7 +28,7 @@
     {
       "source_name": "game_weather_rebuilt",
       "purpose": "Game-level weather context attached to canonical games.",
-      "last_updated_at": "2026-04-17T19:04:09.000Z",
+      "last_updated_at": "2026-04-17T20:04:22.000Z",
       "expected_cadence": "daily",
       "latest_available_date": "2026-04-17",
       "status": "green",
@@ -41,7 +41,7 @@
     {
       "source_name": "mlb_action_features_v3",
       "purpose": "Action/sharp feature table built from snapshot data.",
-      "last_updated_at": "2026-04-17T15:00:19.892Z",
+      "last_updated_at": "2026-04-17T16:00:16.261Z",
       "expected_cadence": "daily",
       "latest_available_date": "2026-04-17",
       "status": "green",
@@ -54,7 +54,7 @@
     {
       "source_name": "mlb_ai_ranker_daily_board_v1",
       "purpose": "Ranked daily board before policy filtering.",
-      "last_updated_at": "2026-04-17T15:30:43.030Z",
+      "last_updated_at": "2026-04-17T16:30:21.110Z",
       "expected_cadence": "daily",
       "latest_available_date": "2026-04-17",
       "status": "green",
@@ -67,7 +67,7 @@
     {
       "source_name": "mlb_ai_ranker_daily_leans_v1",
       "purpose": "Policy-selected ranker bets by board date.",
-      "last_updated_at": "2026-04-17T15:30:43.030Z",
+      "last_updated_at": "2026-04-17T16:30:21.110Z",
       "expected_cadence": "daily",
       "latest_available_date": "2026-04-17",
       "status": "green",
@@ -80,7 +80,7 @@
     {
       "source_name": "mlb_ai_ranker_explanations_v1.json",
       "purpose": "Public explanation layer for selected live bets.",
-      "last_updated_at": "2026-04-17T15:34:17.290Z",
+      "last_updated_at": "2026-04-17T16:33:45.904Z",
       "expected_cadence": "daily",
       "latest_available_date": "2026-04-17",
       "status": "green",
@@ -93,7 +93,7 @@
     {
       "source_name": "mlb_ai_ranker_model_rows_v1",
       "purpose": "Final ranker training/scoring matrix.",
-      "last_updated_at": "2026-04-17T15:04:21.588Z",
+      "last_updated_at": "2026-04-17T16:04:34.708Z",
       "expected_cadence": "daily",
       "latest_available_date": "2026-04-17",
       "status": "green",
@@ -106,7 +106,7 @@
     {
       "source_name": "mlb_ai_ranker_predictions_v1",
       "purpose": "Predicted probabilities and edges for every scored row.",
-      "last_updated_at": "2026-04-17T15:30:43.030Z",
+      "last_updated_at": "2026-04-17T16:30:21.110Z",
       "expected_cadence": "daily",
       "latest_available_date": "2026-04-17",
       "status": "green",
@@ -119,7 +119,7 @@
     {
       "source_name": "mlb_game_results_rebuilt",
       "purpose": "Canonical game results used for training targets and public performance grading.",
-      "last_updated_at": "2026-04-17T15:04:21.588Z",
+      "last_updated_at": "2026-04-17T16:04:34.708Z",
       "expected_cadence": "daily",
       "latest_available_date": "2026-04-16",
       "status": "green",
@@ -132,7 +132,7 @@
     {
       "source_name": "mlb_games_rebuilt",
       "purpose": "Canonical game identity and start-time table.",
-      "last_updated_at": "2026-04-17T15:00:32.709Z",
+      "last_updated_at": "2026-04-17T16:00:25.051Z",
       "expected_cadence": "daily",
       "latest_available_date": "2026-04-17",
       "status": "green",
@@ -145,7 +145,7 @@
     {
       "source_name": "rebuild_mlb_analysis_rows_research_ready_v1",
       "purpose": "Joined research-ready surface attaching Action, weather, baseball, bullpen-role, lineup, and microstructure fields.",
-      "last_updated_at": "2026-04-17T19:30:16.000Z",
+      "last_updated_at": "2026-04-17T20:29:57.000Z",
       "expected_cadence": "daily",
       "latest_available_date": "2026-04-17",
       "status": "green",
@@ -158,7 +158,7 @@
     {
       "source_name": "rebuild_mlb_betting_rows_v1",
       "purpose": "Canonical betting-row surface that defines the boardable market universe.",
-      "last_updated_at": "2026-04-17T15:02:03.000Z",
+      "last_updated_at": "2026-04-17T16:01:39.000Z",
       "expected_cadence": "daily",
       "latest_available_date": "2026-04-17",
       "status": "green",
@@ -171,7 +171,7 @@
     {
       "source_name": "rebuild_mlb_team_baseball_context_v1",
       "purpose": "Baseball context layer including starter/bullpen/statcast aggregates.",
-      "last_updated_at": "2026-04-17T15:04:21.627Z",
+      "last_updated_at": "2026-04-17T16:04:34.746Z",
       "expected_cadence": "daily",
       "latest_available_date": "2026-04-17",
       "status": "green",
