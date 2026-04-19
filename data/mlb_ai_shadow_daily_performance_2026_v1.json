@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T20:01:40.769Z",
+  "generated_at": "2026-04-18T20:15:31.958Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_ranker",
@@ -11,7 +11,7 @@
   },
   "selection_contract": "edge_gte_0_04_no_cap_challenger",
   "season": 2026,
-  "results_through": "2026-04-16",
+  "results_through": "2026-04-17",
   "rows": [
     {
       "board_date": "2026-03-20",
@@ -509,20 +509,38 @@
       "losses": 0,
       "pushes": 0,
       "win_rate": 1,
-      "avg_price": 1.25,
-      "avg_win_price": 1.25,
-      "units": 5.482282,
-      "roi": 1.370571,
-      "cumulative_units": 13.463211,
-      "drawdown_to_date": -0.139426,
+      "avg_price": 0.25,
+      "avg_win_price": 0.25,
+      "units": 5.463514,
+      "roi": 1.365878,
+      "cumulative_units": 13.444443,
+      "drawdown_to_date": -0.158194,
       "selection_pct": 0.071429
     },
     {
       "board_date": "2026-04-17",
+      "bets": 9,
+      "selected_bets": 9,
+      "settled_bets": 9,
+      "pending_bets": 0,
+      "wins": 6,
+      "losses": 3,
+      "pushes": 0,
+      "win_rate": 0.666667,
+      "avg_price": -85.78,
+      "avg_win_price": -179.67,
+      "units": 0.650201,
+      "roi": 0.072245,
+      "cumulative_units": 14.094644,
+      "drawdown_to_date": 0,
+      "selection_pct": 0.118421
+    },
+    {
+      "board_date": "2026-04-18",
       "bets": 0,
-      "selected_bets": 11,
+      "selected_bets": 10,
       "settled_bets": 0,
-      "pending_bets": 11,
+      "pending_bets": 10,
       "wins": 0,
       "losses": 0,
       "pushes": 0,
@@ -531,20 +549,20 @@
       "avg_win_price": null,
       "units": 0,
       "roi": null,
-      "cumulative_units": 13.463211,
-      "drawdown_to_date": -0.139426,
-      "selection_pct": 0.123596
+      "cumulative_units": 14.094644,
+      "drawdown_to_date": 0,
+      "selection_pct": 0.11236
     }
   ],
   "summary": {
-    "bets": 121,
-    "selected_bets": 132,
-    "settled_bets": 121,
-    "pending_bets": 11,
-    "wins": 73,
-    "losses": 48,
+    "bets": 130,
+    "selected_bets": 140,
+    "settled_bets": 130,
+    "pending_bets": 10,
+    "wins": 79,
+    "losses": 51,
     "pushes": 0,
-    "units": 13.463212,
-    "roi": 0.111266
+    "units": 14.094644,
+    "roi": 0.10842
   }
 }

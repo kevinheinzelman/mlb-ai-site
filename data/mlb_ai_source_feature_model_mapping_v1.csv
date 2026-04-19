@@ -1,0 +1,18 @@
+source_name,feeds_feature_tables,feature_tables_list,used_in_live_model,used_in_challenger,used_in_explanations,loaded_but_unused,notes
+game_market_snapshots,yes,mlb_action_features_v3; rebuild_mlb_betting_rows_v1,yes,yes,no,no,Raw snapshot source; not rendered directly in bettor-facing explanations.
+mlb_games_rebuilt,yes,rebuild_mlb_analysis_rows_research_ready_v1,yes,yes,yes,no,Provides canonical matchup identity and start times.
+rebuild_mlb_betting_rows_v1,yes,mlb_ai_ranker_model_rows_v1,yes,yes,yes,no,This is the actual row universe for live and challenger selection.
+mlb_action_features_v3,yes,rebuild_mlb_analysis_rows_research_ready_v1; mlb_ai_ranker_model_rows_v1,yes,yes,yes,no,Sharp/steam/expert/pro-system signals are used. Public bet% and money% are loaded here but not used in the current ranker model.
+game_weather_rebuilt,yes,rebuild_mlb_analysis_rows_research_ready_v1; mlb_ai_ranker_model_rows_v1,yes,yes,yes,no,"Use updated/source_updated_at for trust. Older generated_at reflects source weather history, not current attachment freshness."
+rebuild_mlb_team_baseball_context_v1,yes,rebuild_mlb_analysis_rows_research_ready_v1; mlb_ai_ranker_model_rows_v1,yes,yes,yes,no,Only a subset of loaded baseball fields is currently modeled; richer role/form fields remain context-only or unused.
+mlb_statsapi_gamepk_historical_v1,no,,no,no,no,yes,"Important for historical pitch-event ingestion, but not part of the live/challenger ranker decision path."
+rebuild_mlb_analysis_rows_research_ready_v1,yes,mlb_ai_ranker_model_rows_v1; mlb_ai_ranker_explanations_v1.json,yes,yes,yes,no,This surface contains both used features and extra loaded context that is not yet part of the ranker model.
+mlb_game_results_rebuilt,no,,yes,yes,no,no,"Not part of same-day pick selection, but required for training targets and public record grading."
+mlb_ai_ranker_model_rows_v1,no,,yes,yes,no,no,This table proves exactly which features the ranker model actually sees.
+mlb_ai_ranker_predictions_v1,no,,yes,yes,yes,no,"Live and challenger differ after this table at the policy layer, not at the model layer."
+mlb_ai_ranker_daily_board_v1,no,,yes,yes,no,no,Board-ranking surface before live/challenger policy cuts are applied.
+mlb_ai_ranker_daily_leans_v1,no,,yes,yes,yes,no,This is the table that turns model outputs into official live and challenger cards.
+mlb_ai_daily_leans_v1.json,no,,yes,no,yes,no,Official bettor-facing live card.
+mlb_ai_ranker_explanations_v1.json,no,,no,no,yes,no,Bettor-readable explanation artifact. Explains selection; does not drive it.
+mlb_ai_reporting_v1.json,no,,no,no,no,no,Official public record summary.
+mlb_ai_shadow_reporting_v1.json,no,,no,no,no,no,Separate challenger record. Not part of the official public card.

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T20:01:40.769Z",
+  "generated_at": "2026-04-18T20:15:31.958Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_ranker",
@@ -12,7 +12,7 @@
   "selection_contract": "edge_gte_0_03_cap_minus_150",
   "source_coverage": {
     "historical_window": "2022-2025",
-    "results_through": "2026-04-16"
+    "results_through": "2026-04-17"
   },
   "active_policy_definition": {
     "policy_name": "edge_gte_0_03_cap_minus_150",
@@ -30,7 +30,14 @@
     "eligibility_contract": "quality_filtered_market_surface",
     "historical_window": "2022-2025",
     "live_window": "2026",
-    "results_through": "2026-04-16"
+    "results_through": "2026-04-17",
+    "public_record_source": "published_public_picks_ledger_overlay_else_recompute_fallback",
+    "public_record_snapshot_path": "C:\\Users\\kevin\\Documents\\Action Exporter MLB Rebuild\\data\\public_record_snapshots\\mlb_ai_published_public_picks_ledger_v1.json",
+    "public_record_snapshot_dates": [
+      "2026-04-15",
+      "2026-04-16",
+      "2026-04-17"
+    ]
   },
   "active_policy_historical_summary": {
     "bets": 4303,
@@ -45,18 +52,18 @@
     "roi": 0.034413
   },
   "active_policy_live_summary": {
-    "bets": 141,
-    "settled_bets": 141,
+    "bets": 145,
+    "settled_bets": 145,
     "selected_bets": 152,
-    "wins": 80,
+    "wins": 84,
     "losses": 61,
     "pushes": 0,
-    "win_rate": 0.567376,
-    "hit_rate": 0.567376,
-    "units": 11.011235,
-    "roi": 0.078094
+    "win_rate": 0.57931,
+    "hit_rate": 0.57931,
+    "units": 12.67242,
+    "roi": 0.087396
   },
-  "active_board_date": "2026-04-17",
+  "active_board_date": "2026-04-18",
   "site_surface": {
     "system_key": "ranker_system",
     "label": "Ranker System",
@@ -66,7 +73,7 @@
     "model_version": "v1",
     "threshold": "edge_gte_0_03_cap_minus_150",
     "description": "Quality-filtered public ranker surface using edge >= 0.03 while excluding prices below -150.",
-    "board_date": "2026-04-17"
+    "board_date": "2026-04-18"
   },
   "retained_internal_systems": [
     {
@@ -303,6 +310,7 @@
   "notes": [
     "Ranker System is the current primary public site surface.",
     "Official public picks use edge >= 0.03 on the validated quality-filtered market surface and exclude prices below -150.",
+    "Published public picks ledger overrides mutable recompute for 3 2026 date(s): 2026-04-15, 2026-04-16, 2026-04-17.",
     "The challenger .04 no-cap policy is tracked separately and is not the official public betting record.",
     "Totals / Unders System remains preserved internally but is not surfaced on the public site in this contract."
   ]

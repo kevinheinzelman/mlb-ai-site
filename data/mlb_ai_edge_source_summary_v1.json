@@ -1,0 +1,242 @@
+{
+  "generated_at": "2026-04-18T20:15:31.958Z",
+  "live_policy": "edge_gte_0_03_cap_minus_150",
+  "challenger_policy": "edge_gte_0_04_no_cap_challenger",
+  "primary_edge_sources": [
+    {
+      "family": "market_implied_probability",
+      "feature_count": 6,
+      "features": [
+        "market_implied_probability",
+        "price_american_norm",
+        "line_value",
+        "is_over_side",
+        "selected_is_home",
+        "abs_line_value"
+      ],
+      "coverage_pct": 1,
+      "used_in_model": true,
+      "top_driver_hits_all_predictions": 175530,
+      "top_driver_hits_selected_public": 17,
+      "contribution_share_all_predictions": 0.744028,
+      "contribution_share_selected_public": 0.458596,
+      "evidence_of_contribution": true,
+      "removal_impact_proxy": "would change some selected-bet outputs",
+      "signal_strength": "high"
+    },
+    {
+      "family": "action_sharp_public",
+      "feature_count": 6,
+      "features": [
+        "sharp_count",
+        "steam_move_count",
+        "reverse_line_move_count",
+        "expert_count",
+        "opposing_expert_count",
+        "pro_system_count"
+      ],
+      "coverage_pct": 1,
+      "used_in_model": true,
+      "top_driver_hits_all_predictions": 46507,
+      "top_driver_hits_selected_public": 0,
+      "contribution_share_all_predictions": 0.023428,
+      "contribution_share_selected_public": 0,
+      "evidence_of_contribution": true,
+      "removal_impact_proxy": "no observed selected-bet driver presence in current outputs",
+      "signal_strength": "none"
+    },
+    {
+      "family": "weather",
+      "feature_count": 7,
+      "features": [
+        "temperature",
+        "wind_speed",
+        "precipitation_probability",
+        "is_wind_out",
+        "is_wind_in",
+        "is_crosswind",
+        "has_weather"
+      ],
+      "coverage_pct": 0.856076,
+      "used_in_model": true,
+      "top_driver_hits_all_predictions": 3112,
+      "top_driver_hits_selected_public": 0,
+      "contribution_share_all_predictions": 0.001139,
+      "contribution_share_selected_public": 0,
+      "evidence_of_contribution": true,
+      "removal_impact_proxy": "no observed selected-bet driver presence in current outputs",
+      "signal_strength": "none"
+    },
+    {
+      "family": "market_microstructure",
+      "feature_count": 4,
+      "features": [
+        "market_micro_price_range",
+        "market_micro_price_stddev",
+        "market_micro_move_count",
+        "market_micro_bookmaker_count"
+      ],
+      "coverage_pct": 0.99882,
+      "used_in_model": true,
+      "top_driver_hits_all_predictions": 113338,
+      "top_driver_hits_selected_public": 14,
+      "contribution_share_all_predictions": 0.08776,
+      "contribution_share_selected_public": 0.043522,
+      "evidence_of_contribution": true,
+      "removal_impact_proxy": "would change some selected-bet outputs",
+      "signal_strength": "low"
+    }
+  ],
+  "weaker_or_sparse_sources": [
+    {
+      "family": "pitcher",
+      "feature_count": 21,
+      "features": [
+        "away_team_avg_ipouts_last3",
+        "home_team_avg_ipouts_last3",
+        "away_team_er_per_27_outs_last3",
+        "home_team_er_per_27_outs_last3",
+        "away_team_delta_velo",
+        "home_team_delta_velo",
+        "away_team_statcast_available_flag",
+        "home_team_statcast_available_flag",
+        "away_team_pitch_mix_change_score_last3",
+        "home_team_pitch_mix_change_score_last3",
+        "selected_team_avg_ipouts_last3",
+        "opponent_team_avg_ipouts_last3",
+        "selected_minus_opponent_avg_ipouts_last3",
+        "selected_team_er_per_27_outs_last3",
+        "opponent_team_er_per_27_outs_last3",
+        "selected_minus_opponent_er_per_27_outs_last3",
+        "selected_team_delta_velo",
+        "opponent_team_delta_velo",
+        "selected_minus_opponent_delta_velo",
+        "selected_team_statcast_available_flag",
+        "opponent_team_statcast_available_flag"
+      ],
+      "coverage_pct": 0.981604,
+      "used_in_model": true,
+      "top_driver_hits_all_predictions": 79220,
+      "top_driver_hits_selected_public": 19,
+      "contribution_share_all_predictions": 0.079927,
+      "contribution_share_selected_public": 0.479052,
+      "evidence_of_contribution": true,
+      "removal_impact_proxy": "would change some selected-bet outputs",
+      "signal_strength": "high"
+    },
+    {
+      "family": "bullpen",
+      "feature_count": 12,
+      "features": [
+        "away_team_bullpen_ipouts_last3",
+        "home_team_bullpen_ipouts_last3",
+        "total_bullpen_ipouts_last3",
+        "away_team_bullpen_er_last3",
+        "home_team_bullpen_er_last3",
+        "bullpen_role_context_complete_flag",
+        "bet_team_bullpen_ipouts_last3",
+        "opp_team_bullpen_ipouts_last3",
+        "bet_minus_opp_bullpen_ipouts_last3",
+        "bet_team_bullpen_er_last3",
+        "opp_team_bullpen_er_last3",
+        "bet_minus_opp_bullpen_er_last3"
+      ],
+      "coverage_pct": 0.888234,
+      "used_in_model": true,
+      "top_driver_hits_all_predictions": 70184,
+      "top_driver_hits_selected_public": 6,
+      "contribution_share_all_predictions": 0.063605,
+      "contribution_share_selected_public": 0.01883,
+      "evidence_of_contribution": true,
+      "removal_impact_proxy": "would change some selected-bet outputs",
+      "signal_strength": "low"
+    },
+    {
+      "family": "matchup_team_context",
+      "feature_count": 1,
+      "features": [
+        "lineup_context_complete_flag"
+      ],
+      "coverage_pct": 1,
+      "used_in_model": true,
+      "top_driver_hits_all_predictions": 43,
+      "top_driver_hits_selected_public": 0,
+      "contribution_share_all_predictions": 0.000021,
+      "contribution_share_selected_public": 0,
+      "evidence_of_contribution": true,
+      "removal_impact_proxy": "no observed selected-bet driver presence in current outputs",
+      "signal_strength": "none"
+    }
+  ],
+  "loaded_but_unused": [
+    {
+      "family": "matchup_form_buckets",
+      "feature_count": 2,
+      "features": [
+        "away_team_form_trend_bucket",
+        "home_team_form_trend_bucket"
+      ],
+      "coverage_pct": null,
+      "used_in_model": false,
+      "top_driver_hits_all_predictions": 0,
+      "top_driver_hits_selected_public": 0,
+      "contribution_share_all_predictions": 0,
+      "contribution_share_selected_public": 0,
+      "evidence_of_contribution": false,
+      "removal_impact_proxy": "loaded in research-ready surface only",
+      "signal_strength": "none"
+    },
+    {
+      "family": "action_public_money_splits",
+      "feature_count": 3,
+      "features": [
+        "public_bets_pct",
+        "public_money_pct",
+        "money_minus_bets_pct"
+      ],
+      "coverage_pct": null,
+      "used_in_model": false,
+      "top_driver_hits_all_predictions": 0,
+      "top_driver_hits_selected_public": 0,
+      "contribution_share_all_predictions": 0,
+      "contribution_share_selected_public": 0,
+      "evidence_of_contribution": false,
+      "removal_impact_proxy": "loaded in action features but not copied into ranker model rows",
+      "signal_strength": "none"
+    },
+    {
+      "family": "bullpen_role_detail",
+      "feature_count": 4,
+      "features": [
+        "away_bullpen_availability_bucket",
+        "home_bullpen_availability_bucket",
+        "away_bullpen_role_quality_score",
+        "home_bullpen_role_quality_score"
+      ],
+      "coverage_pct": null,
+      "used_in_model": false,
+      "top_driver_hits_all_predictions": 0,
+      "top_driver_hits_selected_public": 0,
+      "contribution_share_all_predictions": 0,
+      "contribution_share_selected_public": 0,
+      "evidence_of_contribution": false,
+      "removal_impact_proxy": "available for explanation/context only in current public layer",
+      "signal_strength": "none"
+    }
+  ],
+  "explicit_yes_no": {
+    "weather_used_in_model": true,
+    "bullpen_used_in_model": true,
+    "matchup_used_in_model": false,
+    "action_sharp_used_in_model": true,
+    "public_money_split_used_in_model": false,
+    "pitcher_used_in_model": true
+  },
+  "notes": [
+    "Live and challenger use the same underlying ranker model outputs; the difference is the policy cut.",
+    "Weather is truly modeled.",
+    "Bullpen and pitcher proxies are modeled, but many richer baseball fields are loaded without being part of the current model.",
+    "Action sharp/steam/expert/pro-system signals are modeled. Public bet% / money% are loaded but not used.",
+    "Matchup form buckets are loaded but not used in the current ranker model."
+  ]
+}

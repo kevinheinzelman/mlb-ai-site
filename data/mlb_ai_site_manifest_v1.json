@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T20:01:40.769Z",
+  "generated_at": "2026-04-18T20:15:31.958Z",
   "artifact_version": "v1",
   "site_system_contract": {
     "primary_system": {
@@ -11,12 +11,12 @@
       "model_version": "v1",
       "threshold": "edge_gte_0_03_cap_minus_150",
       "description": "Quality-filtered public ranker surface using edge >= 0.03 while excluding prices below -150.",
-      "board_date": "2026-04-17",
+      "board_date": "2026-04-18",
       "threshold_summary": {
         "historical_roi": 0.034413,
         "historical_units": 148.080475,
-        "settled_2026_roi": 0.078094,
-        "settled_2026_units": 11.011235
+        "settled_2026_roi": 0.073057,
+        "settled_2026_units": 10.812464
       }
     },
     "challenger_system": {
@@ -28,12 +28,12 @@
       "model_version": "v1",
       "threshold": "edge_gte_0_04_no_cap_challenger",
       "description": "Separate challenger lane using edge >= 0.04 with no additional favorite cap. Not the official public betting record.",
-      "board_date": "2026-04-17",
+      "board_date": "2026-04-18",
       "threshold_summary": {
         "historical_roi": 0.060754,
         "historical_units": 242.225088,
-        "settled_2026_roi": 0.111266,
-        "settled_2026_units": 13.463212
+        "settled_2026_roi": 0.10842,
+        "settled_2026_units": 14.094644
       }
     },
     "internal_research_lanes": [

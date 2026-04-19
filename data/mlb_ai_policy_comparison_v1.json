@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T20:01:40.769Z",
+  "generated_at": "2026-04-18T20:15:31.958Z",
   "artifact_version": "v1",
   "site_surface": {
     "system_key": "ranker_system",
@@ -58,9 +58,9 @@
       "max_drawdown": -64.344355
     },
     "ytd_2026_summary": {
-      "bets": 141,
-      "units": 11.011235,
-      "roi": 0.078094
+      "bets": 148,
+      "units": 10.812464,
+      "roi": 0.073057
     }
   },
   "challenger_policy": {
@@ -76,9 +76,9 @@
       "max_drawdown": -57.977841
     },
     "ytd_2026_summary": {
-      "bets": 121,
-      "units": 13.463212,
-      "roi": 0.111266
+      "bets": 130,
+      "units": 14.094644,
+      "roi": 0.10842
     }
   },
   "promotion_rule": "Challenger policy cannot become live without explicit forward evidence, reconciliation, and doc updates.",

@@ -1,0 +1,146 @@
+{
+  "generated_at": "2026-04-18T20:15:31.958Z",
+  "operating_date": "2026-04-18",
+  "rows": [
+    {
+      "source_name": "game_market_snapshots",
+      "does_refresh_daily": true,
+      "needs_daily_refresh": true,
+      "latest_available_date": "2026-09-06",
+      "last_updated_at": "2026-04-18T19:43:29.075Z",
+      "health_status": "healthy",
+      "metadata_missing": false,
+      "notes": "Raw snapshot source; not rendered directly in bettor-facing explanations."
+    },
+    {
+      "source_name": "mlb_games_rebuilt",
+      "does_refresh_daily": true,
+      "needs_daily_refresh": true,
+      "latest_available_date": "2026-04-18",
+      "last_updated_at": "2026-04-18T19:43:29.075Z",
+      "health_status": "healthy",
+      "metadata_missing": false,
+      "notes": "Provides canonical matchup identity and start times."
+    },
+    {
+      "source_name": "rebuild_mlb_betting_rows_v1",
+      "does_refresh_daily": true,
+      "needs_daily_refresh": true,
+      "latest_available_date": "2026-04-18",
+      "last_updated_at": "2026-04-18T19:44:49.000Z",
+      "health_status": "healthy",
+      "metadata_missing": false,
+      "notes": "This is the actual row universe for live and challenger selection."
+    },
+    {
+      "source_name": "mlb_action_features_v3",
+      "does_refresh_daily": true,
+      "needs_daily_refresh": true,
+      "latest_available_date": "2026-04-18",
+      "last_updated_at": "2026-04-18T19:43:20.744Z",
+      "health_status": "healthy",
+      "metadata_missing": false,
+      "notes": "Sharp/steam/expert/pro-system signals are used. Public bet% and money% are loaded here but not used in the current ranker model."
+    },
+    {
+      "source_name": "game_weather_rebuilt",
+      "does_refresh_daily": true,
+      "needs_daily_refresh": true,
+      "latest_available_date": "2026-04-18",
+      "last_updated_at": "2026-04-18T23:47:07.000Z",
+      "health_status": "healthy",
+      "metadata_missing": false,
+      "notes": "Use updated/source_updated_at for trust. Older generated_at reflects source weather history, not current attachment freshness."
+    },
+    {
+      "source_name": "rebuild_mlb_team_baseball_context_v1",
+      "does_refresh_daily": true,
+      "needs_daily_refresh": true,
+      "latest_available_date": "2026-04-18",
+      "last_updated_at": "2026-04-18T19:47:21.550Z",
+      "health_status": "healthy",
+      "metadata_missing": false,
+      "notes": "Only a subset of loaded baseball fields is currently modeled; richer role/form fields remain context-only or unused."
+    },
+    {
+      "source_name": "rebuild_mlb_analysis_rows_research_ready_v1",
+      "does_refresh_daily": true,
+      "needs_daily_refresh": true,
+      "latest_available_date": "2026-04-18",
+      "last_updated_at": "2026-04-19T00:12:13.000Z",
+      "health_status": "healthy",
+      "metadata_missing": false,
+      "notes": "This surface contains both used features and extra loaded context that is not yet part of the ranker model."
+    },
+    {
+      "source_name": "mlb_game_results_rebuilt",
+      "does_refresh_daily": true,
+      "needs_daily_refresh": true,
+      "latest_available_date": "2026-04-17",
+      "last_updated_at": "2026-04-18T19:47:21.515Z",
+      "health_status": "healthy",
+      "metadata_missing": false,
+      "notes": "Not part of same-day pick selection, but required for training targets and public record grading."
+    },
+    {
+      "source_name": "mlb_ai_ranker_model_rows_v1",
+      "does_refresh_daily": true,
+      "needs_daily_refresh": true,
+      "latest_available_date": "2026-04-18",
+      "last_updated_at": "2026-04-18T19:47:21.515Z",
+      "health_status": "healthy",
+      "metadata_missing": false,
+      "notes": "This table proves exactly which features the ranker model actually sees."
+    },
+    {
+      "source_name": "mlb_ai_ranker_predictions_v1",
+      "does_refresh_daily": true,
+      "needs_daily_refresh": true,
+      "latest_available_date": "2026-04-18",
+      "last_updated_at": "2026-04-18T20:12:20.251Z",
+      "health_status": "healthy",
+      "metadata_missing": false,
+      "notes": "Live and challenger differ after this table at the policy layer, not at the model layer."
+    },
+    {
+      "source_name": "mlb_ai_ranker_daily_board_v1",
+      "does_refresh_daily": true,
+      "needs_daily_refresh": true,
+      "latest_available_date": "2026-04-18",
+      "last_updated_at": "2026-04-18T20:12:20.251Z",
+      "health_status": "healthy",
+      "metadata_missing": false,
+      "notes": "Board-ranking surface before live/challenger policy cuts are applied."
+    },
+    {
+      "source_name": "mlb_ai_ranker_daily_leans_v1",
+      "does_refresh_daily": true,
+      "needs_daily_refresh": true,
+      "latest_available_date": "2026-04-18",
+      "last_updated_at": "2026-04-18T20:12:20.251Z",
+      "health_status": "healthy",
+      "metadata_missing": false,
+      "notes": "This is the table that turns model outputs into official live and challenger cards."
+    },
+    {
+      "source_name": "mlb_ai_daily_leans_v1.json",
+      "does_refresh_daily": true,
+      "needs_daily_refresh": true,
+      "latest_available_date": "2026-04-18",
+      "last_updated_at": "2026-04-18T20:15:31.958Z",
+      "health_status": "healthy",
+      "metadata_missing": false,
+      "notes": "Official bettor-facing live card."
+    },
+    {
+      "source_name": "mlb_ai_ranker_explanations_v1.json",
+      "does_refresh_daily": true,
+      "needs_daily_refresh": false,
+      "latest_available_date": "2026-04-18",
+      "last_updated_at": "2026-04-18T20:15:31.958Z",
+      "health_status": "healthy",
+      "metadata_missing": false,
+      "notes": "Bettor-readable explanation artifact. Explains selection; does not drive it."
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T20:01:40.769Z",
+  "generated_at": "2026-04-18T20:15:31.958Z",
   "artifact_version": "v1",
   "active_engine": {
     "engine_family": "mlb_ai_ranker",
@@ -9,17 +9,17 @@
     "model_lock_status": "ranker_quality_filtered_cap_primary",
     "trusted_for_live_betting": false
   },
-  "requested_board_date": "2026-04-17",
-  "active_board_date": "2026-04-17",
+  "requested_board_date": "2026-04-18",
+  "active_board_date": "2026-04-18",
   "freshness": {
-    "generated_at": "2026-04-17T20:01:40.769Z",
-    "board_date": "2026-04-17",
-    "latest_canonical_board_date": "2026-04-17",
-    "current_source_scores_generated_at": "2026-04-17T19:58:01.657Z",
-    "historical_source_audit_generated_at": "2026-04-17T20:01:40.769Z"
+    "generated_at": "2026-04-18T20:15:31.958Z",
+    "board_date": "2026-04-18",
+    "latest_canonical_board_date": "2026-04-18",
+    "current_source_scores_generated_at": "2026-04-18T20:12:20.251Z",
+    "historical_source_audit_generated_at": "2026-04-18T20:15:31.958Z"
   },
   "source_date_coverage": {
-    "current_window_end": "2026-04-17",
+    "current_window_end": "2026-04-18",
     "historical_start": "2022-04-07",
     "historical_end": "2025-09-30"
   },
@@ -33,12 +33,12 @@
       "model_version": "v1",
       "threshold": "edge_gte_0_03_cap_minus_150",
       "description": "Quality-filtered public ranker surface using edge >= 0.03 while excluding prices below -150.",
-      "board_date": "2026-04-17",
+      "board_date": "2026-04-18",
       "threshold_summary": {
         "historical_roi": 0.034413,
         "historical_units": 148.080475,
-        "settled_2026_roi": 0.078094,
-        "settled_2026_units": 11.011235
+        "settled_2026_roi": 0.073057,
+        "settled_2026_units": 10.812464
       }
     },
     "challenger_system": {
@@ -50,12 +50,12 @@
       "model_version": "v1",
       "threshold": "edge_gte_0_04_no_cap_challenger",
       "description": "Separate challenger lane using edge >= 0.04 with no additional favorite cap. Not the official public betting record.",
-      "board_date": "2026-04-17",
+      "board_date": "2026-04-18",
       "threshold_summary": {
         "historical_roi": 0.060754,
         "historical_units": 242.225088,
-        "settled_2026_roi": 0.111266,
-        "settled_2026_units": 13.463212
+        "settled_2026_roi": 0.10842,
+        "settled_2026_units": 14.094644
       }
     },
     "internal_research_lanes": [

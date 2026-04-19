@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T20:01:40.769Z",
+  "generated_at": "2026-04-18T20:15:31.958Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_ranker",
@@ -10,7 +10,7 @@
     "trusted_for_live_betting": false
   },
   "selection_contract": "edge_gte_0_03_cap_minus_150",
-  "board_date": "2026-04-17",
+  "board_date": "2026-04-18",
   "display_units": {
     "model_weather": {
       "temperature_unit": "celsius",
@@ -23,222 +23,30 @@
   },
   "rows": [
     {
-      "board_date": "2026-04-17",
-      "canonical_game_id": "mlb:287013",
+      "board_date": "2026-04-18",
+      "canonical_game_id": "mlb:287081",
       "market_type": "moneyline",
       "side": "home",
-      "bet_label": "Los Angeles Angels ML (-131)",
-      "matchup": "San Diego Padres @ Los Angeles Angels",
-      "start_time_utc": "2026-04-18T01:39:00Z",
-      "start_time_et": "Apr 17, 9:39 PM",
-      "first_pitch_et": "9:39 PM",
-      "model_probability": 0.823529,
-      "market_implied_probability": 0.5671,
-      "edge": 0.25643,
-      "selection_logic_note": "Selection logic uses model edge versus market implied probability plus the public price rule. Extra notes below explain the bet but are not separate approval rules.",
-      "why_this_bet": [
-        "Model 82.4% vs market 56.7% for a 25.6 point edge.",
-        "Market activity: 66% of money vs 62% of bets on this side.",
-        "Weather: 6 mph wind out, 75F."
-      ],
-      "context_only_notes": [
-        "Context only: Home side bullpen context suggests bullpen availability looks thin, bullpen quality score 5.4."
-      ],
-      "market_context": {
-        "summary": "Model 82.4% vs market 56.7%.",
-        "edge_text": "25.6 point edge",
-        "current_price": "-131"
-      },
-      "line_movement": {
-        "summary": "Additional context not available in current model output",
-        "missing": [
-          "line movement"
-        ]
-      },
-      "sharp_public_context": {
-        "data_role": "model_used",
-        "summary": "66% money vs 62% bets"
-      },
-      "weather_context": {
-        "data_role": "model_used",
-        "wind_direction": "wind out",
-        "wind_speed_mph": 6.462,
-        "temperature_f": 74.66,
-        "wind_unit": "mph",
-        "temperature_unit": "fahrenheit",
-        "source_wind_unit": "km/h",
-        "source_temperature_unit": "celsius",
-        "summary": "Weather: 6 mph wind out, 75F."
-      },
-      "pitching_bullpen_context": {
-        "data_role": "context_only",
-        "summary": "Pitching/bullpen context available"
-      },
-      "matchup_context": {
-        "data_role": "missing",
-        "summary": "Additional context not available in current model output",
-        "missing": [
-          "matchup context"
-        ]
-      },
-      "missing_context": [
-        "line movement",
-        "matchup context"
-      ]
-    },
-    {
-      "board_date": "2026-04-17",
-      "canonical_game_id": "mlb:287008",
-      "market_type": "moneyline",
-      "side": "home",
-      "bet_label": "Miami Marlins ML (-112)",
-      "matchup": "Milwaukee Brewers @ Miami Marlins",
-      "start_time_utc": "2026-04-17T23:11:00Z",
-      "start_time_et": "Apr 17, 7:11 PM",
-      "first_pitch_et": "7:11 PM",
-      "model_probability": 0.655963,
-      "market_implied_probability": 0.528302,
-      "edge": 0.127661,
-      "selection_logic_note": "Selection logic uses model edge versus market implied probability plus the public price rule. Extra notes below explain the bet but are not separate approval rules.",
-      "why_this_bet": [
-        "Model 65.6% vs market 52.8% for a 12.8 point edge.",
-        "Market activity: 44% of money vs 38% of bets on this side.",
-        "Weather: 9 mph, 78F."
-      ],
-      "context_only_notes": [
-        "Context only: Home side bullpen context suggests bullpen availability looks thin, bullpen quality score 3.9."
-      ],
-      "market_context": {
-        "summary": "Model 65.6% vs market 52.8%.",
-        "edge_text": "12.8 point edge",
-        "current_price": "-112"
-      },
-      "line_movement": {
-        "summary": "Additional context not available in current model output",
-        "missing": [
-          "line movement"
-        ]
-      },
-      "sharp_public_context": {
-        "data_role": "model_used",
-        "summary": "44% money vs 38% bets"
-      },
-      "weather_context": {
-        "data_role": "model_used",
-        "wind_direction": null,
-        "wind_speed_mph": 8.637,
-        "temperature_f": 77.72,
-        "wind_unit": "mph",
-        "temperature_unit": "fahrenheit",
-        "source_wind_unit": "km/h",
-        "source_temperature_unit": "celsius",
-        "summary": "Weather: 9 mph, 78F."
-      },
-      "pitching_bullpen_context": {
-        "data_role": "context_only",
-        "summary": "Pitching/bullpen context available"
-      },
-      "matchup_context": {
-        "data_role": "missing",
-        "summary": "Additional context not available in current model output",
-        "missing": [
-          "matchup context"
-        ]
-      },
-      "missing_context": [
-        "line movement",
-        "matchup context"
-      ]
-    },
-    {
-      "board_date": "2026-04-17",
-      "canonical_game_id": "mlb:287013",
-      "market_type": "spread",
-      "side": "home",
-      "bet_label": "Los Angeles Angels +1.5 (+149)",
-      "matchup": "San Diego Padres @ Los Angeles Angels",
-      "start_time_utc": "2026-04-18T01:39:00Z",
-      "start_time_et": "Apr 17, 9:39 PM",
-      "first_pitch_et": "9:39 PM",
-      "model_probability": 0.506494,
-      "market_implied_probability": 0.401606,
-      "edge": 0.104887,
-      "selection_logic_note": "Selection logic uses model edge versus market implied probability plus the public price rule. Extra notes below explain the bet but are not separate approval rules.",
-      "why_this_bet": [
-        "Model 50.6% vs market 40.2% for a 10.5 point edge.",
-        "Market activity: 89% of money vs 84% of bets on this side.",
-        "Weather: 6 mph wind out, 75F."
-      ],
-      "context_only_notes": [
-        "Context only: Home side bullpen context suggests bullpen availability looks thin, bullpen quality score 5.4."
-      ],
-      "market_context": {
-        "summary": "Model 50.6% vs market 40.2%.",
-        "edge_text": "10.5 point edge",
-        "current_price": "+149"
-      },
-      "line_movement": {
-        "summary": "Additional context not available in current model output",
-        "missing": [
-          "line movement"
-        ]
-      },
-      "sharp_public_context": {
-        "data_role": "model_used",
-        "summary": "89% money vs 84% bets"
-      },
-      "weather_context": {
-        "data_role": "model_used",
-        "wind_direction": "wind out",
-        "wind_speed_mph": 6.462,
-        "temperature_f": 74.66,
-        "wind_unit": "mph",
-        "temperature_unit": "fahrenheit",
-        "source_wind_unit": "km/h",
-        "source_temperature_unit": "celsius",
-        "summary": "Weather: 6 mph wind out, 75F."
-      },
-      "pitching_bullpen_context": {
-        "data_role": "context_only",
-        "summary": "Pitching/bullpen context available"
-      },
-      "matchup_context": {
-        "data_role": "missing",
-        "summary": "Additional context not available in current model output",
-        "missing": [
-          "matchup context"
-        ]
-      },
-      "missing_context": [
-        "line movement",
-        "matchup context"
-      ]
-    },
-    {
-      "board_date": "2026-04-17",
-      "canonical_game_id": "mlb:287014",
-      "market_type": "moneyline",
-      "side": "home",
-      "bet_label": "Arizona Diamondbacks ML (-136)",
-      "matchup": "Toronto Blue Jays @ Arizona Diamondbacks",
-      "start_time_utc": "2026-04-18T01:41:00Z",
-      "start_time_et": "Apr 17, 9:41 PM",
-      "first_pitch_et": "9:41 PM",
-      "model_probability": 0.672131,
+      "bet_label": "Seattle Mariners ML (-136)",
+      "matchup": "Texas Rangers @ Seattle Mariners",
+      "start_time_utc": "2026-04-18T23:16:00Z",
+      "start_time_et": "Apr 18, 7:16 PM",
+      "first_pitch_et": "7:16 PM",
+      "model_probability": 0.9999,
       "market_implied_probability": 0.576271,
-      "edge": 0.09586,
+      "edge": 0.423629,
       "selection_logic_note": "Selection logic uses model edge versus market implied probability plus the public price rule. Extra notes below explain the bet but are not separate approval rules.",
       "why_this_bet": [
-        "Model 67.2% vs market 57.6% for a 9.6 point edge.",
-        "Market activity: 2 sharp signals, 2 reverse-line moves, 86% of money vs 79% of bets on this side.",
-        "Weather: 6 mph, 84F."
+        "Model 100.0% vs market 57.6% for a 42.4 point edge.",
+        "Market activity: 1 sharp signals, 1 steam moves, 37% of money vs 55% of bets on this side.",
+        "Weather: 5 mph, 61F."
       ],
       "context_only_notes": [
-        "Context only: Home side bullpen context suggests bullpen availability looks thin, bullpen quality score 2.5."
+        "Context only: Home side bullpen context suggests bullpen availability looks thin, bullpen quality score 2.3."
       ],
       "market_context": {
-        "summary": "Model 67.2% vs market 57.6%.",
-        "edge_text": "9.6 point edge",
+        "summary": "Model 100.0% vs market 57.6%.",
+        "edge_text": "42.4 point edge",
         "current_price": "-136"
       },
       "line_movement": {
@@ -249,18 +57,18 @@
       },
       "sharp_public_context": {
         "data_role": "model_used",
-        "summary": "2 sharp signals, 2 reverse-line moves, 86% money vs 79% bets"
+        "summary": "1 sharp signals, 1 steam moves, 37% money vs 55% bets"
       },
       "weather_context": {
         "data_role": "model_used",
         "wind_direction": null,
-        "wind_speed_mph": 6.462,
-        "temperature_f": 83.84,
+        "wind_speed_mph": 5.344,
+        "temperature_f": 61.34,
         "wind_unit": "mph",
         "temperature_unit": "fahrenheit",
         "source_wind_unit": "km/h",
         "source_temperature_unit": "celsius",
-        "summary": "Weather: 6 mph, 84F."
+        "summary": "Weather: 5 mph, 61F."
       },
       "pitching_bullpen_context": {
         "data_role": "context_only",
@@ -279,31 +87,95 @@
       ]
     },
     {
-      "board_date": "2026-04-17",
-      "canonical_game_id": "mlb:287014",
+      "board_date": "2026-04-18",
+      "canonical_game_id": "mlb:287078",
+      "market_type": "moneyline",
+      "side": "home",
+      "bet_label": "Cleveland Guardians ML (-136)",
+      "matchup": "Baltimore Orioles @ Cleveland Guardians",
+      "start_time_utc": "2026-04-18T22:11:00Z",
+      "start_time_et": "Apr 18, 6:11 PM",
+      "first_pitch_et": "6:11 PM",
+      "model_probability": 0.655963,
+      "market_implied_probability": 0.576271,
+      "edge": 0.079692,
+      "selection_logic_note": "Selection logic uses model edge versus market implied probability plus the public price rule. Extra notes below explain the bet but are not separate approval rules.",
+      "why_this_bet": [
+        "Model 65.6% vs market 57.6% for a 8.0 point edge.",
+        "Market activity: 82% of money vs 76% of bets on this side.",
+        "Weather: 15 mph crosswind, 47F."
+      ],
+      "context_only_notes": [
+        "Context only: Home side bullpen context suggests bullpen availability looks thin, bullpen quality score 4.8."
+      ],
+      "market_context": {
+        "summary": "Model 65.6% vs market 57.6%.",
+        "edge_text": "8.0 point edge",
+        "current_price": "-136"
+      },
+      "line_movement": {
+        "summary": "Additional context not available in current model output",
+        "missing": [
+          "line movement"
+        ]
+      },
+      "sharp_public_context": {
+        "data_role": "model_used",
+        "summary": "82% money vs 76% bets"
+      },
+      "weather_context": {
+        "data_role": "model_used",
+        "wind_direction": "crosswind",
+        "wind_speed_mph": 14.975,
+        "temperature_f": 46.94,
+        "wind_unit": "mph",
+        "temperature_unit": "fahrenheit",
+        "source_wind_unit": "km/h",
+        "source_temperature_unit": "celsius",
+        "summary": "Weather: 15 mph crosswind, 47F."
+      },
+      "pitching_bullpen_context": {
+        "data_role": "context_only",
+        "summary": "Pitching/bullpen context available"
+      },
+      "matchup_context": {
+        "data_role": "missing",
+        "summary": "Additional context not available in current model output",
+        "missing": [
+          "matchup context"
+        ]
+      },
+      "missing_context": [
+        "line movement",
+        "matchup context"
+      ]
+    },
+    {
+      "board_date": "2026-04-18",
+      "canonical_game_id": "mlb:287078",
       "market_type": "spread",
       "side": "home",
-      "bet_label": "Arizona Diamondbacks +1.5 (+144)",
-      "matchup": "Toronto Blue Jays @ Arizona Diamondbacks",
-      "start_time_utc": "2026-04-18T01:41:00Z",
-      "start_time_et": "Apr 17, 9:41 PM",
-      "first_pitch_et": "9:41 PM",
-      "model_probability": 0.492683,
-      "market_implied_probability": 0.409836,
-      "edge": 0.082847,
+      "bet_label": "Cleveland Guardians +1.5 (+159)",
+      "matchup": "Baltimore Orioles @ Cleveland Guardians",
+      "start_time_utc": "2026-04-18T22:11:00Z",
+      "start_time_et": "Apr 18, 6:11 PM",
+      "first_pitch_et": "6:11 PM",
+      "model_probability": 0.446429,
+      "market_implied_probability": 0.3861,
+      "edge": 0.060328,
       "selection_logic_note": "Selection logic uses model edge versus market implied probability plus the public price rule. Extra notes below explain the bet but are not separate approval rules.",
       "why_this_bet": [
-        "Model 49.3% vs market 41.0% for a 8.3 point edge.",
-        "Market activity: 98% of money vs 92% of bets on this side.",
-        "Weather: 6 mph, 84F."
+        "Model 44.6% vs market 38.6% for a 6.0 point edge.",
+        "Market activity: 77% of money vs 88% of bets on this side.",
+        "Weather: 15 mph crosswind, 47F."
       ],
       "context_only_notes": [
-        "Context only: Home side bullpen context suggests bullpen availability looks thin, bullpen quality score 2.5."
+        "Context only: Home side bullpen context suggests bullpen availability looks thin, bullpen quality score 4.8."
       ],
       "market_context": {
-        "summary": "Model 49.3% vs market 41.0%.",
-        "edge_text": "8.3 point edge",
-        "current_price": "+144"
+        "summary": "Model 44.6% vs market 38.6%.",
+        "edge_text": "6.0 point edge",
+        "current_price": "+159"
       },
       "line_movement": {
         "summary": "Additional context not available in current model output",
@@ -313,18 +185,82 @@
       },
       "sharp_public_context": {
         "data_role": "model_used",
-        "summary": "98% money vs 92% bets"
+        "summary": "77% money vs 88% bets"
+      },
+      "weather_context": {
+        "data_role": "model_used",
+        "wind_direction": "crosswind",
+        "wind_speed_mph": 14.975,
+        "temperature_f": 46.94,
+        "wind_unit": "mph",
+        "temperature_unit": "fahrenheit",
+        "source_wind_unit": "km/h",
+        "source_temperature_unit": "celsius",
+        "summary": "Weather: 15 mph crosswind, 47F."
+      },
+      "pitching_bullpen_context": {
+        "data_role": "context_only",
+        "summary": "Pitching/bullpen context available"
+      },
+      "matchup_context": {
+        "data_role": "missing",
+        "summary": "Additional context not available in current model output",
+        "missing": [
+          "matchup context"
+        ]
+      },
+      "missing_context": [
+        "line movement",
+        "matchup context"
+      ]
+    },
+    {
+      "board_date": "2026-04-18",
+      "canonical_game_id": "mlb:287077",
+      "market_type": "moneyline",
+      "side": "home",
+      "bet_label": "Miami Marlins ML (-115)",
+      "matchup": "Milwaukee Brewers @ Miami Marlins",
+      "start_time_utc": "2026-04-18T20:11:00Z",
+      "start_time_et": "Apr 18, 4:11 PM",
+      "first_pitch_et": "4:11 PM",
+      "model_probability": 0.582609,
+      "market_implied_probability": 0.534884,
+      "edge": 0.047725,
+      "selection_logic_note": "Selection logic uses model edge versus market implied probability plus the public price rule. Extra notes below explain the bet but are not separate approval rules.",
+      "why_this_bet": [
+        "Model 58.3% vs market 53.5% for a 4.8 point edge.",
+        "Market activity: 2 sharp signals, 2 steam moves, 45% of money vs 42% of bets on this side.",
+        "Weather: 10 mph, 83F."
+      ],
+      "context_only_notes": [
+        "Context only: Home side bullpen context suggests bullpen availability looks thin, bullpen quality score 5.3."
+      ],
+      "market_context": {
+        "summary": "Model 58.3% vs market 53.5%.",
+        "edge_text": "4.8 point edge",
+        "current_price": "-115"
+      },
+      "line_movement": {
+        "summary": "Additional context not available in current model output",
+        "missing": [
+          "line movement"
+        ]
+      },
+      "sharp_public_context": {
+        "data_role": "model_used",
+        "summary": "2 sharp signals, 2 steam moves, 45% money vs 42% bets"
       },
       "weather_context": {
         "data_role": "model_used",
         "wind_direction": null,
-        "wind_speed_mph": 6.462,
-        "temperature_f": 83.84,
+        "wind_speed_mph": 9.88,
+        "temperature_f": 82.58,
         "wind_unit": "mph",
         "temperature_unit": "fahrenheit",
         "source_wind_unit": "km/h",
         "source_temperature_unit": "celsius",
-        "summary": "Weather: 6 mph, 84F."
+        "summary": "Weather: 10 mph, 83F."
       },
       "pitching_bullpen_context": {
         "data_role": "context_only",
@@ -343,154 +279,26 @@
       ]
     },
     {
-      "board_date": "2026-04-17",
-      "canonical_game_id": "mlb:287005",
-      "market_type": "moneyline",
-      "side": "away",
-      "bet_label": "San Francisco Giants ML (-149)",
-      "matchup": "San Francisco Giants @ Washington Nationals",
-      "start_time_utc": "2026-04-17T22:46:00Z",
-      "start_time_et": "Apr 17, 6:46 PM",
-      "first_pitch_et": "6:46 PM",
-      "model_probability": 0.655963,
-      "market_implied_probability": 0.598394,
-      "edge": 0.05757,
-      "selection_logic_note": "Selection logic uses model edge versus market implied probability plus the public price rule. Extra notes below explain the bet but are not separate approval rules.",
-      "why_this_bet": [
-        "Model 65.6% vs market 59.8% for a 5.8 point edge.",
-        "Market activity: 1 sharp signals, 1 steam moves, 43% of money vs 57% of bets on this side.",
-        "Weather: 8 mph crosswind, 82F."
-      ],
-      "context_only_notes": [
-        "Context only: Away side bullpen context suggests bullpen availability looks thin, bullpen quality score 3.5."
-      ],
-      "market_context": {
-        "summary": "Model 65.6% vs market 59.8%.",
-        "edge_text": "5.8 point edge",
-        "current_price": "-149"
-      },
-      "line_movement": {
-        "summary": "Additional context not available in current model output",
-        "missing": [
-          "line movement"
-        ]
-      },
-      "sharp_public_context": {
-        "data_role": "model_used",
-        "summary": "1 sharp signals, 1 steam moves, 43% money vs 57% bets"
-      },
-      "weather_context": {
-        "data_role": "model_used",
-        "wind_direction": "crosswind",
-        "wind_speed_mph": 7.954,
-        "temperature_f": 81.5,
-        "wind_unit": "mph",
-        "temperature_unit": "fahrenheit",
-        "source_wind_unit": "km/h",
-        "source_temperature_unit": "celsius",
-        "summary": "Weather: 8 mph crosswind, 82F."
-      },
-      "pitching_bullpen_context": {
-        "data_role": "context_only",
-        "summary": "Pitching/bullpen context available"
-      },
-      "matchup_context": {
-        "data_role": "missing",
-        "summary": "Additional context not available in current model output",
-        "missing": [
-          "matchup context"
-        ]
-      },
-      "missing_context": [
-        "line movement",
-        "matchup context"
-      ]
-    },
-    {
-      "board_date": "2026-04-17",
-      "canonical_game_id": "mlb:287007",
-      "market_type": "spread",
-      "side": "away",
-      "bet_label": "Kansas City Royals +1.5 (-143)",
-      "matchup": "Kansas City Royals @ New York Yankees",
-      "start_time_utc": "2026-04-17T23:06:00Z",
-      "start_time_et": "Apr 17, 7:06 PM",
-      "first_pitch_et": "7:06 PM",
-      "model_probability": 0.637271,
-      "market_implied_probability": 0.588477,
-      "edge": 0.048794,
-      "selection_logic_note": "Selection logic uses model edge versus market implied probability plus the public price rule. Extra notes below explain the bet but are not separate approval rules.",
-      "why_this_bet": [
-        "Model 63.7% vs market 58.8% for a 4.9 point edge.",
-        "Market activity: 13% of money vs 22% of bets on this side.",
-        "Weather: 12 mph crosswind, 68F. Crosswind conditions can suppress carry, which is generally friendlier to a plus run line."
-      ],
-      "context_only_notes": [
-        "Context only: Away side bullpen context suggests bullpen availability looks thin, bullpen quality score 3.4."
-      ],
-      "market_context": {
-        "summary": "Model 63.7% vs market 58.8%.",
-        "edge_text": "4.9 point edge",
-        "current_price": "-143"
-      },
-      "line_movement": {
-        "summary": "Additional context not available in current model output",
-        "missing": [
-          "line movement"
-        ]
-      },
-      "sharp_public_context": {
-        "data_role": "model_used",
-        "summary": "13% money vs 22% bets"
-      },
-      "weather_context": {
-        "data_role": "model_used",
-        "wind_direction": "crosswind",
-        "wind_speed_mph": 11.93,
-        "temperature_f": 68.18,
-        "wind_unit": "mph",
-        "temperature_unit": "fahrenheit",
-        "source_wind_unit": "km/h",
-        "source_temperature_unit": "celsius",
-        "summary": "Weather: 12 mph crosswind, 68F. Crosswind conditions can suppress carry, which is generally friendlier to a plus run line."
-      },
-      "pitching_bullpen_context": {
-        "data_role": "context_only",
-        "summary": "Pitching/bullpen context available"
-      },
-      "matchup_context": {
-        "data_role": "missing",
-        "summary": "Additional context not available in current model output",
-        "missing": [
-          "matchup context"
-        ]
-      },
-      "missing_context": [
-        "line movement",
-        "matchup context"
-      ]
-    },
-    {
-      "board_date": "2026-04-17",
-      "canonical_game_id": "mlb:287010",
+      "board_date": "2026-04-18",
+      "canonical_game_id": "mlb:287079",
       "market_type": "moneyline",
       "side": "away",
       "bet_label": "St. Louis Cardinals ML (+119)",
       "matchup": "St. Louis Cardinals @ Houston Astros",
-      "start_time_utc": "2026-04-18T00:11:00Z",
-      "start_time_et": "Apr 17, 8:11 PM",
-      "first_pitch_et": "8:11 PM",
+      "start_time_utc": "2026-04-18T23:11:00Z",
+      "start_time_et": "Apr 18, 7:11 PM",
+      "first_pitch_et": "7:11 PM",
       "model_probability": 0.499146,
       "market_implied_probability": 0.456621,
       "edge": 0.042525,
       "selection_logic_note": "Selection logic uses model edge versus market implied probability plus the public price rule. Extra notes below explain the bet but are not separate approval rules.",
       "why_this_bet": [
         "Model 49.9% vs market 45.7% for a 4.3 point edge.",
-        "Market activity: 43% of money vs 38% of bets on this side.",
-        "Weather: 12 mph, 75F."
+        "Market activity: 1 sharp signals, 1 steam moves, 62% of money vs 40% of bets on this side.",
+        "Weather: 13 mph, 69F."
       ],
       "context_only_notes": [
-        "Context only: Away side bullpen context suggests bullpen availability looks thin, bullpen quality score 3.8."
+        "Context only: Away side bullpen context suggests bullpen availability looks thin, bullpen quality score 3.5."
       ],
       "market_context": {
         "summary": "Model 49.9% vs market 45.7%.",
@@ -505,18 +313,18 @@
       },
       "sharp_public_context": {
         "data_role": "model_used",
-        "summary": "43% money vs 38% bets"
+        "summary": "1 sharp signals, 1 steam moves, 62% money vs 40% bets"
       },
       "weather_context": {
         "data_role": "model_used",
         "wind_direction": null,
-        "wind_speed_mph": 12.055,
-        "temperature_f": 74.84,
+        "wind_speed_mph": 12.614,
+        "temperature_f": 68.72,
         "wind_unit": "mph",
         "temperature_unit": "fahrenheit",
         "source_wind_unit": "km/h",
         "source_temperature_unit": "celsius",
-        "summary": "Weather: 12 mph, 75F."
+        "summary": "Weather: 13 mph, 69F."
       },
       "pitching_bullpen_context": {
         "data_role": "context_only",
@@ -535,26 +343,26 @@
       ]
     },
     {
-      "board_date": "2026-04-17",
-      "canonical_game_id": "mlb:287011",
+      "board_date": "2026-04-18",
+      "canonical_game_id": "mlb:287076",
       "market_type": "spread",
-      "side": "away",
-      "bet_label": "Cincinnati Reds +1.5 (-149)",
-      "matchup": "Cincinnati Reds @ Minnesota Twins",
-      "start_time_utc": "2026-04-18T00:11:00Z",
-      "start_time_et": "Apr 17, 8:11 PM",
-      "first_pitch_et": "8:11 PM",
+      "side": "home",
+      "bet_label": "Boston Red Sox -1.5 (-149)",
+      "matchup": "Detroit Tigers @ Boston Red Sox",
+      "start_time_utc": "2026-04-18T20:11:00Z",
+      "start_time_et": "Apr 18, 4:11 PM",
+      "first_pitch_et": "4:11 PM",
       "model_probability": 0.637271,
       "market_implied_probability": 0.598394,
       "edge": 0.038878,
       "selection_logic_note": "Selection logic uses model edge versus market implied probability plus the public price rule. Extra notes below explain the bet but are not separate approval rules.",
       "why_this_bet": [
         "Model 63.7% vs market 59.8% for a 3.9 point edge.",
-        "Market activity: 4% of money vs 13% of bets on this side.",
-        "Weather: 13 mph crosswind, 41F. Crosswind conditions can suppress carry, which is generally friendlier to a plus run line."
+        "Market activity: 12% of money vs 21% of bets on this side.",
+        "Weather: 7 mph wind in, 44F."
       ],
       "context_only_notes": [
-        "Context only: Away side bullpen context suggests bullpen availability looks thin, bullpen quality score 3.5."
+        "Context only: Home side bullpen context suggests bullpen availability looks thin, bullpen quality score 5.0."
       ],
       "market_context": {
         "summary": "Model 63.7% vs market 59.8%.",
@@ -569,146 +377,18 @@
       },
       "sharp_public_context": {
         "data_role": "model_used",
-        "summary": "4% money vs 13% bets"
+        "summary": "12% money vs 21% bets"
       },
       "weather_context": {
         "data_role": "model_used",
-        "wind_direction": "crosswind",
-        "wind_speed_mph": 13.484,
-        "temperature_f": 41.18,
+        "wind_direction": "wind in",
+        "wind_speed_mph": 7.394,
+        "temperature_f": 44.24,
         "wind_unit": "mph",
         "temperature_unit": "fahrenheit",
         "source_wind_unit": "km/h",
         "source_temperature_unit": "celsius",
-        "summary": "Weather: 13 mph crosswind, 41F. Crosswind conditions can suppress carry, which is generally friendlier to a plus run line."
-      },
-      "pitching_bullpen_context": {
-        "data_role": "context_only",
-        "summary": "Pitching/bullpen context available"
-      },
-      "matchup_context": {
-        "data_role": "missing",
-        "summary": "Additional context not available in current model output",
-        "missing": [
-          "matchup context"
-        ]
-      },
-      "missing_context": [
-        "line movement",
-        "matchup context"
-      ]
-    },
-    {
-      "board_date": "2026-04-17",
-      "canonical_game_id": "mlb:287016",
-      "market_type": "spread",
-      "side": "away",
-      "bet_label": "Chicago White Sox +1.5 (-149)",
-      "matchup": "Chicago White Sox @ Athletics",
-      "start_time_utc": "2026-04-18T01:41:00Z",
-      "start_time_et": "Apr 17, 9:41 PM",
-      "first_pitch_et": "9:41 PM",
-      "model_probability": 0.637271,
-      "market_implied_probability": 0.598394,
-      "edge": 0.038878,
-      "selection_logic_note": "Selection logic uses model edge versus market implied probability plus the public price rule. Extra notes below explain the bet but are not separate approval rules.",
-      "why_this_bet": [
-        "Model 63.7% vs market 59.8% for a 3.9 point edge.",
-        "Market activity: 3% of money vs 9% of bets on this side.",
-        "Weather: 3 mph crosswind, 75F. Crosswind conditions can suppress carry, which is generally friendlier to a plus run line."
-      ],
-      "context_only_notes": [
-        "Context only: Away side bullpen context suggests bullpen availability looks thin, bullpen quality score 2.9."
-      ],
-      "market_context": {
-        "summary": "Model 63.7% vs market 59.8%.",
-        "edge_text": "3.9 point edge",
-        "current_price": "-149"
-      },
-      "line_movement": {
-        "summary": "Additional context not available in current model output",
-        "missing": [
-          "line movement"
-        ]
-      },
-      "sharp_public_context": {
-        "data_role": "model_used",
-        "summary": "3% money vs 9% bets"
-      },
-      "weather_context": {
-        "data_role": "model_used",
-        "wind_direction": "crosswind",
-        "wind_speed_mph": 3.231,
-        "temperature_f": 74.66,
-        "wind_unit": "mph",
-        "temperature_unit": "fahrenheit",
-        "source_wind_unit": "km/h",
-        "source_temperature_unit": "celsius",
-        "summary": "Weather: 3 mph crosswind, 75F. Crosswind conditions can suppress carry, which is generally friendlier to a plus run line."
-      },
-      "pitching_bullpen_context": {
-        "data_role": "context_only",
-        "summary": "Pitching/bullpen context available"
-      },
-      "matchup_context": {
-        "data_role": "missing",
-        "summary": "Additional context not available in current model output",
-        "missing": [
-          "matchup context"
-        ]
-      },
-      "missing_context": [
-        "line movement",
-        "matchup context"
-      ]
-    },
-    {
-      "board_date": "2026-04-17",
-      "canonical_game_id": "mlb:287002",
-      "market_type": "spread",
-      "side": "away",
-      "bet_label": "Mets +1.5 (-150)",
-      "matchup": "Mets @ Cubs",
-      "start_time_utc": "2026-04-17T18:20:00.000Z",
-      "start_time_et": "Apr 17, 2:20 PM",
-      "first_pitch_et": "2:20 PM",
-      "model_probability": 0.637271,
-      "market_implied_probability": 0.6,
-      "edge": 0.037271,
-      "selection_logic_note": "Selection logic uses model edge versus market implied probability plus the public price rule. Extra notes below explain the bet but are not separate approval rules.",
-      "why_this_bet": [
-        "Model 63.7% vs market 60.0% for a 3.7 point edge.",
-        "Market activity: 9% of money vs 16% of bets on this side.",
-        "Weather: 10 mph crosswind, 73F. Crosswind conditions can suppress carry, which is generally friendlier to a plus run line."
-      ],
-      "context_only_notes": [
-        "Context only: Away side bullpen context suggests bullpen availability looks thin, bullpen quality score 1.8."
-      ],
-      "market_context": {
-        "summary": "Model 63.7% vs market 60.0%.",
-        "edge_text": "3.7 point edge",
-        "current_price": "-150"
-      },
-      "line_movement": {
-        "summary": "Additional context not available in current model output",
-        "missing": [
-          "line movement"
-        ]
-      },
-      "sharp_public_context": {
-        "data_role": "model_used",
-        "summary": "9% money vs 16% bets"
-      },
-      "weather_context": {
-        "data_role": "model_used",
-        "wind_direction": "crosswind",
-        "wind_speed_mph": 10.128,
-        "temperature_f": 72.68,
-        "wind_unit": "mph",
-        "temperature_unit": "fahrenheit",
-        "source_wind_unit": "km/h",
-        "source_temperature_unit": "celsius",
-        "summary": "Weather: 10 mph crosswind, 73F. Crosswind conditions can suppress carry, which is generally friendlier to a plus run line."
+        "summary": "Weather: 7 mph wind in, 44F."
       },
       "pitching_bullpen_context": {
         "data_role": "context_only",

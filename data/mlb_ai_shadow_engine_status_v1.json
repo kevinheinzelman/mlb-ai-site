@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T20:01:40.769Z",
+  "generated_at": "2026-04-18T20:15:31.958Z",
   "artifact_version": "v1",
   "active_engine": {
     "engine_family": "mlb_ai_ranker",
@@ -9,8 +9,8 @@
     "model_lock_status": "ranker_quality_filtered_challenger",
     "trusted_for_live_betting": false
   },
-  "active_board_date": "2026-04-17",
-  "latest_canonical_board_date": "2026-04-17",
+  "active_board_date": "2026-04-18",
+  "latest_canonical_board_date": "2026-04-18",
   "site_system_contract": {
     "primary_system": {
       "system_key": "ranker_system",
@@ -21,7 +21,7 @@
       "model_version": "v1",
       "threshold": "edge_gte_0_03_cap_minus_150",
       "description": "Quality-filtered public ranker surface using edge >= 0.03 while excluding prices below -150.",
-      "board_date": "2026-04-17"
+      "board_date": "2026-04-18"
     },
     "challenger_system": {
       "system_key": "ranker_challenger_system",
@@ -32,7 +32,7 @@
       "model_version": "v1",
       "threshold": "edge_gte_0_04_no_cap_challenger",
       "description": "Separate challenger lane using edge >= 0.04 with no additional favorite cap. Not the official public betting record.",
-      "board_date": "2026-04-17"
+      "board_date": "2026-04-18"
     },
     "internal_research_lanes": [
       {
@@ -72,9 +72,9 @@
       "max_drawdown": -57.977841
     },
     "ytd_2026_summary": {
-      "bets": 121,
-      "units": 13.463212,
-      "roi": 0.111266
+      "bets": 130,
+      "units": 14.094644,
+      "roi": 0.10842
     }
   },
   "live_policy_reference": {
@@ -90,9 +90,9 @@
       "max_drawdown": -64.344355
     },
     "ytd_2026_summary": {
-      "bets": 141,
-      "units": 11.011235,
-      "roi": 0.078094
+      "bets": 148,
+      "units": 10.812464,
+      "roi": 0.073057
     }
   }
 }

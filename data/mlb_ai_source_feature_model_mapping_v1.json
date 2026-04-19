@@ -1,0 +1,176 @@
+{
+  "generated_at": "2026-04-18T20:15:31.958Z",
+  "operating_date": "2026-04-18",
+  "rows": [
+    {
+      "source_name": "game_market_snapshots",
+      "feeds_feature_tables": "yes",
+      "feature_tables_list": "mlb_action_features_v3; rebuild_mlb_betting_rows_v1",
+      "used_in_live_model": "yes",
+      "used_in_challenger": "yes",
+      "used_in_explanations": "no",
+      "loaded_but_unused": "no",
+      "notes": "Raw snapshot source; not rendered directly in bettor-facing explanations."
+    },
+    {
+      "source_name": "mlb_games_rebuilt",
+      "feeds_feature_tables": "yes",
+      "feature_tables_list": "rebuild_mlb_analysis_rows_research_ready_v1",
+      "used_in_live_model": "yes",
+      "used_in_challenger": "yes",
+      "used_in_explanations": "yes",
+      "loaded_but_unused": "no",
+      "notes": "Provides canonical matchup identity and start times."
+    },
+    {
+      "source_name": "rebuild_mlb_betting_rows_v1",
+      "feeds_feature_tables": "yes",
+      "feature_tables_list": "mlb_ai_ranker_model_rows_v1",
+      "used_in_live_model": "yes",
+      "used_in_challenger": "yes",
+      "used_in_explanations": "yes",
+      "loaded_but_unused": "no",
+      "notes": "This is the actual row universe for live and challenger selection."
+    },
+    {
+      "source_name": "mlb_action_features_v3",
+      "feeds_feature_tables": "yes",
+      "feature_tables_list": "rebuild_mlb_analysis_rows_research_ready_v1; mlb_ai_ranker_model_rows_v1",
+      "used_in_live_model": "yes",
+      "used_in_challenger": "yes",
+      "used_in_explanations": "yes",
+      "loaded_but_unused": "no",
+      "notes": "Sharp/steam/expert/pro-system signals are used. Public bet% and money% are loaded here but not used in the current ranker model."
+    },
+    {
+      "source_name": "game_weather_rebuilt",
+      "feeds_feature_tables": "yes",
+      "feature_tables_list": "rebuild_mlb_analysis_rows_research_ready_v1; mlb_ai_ranker_model_rows_v1",
+      "used_in_live_model": "yes",
+      "used_in_challenger": "yes",
+      "used_in_explanations": "yes",
+      "loaded_but_unused": "no",
+      "notes": "Use updated/source_updated_at for trust. Older generated_at reflects source weather history, not current attachment freshness."
+    },
+    {
+      "source_name": "rebuild_mlb_team_baseball_context_v1",
+      "feeds_feature_tables": "yes",
+      "feature_tables_list": "rebuild_mlb_analysis_rows_research_ready_v1; mlb_ai_ranker_model_rows_v1",
+      "used_in_live_model": "yes",
+      "used_in_challenger": "yes",
+      "used_in_explanations": "yes",
+      "loaded_but_unused": "no",
+      "notes": "Only a subset of loaded baseball fields is currently modeled; richer role/form fields remain context-only or unused."
+    },
+    {
+      "source_name": "mlb_statsapi_gamepk_historical_v1",
+      "feeds_feature_tables": "no",
+      "feature_tables_list": "",
+      "used_in_live_model": "no",
+      "used_in_challenger": "no",
+      "used_in_explanations": "no",
+      "loaded_but_unused": "yes",
+      "notes": "Important for historical pitch-event ingestion, but not part of the live/challenger ranker decision path."
+    },
+    {
+      "source_name": "rebuild_mlb_analysis_rows_research_ready_v1",
+      "feeds_feature_tables": "yes",
+      "feature_tables_list": "mlb_ai_ranker_model_rows_v1; mlb_ai_ranker_explanations_v1.json",
+      "used_in_live_model": "yes",
+      "used_in_challenger": "yes",
+      "used_in_explanations": "yes",
+      "loaded_but_unused": "no",
+      "notes": "This surface contains both used features and extra loaded context that is not yet part of the ranker model."
+    },
+    {
+      "source_name": "mlb_game_results_rebuilt",
+      "feeds_feature_tables": "no",
+      "feature_tables_list": "",
+      "used_in_live_model": "yes",
+      "used_in_challenger": "yes",
+      "used_in_explanations": "no",
+      "loaded_but_unused": "no",
+      "notes": "Not part of same-day pick selection, but required for training targets and public record grading."
+    },
+    {
+      "source_name": "mlb_ai_ranker_model_rows_v1",
+      "feeds_feature_tables": "no",
+      "feature_tables_list": "",
+      "used_in_live_model": "yes",
+      "used_in_challenger": "yes",
+      "used_in_explanations": "no",
+      "loaded_but_unused": "no",
+      "notes": "This table proves exactly which features the ranker model actually sees."
+    },
+    {
+      "source_name": "mlb_ai_ranker_predictions_v1",
+      "feeds_feature_tables": "no",
+      "feature_tables_list": "",
+      "used_in_live_model": "yes",
+      "used_in_challenger": "yes",
+      "used_in_explanations": "yes",
+      "loaded_but_unused": "no",
+      "notes": "Live and challenger differ after this table at the policy layer, not at the model layer."
+    },
+    {
+      "source_name": "mlb_ai_ranker_daily_board_v1",
+      "feeds_feature_tables": "no",
+      "feature_tables_list": "",
+      "used_in_live_model": "yes",
+      "used_in_challenger": "yes",
+      "used_in_explanations": "no",
+      "loaded_but_unused": "no",
+      "notes": "Board-ranking surface before live/challenger policy cuts are applied."
+    },
+    {
+      "source_name": "mlb_ai_ranker_daily_leans_v1",
+      "feeds_feature_tables": "no",
+      "feature_tables_list": "",
+      "used_in_live_model": "yes",
+      "used_in_challenger": "yes",
+      "used_in_explanations": "yes",
+      "loaded_but_unused": "no",
+      "notes": "This is the table that turns model outputs into official live and challenger cards."
+    },
+    {
+      "source_name": "mlb_ai_daily_leans_v1.json",
+      "feeds_feature_tables": "no",
+      "feature_tables_list": "",
+      "used_in_live_model": "yes",
+      "used_in_challenger": "no",
+      "used_in_explanations": "yes",
+      "loaded_but_unused": "no",
+      "notes": "Official bettor-facing live card."
+    },
+    {
+      "source_name": "mlb_ai_ranker_explanations_v1.json",
+      "feeds_feature_tables": "no",
+      "feature_tables_list": "",
+      "used_in_live_model": "no",
+      "used_in_challenger": "no",
+      "used_in_explanations": "yes",
+      "loaded_but_unused": "no",
+      "notes": "Bettor-readable explanation artifact. Explains selection; does not drive it."
+    },
+    {
+      "source_name": "mlb_ai_reporting_v1.json",
+      "feeds_feature_tables": "no",
+      "feature_tables_list": "",
+      "used_in_live_model": "no",
+      "used_in_challenger": "no",
+      "used_in_explanations": "no",
+      "loaded_but_unused": "no",
+      "notes": "Official public record summary."
+    },
+    {
+      "source_name": "mlb_ai_shadow_reporting_v1.json",
+      "feeds_feature_tables": "no",
+      "feature_tables_list": "",
+      "used_in_live_model": "no",
+      "used_in_challenger": "no",
+      "used_in_explanations": "no",
+      "loaded_but_unused": "no",
+      "notes": "Separate challenger record. Not part of the official public card."
+    }
+  ]
+}

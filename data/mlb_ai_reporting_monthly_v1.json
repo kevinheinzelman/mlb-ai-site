@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T20:01:40.769Z",
+  "generated_at": "2026-04-18T20:15:31.958Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_ranker",
@@ -456,16 +456,16 @@
       {
         "month": "2026-04",
         "performance_window": "live_2026",
-        "bets": 79,
+        "bets": 83,
         "selected_bets": 90,
-        "wins": 45,
+        "wins": 49,
         "losses": 34,
         "pushes": 0,
-        "win_pct": 0.56962,
-        "units": 10.717775,
-        "roi": 0.135668,
-        "cumulative_units": 11.011236,
-        "all_time_cumulative_units": 159.09171
+        "win_pct": 0.590361,
+        "units": 12.37896,
+        "roi": 0.149144,
+        "cumulative_units": 12.672421,
+        "all_time_cumulative_units": 160.752895
       }
     ]
   }

@@ -1,0 +1,18 @@
+source_name,layer_type,description,historical_coverage_start,historical_coverage_end,expected_refresh_cadence,latest_available_date,last_updated_at,health_status,is_required_for_live_model,is_required_for_challenger
+game_market_snapshots,raw_source,Supporting Action snapshot market feed used for fallback market rows and Action feature construction.,2021-04-01,2026-09-06,daily,2026-09-06,2026-04-18T19:43:29.075Z,healthy,true,true
+mlb_games_rebuilt,canonical,Canonical game identity and start-time table.,2021-04-01,2026-04-18,daily,2026-04-18,2026-04-18T19:43:29.075Z,healthy,true,true
+rebuild_mlb_betting_rows_v1,canonical,Canonical betting-row surface that defines the boardable market universe.,2022-04-07,2026-04-18,daily,2026-04-18,2026-04-18T19:44:49.000Z,healthy,true,true
+mlb_action_features_v3,feature,Action/sharp feature table built from snapshot data.,,,daily,2026-04-18,2026-04-18T19:43:20.744Z,healthy,true,true
+game_weather_rebuilt,feature,Game-level weather context attached to canonical games.,,,daily,2026-04-18,2026-04-18T23:47:07.000Z,healthy,true,true
+rebuild_mlb_team_baseball_context_v1,feature,Baseball context layer including starter/bullpen/statcast aggregates.,2022-04-07,2026-04-18,daily,2026-04-18,2026-04-18T19:47:21.550Z,healthy,true,true
+mlb_statsapi_gamepk_historical_v1,raw_source,Historical Stats API gamePk bridge used for historical pitch-event workflows.,2022-04-07,2026-04-17,daily,2026-04-17,2026-04-18T23:50:10.000Z,healthy,false,false
+rebuild_mlb_analysis_rows_research_ready_v1,model_input,"Joined research-ready surface attaching Action, weather, baseball, bullpen-role, lineup, and microstructure fields.",2022-04-07,2026-04-18,daily,2026-04-18,2026-04-19T00:12:13.000Z,healthy,true,true
+mlb_game_results_rebuilt,canonical,Canonical game results used for training targets and public performance grading.,2022-04-07,2026-04-17,daily,2026-04-17,2026-04-18T19:47:21.515Z,healthy,true,true
+mlb_ai_ranker_model_rows_v1,model_input,Final ranker training/scoring matrix.,2022-04-07,2026-04-18,daily,2026-04-18,2026-04-18T19:47:21.515Z,healthy,true,true
+mlb_ai_ranker_predictions_v1,model_output,Predicted probabilities and edges for every scored row.,2022-04-07,2026-04-18,daily,2026-04-18,2026-04-18T20:12:20.251Z,healthy,true,true
+mlb_ai_ranker_daily_board_v1,model_output,Ranked daily board before policy filtering.,2026-04-18,2026-04-18,daily,2026-04-18,2026-04-18T20:12:20.251Z,healthy,true,true
+mlb_ai_ranker_daily_leans_v1,model_output,Policy-selected ranker bets by board date.,2026-04-18,2026-04-18,daily,2026-04-18,2026-04-18T20:12:20.251Z,healthy,true,true
+mlb_ai_daily_leans_v1.json,ui_artifact,Official public leans artifact.,,2026-04-18,daily,2026-04-18,2026-04-18T20:15:31.958Z,healthy,true,false
+mlb_ai_ranker_explanations_v1.json,ui_artifact,Public explanation layer for selected live bets.,,2026-04-18,daily,2026-04-18,2026-04-18T20:15:31.958Z,healthy,false,false
+mlb_ai_reporting_v1.json,ui_artifact,Official public performance summary artifact.,,2026-04-17,daily,2026-04-17,2026-04-18T20:15:31.958Z,healthy,false,false
+mlb_ai_shadow_reporting_v1.json,ui_artifact,Challenger performance summary artifact.,,2026-04-17,daily,2026-04-17,2026-04-18T20:15:31.958Z,healthy,false,false

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T20:01:40.769Z",
+  "generated_at": "2026-04-18T20:15:31.958Z",
   "artifact_version": "v1",
   "engine": {
     "engine_family": "mlb_ai_ranker",
@@ -12,7 +12,7 @@
   "selection_contract": "edge_gte_0_04_no_cap_challenger",
   "source_coverage": {
     "historical_window": "2022-2025",
-    "results_through": "2026-04-16"
+    "results_through": "2026-04-17"
   },
   "active_policy_definition": {
     "policy_name": "edge_gte_0_04_no_cap_challenger",
@@ -30,7 +30,7 @@
     "eligibility_contract": "quality_filtered_market_surface",
     "historical_window": "2022-2025",
     "live_window": "2026",
-    "results_through": "2026-04-16"
+    "results_through": "2026-04-17"
   },
   "active_policy_historical_summary": {
     "bets": 3987,
@@ -45,18 +45,18 @@
     "roi": 0.060754
   },
   "active_policy_live_summary": {
-    "bets": 121,
-    "settled_bets": 121,
-    "selected_bets": 132,
-    "wins": 73,
-    "losses": 48,
+    "bets": 130,
+    "settled_bets": 130,
+    "selected_bets": 140,
+    "wins": 79,
+    "losses": 51,
     "pushes": 0,
-    "win_rate": 0.603306,
-    "hit_rate": 0.603306,
-    "units": 13.463212,
-    "roi": 0.111266
+    "win_rate": 0.607692,
+    "hit_rate": 0.607692,
+    "units": 14.094644,
+    "roi": 0.10842
   },
-  "active_board_date": "2026-04-17",
+  "active_board_date": "2026-04-18",
   "site_surface": {
     "system_key": "ranker_challenger_system",
     "label": "Ranker Challenger",
@@ -66,7 +66,7 @@
     "model_version": "v1",
     "threshold": "edge_gte_0_04_no_cap_challenger",
     "description": "Separate challenger lane using edge >= 0.04 with no additional favorite cap. Not the official public betting record.",
-    "board_date": "2026-04-17"
+    "board_date": "2026-04-18"
   },
   "retained_internal_systems": [
     {
